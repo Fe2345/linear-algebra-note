@@ -1,0 +1,17 @@
+\usepackage{xeCJK}
+\setCJKmainfont{SimSun}[BoldFont={SimHei}, ItalicFont={KaiTi}] % 设置中文支持
+
+\newcommand{\point}[1]{\item {#1}}
+\newenvironment{para}[1]{%
+\ifcase#1\relax
+\begin{enumerate}[label=\arabic*.] % 1.2.3.
+\or
+\begin{enumerate}[label=\textcircled{\arabic*}] % ①②③
+\or
+\begin{enumerate}[label=(\roman*)] % (i)(ii)(iii)
+\else
+\begin{enumerate}[label=\arabic*.] % 默认格式
+\fi
+}{
+\end{enumerate}
+}

@@ -1,0 +1,24 @@
+\ifx\allfiles\undefined
+\documentclass[12pt, a4paper, oneside, UTF8]{ctexbook}
+\def\path{../config}
+\input{../config/_config}
+\begin{document}
+% \input{../config/cover}
+\else
+\fi
+%标题
+\chapter{多重线性映射}
+	\section{Galois群}
+		\begin{defn}{Galois群}{}
+			设$E,F$是两个域，$E \textbackslash F$是一个扩张，那么称
+			
+			$Gal(E\textbackslash F) = \{\sigma \in Aut(E) | \sigma |_{F} = id_F\}$
+			
+			是$E \backslash F$的$Galois$群
+		\end{defn}
+		\begin{them}{有限扩张的Galois群有限}{}
+			如果$E\backslash F$是有限扩张，那么$Gal(E\backslash F)$是有限群
+		\end{them}
+\ifx\allfiles\undefined
+\end{document}
+\fi

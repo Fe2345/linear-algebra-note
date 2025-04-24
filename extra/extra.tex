@@ -1,0 +1,61 @@
+\ifx\allfiles\undefined
+\documentclass[12pt, a4paper, oneside, UTF8]{ctexbook}
+\setCJKmainfont{SimSun}
+\def\path{../config}
+\input{../config/_config}
+\begin{document}
+	% \input{../config/cover}
+	\else
+	\fi
+	%标题
+	\chapter{附录}
+	这一部分中，对于正文中因为逻辑结构无法提及的部分，进行补充。
+	%--------------------正文---------------------------
+		\section{一些典型的域}
+			\subsection{$F_p$}
+				首先约定，这一部分的讨论中，都认为$p$是一个素数。
+				
+				我们首先讨论的是一个典型的有限域——模$p$剩余类域。
+				
+				\begin{defn}{$F_p$}{}
+					设$F$是一个域，$Char F \geqslant p$且$p$是一个素数，
+					
+					我们定义$F_p = N(\Z_p)$
+					
+					并定义其中的加法和乘法为：
+					
+					$+_F = N^-1 \circ + \circ N,{\cdot}_F = N^-1 \circ \cdot \circ N$
+				\end{defn}
+				\begin{them}{$F_p$没有真子域}{}
+					设$p$是一个素数，那么域$F_p$不存在真子域，即$F_p \textbackslash E \rightarrow E = F_p$
+				\end{them}
+				\begin{proof}
+					不妨假设命题不成立，那么一定有真子域$E \subseteq F_p$
+					
+					不妨假设$[F_p : E]=d$，因为$F_p$是有限域，那么$|E|,|F_p|$都是有限的。
+					
+					但是，$|F_p|={|E|}^d$
+					
+					$\Rightarrow p = {|E|}^d$，但是$p$是素数，因此只可能$d=1$
+					
+					于是$|F_p|=|E|$，那么只可能$F_p=E$，与假设矛盾，于是命题得证。
+				\end{proof}
+			\subsection{$\Q$}
+				\begin{them}{$Q$没有真子域}
+					域$\Q$不存在真子域，即$\Q \textbackslash E \rightarrow E = \Q$
+				\end{them}
+				\begin{proof}
+					不妨假设命题不成立，$E \subset \Q$是$\Q$真子域。
+					
+					那么，因为$0,1 \in E$，由域对加法封闭，那么一定有$\N \subseteq E$
+					
+					进一步，因为任意元素的加法逆存在，于是有$\Z \subseteq E$
+					
+					于是，由任意非零元素的逆存在，一定有$\Q \subseteq E$。
+					
+					但是，我们假设$E \subset \Q$，矛盾。于是命题成立
+				\end{proof}
+	
+	\ifx\allfiles\undefined
+\end{document}
+\fi

@@ -1,0 +1,40 @@
+{
+    "InternalPDFViewer": {
+        "Embedded": false,
+        "File": ""
+    },
+    "Session": {
+        "Bookmarks": [
+        ],
+        "CurrentFile": "extra/extra.tex",
+        "FileVersion": 1,
+        "Files": [
+            {
+                "Col": 32,
+                "EditorGroup": 0,
+                "FileName": "chap1/chap.tex",
+                "FirstLine": 178,
+                "FoldedLines": "",
+                "Line": 50
+            },
+            {
+                "Col": 20,
+                "EditorGroup": 0,
+                "FileName": "main.tex",
+                "FirstLine": 0,
+                "FoldedLines": "",
+                "Line": 10
+            },
+            {
+                "Col": 0,
+                "EditorGroup": 0,
+                "FileName": "extra/extra.tex",
+                "FirstLine": 9,
+                "FoldedLines": "",
+                "Line": 0
+            }
+        ],
+        "MasterFile": "",
+        "VerticalSplit": false
+    }
+}
