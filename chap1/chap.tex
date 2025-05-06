@@ -2,6 +2,7 @@
 \documentclass[12pt, a4paper, oneside, UTF8]{ctexbook}
 \def\path{../config}
 \input{../config/_config}
+\pgfplotsset{compat=1.18}
 \begin{document}
 % \input{../config/cover}
 \else
@@ -100,11 +101,294 @@
 				\end{proof}
 		\end{para}
 	\section{线性组合}
+		本节中，我们着手研究一系列向量以相加，相乘的形式组合而成的新向量，称之为线性组合。
+
+		其最一般的形式是$\sum\limits_{i=1}^{n} \alpha_i$，但是我们希望能够进一步拓展，考虑无穷多个向量的线性组合。
+
+		因此，我们需要先定义向量列的极限，其最好方式就是先定义出线性空间中的度量。
+		\subsection{度量线性空间}
+			\begin{defn}{度量线性空间、线性组合的定义}{}
+				设$V$是一个域$F$上的线性空间，映射$d:V\times V \rightarrow F$如果满足：
+
+				\ding{172} $\forall \alpha ,\beta \in V,d(\alpha ,\beta )=0 \Leftrightarrow \alpha =\beta $
+			
+				\ding{173} $\forall \alpha ,\beta \in V,d(\alpha ,\beta )=d(\beta ,\alpha )$
+
+				\ding{174} $\forall \alpha,\beta,\gamma \in V,d(\alpha,\beta )+d(\beta ,\gamma ) \geqslant d(\alpha ,\gamma )$
+
+				那么我们称$(V,d)$是一个度量线性空间（或Banach空间），$d$称为$V$中的度量
+			\end{defn}
+			这样，我们就可以定义出线性组合
+			\begin{defn}{线性组合}{}
+				设$V$是一个域$F$上的线性空间，$\{\alpha_i \in V\}$是一个至多可数的向量组
+
+				那么如果向量$\beta \in V$满足：$\forall \varepsilon > 0,\exists,n \in \N_+,\text{s.t. }d(\sum\limits_{i=1}^{n} k_i\alpha_i,\beta ) < \varepsilon ,k_i \in F$
+
+				那么我们称$\beta$是一个由向量组$\{\alpha_i \in V\}$张成的的线性组合，并称$\beta $可以由$\{\alpha_i \in V\}$线性表出
+				
+				如果$\{\alpha_i \in V\}$可数，记作：$\beta =\sum\limits_{i=1}^{\infty} \alpha_i$，否则记作$\beta =\sum\limits_{i=1}^{n} \alpha_i$，其中$n$是向量组的元素数
+
+				由向量组$S$张成的全体线性组合形成的子空间记作：$span_F (S)$（或$L(S)$，$\langle S \rangle $）
+			\end{defn}
+			我们不考虑不可数的向量组张成的线性组合，因为不可数的向量的求和的定义通常是不良好的。
+
+			此后除非特别说明，我们默认我们所说的向量组指的是至多可数的向量组。
+		\subsection{向量组的线性相关性和线性无关性}
+			我们观察到一个现象：向量组张成线性子空间时，并非每一个向量都有贡献，有些向量是不必要的。就像下图中，尽管三个向量张成了整个平面，但是其实任取其中之二，就足以张成整个平面。
+
+			% 设置3D视图角度
+			\tdplotsetmaincoords{75}{125}
+			\begin{tikzpicture}[tdplot_main_coords, scale=1.5]
+
+			% 坐标原点
+			\coordinate (A) at (0,0,0);
+
+			% 向量终点坐标
+			\coordinate (B) at (3.66,4.16,0);
+			\coordinate (C) at (3,-2,0);
+			\coordinate (D) at (4.5,0.7,0);
+
+			% 背景平面（淡蓝色）
+			\fill[cyan!15, opacity=0.7] (-5,-5,0) -- (5,-5,0) -- (5,5,0) -- (-5,5,0) -- cycle;
+
+			% 向量
+			\draw[->, thick, black] (A) -- (B);
+			\draw[->, thick, black] (A) -- (C);
+			\draw[->, thick, black] (A) -- (D);
+
+			% 标签（无圆点）
+			\draw (B) node[anchor=east, blue] {B};
+			\draw (C) node[anchor=west, blue] {C};
+			\draw (D) node[anchor=south, blue] {D};
+
+			% 点
+			\filldraw[gray] (A) circle (2pt) node[anchor=north east] {A};
+
+			\end{tikzpicture}
+			我们会自然地认为：如果每一个向量都和其他向量的“方向”不一样，就不会有不必要的向量，或者说，不应该可以在赋予非零系数时，张成零向量
+
+			此时，向量组被称为是“线性无关的”。
+			\begin{defn}{线性无关的向量组}{}
+				向量组$\{\alpha_x \in V|x \in A\}$如果满足：
+
+				$\sum\limits_{x \in A} k_x \alpha_x = \mathbf{0} \Rightarrow \forall x \in A,k_x = 0$
+
+				那么我们称$\{\alpha_x \in V|x \in A\}$是一个线性无关的向量组
+			\end{defn}
+			如果一个向量组不是线性无关的，那么我们称它是线性相关的，我们可以写出以下定义
+			\begin{defn}{线性相关的向量组}{}
+				向量组$\{\alpha_x \in V|x \in A\}$如果满足：
+
+				存在不全为零的一组系数$k_x,x \in A$，使得$\sum\limits_{x \in A} k_x \alpha_x = \mathbf{0}$
+
+				那么我们称$\{\alpha_x \in V|x \in A\}$是一个线性相关关的向量组
+			\end{defn}
+		\subsection{线性相关和线性无关的性质}
+		\begin{para}{0}
+			\point{单个向量当且仅当它是零向量是线性相关}
+				\begin{proposition}
+					$\alpha $线性相关 $\Leftrightarrow \alpha =\mathbf{0}$
+				\end{proposition}
+				\begin{proof}
+					先证充分性，如果$\alpha $线性相关，那么$\exists k \in F,k \neq 0,k\alpha =\mathbf{0} \Rightarrow \alpha =\mathbf{0}$
+
+					必要性是显然的
+				\end{proof}
+			\point{如果一个部分组线性相关，整个向量组也是线性相关的}
+				\begin{proposition}
+					如果$\{\alpha_x \in V|x \in A\}$是一个向量组，它的一个部分组$\{\alpha_x \in V| x \in B\},B \subseteq A$线性相关，那么$\{\alpha_x \in V|x \in A\}$也是线性相关的
+				\end{proposition}
+				\begin{proof}
+					因为$\{\alpha_x \in V| x \in B\}$线性相关，所以存在不全为零的系数$k_x,x \in B$，使得$\sum\limits_{x \in B} k_x \alpha_x = \mathbf{0}$
+
+					我们可以将$k_x$扩展到$A$上，令$k_x = 0,x \in A-B$，那么$\sum\limits_{x \in A} k_x \alpha_x = \sum\limits_{x \in B} k_x \alpha_x=\mathbf{0}$，所以$\{\alpha_x \in V|x \in A\}$线性相关
+				\end{proof}
+				反过来，我们可以推论出，线性无关向量组的任意部分组也是线性无关的
+				\begin{corollary}{线性无关向量组的任意部分组都线性无关}{}
+					若向量组$\{\alpha_x \in V|x \in A\}$线性无关，那么它的任意一个部分组$\{\alpha_x \in V| x \in B\},B \subseteq A$也是线性无关的
+				\end{corollary}
+				\begin{proof}
+					如果并非如此，那么至少有一个部分组线性相关，那么按照命题，整个向量组线性相关，这与假设矛盾，所以命题得证
+				\end{proof}
+				因此，一个显然的事实是，一个包含零向量的向量组是一定线性相关的
+				\begin{proposition}
+					如果$ \mathbf{0} \in \{\alpha_x \in V|x \in A\}$，那么$\{\alpha_x \in V|x \in A\}$线性相关
+				\end{proposition}
+				\begin{proof}
+					显然
+				\end{proof}
+			\point{向量组线性相关的充要条件是：存在一个向量可以由其他向量线性表出}
+				\begin{proposition}
+					向量组线性相关$\Leftrightarrow$向量组中存在一个向量可以由其他向量线性表出
+				\end{proposition}
+				\begin{proof}
+					先证充分性。如果$\{\alpha_x \in V|x \in A\}$线性相关，那么存在不全为零的系数$k_x,x \in A$，使得$\sum\limits_{x \in A} k_x \alpha_x = \mathbf{0}$
+
+					取其中任意一个不为零的系数$k_a \neq 0$，那么有$\alpha_a =-\frac{1}{k_a}\sum\limits_{x \in A-\{a\}} k_x \alpha_x$，充分性得证
+
+					接下来证明必要性，如果$\alpha_a =\sum\limits_{x \in A-\{a\}} k_x \alpha_x$，那么我们只需令$k_a=-1$
+
+					那么就有$\sum\limits_{x \in A} k_x \alpha_x = \mathbf{0}$
+				\end{proof}
+			\point{能唯一地表出一个向量的向量组线性无关}
+				\begin{proposition}
+					$\beta \in V$可以被$\{\alpha_x \in V| x\in A\}$唯一地线性表出$\Leftrightarrow\{\alpha_x \in V| x\in A\}$线性无关
+				\end{proposition}
+				\begin{proof}
+					先证充分性。
+
+					这其实是显然的，因为如果$\{\alpha_x \in V| x\in A\}$线性相关，那么有一个线性组合$\sum\limits_{x \in A} k_x \alpha_x = \mathbf{0}$并且$k_x$不全为零
+
+					假设$\beta =\sum\limits_{x \in A} l_x \alpha_x$，那么也有$\sum\limits_{x \in A} (k_x + l_x) \alpha_x$，这与假设矛盾
+
+					再证必要性。
+
+					不妨假设$\beta =\sum\limits_{x \in A} l_x \alpha_x=\sum\limits_{x \in A} k_x \alpha_x \exists x \in A,k_x \neq l_x$
+
+					那么$\sum\limits_{x \in A} (l_x-k_x) \alpha_x = \mathbf{0}$，又因为$\{\alpha_x \in V| x\in A\}$线性无关，所以$l_x-k_x=0$。因此表出方式是唯一的，命题得证
+				\end{proof}
+			\point{向线性无关向量组中加入一个向量，如果变得线性相关，那么这个向量可以由其他向量线性表出}
+				\begin{proposition}
+					如果$\{\alpha _x \in V| x \in A\}$线性无关，$\{\beta ,\alpha_x \in V| x\in A\}$线性相关
+
+					那么$\beta $可由$\{\alpha_x \in V| x\in A\}$线性表出
+				\end{proposition}
+				\begin{proof}
+					因为$\{\beta ,\alpha_x \in V| x\in A\}$线性相关，所以存在不全为零的系数$k_x,l\in F,x \in A$，使得$\sum\limits_{x \in A} k_x \alpha_x + l \beta = \mathbf{0}$
+
+					我们只需证$l \neq 0$。我们不妨假设$l=0$
+
+					那么$\sum\limits_{x \in A} k_x \alpha_x = \mathbf{0}$。但是$\{\alpha_x \in V| x\in A\}$线性无关，所以$\forall x \in A,k_x =0$，这与系数不全为零的假设矛盾
+
+					那么有$l \neq 0$，于是$\beta  =-\frac{1}{l}\sum\limits_{x \in A} k_x \alpha_x$，命题得证
+				\end{proof}
+		\end{para}
 	\section{极大线性无关向量组、向量组的秩}
+		前面我们讨论了线性无关向量组，它可以说是“所有元素都有贡献”的，接下来我们讨论，如果把一个向量集剔除至恰好包含所有“有贡献”的向量，这种向量组有什么性质
+
+		我们的一个想法是，如果剔除至向量组本身依旧线性无关，但是加入任意向量就变得线性相关，那么这个向量组就是我们想要的“极大线性无关向量组”
+		\subsection{极大线性无关向量组}
+			\begin{defn}{极大线性无关向量组}{}
+				设$\{\alpha_x \in V| x \in A\}$是一个向量组
+
+				如果它的一个部分组$\{\alpha_x \in V| x \in B\},B\subseteq A$线性无关，并且$\forall \beta \in V,\{\beta ,\alpha_x| x \in B\}$线性相关
+
+				那么我们称$\{\alpha_x \in V| x \in B\}$是$\{\alpha_x \in V| x \in A\}$的一个极大线性无关向量组
+			\end{defn}
+			我们直观地认为，每一个极大线性无关向量组应该具备相同的元素数（或势），就像在三维空间中，我们可以选取不同的坐标系，但是每个坐标系都恰好三个坐标轴
+		\subsection{向量组的等价}
+			我们在向量组上定义以下等价关系：
+			\begin{defn}{向量组的线性表出}{}
+				如果向量组$\{\alpha_x \in V| x \in A\}$中的任意向量可由$\{\beta_x \in V| x \in B\}$线性表出
+
+				那么我们称$\{\alpha_x \in V| x \in A\}$可由$\{\beta _x \in V| x \in B\}$线性表出
+			\end{defn}
+			\begin{defn}{向量组的等价}{}
+				如果向量组$\{\alpha_x \in V| x \in A\}$可由$\{\beta_x \in V| x \in B\}$线性表出，并且$\{\beta_x \in V| x \in B\}$可由$\{\alpha_x \in V| x \in A\}$线性表出
+
+				那么我们称$\{\alpha_x \in V| x \in A\}$和$\{\beta_x \in V| x \in B\}$是等价的，记作：$\{\alpha_x \in V| x \in A\} \cong \{\beta_x \in V| x \in B\}$
+			\end{defn}
+			我们首先验证它的确是一个等价关系
+			\begin{proposition}
+				向量组的等价是一个等价关系
+			\end{proposition}
+			\begin{proof}
+				自反性是显然的，因为向量组中的任意向量$\alpha_x$可以由它自己线性表出；
+
+				对称性由定义是显然的；
+
+				最后证明传递性，假设$\{\alpha_x \in V| x \in A\} \cong \{\beta _x \in V| x \in B\},\{\beta _x \in V| x \in B\}\cong\{\gamma _x \in V| x \in C\}$
+
+				设$\alpha_x = \sum\limits_{y \in B} k_{xy} \beta_y,\beta_y = \sum\limits_{z \in C} l_{yz} \gamma_z$
+
+				那么$\alpha_x = \sum\limits_{y \in B} k_{xy} \left(\sum\limits_{z \in C} l_{yz} \gamma_z\right)=\sum\limits_{y \in B,z\in C} k_{xy}l_{yz} \gamma_z$
+
+				因此$\{\alpha_x \in V| x \in A\}$可由$\{\alpha_x \in V| x \in A\}$线性表出，同理可证$\{\gamma_x \in V| x \in C\}$可由$\{\alpha_x \in V| x \in A\}$线性表出
+				
+				所以$\{\alpha_x \in V| x \in A\} \cong \{\gamma_x \in V| x \in C\}$，传递性得证。于是命题得证
+			\end{proof}
+			接下来讨论一些向量组等价的性质：
+			\begin{para}{0}
+				\point{}
+					\begin{proposition}
+						任何向量组和它的极大线性无关向量组等价
+					\end{proposition}
+					\begin{proof}
+						极大线性无关向量组显然可以由原向量组线性表出；
+
+						而按照极大线性无关向量组的定义，向其中加入任意一个向量，向量组会变得线性相关，于是，原向量组中的任意一个向量都可以由极大线性无关向量组线性表出。命题得证
+					\end{proof}
+				\point{一个向量组如果可以由一个势比它小的向量组线性表出，那么它线性相关}
+					在给出命题及其证明前，我们先证明一个显然的引理
+					\begin{lemma}{}{}
+						向量组$\{\alpha_1,\cdots,\alpha_n\}$如果线性相关，
+						
+						那么一定$\exists k,\text{s.t. }\alpha_k$可由$\alpha_1,\cdots,\alpha_{k-1}$线性表出，并且$\text{span}(\alpha_1,\cdots,\alpha_{i-1},\alpha_{i+1},\cdots,\alpha_n)=\text{span}(\alpha_1,\cdots,\alpha_n)$
+					\end{lemma}
+					\begin{proof}
+						因为$\{\alpha_1,\cdots,\alpha_n\}$线性相关，所以一定$\exists k_1,\cdots,k_n,k_1 \alpha_1+\cdots+k_n \alpha_n = \mathbf{0}$
+
+						只需选取满足$k_i \neq 0$的最大的下标$p$，那么有$\alpha_1+\cdots+k_p \alpha_p = \mathbf{0}$
+
+						于是$\alpha_p = -\frac{1}{k_p} \sum\limits_{i=1}^{p-1} \alpha_i$
+
+						此时因为$\alpha_p$可由前面的向量线性表出，因此去除其不会对生成的子空间有任何影响，命题得证。
+					\end{proof}
+					\begin{proposition}
+						如果向量组$\{\alpha_x \in V| x \in A\}$可由$\{\beta_x \in V| x \in B\}$线性表出，并且$\text{Card } A > \text{Card }B$
+
+						那么$\{\alpha_x \in V| x \in A\}$线性相关
+					\end{proposition}
+					\begin{proof}
+						先考虑两者都是有限向量组的情况
+
+						我们可以证明：如果$\{\alpha_1,\cdots,\alpha_m\}$可由$\{\beta_1,\cdots,\beta_n\}$线性表出，并且$m > n$，那么$\{\alpha_1,\cdots,\alpha_m\}$线性相关
+
+						记$W=\text{span}(\beta _1, \dots, \beta _n)$。
+
+						我们采取以下方法证明：用$\alpha_i$逐步替换$\beta_j$，但是保持生成的子空间不变。最后，我们一定会发现，$\beta_j$已经被全部替换，但是此时依旧有$\alpha_i$未曾被加入向量组过。这就说明了$\{\alpha_1,\cdots,\alpha_m\}$中有向量可以被其它向量线性表出，即$\{\alpha_1,\cdots,\alpha_m\}$线性相关
+						
+						也就是说，我们希望构造一系列向量组 $B_0, B_1, \dots, B_n$，使得对于 $j=0, 1, \dots, n$，向量组 $B_j$ 满足：
+						\begin{enumerate}
+							\item $B_j$ 的长度为 $n$。
+							\item $\text{span}(B_j) = W$。
+							\item $B_j$ 包含向量 $\alpha _1, \dots, \alpha _j$ 以及从原始向量组 $(\beta _1, \dots, \beta _n)$ 中剩下的 $n-j$ 个向量。
+						\end{enumerate}
+						
+						我们首先取$B_0 = \{\beta _1, \dots, \beta _n\}$
+
+						我们如此由$B_{j-1}$迭代出向量组$B_j$：
+
+						考虑向量组 $\alpha_j \cup B_{j-1}$（并且不失一般性地将$\alpha_j$置于向量组的首位）。由于$\alpha_j \in W$，所以一定有$\text{span}(\alpha_j \cup B_{j-1})=W$
+						
+						由于 $\text{span}(B_{j-1})=W$，向量 $\alpha _j$ 在 $B_{j-1}$ 生成的子空间中，因此向量组 $\alpha _j\cup B_{j-1}$ 是线性相关的。
+
+						根据前面的引理，线性相关的向量组 $\alpha_j\cup B_{j-1}$ 中存在一个向量，它是其前面向量的线性组合。设这个向量为 $w$。
+						
+						如果 $w = \alpha_j$，则 $\alpha_j$ 是空向量组的线性组合，意味着 $\alpha_j = \mathbf{0}$，于是该向量组是线性相关的，证明结束。
+
+						接下来考虑$w$是 $B_{j-1}$ 中的一个向量。如果$w \in \{\alpha_1,\cdots,\alpha_{j-1}\}$，那么它可以被$\{\alpha_1,\cdots,\alpha_m\}$中的向量线性表出，那么向量组线性相关，证明结束。
+
+						因此只需考虑这个向量 $w$ 是 $B_{j-1}$ 中那些来自 $\{\beta _1, \dots, \beta _n\}$ 的向量
+
+						由于 $w$ 可以由向量组中前面的向量线性表出，我们可以从 $\alpha_j \cup B_{j-1}$ 中移除 $w$，得到新的向量组 $B_j = (\alpha_j \cup B_{j-1})-w$。这个新的向量组 $B_j$ 仍然生成子空间 $W$
+						
+						这样，我们就完成了向量组序列$B_0, B_1, \dots, B_n$的构造。
+						
+						此时，我们只需注意到，$\text{span}(B_n)=\text{span}(\alpha_1,\cdots,\alpha _n)=W,\alpha_{n+1} \in W$。于是$\alpha_{n+1}$可由$\alpha_1,\cdots,\alpha_n$线性表出，于是$\{\alpha_1,\cdots,\alpha_m\}$线性相关，证明完毕。
+
+						最后，我们考虑$\text{Card} A = \N,\text{Card} B < \N$的情况。此时，一定能找到$\{\alpha_x \in V | x \in A\}$的一个有限部分组线性相关，于是整个向量组就线性相关了。
+
+						于是命题得证。
+					\end{proof}
+			\end{para}
+		\subsection{向量组的秩}
+			
 	\section{基、线性空间的维数}
 	\section{线性子空间的直和}
 	\section{线性空间的同构}
 	\section{商空间}
+	\section{对偶空间}
 \ifx\allfiles\undefined
 \end{document}
 \fi

@@ -7,12 +7,12 @@
 \else
 \fi
 %标题
-\chapter{矩阵}
-	\section{矩阵的定义和运算}
+\chapter{线性映射}
+	\section{线性映射的定义和性质}
+	\section{矩阵}
 		\subsection{矩阵的定义}
 			\begin{defn}{矩阵}{}
 				形如以下的矩形阵列称为一个域$F$上的矩阵
-
 				$\begin{pmatrix}
 					a_{11} & \cdots & a_{1n} \\
 					\vdots & \ddots & \vdots \\
@@ -121,6 +121,31 @@
 
 				$=\sum\limits_{\sigma \in S_n} \left(\prod\limits_{k=1}^{n}a_{k,\sigma(k)} \text{sgn}(\sigma )\right)$
 			\end{proof}
+			事实上，我们也可以改变第一个求和指标，使之称为一个固定但是可以随意选取的置换
+			\begin{corollary}{}{}
+				设$F$是一个域，$V$是$F$上的一个线性空间，并且$dim_F V = n$，
+				
+				$V$上的$n$阶行列式$\det$满足$\det(\gamma_1,\cdots,\gamma_n)=1$，其中$\{\gamma_1,\cdots,\gamma_n\}$是$V$的一组基
+
+				那么，有：
+				\begin{equation}
+					\det(\alpha_1,\cdots,\alpha_n)=\text{sgn}(\rho )\sum_{\sigma \in S_n} \text{sgn}(\sigma) \prod_{i=1}^n a_{\rho(i),\sigma(i)}
+				\end{equation}
+				其中$\alpha_i = \sum\limits_{j=1}^{n} a_{i,j} \gamma_j$，$\rho$是一个置换
+			\end{corollary}
+			\begin{proof}
+				$\det(\alpha_1,\cdots,\alpha_n)=\sum_{\tau  \in S_n} \text{sgn}(\tau ) \prod_{i=1}^n a_{i,\tau (i)}$
+
+				对指标作置换$\rho $，累乘的结果不会变化，所以有：
+
+				$\det(\alpha_1,\cdots,\alpha_n)=\sum_{\tau \in S_n} \text{sgn}(\tau ) \prod_{i=1}^n a_{\rho(i),(\rho \circ \tau )(i)}$
+
+				记$\sigma =\rho \circ \tau $，那么$\det(\alpha_1,\cdots,\alpha_n)=\sum_{\rho^{-1} \circ \sigma  \in S_n} \text{sgn}(\rho^{-1} \circ \sigma) \prod_{i=1}^n a_{\rho(i),\sigma (i)}$
+
+				但是，$\rho^{-1} \circ \sigma \in S_n$其实就是$\sigma \in S_n$，并且我们知道$\text{sgn}(\rho^{-1} \circ \sigma)=\text{sgn}(\rho )\text{sgn}(\sigma )$
+
+				所以$\det(\alpha_1,\cdots,\alpha_n)=\text{sgn}(\rho )\sum_{\sigma \in S_n} \text{sgn}(\sigma) \prod_{i=1}^n a_{\rho(i),\sigma(i)}$
+			\end{proof}
 		\subsection{矩阵的行列式}
 			我们之前已经指出，$M_n (F) \cong F^{n^2} \cong (F^n)^n$，因此，我们可以对矩阵定义行列式：
 			\begin{defn}{矩阵的行列式}{}
@@ -138,7 +163,8 @@
 					|A|=\sum_{\sigma \in S_n} \text{sgn}(\sigma) \prod_{i=1}^n a_{i,\sigma(i)}
 				\end{equation}
 			\end{them}
-		\subsection{矩阵的行列式的展开}
+		\subsection{矩阵的行列式的余子式展开}
+		\subsection{矩阵乘积的行列式}
 	\section{矩阵的初等变换、线性方程组的解}
 	\section{可逆矩阵}
 	\section{矩阵的分块}
