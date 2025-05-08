@@ -1,19 +1,19 @@
 # Fdb version 4
-["xdvipdfmx"] 1746539923.87406 "chap.xdv" "chap.pdf" "chap" 1746539924.64148 0
-  "chap.xdv" 1746539923 163348 dc9d31b4187820b276515c748989f8a0 "xelatex"
+["xdvipdfmx"] 1746717050.53043 "chap.xdv" "chap.pdf" "chap" 1746717052.10441 0
+  "chap.xdv" 1746717050 176944 d49dd1ca40357a3bd1f3a12d9fb47509 "xelatex"
   (generated)
   "chap.pdf"
   (rewritten before read)
-["xelatex"] 1746539921.12983 "d:/文件/学习/各个课程学习笔记收录/高等代数/chap1/chap.tex" "chap.xdv" "chap" 1746539924.6254 0
+["xelatex"] 1746717046.11202 "d:/文件/学习/各个课程学习笔记收录/高等代数/chap1/chap.tex" "chap.xdv" "chap" 1746717052.07977 0
   "../config/_config.tex" 1744951838 398 ed5c3776625a7c32e405f855ba9af84e ""
   "../config/custom.tex" 1739771609 848 a3a043e8590ca8c6fb5aacb0c28f777f ""
   "../config/package.tex" 1745573619 1483 994a00fea88b781bc4bec4f259a3153d ""
   "../config/paragraph.tex" 1736160617 440 c4e77aba1f37bc4210a639f0c710c16c ""
   "../config/theorem1.tex" 1737726975 2103 c44e3255d3cd2dc316f9611d5bae1879 ""
   "c:/Windows/Fonts/msyh.ttc" 1736561799 19704352 1e10e74402e59d54499af795caf0b135 ""
-  "chap.aux" 1746539923 2537 bbe4bc88bdd1c88c67fed9c49404d959 "xelatex"
-  "chap.out" 1746539923 2097 859eb75f3e1cea57579cf3f3844ddd9e "xelatex"
-  "chap.tex" 1746539920 21564 0c93f6d8c097f406ba9898c45788eddb ""
+  "chap.aux" 1746717050 2537 32560765091b8b5b461218875f190a0a "xelatex"
+  "chap.out" 1746717050 2097 859eb75f3e1cea57579cf3f3844ddd9e "xelatex"
+  "chap.tex" 1746717044 23511 7cf26fdc7aa50bdde8eb8069012a1a92 ""
   "d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1735876988 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1735881187 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1735882627 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -282,7 +282,7 @@
   "d:/Program Files (x86)/texlive/2024/texmf-dist/web2c/texmf.cnf" 1735869087 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "d:/Program Files (x86)/texlive/2024/texmf-var/web2c/xetex/xelatex.fmt" 1735883004 10850220 00111e35ff84ce4a94f863e2ab2bb4e3 ""
   "d:/Program Files (x86)/texlive/2024/texmf.cnf" 1735882676 713 e69b156964470283e0530f5060668171 ""
-  "d:/文件/学习/各个课程学习笔记收录/高等代数/chap1/chap.tex" 1746539920 21564 0c93f6d8c097f406ba9898c45788eddb ""
+  "d:/文件/学习/各个课程学习笔记收录/高等代数/chap1/chap.tex" 1746717044 23511 7cf26fdc7aa50bdde8eb8069012a1a92 ""
   (generated)
   "chap.aux"
   "chap.log"

@@ -309,7 +309,7 @@
 			\end{proof}
 			接下来讨论一些向量组等价的性质：
 			\begin{para}{0}
-				\point{}
+				\point{任何向量组和它的极大线性无关向量组等价}
 					\begin{proposition}
 						任何向量组和它的极大线性无关向量组等价
 					\end{proposition}
@@ -318,6 +318,13 @@
 
 						而按照极大线性无关向量组的定义，向其中加入任意一个向量，向量组会变得线性相关，于是，原向量组中的任意一个向量都可以由极大线性无关向量组线性表出。命题得证
 					\end{proof}
+				\point{向量组的两个极大线性无关向量组等价}
+					\begin{proposition}
+						向量组的两个极大线性无关向量组等价
+					\end{proposition}
+					\begin{proof}
+						只需利用上面的性质和等价的传递性即可完成证明。
+					\end{proof}
 				\point{一个向量组如果可以由一个势比它小的向量组线性表出，那么它线性相关}
 					在给出命题及其证明前，我们先证明一个显然的引理
 					\begin{lemma}{}{}
@@ -325,6 +332,7 @@
 						
 						那么一定$\exists k,\text{s.t. }\alpha_k$可由$\alpha_1,\cdots,\alpha_{k-1}$线性表出，并且$\text{span}(\alpha_1,\cdots,\alpha_{i-1},\alpha_{i+1},\cdots,\alpha_n)=\text{span}(\alpha_1,\cdots,\alpha_n)$
 					\end{lemma}
+					接下来给出命题
 					\begin{proof}
 						因为$\{\alpha_1,\cdots,\alpha_n\}$线性相关，所以一定$\exists k_1,\cdots,k_n,k_1 \alpha_1+\cdots+k_n \alpha_n = \mathbf{0}$
 
@@ -352,7 +360,7 @@
 						\begin{enumerate}
 							\item $B_j$ 的长度为 $n$。
 							\item $\text{span}(B_j) = W$。
-							\item $B_j$ 包含向量 $\alpha _1, \dots, \alpha _j$ 以及从原始向量组 $(\beta _1, \dots, \beta _n)$ 中剩下的 $n-j$ 个向量。
+							\item $B_j$ 包含向量 $\alpha _1, \dots, \alpha _j$ 以及从原始向量组 $\{\beta _1, \dots, \beta _n\}$ 中剩下的 $n-j$ 个向量。
 						\end{enumerate}
 						
 						我们首先取$B_0 = \{\beta _1, \dots, \beta _n\}$
@@ -381,9 +389,38 @@
 
 						于是命题得证。
 					\end{proof}
+				\point{向量组的两个极大线性无关向量组等势}
+					\begin{proposition}
+						向量组的两个极大线性无关向量组等势
+					\end{proposition}
+					\begin{proof}
+						设有两个极大线性无关向量组$\{\alpha_x \in V| x\in A\},\{\beta_x \in V| x \in B\}$
+
+						根据前面的性质，他们相互等价，因此可以相互线性表出。所以一定有$\text{Card }A \leqslant \text{Card }B,\text{Card }B \text{Card }A$
+
+						那么一定有$\text{Card }A = \text{Card }B$，所以命题得证
+					\end{proof}
 			\end{para}
 		\subsection{向量组的秩}
+			在完成了前面的准备工作后，我们可以定义向量组的秩了
+			\begin{defn}{向量组的秩}{}
+				向量组$G=\{\alpha_x \in V| x \in A\}$的极大线性无关向量组的势称为向量组的秩，记作：$rank(G)$
+			\end{defn}
+			我们前面的命题已经保证了，无论如何选取极大线性无关组，它的势都相同，因而秩也是相同的。
 			
+			接下来讨论它的性质
+			\begin{para}{0}
+				\point{}
+					\begin{proposition}
+						向量组$\{\alpha_1,\cdots,\alpha_n\}$线性无关$\Leftrightarrow rank(\alpha_1,\cdots,\alpha_n)=n$
+					\end{proposition}
+					\begin{proof}
+						先证充分性，如果向量组线性无关，那么它自身即是自己的一个极大线性无关向量组，所以$rank(\alpha_1,\cdots,\alpha_n)=n$
+
+						再证必要性。如果$rank(\alpha_1,\cdots,\alpha_n)=n$，那么它仅有一个极大线性无关向量组，即向量组本身，所以它线性无关，命题得证
+					\end{proof}
+			\end{para}
+
 	\section{基、线性空间的维数}
 	\section{线性子空间的直和}
 	\section{线性空间的同构}
