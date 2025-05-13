@@ -128,7 +128,7 @@
 				
 				如果$\{\alpha_i \in V\}$可数，记作：$\beta =\sum\limits_{i=1}^{\infty} \alpha_i$，否则记作$\beta =\sum\limits_{i=1}^{n} \alpha_i$，其中$n$是向量组的元素数
 
-				由向量组$S$张成的全体线性组合形成的子空间记作：$span_F (S)$（或$L(S)$，$\langle S \rangle $）
+				由向量组$S$张成的全体线性组合形成的子空间记作：$span_F (S)$（或$L(S)$，$\langle S \rangle $）。特别地，如果$S$不可数，我们记$span_F(S)$为由$S$的有限子集张成的全体向量的集合
 			\end{defn}
 			我们不考虑不可数的向量组张成的线性组合，因为不可数的向量的求和的定义通常是不良好的。
 
@@ -419,9 +419,230 @@
 
 						再证必要性。如果$rank(\alpha_1,\cdots,\alpha_n)=n$，那么它仅有一个极大线性无关向量组，即向量组本身，所以它线性无关，命题得证
 					\end{proof}
-			\end{para}
+					值得注意的是，这个性质只对有限向量组成立，因为对于可数的向量组，可以存在一个可数的极大线性无关组，但是他的秩依旧和整个向量组一致。
+				\point{}
+					\begin{proposition}
+						如果向量组$A=\{\alpha_x \in V| x\in A\}$可由$B=\{\beta_x \in V|x \in B\}$线性表出
 
+						那么$rank(A) \leqslant rank(B)$
+					\end{proposition}
+					\begin{proof}
+						选取两者的任意一个极大线性无关向量组$C \subseteq A,D\subseteq B$
+
+						因为$A \cong C,B \cong D$，所以$C$可由$D$线性表出
+
+						由$C$的线性无关性可知，$rank(A) = \text{Card }C \leqslant \text{Card }D = rank(B)$
+					\end{proof}
+			\end{para}
 	\section{基、线性空间的维数}
+		上一节中，我们提出了极大线性无关向量组的概念。
+
+		从线性子空间的角度看，极大线性无关组是张成子空间的最小的向量组；
+
+		本节中，我们尝试进一步地，让极大线性无关组张成整个线性空间。这样的极大线性无关组的存在性并不是平凡的，因为我们甚至不知道是否存在一个向量组可以张成整个空间
+		\subsection{基的定义}
+			我们定义两种不同的基，后续我们会看到为何我们需要两种基
+			\begin{defn}{Harmel基}{}
+				设$V$是一个线性空间，它的一个子集$B \subseteq V$如果满足：
+				\begin{enumerate}
+					\item $B$的任意有限子集线性无关
+					\item $V$中的任意向量可由$B$的一个有限子集线性表出
+				\end{enumerate}
+				那么我们称$B$是$V$的一个Harmel基
+
+				我们特别规定：$\{\mathbf{0}\}$的基是$\emptyset$
+			\end{defn}
+			\begin{defn}{Schauder基}{}
+				设$V$是一个线性空间，它的一个子集$B \subseteq V$如果满足：
+				\begin{enumerate}
+					\item $B$线性无关
+					\item $V$中的任意向量可由$B$线性表出
+				\end{enumerate}
+				那么我们称$B$是$V$的一个Schauder基
+
+				我们特别规定：$\{\mathbf{0}\}$的基是$\emptyset$
+			\end{defn}
+			可以看出来，这两种基的根本区别是：Schauder基允许无限个向量来逼近一个向量，而Harmel基要求向量必须由有限个向量表出
+			
+			我们接下来将看到这个区别的重要影响：即两种基的存在性是不同的
+		\subsection{Harmel基的存在性}
+			我们将证明：Harmel基总是存在的
+			\begin{them}{Harmel基的存在性}{}
+				设$V$是一个线性空间，那么$V$中一定存在一个Harmel基
+			\end{them}
+			\begin{proof}
+				记$H$为$V$中所有满足全部有限子集都线性无关的子集的集合。
+
+				我们定义$H$上的一个序关系：$A,B \in H,A \leqslant B \Leftrightarrow A \subseteq B$，显然它的确是一个序，因而$H$成为一个偏序集
+
+				接下来证明，对于任意一个$H$中的链$C$，$\bigcup\limits_{P \in C} P$正是$C$的一个上界
+
+				先证明$\bigcup\limits_{P \in C} P$是$H$中的一个元素。
+
+				取$\bigcup\limits_{P \in C} P$的一个有限子集$\alpha_1,\cdots,\alpha_s$
+
+				事实上，$\alpha_1,\cdots,\alpha_s$一定属于某个$K \in C$（因为链是按照相互包含的关系形成的），因此$\alpha_1,\cdots,\alpha_s$线性无关。
+
+				而$\forall K \in C,K \leqslant \bigcup_{P\in C} P$是显然的。于是$H$中的任意一个链有上界
+
+				那么，依据Zorn引理，$H$中一定存在一个极大元素$B$。我们接下来证明，$B$是$V$的一个Harmel基
+				
+				首先，由$B$的构造方式，它的任意有限子集线性无关是显然的
+
+				我们证明任意一个向量$\alpha \in V$都可以被$B$的有限子集线性表出
+
+				如果不然，那么任意的$K \cup \{\alpha \} \subseteq B\cup \{\alpha \}$，$K\cup \{\alpha \}$都是线性无关的（利用命题1.2.6）
+				
+				所以$B \cup \{\alpha \} \in H$，于是，$B \leqslant B\cup \{\alpha \}$，这与$B$是$H$的极大元素矛盾。
+
+				于是命题得证。
+			\end{proof}
+			在这个证明中，我们使用了Zorn引理，如果我们不承认选择公理，Harmel基的存在性就不再成立。
+
+			事实上，线性空间的Schauder基是不一定存在的，但是它的反例非常复杂，此处我们简单讨论一下为何我们不能按照证明Harmel基存在性的方式来证明Schauder基的存在性
+
+			前面的证明中，有一个容易被忽视的地方：为何任意一个链都有上界。在Harmel基的定义下，这是可以成立的，因为Harmel基要求的是有限子集，从而可以被链上的一个元素包含
+
+			但是当考虑Schauder基，它要求全体向量一起作用，此时，链的并就不一定有这样的性质了，比如考虑以下例子：
+			\begin{example}
+				考虑平方可和空间$l^2 = \{(a_1,\cdots,a_n,\cdots)| \sum\limits_{i=1}^{\infty} |a_i|^2 < + \infty\}$
+
+				并定义其中的度量为：$d\left((a_1,\cdots,a_n,\cdots),(b_1,\cdots,b_n,\cdots)\right)=\sqrt{\sum\limits_{i=1}^{\infty} (a_i-b_i)^2}$
+				
+				取它上面的一个向量组$\{e_i\},e_n = (0,\cdots,1,\cdots)$，其中$1$处于第n个位置
+
+				我们构造以下链$\{S_k\}$：
+
+				$S_1 = \{e_1\},S_{n+1}=S_n \cup \{e_{n+1}\}$
+
+				证明：$\forall k,S_k$线性无关，但是$\bigcup_{i=1}^{\infty} S_i$线性相关
+			\end{example}
+			\begin{proof}
+				首先，$\forall k,S_k$线性无关。这是显然的，因为其实$S_k$全部是有限集
+
+				设$c_n = \begin{cases}
+					\frac{1}{2k+1},n=2k+1,k \in \N \\
+					\frac{1}{2k},n=2k,k\in \N \\
+				\end{cases}$
+
+				注意到：$\sum\limits_{i=1}^{\infty} c_i e_i = \mathbf{0}$
+
+				因为：$\forall \varepsilon >0,\exists n \in N_+,\text{s.t.}$
+				
+				$d\left(\sum\limits_{i=1}^{n} c_i e_i,\mathbf{0}\right)=\sum\limits_{i=1}^{\infty} c_n < \varepsilon $
+
+				此时系数显然不全为零，所以$\bigcup_{i=1}^{\infty} S_i$线性相关
+			\end{proof}
+			所以，论证至此就失效了，我们并不能同样地证明Schauder基的存在性。
+
+			此后除非特别说明，我们默认我们所说的基指的是Hamel基
+		\subsection{线性空间的维数}
+			我们常常将基的势称为维数。自然地，因为Schauder基并非一直存在，我们一般选取Hamel基来定义维数。
+
+			但是，目前还有一个问题：我们如何保证选取不同基时，维数依旧不变？也就是说，为何两个基一定等势？
+
+			对于有限基，这个问题是容易解决的，但是对于无限基，特别是不可数基，这个问题非常难以解决。接下来，我们将花费大量篇幅论证这一点。
+
+			\begin{lemma}{Steinitz替换引理}{}
+				设$V$是一个线性空间，$S,T \subseteq V$，并且$S$的任意有限子集线性无关，$V=\operatorname{span}(T)$
+
+				那么我们断言：$|S| \leqslant |T|$
+			\end{lemma}
+			\begin{proof}
+				我们希望构造一个映射$S \ni S \mapsto C_s \subseteq T$，但是此时我们发现我们无从下手。
+
+				我们退而求其次，构造$S$的子集和$T$的子集之间的映射，同时用一个偏序集逼近$T$
+
+				为了保证偏序集的每一个链都有上界（后面我们会发现为何我们采取这样的奇怪构造），我们如下构造
+
+				设$\Omega\;:=\;\bigl\{\,(C,f)\mid C\subset T,\;f:C\to S \text{ 单射且 }(S-f(C))\cup C\text{ 线性无关}\,\bigr\}.$
+				
+				并在它上面定义序关系：$(C_1,f_1)\preceq(C_2,f_2) \iff C_1\subset C_2\text{ 且 }f_2|_{C_1}=f_1$
+
+				我们先验证$\Omega$中的每个链的确有上界
+
+				设 $\mathcal C=\{(C_\alpha,f_\alpha)\}_{\alpha\in\Lambda}$ 是 $\Omega$ 中的全序链
+
+				设$C\;:=\;\bigcup_{\alpha\in\Lambda}C_\alpha,f\;:=\;\bigcup_{\alpha\in\Lambda}f_\alpha$
+
+				此处映射的并指的是将全部元素的映射关系一同合并（由$\Omega$的定义，此次操作的定义显然是良好的）
+
+				那么，$f:C\to S$的单射性是显然的；
+				
+				而因为$\forall \alpha ,(S-f(C))\cup C_\alpha \subseteq (S-f(C_\alpha )\cup C_\alpha )$线性无关，因此$(S-f(C))\cup C$ 线性无关。
+				
+				于是 $(C,f)$ 是链的上界。
+
+				故 $\Omega$ 满足 Zorn 引理的条件，我们记其极大元为 $(C,f)$。
+
+				我们接下来证明$S\subset f(C)\cup C$。如果这个成立，我们可以立即用集合的势的性质推出结论。
+				
+				若不然，那一定可以取$s\in S- \bigl(f(C)\cup C\bigr)$
+				
+				记$S'\;:=\;(S-f(C))\cup C$。因为$(C,f)$是极大元，因此$S'$ 线性无关，所以$S'-\{s\}$也是线性无关的。
+				
+				我们说，一定存在一个$t \in T-C,t \notin \operatorname{span}\bigl(S'-\{s\}\bigr)$
+				
+				如果不是这样，即$T-C\subset \operatorname{span}\bigl(S-\{s\}\bigr)$
+
+				那么$s\in\operatorname{span}(T)=\operatorname{span}(T- C)+\operatorname{span}(C)\subset \operatorname{span}\bigl(S'-\{s\}\bigr)$,
+				
+				那么$s$可由$S^\prime{}-{s}$线性表出，那么$S'$就是线性相关的，与 $S'$ 的线性无关性矛盾。
+				
+				因此可取$t\in T- C,t\notin\operatorname{span}\bigl(S'-\{s\}\bigr)$
+				
+				此时，我们定义：$g:C\cup\{t\}\longrightarrow S,\quad g|_C=f,\;g(t)=s$
+
+				而$(S- g(C\cup\{t\}))\cup (C\cup\{t\})=(S'-\{s\})\cup\{t\}$ 仍线性无关（因为$S'-{s}$线性无关且$t$不能被$S'-{s}$线性表出），
+				
+				故 $(C\cup\{t\},g)\in\Omega$，与 $(C,f)$ 极大矛盾。于是$S\subset f(C)\cup C$
+
+				至此，我们可以推出最终的结论了，由 $f$ 单射可知；
+				
+				$|S|\leqslant |f(C)|+|C|= 2|C|\leqslant 2|T|.$
+			\end{proof}
+			进而我们知道，线性空间的两个基是等势的。
+			\begin{lemma}{线性空间的两个基等势}{}
+				设$V$是一个线性空间，$B_1,B_2$是$V$的两个基。
+
+				那么：$|B_1|=|B_2|$
+			\end{lemma}
+			\begin{proof}
+				这是显然的，因为$B_1,B_2$均满足有限子集线性无关和张成$V$
+
+				所以一定有$|B_1| \leqslant |B_2|,|B_2| \leqslant |B_1|$，于是有$|B_1|=|B_2|$，命题得证
+			\end{proof}
+			证明了这个引理后，我们就可以给出维数的定义了
+			\begin{defn}{线性空间的维数}{}
+				设$V$是一个$F$上的线性空间，$B$是$V$的一个Hamel基
+
+				我们定义：
+				\begin{equation}
+					dim_F V = \text{Card }B
+				\end{equation}
+				称为$V$的维数，简记作$dim V$
+
+				如果$dim_F V < +\infty$，我们称$V$是一个有限维线性空间，反之称为无限维线性空间
+			\end{defn}
+			可以看出来，线性空间的维数不一定可数。
+		\subsection{线性空间的维数的性质}
+			现在讨论一些维数的性质
+			\begin{para}{0}
+				\point{}
+					\begin{proposition}
+						设$V$是一个线性空间，集合$S \subseteq V$如果$|S| > dim V$
+
+						那么$S$至少有一个有限子集线性相关。
+					\end{proposition}
+					\begin{proof}
+						这其实是前面的Steinitz替换引理的直接结论
+
+						任取$V$的一个基$B$，由基的定义和引理可知，如果$S$线性无关，那么一定有$|S| \leqslant |B|$，与前提矛盾。
+
+						于是命题得证。
+					\end{proof}
+				\point{}
+			\end{para}
 	\section{线性子空间的直和}
 	\section{线性空间的同构}
 	\section{商空间}
