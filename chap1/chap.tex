@@ -760,6 +760,11 @@
 					\end{proof}
 			\end{para}
 	\section{线性空间的同构}
+		在前面的章节中，我们讨论了线性组合、线性空间的基和维数。
+
+		本节开始，我们着手研究不同的空间之间的关系。本节我们考虑一个问题：不同的空间是否可以拥有相同的结构呢？我们应该如何刻画这个“相同”呢？
+
+		这个问题的答案是肯定的。这种关系称为同构，它具有一系列极为良好的性质。
 		\subsection{同构的定义}
 			\begin{defn}{线性空间的同构}
 				设$V_1,V_2$是两个$F$上的线性空间，如果存在双射$f:V_1 \rightarrow V_2$
@@ -878,6 +883,32 @@
 						$\Leftrightarrow f(\alpha_1),\cdots,f(\alpha_n)$线性相关
 					\end{proof}
 					其实，这个命题也指出了线性无关的向量组在同构映射作用下也是线性无关的，也就是说同构线性相关和线性无关性
+				
+					另外一个有趣的点是，其实在这个命题的证明中，我们并没有用到同构映射的满射性，只需要它是单射即可。
+				\point{}
+					\begin{proposition}
+						设$V_1,V_2$是两个线性空间，$\dim V_1  = \dim V_2 = n < \aleph_0$
+
+						映射$T:V_1 \to V_2$如果是单射，并且满足：
+						
+						$T(\alpha +\beta )=T(\alpha )+T(\beta ),T(k\alpha )=kT(\alpha )$
+
+						那么$T$是一个同构映射
+					\end{proposition}
+					\begin{proof}
+						取$V_1$的一组基$\{\alpha_1,\cdots,\alpha_n\}$，按基的定义，它一定线性无关
+
+						运用前面命题的证明方法可得，$T(\alpha_1),\cdots,T(\alpha_n)$线性无关。
+
+						而$\dim V_2 = n$，于是$\{T(\alpha_1),\cdots,T(\alpha_n)\}$是$V_2$的一个基
+
+						那么，我们说，$T$一定也是满射。因为：
+
+						$\forall \beta = k_1 T(\alpha_1)+\cdots+k_n T(\alpha_n) \in V_2$，注意到：
+
+						$T(k_1 \alpha_1+\cdots+k_n \alpha_n) = k_1 T(\alpha_1)+\cdots+k_n T(\alpha_n) =\beta $，于是命题得证。
+					\end{proof}
+					这个命题指出，其实同构映射满射的条件也可以用维数有限且相等代替。值得注意的是，维数有限是必须的。
 				\point{}
 					\begin{proposition}
 						如果$V_1 \cong V_2$，$f:V_1 \to V_2$是一个同构映射，$B_1 \subseteq V_1$是$V_1$的一个基
@@ -971,6 +1002,9 @@
 					\end{proof}
 			\end{para}
 	\section{线性子空间的直和}
+		在研究了同构后，我们转而研究另一种关系：直和。与之间我们研究的是结构相同的空间不同，我们此时寻求一个空间可以分裂为数个空间，而且最好可以对每一个向量唯一分解。
+		
+		先提出线性空间和的概念。
 		\subsection{子空间的和}
 			\begin{defn}{子空间的和}{}
 				设$V$是一个线性空间，$V_1,V_2 \subseteq V$是$V$的子空间
@@ -1247,6 +1281,13 @@
 					\end{proof}
 			\end{para}
 	\section{商空间}
+		本节中，我们考虑一种新的线性空间的构造方式：商空间。商空间是将一个线性空间中的向量划分为等价类，进而构造出一个新的线性空间。
+
+		比如说，在三维空间$\R^3$中，我们可以把所有的水平面看作一个子空间，然后将每个平面上的向量看作一个等价类。这样，我们就可以得到一个新的线性空间，其中的元素是平面，而不是具体的向量。
+
+		同时，我们也可以看到，于是同时每一个巨大的平面变得可以由与$z$轴的交点来唯一标识，从而我们做到了“消去二维平面的影响”。
+
+		商空间比较抽象，但是在后续线性映射的研究中有巨大作用。
 		\subsection{商空间的定义}
 			在定义商空间之前，我们先定义一个关于子空间的等价关系
 			\begin{defn}{关于子空间的等价}{}
@@ -1394,6 +1435,8 @@
 					V^* = \{f:V \to F| \forall \alpha ,\beta \in V,k \in F,f(\alpha +\beta )=f(\alpha )+f(\beta ),f(k\alpha )=kf(\alpha )\}
 				\end{equation}
 
+				其中$V^*$的基域是$F$，它的加法和纯量乘法是即是函数的加法和纯量乘法
+
 				称为$V$的对偶空间
 			\end{defn}
 		\subsection{有限维对偶空间的对偶基}
@@ -1444,10 +1487,90 @@ b
 			\begin{corollary}{有限维线性空间的对偶空间的维数}{}
 				如果$\dim V = n < \aleph_0$，那么$\dim V^* = n$
 			\end{corollary}
+			证明过程中还使用了一个后续很常用的性质：
+			\begin{proposition}
+				设$\{\alpha_1,\cdots,\alpha_n\}$是$V$的一个基，$\{f_1,\cdots,f_n\}$是它的对偶基，那么
+
+				$\forall A \in V^*,A=\sum\limits_{i=1}^{n} A(\alpha_i) f_i$
+			\end{proposition}
+			类似地，我们也可以对向量作一个展开
+			\begin{proposition}
+				设$\{\alpha_1,\cdots,\alpha_n\}$是$V$的一个基，$\{f_1,\cdots,f_n\}$是它的对偶基，那么
+
+				$\forall \gamma  \in V,\gamma  =\sum\limits_{i=1}^{n} f_i(\gamma )\alpha_i$
+			\end{proposition}
 		\subsection{双重对偶空间}
 			\begin{defn}{双重对偶空间}{}
-				
+				$V^*$的对偶空间称为$V$的双重对偶空间，记作$V^{**}$
 			\end{defn}
+			双重对偶空间的最大意义是，它体现了对偶并非是一个“越来越远”的操作，反而每两次操作在同构意义下可以抵消
+
+			接下来的命题将逐步指出为什么我们这么说
+			\begin{them}{线性空间与其双重对偶空间的自然同构}{}
+				设$V$是一个$F$上的线性空间，$\dim V = n < \aleph_0$。
+				
+				那么$V \cong V^{**}$，并且存在不依赖于基的自然同构
+
+				\begin{equation}
+					\psi : V \ni \alpha \mapsto \left(\alpha^{**}:V^* \ni f \mapsto f(\alpha ) \in F\right) \in V^{**}
+				\end{equation}
+			\end{them}
+			\begin{proof}
+				首先验证$\psi $是一个单射。
+
+				如果不成立，那么$\exists \alpha_1 \neq \alpha_2,\psi (\alpha_1)=\psi(\alpha_2)=\alpha^{**}$
+
+				依照$\psi $的定义，此时有：$\forall f \in V^*,f(\alpha_1)=f(\alpha_2)$。
+
+				我们只需举出一个$V^*$中的映射即可推出矛盾。比如说：
+				
+				记$\gamma =\alpha_1-\alpha_2$，将其补充为$V$的一个基$\{\gamma ,\beta_1,\cdots,\beta_{n-1}\}$
+
+				考虑映射$f\in V^*,f(\gamma )=1,f(\beta_i)=0$。但是本来理应$f(\gamma )=0$，与假设矛盾。
+
+				所以$\psi $是一个单射。
+
+				我们接下来验证可加性和齐次性。
+
+				$\forall \alpha ,\beta \in V,k \in F$
+
+				$\psi (\alpha +\beta )(f) = f(\alpha +\beta )=f(\alpha )+f(\beta )=\psi (\alpha )(f)+\psi (\beta )(f) \Rightarrow \psi (\alpha +\beta )=\psi (\alpha )+\psi (\beta )$
+			
+				$\psi (k\alpha )(f)=f(k\alpha )=kf(\alpha )=k\psi (\alpha )(f) \Rightarrow \psi (k\alpha )=k\psi (\alpha )$
+			
+				我们其实不需要验证满射性，因为$\dim V = \dim V^{**} = n < \aleph_0$，结合单射性和可加性和齐次性，我们可以直接得出$\psi $是一个同构映射。
+			
+				于是命题得证。
+			\end{proof}
+			之所以我们说“两次对偶相互抵消”，是因为在一般的线性空间之间，两次同构会使基的作用堆叠，其同构依旧是依赖于基的。但是自然同构却不依赖于任何基
+
+			接下来的命题让我们看到，自然同构不仅仅是消除了基的影响的同构，而且还恰好是由两次对偶基导出的同构映射的复合
+			\begin{proposition}
+				设$V$是一个$F$上的线性空间，$\dim V = n < \aleph_0$。
+
+				设$\{\alpha_1,\cdots,\alpha_n\}$是$V$的一个基，$\{f_1,\cdots,f_n\}$是它的对偶基，$\{\alpha_1^{**},\cdots,\alpha_n^{**}\}$是$\{f_1,\cdots,f_n\}$的对偶基
+				
+				设$\sigma : V \ni \sum\limits_{i=1}^{n} k_i \alpha_i \mapsto \sum\limits_{i=1}^{n} k_i f_i \in V^*$
+
+				$\tau : V^* \ni \sum\limits_{i=1}^{n} l_i f_i \mapsto \sum\limits_{i=1}^{n} l_i \alpha_i^{**} \in V^{**}$
+			
+				那么，$\psi = \tau \circ \sigma $
+			\end{proposition}
+			\begin{proof}
+				$\forall \gamma  = \sum\limits_{i=1}^{n} k_i \alpha_i \in V,f\in V^*$
+
+				$(\tau \circ \sigma) (\gamma )(f)=\tau \left(\sigma (\sum\limits_{i=1}^{n} k_i \alpha_i)\right)(f)$
+			
+				$=\tau (\sum\limits_{i=1}^{n} k_i f_i)(f) = \sum\limits_{i=1}^{n} k_i \alpha_i^{**}(f)$
+
+				$=\sum\limits_{i=1}^{n} k_i \alpha_i^{**}\left(\sum\limits_{j=1}^{n} f(\alpha_j)f_j\right)$
+
+				$=\sum\limits_{i=1}^{n} k_i f(\alpha_i)=f \left(\sum\limits_{i=1}^{n} k_i \alpha_i\right)$
+				
+				$=f(\gamma )=\psi (\gamma )(f) \Rightarrow \psi =\tau \circ \sigma $
+
+				于是命题得证。
+			\end{proof}
 \ifx\allfiles\undefined
 \end{document}
 \fi

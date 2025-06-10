@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.1.3)  21 APR 2025 18:22
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.1.3)  10 JUN 2025 16:30
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -737,7 +737,64 @@ File: upzd.fd 2001/06/04 font definitions for U/pzd.
 LaTeX Font Info:    Trying to load font information for U+psy on input line 64.
  (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/psnfss/upsy.fd
 File: upsy.fd 2001/06/04 font definitions for U/psy.
-)) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+)) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/pgfplots/pgfplots.sty (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
+ (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
+\t@pgfplots@toka=\toks43
+\t@pgfplots@tokb=\toks44
+\t@pgfplots@tokc=\toks45
+\pgfplots@tmpa=\dimen311
+\c@pgfplots@coordindex=\count355
+\c@pgfplots@scanlineindex=\count356
+ (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code.tex)) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.tex) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_loader.code.tex (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex)
+Package pgfplots: loading complementary utilities for your pgf version...
+\t@pgf@toka=\toks46
+\t@pgf@tokb=\toks47
+\t@pgf@tokc=\toks48
+(d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldpgfsupp_pgfutil-common-lists.tex)) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructure.code.tex) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsliststructureext.code.tex) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray.code.tex
+\c@pgfplotsarray@tmp=\count357
+) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatrix.code.tex) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshared.code.tex
+\c@pgfplotstable@counta=\count358
+\t@pgfplotstable@a=\toks49
+) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque.code.tex) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.tex (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.code.tex)) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code.tex) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.surfshading.code.tex
+\c@pgfplotslibrarysurf@no=\count359
+ (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsys-xetex.def (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surfshading.pgfsys-dvipdfmx.def
+\c@pgfplotslibrarysurf@streamlen=\count360
+)))) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.tex (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex)) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.tex) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.tex (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.code.tex (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.tex))) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.code.tex) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.code.tex (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen312
+\pgfdecoratedremainingdistance=\dimen313
+\pgfdecoratedinputsegmentcompleteddistance=\dimen314
+\pgfdecoratedinputsegmentremainingdistance=\dimen315
+\pgf@decorate@distancetomove=\dimen316
+\pgf@decorate@repeatstate=\count361
+\pgfdecorationsegmentamplitude=\dimen317
+\pgfdecorationsegmentlength=\dimen318
+)
+\tikz@lib@dec@box=\box76
+) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathmorphing.code.tex (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathmorphing.code.tex)) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarydecorations.pathreplacing.code.tex (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrarydecorations.pathreplacing.code.tex)) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.contourlua.code.tex)
+\pgfplots@numplots=\count362
+\pgfplots@xmin@reg=\dimen319
+\pgfplots@xmax@reg=\dimen320
+\pgfplots@ymin@reg=\dimen321
+\pgfplots@ymax@reg=\dimen322
+\pgfplots@zmin@reg=\dimen323
+\pgfplots@zmax@reg=\dimen324
+) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.code.tex
+File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
+))) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/tikz-3dplot/tikz-3dplot.sty (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
+) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarycalc.code.tex
+File: tikzlibrarycalc.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrary3d.code.tex
+File: tikzlibrary3d.code.tex 2023-01-15 v3.1.10 (3.1.10)
+) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
+File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+ (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
+\arrowsize=\dimen325
+))) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 \f@nch@headwidth=\skip75
 \f@nch@O@elh=\skip76
@@ -753,33 +810,33 @@ File: dvipsnam.def 2016/06/17 v3.0m Driver-dependent file (DPC,SPQR)
 ) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/xcolor/svgnam.def
 File: svgnam.def 2023/11/15 v3.01 Predefined colors according to SVG 1.1 (UK)
 ) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count355
-\lst@gtempboxa=\box76
-\lst@token=\toks43
-\lst@length=\count356
-\lst@currlwidth=\dimen311
-\lst@column=\count357
-\lst@pos=\count358
-\lst@lostspace=\dimen312
-\lst@width=\dimen313
-\lst@newlines=\count359
-\lst@lineno=\count360
-\lst@maxwidth=\dimen314
+\lst@mode=\count363
+\lst@gtempboxa=\box77
+\lst@token=\toks50
+\lst@length=\count364
+\lst@currlwidth=\dimen326
+\lst@column=\count365
+\lst@pos=\count366
+\lst@lostspace=\dimen327
+\lst@width=\dimen328
+\lst@newlines=\count367
+\lst@lineno=\count368
+\lst@maxwidth=\dimen329
  (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/listings/lstpatch.sty
 File: lstpatch.sty 2024/02/21 1.10 (Carsten Heinz)
 ) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2024/02/21 1.10 (Carsten Heinz)
-\c@lstnumber=\count361
-\lst@skipnumbers=\count362
-\lst@framebox=\box77
+\c@lstnumber=\count369
+\lst@skipnumbers=\count370
+\lst@framebox=\box78
 ) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2024/02/21 1.10 listings configuration
 ))
 Package: listings 2024/02/21 1.10 (Carsten Heinz)
  (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/xelatex/xecjk/xeCJK-listings.sty
 Package: xeCJK-listings 2022/08/05 v3.9.1 xeCJK patch file for listings
-\l__xeCJK_listings_max_char_int=\count363
-\l__xeCJK_listings_flag_int=\count364
+\l__xeCJK_listings_max_char_int=\count371
+\l__xeCJK_listings_flag_int=\count372
 ) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2024/02/21 1.10 listings language file
 ) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/listings/lstlang1.sty
@@ -790,46 +847,46 @@ File: lstlang1.sty 2024/02/21 1.10 listings language file
 File: lstlang1.sty 2024/02/21 1.10 listings language file
 )) (../config/theorem1.tex (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/changepage/changepage.sty
 Package: changepage 2009/10/20 v1.0c check page and change page layout
-\c@cp@cntr=\count365
-\cp@tempcnt=\count366
+\c@cp@cntr=\count373
+\cp@tempcnt=\count374
 ) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/framed/framed.sty
 Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
 \OuterFrameSep=\skip84
-\fb@frw=\dimen315
-\fb@frh=\dimen316
-\FrameRule=\dimen317
-\FrameSep=\dimen318
+\fb@frw=\dimen330
+\fb@frh=\dimen331
+\FrameRule=\dimen332
+\FrameSep=\dimen333
 ) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
 Package: tcolorbox 2024/01/10 version 6.2.0 text color boxes
  (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2023-11-06 v1.5v LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks44
-\verbatim@line=\toks45
+\every@verbatim=\toks51
+\verbatim@line=\toks52
 \verbatim@in@stream=\read3
 ) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/environ/environ.sty
 Package: environ 2014/05/04 v0.3 A new way to define environments
  (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/trimspaces/trimspaces.sty
 Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
-\tcb@titlebox=\box78
-\tcb@upperbox=\box79
-\tcb@lowerbox=\box80
-\tcb@phantombox=\box81
-\c@tcbbreakpart=\count367
-\c@tcblayer=\count368
-\c@tcolorbox@number=\count369
-\l__tcobox_tmpa_box=\box82
-\l__tcobox_tmpa_dim=\dimen319
-\tcb@temp=\box83
+\tcb@titlebox=\box79
+\tcb@upperbox=\box80
+\tcb@lowerbox=\box81
+\tcb@phantombox=\box82
+\c@tcbbreakpart=\count375
+\c@tcblayer=\count376
+\c@tcolorbox@number=\count377
+\l__tcobox_tmpa_box=\box83
+\l__tcobox_tmpa_dim=\dimen334
 \tcb@temp=\box84
 \tcb@temp=\box85
 \tcb@temp=\box86
+\tcb@temp=\box87
 ) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/tcolorbox/tcbraster.code.tex
 Library (tcolorbox): 'tcbraster.code.tex' version '6.2.0'
-\c@tcbrastercolumn=\count370
-\c@tcbrasterrow=\count371
-\c@tcbrasternum=\count372
-\c@tcbraster=\count373
+\c@tcbrastercolumn=\count378
+\c@tcbrasterrow=\count379
+\c@tcbrasternum=\count380
+\c@tcbraster=\count381
 ) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/tcolorbox/tcbskins.code.tex
 Library (tcolorbox): 'tcbskins.code.tex' version '6.2.0'
 (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/tikzfill/tikzfill.image.sty
@@ -838,7 +895,7 @@ Package: tikzfill.image 2023/08/08 v1.0.1 Image filling library for TikZ
 Package: tikzfill-common 2023/08/08 v1.0.1 Auxiliary code for tikzfill
 ) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/tikzfill/tikzlibraryfill.image.code.tex
 File: tikzlibraryfill.image.code.tex 2023/08/08 v1.0.1 Image filling library
-\l__tikzfill_img_box=\box87
+\l__tikzfill_img_box=\box88
 )) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/tcolorbox/tcbskinsjigsaw.code.tex
 Library (tcolorbox): 'tcbskinsjigsaw.code.tex' version '6.2.0'
 )) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/tcolorbox/tcbbreakable.code.tex
@@ -848,19 +905,19 @@ Package: pdfcol 2022-09-21 v1.7 Handle new color stacks for pdfTeX (HO)
 Package pdfcol Info: Interface disabled because of missing PDF mode of pdfTeX.
 )
 Package pdfcol Info: pdfTeX's color stacks are not available.
-\tcb@testbox=\box88
-\tcb@totalupperbox=\box89
-\tcb@totallowerbox=\box90
+\tcb@testbox=\box89
+\tcb@totalupperbox=\box90
+\tcb@totallowerbox=\box91
 ) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/tcolorbox/tcbhooks.code.tex
 Library (tcolorbox): 'tcbhooks.code.tex' version '6.2.0'
 ) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/tcolorbox/tcbtheorems.code.tex
 Library (tcolorbox): 'tcbtheorems.code.tex' version '6.2.0'
 ) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/tcolorbox/tcbfitting.code.tex
 Library (tcolorbox): 'tcbfitting.code.tex' version '6.2.0'
-\tcbfitdim=\dimen320
-\tcb@lowerfitdim=\dimen321
-\tcb@upperfitdim=\dimen322
-\tcb@cur@hbadness=\count374
+\tcbfitdim=\dimen335
+\tcb@lowerfitdim=\dimen336
+\tcb@upperfitdim=\dimen337
+\tcb@cur@hbadness=\count382
 ) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/tcolorbox/tcblistingsutf8.code.tex
 Library (tcolorbox): 'tcblistingsutf8.code.tex' version '6.2.0'
 (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/tcolorbox/tcblistings.code.tex
@@ -870,7 +927,7 @@ Library (tcolorbox): 'tcblistingscore.code.tex' version '6.2.0'
 (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/tcolorbox/tcbprocessing.code.tex
 Library (tcolorbox): 'tcbprocessing.code.tex' version '6.2.0'
 )
-\c@tcblisting=\count375
+\c@tcblisting=\count383
 ))
 Package tcolorbox Info: Library `listingsutf8' is compatible with pdftex only. Library `listings` is loaded instead. on input line 29.
 ) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/tcolorbox/tcbexternal.code.tex
@@ -886,10 +943,10 @@ File: pgflibraryfadings.code.tex 2023-01-15 v3.1.10 (3.1.10)
 ))) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/tcolorbox/tcbposter.code.tex
 Library (tcolorbox): 'tcbposter.code.tex' version '6.2.0'
 )
-\c@tcb@cnt@defn=\count376
-\c@tcb@cnt@lemma=\count377
-\c@proposition=\count378
-\c@example=\count379
+\c@tcb@cnt@defn=\count384
+\c@tcb@cnt@lemma=\count385
+\c@proposition=\count386
+\c@example=\count387
 ) (../config/custom.tex
 
 Package fontspec Info: Could not resolve font "LatinModernMath-Regular/B" (it
@@ -1135,33 +1192,32 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
 (Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 5.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 5.
-\c@lstlisting=\count380
 
+
+Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
+ on input line 5.
+
+\c@lstlisting=\count388
 第一章
 [1
 
 
-]
-Overfull \vbox (14.64209pt too high) has occurred while \output is active []
-
-LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <12> not available
-(Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 24.
- [2] (./chap.aux)
+] (./chap.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/08/05>
  ***********
 Package rerunfilecheck Info: File `chap.out' has not changed.
-(rerunfilecheck)             Checksum: F1C0D85FFB987FBF41C9B0713D4821C5;1600.
+(rerunfilecheck)             Checksum: A2D05687697EC5E6A4CD7377257A1989;697.
  )
-(\end occurred when \ifx on line 23 was incomplete) 
+(\end occurred when \ifx on line 16 was incomplete) 
 Here is how much of TeX's memory you used:
- 39002 strings out of 474773
- 853950 string characters out of 5752390
- 2224269 words of memory out of 5000000
- 60526 multiletter control sequences out of 15000+600000
- 561571 words of font info for 71 fonts, out of 8000000 for 9000
+ 49834 strings out of 474773
+ 1214703 string characters out of 5752390
+ 2670125 words of memory out of 5000000
+ 71203 multiletter control sequences out of 15000+600000
+ 561555 words of font info for 69 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  98i,5n,120p,1297b,2937s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on chap.xdv (2 pages, 18308 bytes).
+Output written on chap.xdv (1 page, 14464 bytes).
