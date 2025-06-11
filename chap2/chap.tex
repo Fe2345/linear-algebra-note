@@ -8,10 +8,24 @@
 \fi
 %标题
 \chapter{线性映射}
+	本章开始，我们转向线性映射的研究。
+
+	我们将用三章完成线性映射的研究。本章我们将从映射最基本的研究方式：向量的作用开始
+
+	线性映射的独特之处在于：一方面它能在常规的映射加法和纯量乘法下构成一个线性空间；另一方面，如果我们将复合视为乘法，它可以构成一个幺环。
+
+	第一节中，我们将给出线性映射的定义及运算，并研究基本性质；
+	
+	第二节中，我们将研究两种由线性映射导出的子空间，核和像，并借此提出一个概念：秩。它和我们之前的秩也有很强的联系；
+
+	第三节到第五节中，我们将研究矩阵，它是将线性映射在基下的作用写成的一张数表，非常便于在数值上研究矩阵；
+
+	第六节中，我们将研究行列式，它是一个反对称多线性函数，我们以此为工具，为后续我们对线性映射分解的研究铺垫。
 	\section{线性映射的定义和运算}
 		\subsection{线性映射的定义}
+			我们首先给出线性映射的定义
 			\begin{defn}{线性映射}{}
-				设$V_1$是一个$F$上的线性空间，$V_2$是一个线性空间，映射$A:V_1 \to V_2$如果满足：
+				设$V_1,V_2$是一个$F$上的两个线性空间，，映射$A:V_1 \to V_2$如果满足：
 
 				$\forall \alpha ,\beta \in V_1,k \in F$
 
@@ -25,8 +39,79 @@
 
 				特别地，如果$V_1=V_2$，我们称$A$是一个$V_1$上的线性变换
 			\end{defn}
+			有一些常用的线性映射，我们在这里列出来：
+			\begin{defn}{一些常用的线性映射}{}
+				\begin{enumerate}
+					\item 恒等变换：$I:V \ni \alpha \mapsto \alpha \in V$
+					\item 数乘变换：$k:V \ni \alpha \mapsto k\alpha \in V$
+					\item 零变换：$0:V_1 \ni \alpha \mapsto \mathbf{0}_{V_2} \in V_2$
+				\end{enumerate}
+			\end{defn}
 		\subsection{线性映射的运算}
+			前面我们定义了线性映射，现在我们开始赋予$\hom (V_1,V_2)$线性空间和环的性质。
+
+			我们会定义三种运算：加法、纯量乘法、乘法
+			\begin{defn}{线性映射的运算}{}
+				我们定义：
+				
+				映射$+:\hom(V_1,V_2) \times \hom(V_1,V_2) \rightarrow \hom(V_1,V_2)$，称为加法，如果满足：
+				\begin{equation}
+					\forall A,B \in \hom(V_1,V_2),\alpha \in V_1,(A+B)(\alpha )=A(\alpha )+B(\alpha )
+				\end{equation}
+				映射$\cdot:F \times \hom(V_1,V_2) \rightarrow \hom(V_1,V_2)$，称为纯量乘法，如果满足：
+				\begin{equation}
+					\forall k \in F,A \in \hom(V_1,V_2),\alpha \in F,(k\cdot A)(\alpha )=kA(\alpha )
+				\end{equation}
+				映射$\circ:\hom(V_1,V_2) \times \hom(V_1,V_2) \rightarrow \hom(V_1,V_2)$，称为乘法，如果满足：
+				\begin{equation}
+					\forall A,B \in \hom(V_1,V_2),\alpha \in V_1,(A\circ B)(\alpha )=A\left(B(\alpha )\right)
+				\end{equation}
+			\end{defn}
+			我们也常常把$k\cdot A$简记为$kA$，将$A \circ B$简记为$AB$
+
+			显然，$\left(\hom(V_1,V_2),F,+,\cdot\right)$是一个线性空间，$0$是它的零向量；
+
+			$\left(\hom(V_1,V_2),+,\circ\right)$是一个幺环，$0$是它的加法单位元，$I$是它的乘法单位元
+
+			除此之外，还有一些运算，但是它们是针对特殊的线性映射的，比如说：
+			\begin{defn}{线性变换的幂}{}
+				$\forall A \in \hom(V,V)$
+
+				我们定义：$A^m:= \begin{cases}
+					A\circ A^{m-1},m \geqslant 1 \\
+					I,m = 0
+				\end{cases},m \geqslant 0$
+			\end{defn}
+			如果一个映射的幂不会使其本身变化，我们称它是一个幂等变换
+			\begin{defn}{幂等映射}{}
+				$A \hom(V,V)$如果有：
+
+				$A = A^2$
+
+				我们称它是一个幂等变换
+			\end{defn}
+			我们不再讨论其他的运算，我们接下来转入线性映射一般性质的研究
 		\subsection{线性映射的性质}
+			\begin{para}{0}
+				\point{}
+					\begin{proposition}
+						$\forall A \in \hom(V_1,V_2),A(\mathbf{0}_{V_1}) = \mathbf{0}_{V_2}$
+					\end{proposition}
+					\begin{proof}
+						$A(\mathbf{0}_{V_1})=A(0\cdot \mathbf{0}_{V_1})=0\cdot A(\mathbf{0}_{V_1})=\mathbf{0}_{V_2}$
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						$\forall A \in \hom(V_1,V_2),A(-\alpha )=-A(\alpha )$
+					\end{proposition}
+					\begin{proof}
+						$A(-\alpha )=A((-1)\cdot \alpha )=(-1)\cdot A(\alpha )=-A(\alpha )$
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						$\forall A \in \hom(V_1,V_2),A(\sum\limits_{i=1}^{n} k_i \alpha_i)=\sum\limits_{i=1}^{n} k_i A(\alpha_i)$
+					\end{proposition}
+			\end{para}
 	\section{线性映射的核和像}
 	\section{矩阵}
 		\subsection{矩阵的定义}
@@ -79,7 +164,7 @@
 			\point{幂}
 				\begin{defn}{方阵的幂}{}
 					设$A \in M_n (F)$是一个方阵，
-					我们定义：$$A^k=A\cdot A^{k-1}$$
+					我们定义：$A^k=A\cdot A^{k-1}$
 				\end{defn}
 		\end{para}
 		\subsection{矩阵的性质}
