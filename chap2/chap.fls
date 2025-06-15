@@ -390,6 +390,8 @@ INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgf/frontendlay
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/tools/bm.sty
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/tools/bm.sty
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/graphics/dvipsnam.def
@@ -510,6 +512,15 @@ INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/yhmath/OMXyhex.fd
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/yhmath/yhcmex10.tfm
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/yhmath/yhcmex10.tfm
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/yhmath/yhcmex10.tfm
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx6.tfm
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib7.tfm
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm
 OUTPUT chap.xdv
 INPUT chap.aux
 INPUT ./chap.out

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.1.3)  11 JUN 2025 18:50
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.1.3)  12 JUN 2025 21:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -794,7 +794,18 @@ File: tikzlibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 File: pgflibraryarrows.code.tex 2023-01-15 v3.1.10 (3.1.10)
 \arrowsize=\dimen325
-))) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+))) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2023/07/08 v1.2f Bold Symbol Support (DPC/FMi)
+\symboldoperators=\mathgroup8
+\symboldletters=\mathgroup9
+\symboldsymbols=\mathgroup10
+Package bm Info: No bold for \OMX/cmex/m/n, using \pmb.
+Package bm Info: No bold for \U/msa/m/n, using \pmb.
+Package bm Info: No bold for \U/msb/m/n, using \pmb.
+Package bm Info: No bold for \U/rsfs/m/n, using \pmb.
+Package bm Info: No bold for \OMX/yhex/m/n, using \pmb.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 149.
+) (d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 Package: fancyhdr 2022/11/09 v4.1 Extensive control of page headers and footers
 \f@nch@headwidth=\skip75
 \f@nch@O@elh=\skip76
@@ -1106,7 +1117,7 @@ Package fontspec Info: Font family 'TeXGyrePagellaMath-Regular(0)' created for
 (fontspec)             <10.2->"TeXGyrePagellaMath-Regular/OT:script=math;language=dflt;"<7.2-10.2>"TeXGyrePagellaMath-Regular/OT:script=math;language=dflt;+ssty=0;"<-7.2>"TeXGyrePagellaMath-Regular/OT:script=math;language=dflt;+ssty=1;"
 (fontspec)             - 'small caps'  (m/sc) with NFSS spec.: 
 
-\sym__um_fam1=\mathgroup8
+\sym__um_fam1=\mathgroup11
 LaTeX Font Info:    Overwriting symbol font `__um_fam1' in version `normal'
 (Font)                  TU/TeXGyrePagellaMath-Regular(0)/m/n --> TU/TeXGyrePagellaMath-Regular(0)/m/n on input line 4.
 LaTeX Font Info:    Overwriting symbol font `__um_fam1' in version `bold'
@@ -1233,22 +1244,22 @@ File: OMXyhex.fd 2013/07/03 v1.1 YH's humble contribution to TeX maths (NP)
 ]
 LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <12> not available
 (Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 70.
- [2] [3] [4] [5] [6] [7] [8] (./chap.aux)
+ [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] (./chap.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/08/05>
  ***********
 Package rerunfilecheck Info: File `chap.out' has not changed.
-(rerunfilecheck)             Checksum: FCE33FB29C86BC65228164994D32FA13;1967.
+(rerunfilecheck)             Checksum: 2407403A87914AD6B1DE545A5D315A83;2187.
  )
-(\end occurred when \ifx on line 273 was incomplete) 
+(\end occurred when \ifx on line 421 was incomplete) 
 Here is how much of TeX's memory you used:
- 50133 strings out of 474773
- 1224976 string characters out of 5752390
- 2691125 words of memory out of 5000000
- 71449 multiletter control sequences out of 15000+600000
- 566291 words of font info for 106 fonts, out of 8000000 for 9000
+ 50317 strings out of 474773
+ 1230701 string characters out of 5752390
+ 2694035 words of memory out of 5000000
+ 71623 multiletter control sequences out of 15000+600000
+ 569055 words of font info for 115 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  98i,11n,120p,1297b,2937s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on chap.xdv (8 pages, 135912 bytes).
+Output written on chap.xdv (12 pages, 191836 bytes).

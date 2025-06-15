@@ -390,6 +390,8 @@ INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgf/frontendlay
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibraryarrows.code.tex
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.tex
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/tools/bm.sty
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/tools/bm.sty
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/graphics/dvipsnam.def
@@ -474,32 +476,8 @@ INPUT ./config/paragraph.tex
 INPUT ./main.aux
 INPUT ./main.aux
 INPUT main.aux
-INPUT ./config/cover.aux
-INPUT ./config/cover.aux
-INPUT config/cover.aux
-INPUT ./chap1/chap.aux
-INPUT ./chap1/chap.aux
-INPUT chap1/chap.aux
-INPUT ./chap2/chap.aux
-INPUT ./chap2/chap.aux
-INPUT chap2/chap.aux
-INPUT ./chap3/chap.aux
-INPUT ./chap3/chap.aux
-INPUT chap3/chap.aux
-INPUT ./chap4/chap.aux
-INPUT ./chap4/chap.aux
-INPUT chap4/chap.aux
-INPUT ./extra/extra.aux
-INPUT ./extra/extra.aux
-INPUT extra/extra.aux
 OUTPUT main.aux
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/graphics/color.sty
-INPUT ./main.out
-INPUT ./main.out
-INPUT main.out
-INPUT main.out
-INPUT ./main.out
-INPUT ./main.out
 OUTPUT main.out
 INPUT ./config/cover.tex
 INPUT ./config/cover.tex
@@ -535,6 +513,15 @@ INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/yhmath/OMXyhex.fd
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/yhmath/yhcmex10.tfm
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/yhmath/yhcmex10.tfm
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/yhmath/yhcmex10.tfm
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx7.tfm
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib7.tfm
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm
 OUTPUT main.xdv
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
@@ -551,9 +538,15 @@ INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/rsfs/rsfs5
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/yhmath/yhcmex10.tfm
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/yhmath/yhcmex10.tfm
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/yhmath/yhcmex10.tfm
-INPUT ./main.toc
-INPUT ./main.toc
-INPUT main.toc
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx6.tfm
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmib10.tfm
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib7.tfm
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
+INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm
 OUTPUT main.toc
 INPUT ./chap1/chap.tex
 INPUT ./chap1/chap.tex

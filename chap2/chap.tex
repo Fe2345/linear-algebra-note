@@ -111,8 +111,156 @@
 					\begin{proposition}
 						$\forall A \in \hom(V_1,V_2),A(\sum\limits_{i=1}^{n} k_i \alpha_i)=\sum\limits_{i=1}^{n} k_i A(\alpha_i)$
 					\end{proposition}
+					\begin{proof}
+						对$n$使用数学归纳法易证。
+					\end{proof}
+					值得注意，这个定理并不能随意地推广到$\aleph_0$，因为此时依赖于度量线性空间或线性映射的进一步性质。
+				\point{}
+					\begin{proposition}
+						$\forall A \in \hom(V,V),m \geqslant 1, A^m = A^{m-1} \circ A$
+					\end{proposition}
+					\begin{proof}
+						对$m$作数学归纳法。
+
+						首先，当$m=2$时，$A^2 = A \circ A$，命题成立
+
+						现在假设$m$时成立，我们来证明$m+1$时命题也成立：
+
+						$A^m = A \circ A^{m-1} = A \circ A^{m-2} \circ A = A^{m-1} \circ A$，于是命题得证。
+					\end{proof}
+					这个命题看似显然，但是是必要的，因为线性映射环不交换。这个命题指出：递归式地推导幂时，从左右方向都是等价的。进一步，在递归中不断变换方向也不会影响结果。
+				\point{}
+					\begin{proposition}
+						$\forall A \in \hom(V_1,V_2)$
+
+						如果$\alpha_1,\cdots,\alpha_s$线性相关，那么$A(\alpha_1),\cdots,A(\alpha_s)$也线性相关
+					\end{proposition}
+					\begin{proof}
+						$\alpha_1,\cdots,\alpha_s$线性相关
+
+						$\Rightarrow \exists k_1,\cdots,k_s,k_1\alpha_1+\cdots+k_n\alpha_s=\mathbf{0}$，其中$k_1,\cdots,k_s$不全为零
+
+						$\Rightarrow A(k_1\alpha_1+\cdots+k_n\alpha_s)=k_1A(\alpha_1)+\cdots+k_nA(\alpha_s)=\mathbf{0}$
+
+						$\Rightarrow A(\alpha_1),\cdots,A(\alpha_n)$线性无关
+					\end{proof}
+					值得注意的是，不同于同构映射，在这个命题中把线性相关改为线性无关会使命题变得不成立。比如说，零映射会把任何线性无关的向量组变得线性相关
+				\point{}
+					\begin{proposition}
+						$\forall T,Y \in \hom(V_1,V_2)$，$B$是$V_1$的一个基
+
+						如果$\forall \alpha \in B,T(\alpha )=Y(\beta )$，那么$T=Y$
+					\end{proposition}
+					\begin{proof}
+						只需证明：$\forall \gamma \in V_1,T(\gamma )=Y(\gamma )$
+
+						因为$B$是$V_1$的基，所以一定有$\gamma =k_1 \alpha_1+\cdots+k_s \alpha_s,\alpha_1,\cdots,\alpha_s \in B$
+
+						此时，$T(\gamma )=k_1 T(\alpha_1)+\cdots+ k_s T(\alpha_s)=k_1 Y(\alpha_1)+\cdots+ k_s Y(\alpha_s)=Y(\gamma )$，于是命题得证。
+					\end{proof}
+					这个命题指出，线性映射完全由其在基上的作用决定，因为我们其实只需要指定基上的像就指定了线性映射本身。
+				\point{}
+					\begin{them}{$\hom(V_1,V_2)$的维数}{}
+						如果$\dim V_1,\dim V_2 < \aleph_0$
+
+						那么，$\dim \hom(V_1,V_2) = \dim V_1 \cdot \dim V_2$
+
+						否则，$\dim \hom(V_1,V_2) = (\dim V_2)^{\dim V_1}$
+					\end{them}
+					\begin{proof}
+						
+					\end{proof}
 			\end{para}
 	\section{线性映射的核和像}
+		本节中，我们将借助核与像继续研究线性映射。所谓核，即是线性映射映到零的那一部分；像则是值域。
+
+		同时，我们会引入对偶映射，借助本节中核与像的工具，我们将看到对偶和本身之间的联系。
+			\subsection{核与像的定义}
+				\begin{defn}{线性映射的核}{}
+					设$A \in \hom(V_1,V_2)$，我们定义：
+					\begin{equation}
+						\ker A := \{\alpha \in V_1 | A(\alpha )=\mathbf{0}_{V_2}\}
+					\end{equation}
+
+					称为线性映射$A$的核
+				\end{defn}
+				\begin{defn}{线性映射的像}{}
+					设$A \in \hom(V_1,V_2)$，我们定义：
+					\begin{equation}
+						\im A := A(V_1) := \{A(\alpha)| \alpha \in V_1\}
+					\end{equation}·
+
+					称为线性映射$A$的像
+				\end{defn}
+				特别地，核与像的维数我们分别称为零化度和秩：
+				\begin{defn}{线性映射的零化度}{}
+					设$A \in \hom(V_1,V_2)$，我们定义：
+					\begin{equation}
+						\operatorname{nullity} (A) := \dim(\ker A)
+					\end{equation}
+					称为线性映射$A$的零化度
+				\end{defn}
+				\begin{defn}{线性映射的秩}{}
+					设$A \in \hom(V_1,V_2)$，我们定义：
+					\begin{equation}
+						\rank (A) := \dim(\im A)
+					\end{equation}
+					称为线性映射$A$的秩
+				\end{defn}
+				事实上，线性映射的秩和之前我们曾提及的向量组的秩有着很大的联系，我们将在后续看到这一点。
+
+				为了方便后续性质的研究，接下来我们给出对偶映射的概念
+				\begin{defn}{对偶映射}{}
+					设$A \in \hom(V_1,V_2)$，我们定义对偶映射$T^* \in \hom (V_2^*,V_1^*)$
+
+					如果满足：$\forall f \in V_2^*,\alpha \in V_1$
+					\begin{equation}
+							\left(T^*(f)\right)(\alpha )=(f\circ T)(\alpha )
+					\end{equation}
+				\end{defn}
+			\subsection{核与像的性质}
+				接下来研究核与像的性质
+				\begin{para}{0}
+					\point{}
+						\begin{proposition}
+							$\forall A \in \hom(V,W),\ker A,\im A$都是线性空间
+						\end{proposition}
+						\begin{proof}
+							先证明$\ker A$是一个线性空间
+
+							注意到，$\mathbf{0}_V \in \ker A$，因为$A(\mathbf{0}_V)=\mathbf{0}_W$，因此$\ker A$非空
+						\end{proof}
+					\point{}
+						\begin{proposition}
+							$A \in \hom(V,W)$，那么：
+
+							$A$是单射$\Leftrightarrow \ker A = \{\mathbf{0}_V\}$
+						\end{proposition}
+					\point{}
+						\begin{proposition}
+							$A \in \hom(V,W)$，那么：
+
+							$A$是单射$\Leftrightarrow \im A = W$
+						\end{proposition}
+						\begin{proof}
+							这是显然的。
+						\end{proof}
+					\point{秩-零化度定理}
+						在给出定理前，我们先给出一个引理。它是一个线性空间的“同态基本定理”，证明方法也很相似
+						\begin{lemma}{}{}
+							$\forall A \in \hom(V,W)$
+							\begin{equation}
+								V/\ker A \cong \im A
+							\end{equation}
+						\end{lemma}
+						它的直接推论是被称为秩-零化度定理的结论，它揭示了秩和零化度的联系
+						\begin{them}{秩-零化度定理}{}
+							$\forall A \in \hom(V,W)$
+							\begin{equation}
+								\rank(A)+\operatorname{nullity}(A) = \dim V
+							\end{equation}
+						\end{them}
+				\end{para}
 	\section{矩阵}
 		\subsection{矩阵的定义}
 			\begin{defn}{矩阵}{}
@@ -129,7 +277,7 @@
 
 				$F$上的全体$m \times n$矩阵的集合记作$M_{m \times n} (F)$，特别地如果$m=n$，记作$M_n (F)$。
 
-				我们也将矩阵$A$在$m$行$n$列处的元素记作$A(i;j)$
+				我们也将矩阵$\symbfit{A}$在$m$行$n$列处的元素记作$\symbfit{A}_{ij}$
 			\end{defn}
 		\subsection{矩阵的运算}
 		\begin{para}{0}
