@@ -11,51 +11,94 @@
 	\chapter{附录}
 	这一部分中，对于正文中因为逻辑结构无法提及的部分，进行补充。
 	%--------------------正文---------------------------
-		\section{一些典型的域}
-			\subsection{$F_p$}
-				首先约定，这一部分的讨论中，都认为$p$是一个素数。
+		\section{$\hom(V,W)$的维数}
+			这篇附录中，我们解决一个问题：$\hom(V,W)$的维数是多少。
+			\begin{lemma}{}{}
+				$\hom(V,W) \cong \bigoplus_{i=1}^{n} \hom(F,W)$
+			\end{lemma}
+			\begin{proof}
+				任取$V$的一个基$\{\alpha_1,\cdots,\alpha_n\}$，我们定义：
+						
+				$\phi : \hom(V,W) \ni f \mapsto \left(\{1,\cdots,n\} \ni i \mapsto \left(F \ni k \mapsto kf(\alpha_i) \in W\right) \in \hom(F,W)\right) \in \bigoplus_{i=1}^{n} \hom(F,W)$
+					
+				（即满足$\phi (f)(i)(k)=kf(\alpha_i)$的唯一映射）
+						
+				接下来验证$\phi $是同构映射
+
+				首先，容易注意到$\phi (f)=\phi (g) \Rightarrow f=g$，因此$\phi $是单射
+
+				其次，$\forall \left(\{1,\cdots,n\} \ni i \mapsto g_i \in \hom(F,W)\right) \in \bigoplus_{i=1}^{n} \hom(F,W)$
+
+				注意到，如果设$f:V \ni \sum\limits_{i=1}^{n} k_i \alpha_i \mapsto \sum\limits_{i=1}^{n} k_i g_i(1_F)$，那么$\phi (f)(i)=g_i$，于是$\phi $是满射
+
+				接下来验证它是一个线性映射
+
+				$\forall f,g \in \hom(V,W),\phi (f+g)(i)(k)=k(f+g)(\alpha_i)=kf(\alpha_i)+kg(\alpha_i)=\phi (f)(i)(k)+\phi (g)(i)(k) \Rightarrow \phi (f+g)=\phi (f)+\phi (g)$
+
+				$\forall f \in \hom(V,W),l \in F,\phi (lf)(i)(k)=k(lf)(\alpha_i)=lkf(\alpha_i)=l\phi (f)(i)(k) \Rightarrow \phi (lf)=l\phi (f)$
+
+				因此它是一个同构映射，命题得证。
+			\end{proof}
+			\begin{lemma}{}{}
+				$\hom(F,W) \cong W$
+			\end{lemma}
+			\begin{proof}
+				任取$V$的一个基$\{\alpha_1,\cdots,\alpha_n\}$，我们定义：
+
+				$\psi : \alpha \in W \mapsto \left(F \ni k \mapsto k\alpha \in W\right) \in \hom(F,W)$
+
+				注意到：$\psi  (\alpha )=\psi  (\beta ) \Rightarrow \psi  (\alpha )(k)=\psi  (\beta )(k) \Rightarrow k\alpha =k\beta \Rightarrow \alpha =\beta $，于是$\psi  $是单射
+
+				$\forall f \in \hom(F,W),\psi  (f(1_F))(k)=kf(1_F)=f(k)\Rightarrow \psi  (f(1_F))=f$，于是$\psi $是满射
+
+				$\forall \alpha ,\beta \in W,\psi (\alpha +\beta )(k)=k(\alpha +\beta )=k\alpha +k\beta =\psi (\alpha )(k)+\psi (\beta )(k) \Rightarrow \psi (\alpha +\beta )=\psi (\alpha )+\psi (\beta )$
+
+				$\forall \alpha \in W,l \in F,\psi (l\alpha )(k)=lk\alpha =l\psi (\alpha )(k) \Rightarrow \psi (l\alpha )=l\psi (\alpha )$
+
+				于是$\psi $是一个同构映射。
+			\end{proof}
+			\begin{lemma}{}{}
+				$|\hom(V,W)|=|W|^{\dim V}$
+			\end{lemma}
+			\begin{proof}
+				事实上，线性映射只由基上的作用决定，因此如果设$V$的一个基为$B$
+
+				$|\hom(V,W)|=\card \{f:B \to W\}=|W|^{|B|}=|W|^{\dim V}$
+			\end{proof}
+			\begin{lemma}{}{}
+				$\dim \hom_F (V,W) \geqslant |F|$
+			\end{lemma}
+			\begin{proof}
 				
-				我们首先讨论的是一个典型的有限域——模$p$剩余类域。
+			\end{proof}
+			\begin{lemma}{}{}
+				设$U$是$F$上的一个线性空间，那么$|U|=|F|\cdot \dim_F U$
+			\end{lemma}
+			\begin{proof}
 				
-				\begin{defn}{$F_p$}{}
-					设$F$是一个域，$Char F \geqslant p$且$p$是一个素数，
-					
-					我们定义$F_p = N(\Z_p)$
-					
-					并定义其中的加法和乘法为：
-					
-					$+_F = N^-1 \circ + \circ N,{\cdot}_F = N^-1 \circ \cdot \circ N$
-				\end{defn}
-				\begin{them}{$F_p$没有真子域}{}
-					设$p$是一个素数，那么域$F_p$不存在真子域，即$F_p \textbackslash E \rightarrow E = F_p$
-				\end{them}
-				\begin{proof}
-					不妨假设命题不成立，那么一定有真子域$E \subseteq F_p$
-					
-					不妨假设$[F_p : E]=d$，因为$F_p$是有限域，那么$|E|,|F_p|$都是有限的。
-					
-					但是，$|F_p|={|E|}^d$
-					
-					$\Rightarrow p = {|E|}^d$，但是$p$是素数，因此只可能$d=1$
-					
-					于是$|F_p|=|E|$，那么只可能$F_p=E$，与假设矛盾，于是命题得证。
-				\end{proof}
-			\subsection{$\Q$}
-				\begin{them}{$Q$没有真子域}
-					域$\Q$不存在真子域，即$\Q \textbackslash E \rightarrow E = \Q$
-				\end{them}
-				\begin{proof}
-					不妨假设命题不成立，$E \subset \Q$是$\Q$真子域。
-					
-					那么，因为$0,1 \in E$，由域对加法封闭，那么一定有$\N \subseteq E$
-					
-					进一步，因为任意元素的加法逆存在，于是有$\Z \subseteq E$
-					
-					于是，由任意非零元素的逆存在，一定有$\Q \subseteq E$。
-					
-					但是，我们假设$E \subset \Q$，矛盾。于是命题成立
-				\end{proof}
-	
+			\end{proof}
+			\begin{them}{$\hom_F (V_1,V_2)$的维数}{}
+				$\dim \hom_F (V,W)=\begin{cases}
+					0, \dim V = 0 \vee \dim W=0 \\
+					(\dim V)\cdot (\dim W),\dim V = n < \aleph_0 \\
+					|\hom(V,W)|=|W|^{\dim V} = (|F|\cdot \dim W)^{\dim V},\dim \geqslant \aleph_0
+				\end{cases}$
+			\end{them}
+			\begin{proof}
+				首先考虑$V,W$中存在零空间的情形。
+
+				如果$\dim V=0$，即$V=\{\mathbf{0}_{V}\}$，而我们知道线性映射仅能把零向量映射到零向量，此时$\hom(V,W)$中仅存在零映射，维数为零
+
+				如果$\dim W=0$。即$W=\{\mathbf{0}_W\}$，此时映射只有零映射（因为$W$中仅存在零向量），维数为零
+
+				接下来考虑$V,W$中不存在零空间，且$\dim V = n < \aleph_0$的情形。
+
+				此时，$\dim \hom(V,W) =\dim \bigoplus_{i=1}^{n} \hom(F,W) = n \cdot \dim \hom(F,W) = n \cdot \dim W = (\dim V)\cdot (\dim W)$
+
+				最后我们证明$\dim V,\dim W$均是无限的情形。
+
+
+			\end{proof}
 	\ifx\allfiles\undefined
 \end{document}
 \fi

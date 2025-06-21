@@ -1,20 +1,17 @@
 # Fdb version 4
-["xdvipdfmx"] 1750333671.99899 "chap.xdv" "chap.pdf" "chap" 1750333673.51304 0
-  "chap.xdv" 1750333671 219276 5c412130aacf94c9c45fe16d8a37ef2f "xelatex"
+["xdvipdfmx"] 1750379428.16881 "extra.xdv" "extra.pdf" "extra" 1750379430.26745 0
+  "extra.xdv" 1750379427 55396 49958f85a8bf927f75e6170afc6c0ebb "xelatex"
   (generated)
-  "chap.pdf"
+  "extra.pdf"
   (rewritten before read)
-["xelatex"] 1750333666.98553 "d:/Data/MyFiles/学习/各个课程学习笔记收录/高等代数/chap2/chap.tex" "chap.xdv" "chap" 1750333673.4734 0
+["xelatex"] 1750379424.59096 "d:/Data/MyFiles/学习/各个课程学习笔记收录/高等代数/extra/extra.tex" "extra.xdv" "extra" 1750379430.24128 0
   "../config/_config.tex" 1744951838 398 ed5c3776625a7c32e405f855ba9af84e ""
   "../config/custom.tex" 1747724549 972 b72dad33b80522224c9c47017c6a3fc1 ""
   "../config/package.tex" 1750303937 1500 1cd5a27540b5979478ffdbbeb0ea22ee ""
   "../config/paragraph.tex" 1736160617 440 c4e77aba1f37bc4210a639f0c710c16c ""
   "../config/theorem1.tex" 1737726975 2103 c44e3255d3cd2dc316f9611d5bae1879 ""
   "c:/Windows/Fonts/msyh.ttc" 1733915345 19704352 1e10e74402e59d54499af795caf0b135 ""
-  "chap.aux" 1750333671 2765 bc73356af8ea55a9a151f8760fa69a9e "xelatex"
-  "chap.out" 1750333671 2187 2407403a87914ad6b1de545a5d315a83 "xelatex"
-  "chap.tex" 1750333665 22827 9cee0f319e716dba4c2c26a06b52bee7 ""
-  "d:/Data/MyFiles/学习/各个课程学习笔记收录/高等代数/chap2/chap.tex" 1750333665 22827 9cee0f319e716dba4c2c26a06b52bee7 ""
+  "d:/Data/MyFiles/学习/各个课程学习笔记收录/高等代数/extra/extra.tex" 1750379422 4294 b9a62fe1bd9f55fdcc1eaa6ea6280dde ""
   "d:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1749001069 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "d:/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1749003768 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "d:/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1749004501 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -25,6 +22,7 @@
   "d:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm" 1748999622 908 2921f8a10601f252058503cc6570e581 ""
   "d:/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm" 1748999622 940 228d6584342e91276bf566bcf9716b83 ""
   "d:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm" 1749000259 1116 4e6ba9d7914baa6482fd69f67d126380 ""
+  "d:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1749000259 1328 c834bbb027764024c09d3d2bf908b5f0 ""
   "d:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx12.tfm" 1749000259 1324 c910af8c371558dc20f2d7822f66fe64 ""
   "d:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx6.tfm" 1749000259 1344 8a0be4fe4d376203000810ad4dc81558 ""
   "d:/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbx8.tfm" 1749000259 1332 1fde11373e221473104d6cc5993f046e ""
@@ -291,9 +289,12 @@
   "d:/texlive/2024/texmf-dist/web2c/texmf.cnf" 1748999521 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "d:/texlive/2024/texmf-var/web2c/xetex/xelatex.fmt" 1749004641 10849655 47f8f8f8fb7d6ca8dbef5fbc0b941dc5 ""
   "d:/texlive/2024/texmf.cnf" 1749004529 713 e69b156964470283e0530f5060668171 ""
+  "extra.aux" 1750379427 452 4bf71ed52fd4b4fa2372ca976d8ae848 "xelatex"
+  "extra.out" 1750379427 168 49a04f23abc03ad7060312de9b80783b "xelatex"
+  "extra.tex" 1750379422 4294 b9a62fe1bd9f55fdcc1eaa6ea6280dde ""
   (generated)
-  "chap.aux"
-  "chap.log"
-  "chap.out"
-  "chap.xdv"
+  "extra.aux"
+  "extra.log"
+  "extra.out"
+  "extra.xdv"
   (rewritten before read)

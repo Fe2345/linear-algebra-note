@@ -35,7 +35,7 @@
 
 				那么我们称$A$是一个从$V_1$到$V_2$的线性映射
 
-				全体$V_1$到$V_2$的线性映射的集合记作$\hom (V_1,V_2)$
+				全体$V_1$到$V_2$的线性映射的集合记作$\hom_F (V_1,V_2)$，或简记作$\hom (V_1,V_2)$
 
 				特别地，如果$V_1=V_2$，我们称$A$是一个$V_1$上的线性变换
 			\end{defn}
@@ -159,18 +159,8 @@
 						此时，$T(\gamma )=k_1 T(\alpha_1)+\cdots+ k_s T(\alpha_s)=k_1 Y(\alpha_1)+\cdots+ k_s Y(\alpha_s)=Y(\gamma )$，于是命题得证。
 					\end{proof}
 					这个命题指出，线性映射完全由其在基上的作用决定，因为我们其实只需要指定基上的像就指定了线性映射本身。
-				\point{}
-					\begin{them}{$\hom(V_1,V_2)$的维数}{}
-						如果$\dim V_1,\dim V_2 < \aleph_0$
-
-						那么，$\dim \hom(V_1,V_2) = \dim V_1 \cdot \dim V_2$
-
-						否则，$\dim \hom(V_1,V_2) = (\dim V_2)^{\dim V_1}$
-					\end{them}
-					\begin{proof}
-						
-					\end{proof}
 			\end{para}
+			最后，还有一个问题未被解决：$\hom(V,W)$的维数和$\dim V,\dim W$有什么关系。这个问题比较复杂，因为涉及无限维时，维数的公式会变得和有限情形完全不同。在讲解行列式后，我们将在附录一中解决这个问题。
 	\section{线性映射的核和像}
 		本节中，我们将借助核与像继续研究线性映射。所谓核，即是线性映射映到零的那一部分；像则是值域。
 
@@ -229,6 +219,20 @@
 							先证明$\ker A$是一个线性空间
 
 							注意到，$\mathbf{0}_V \in \ker A$，因为$A(\mathbf{0}_V)=\mathbf{0}_W$，因此$\ker A$非空
+
+							那么，只需注意到$\forall \alpha ,\beta \in \ker A,A(\alpha +\beta )=A(\alpha )+A(\beta )=\mathbf{0}_{W} \Rightarrow \alpha + \beta \in \ker A$
+
+							$\forall \alpha \in \ker A,k \in F,A(k\alpha )=kA(\alpha )=\mathbf{0}_W \Rightarrow k\alpha \in \ker A$
+
+							再证明$\im A$是一个线性空间
+
+							注意到，$\mathbf{0}_W = A(\mathbf{0}_V) \in \im A \Rightarrow \im A \neq \emptyset$
+
+							那么，只需注意到$\forall A(\alpha) ,A(\beta) \in \im A,A(\alpha )+A(\beta )=A(\alpha +\beta )\in \im A$
+
+							$\forall A(\alpha )\in \im A,k \in F,kA(\alpha )=A(k\alpha )\in \im A$
+
+							于是命题得证
 						\end{proof}
 					\point{}
 						\begin{proposition}
@@ -236,7 +240,12 @@
 
 							$A$是单射$\Leftrightarrow \ker A = \{\mathbf{0}_V\}$
 						\end{proposition}
-					\point{}
+						\begin{proof}
+							先证明充分性。注意到，$A(\mathbf{0}_V)=\mathbf{0}_W$，而$A$为单射，于是一定有$\ker A = \{\mathbf{0}_V\}$
+
+							再证明必要性。设$A(\alpha )=A(\beta )$，那么$A(\alpha -\beta )=\mathbf{0}_W \Rightarrow \alpha -\beta =\mathbf{0}_V \Rightarrow \alpha =\beta \Rightarrow A$是单射
+						\end{proof}
+						\point{}
 						\begin{proposition}
 							$A \in \hom(V,W)$，那么：
 
@@ -260,6 +269,18 @@
 								\rank(A)+\operatorname{nullity}(A) = \dim V
 							\end{equation}
 						\end{them}
+					\point{有限维映射和其对偶的秩相同}
+						\begin{proposition}
+							设$A \in \hom(V,W),\dim V,\dim W = n < \aleph_0$
+
+							那么$\rank(A)=\rank(A^*)$
+						\end{proposition}
+					\point{}
+						\begin{proposition}
+							设$A \in \hom(V,W)$，如果$\dim V=\dim W$，那么：
+
+							$A$是满射$\Leftrightarrow A$是单射
+						\end{proposition}
 				\end{para}
 	\section{矩阵}
 		\subsection{矩阵的定义}
