@@ -18,7 +18,7 @@
 			\end{lemma}
 			\begin{proof}
 				任取$V$的一个基$\{\alpha_1,\cdots,\alpha_n\}$，我们定义：
-						
+
 				$\phi : \hom(V,W) \ni f \mapsto \left(\{1,\cdots,n\} \ni i \mapsto \left(F \ni k \mapsto kf(\alpha_i) \in W\right) \in \hom(F,W)\right) \in \bigoplus_{i=1}^{n} \hom(F,W)$
 					
 				（即满足$\phi (f)(i)(k)=kf(\alpha_i)$的唯一映射）
@@ -69,7 +69,45 @@
 				$\dim \hom_F (V,W) \geqslant |F|$
 			\end{lemma}
 			\begin{proof}
-				
+				取$V$的一个基$B$，任取$B$的一个可数子集$\{\alpha_1,\cdots,\alpha_n,\cdots\}$，又任取$\gamma \in W,\gamma \neq \mathbf{0}_W$
+
+				我们定义：$k \in F,f_k(\alpha_i) = k^{i-1} \gamma$，并且$\forall \beta \in B-\{\alpha_1,\cdots,\alpha_n\},f_k (\beta )=\mathbf{0}_W$
+
+				显然，如此定义的映射集$\{f_k|k \in F\}$中的任意映射都是线性映射（因为我们给出且只给出了在基上的像）
+
+				我们来验证，$\{f_k | k \in F\}$的任意有限子集线性无关
+
+				取它的一个有限子集$\{f_{k_1},\cdots,f_{k_s}\}$
+
+				如果$\sum\limits_{i=1}^{s} l_i f_{k_i} = 0$
+
+				$\Rightarrow \forall \alpha_j,\sum\limits_{i=1}^{s} l_i f_{k_i}(\alpha_j) = \mathbf{0}_W$
+
+				$\Rightarrow \sum\limits_{i=1}^{s} l_i k_i^{j-1} \gamma = \mathbf{0}_W$
+
+				$\Rightarrow \sum\limits_{i=1}^{s} l_i k_i^{j-1} = 0$
+
+				因此，$\forall j \in \N_+,\sum\limits_{i=1}^{s} l_i k_i^{j-1} = 0$，我们取前$s$项，并写成方程组的形式：
+
+				$\symbfit{A}\mathbf{x} = \mathbf{0}_{F^s}$
+
+				其中$\symbfit{A}=\begin{pmatrix}
+					1 & \cdots & 1 \\
+					\vdots & \ddots & \vdots \\
+					k_1^{s-1} & \cdots & k_s^{s-1} \\
+				\end{pmatrix},\mathbf{x} = \begin{pmatrix}
+					l_1 \\
+					\ddots \\
+					l_s
+				\end{pmatrix}$
+
+				注意到，$|\symbfit{A}|=\prod_{1\leqslant i < j \leqslant s} (k_j - k_i) \neq 0$
+
+				因此方程组$\symbfit{A}\mathbf{x} = 	\mathbf{0}_{F^s}$仅有平凡解$\mathbf{x} = \mathbf{0}_{F^s}$
+
+				又因为这个有限子集是随意选取的，因此$\{f_k|k \in F\}$线性无关。
+
+				那么，就必须有$\dim \hom(V,W) \geqslant |F|$，命题得证
 			\end{proof}
 			\begin{lemma}{}{}
 				设$U$是$F$上的一个线性空间，那么$|U|=|F|\cdot \dim_F U$
@@ -77,11 +115,44 @@
 			\begin{proof}
 				
 			\end{proof}
+			\begin{lemma}{}{}
+				$\hom(V,W) \cong \{f:B_1 \to G|G \subseteq F^{B_2}, \forall g \in G,supp(g)<\aleph_0 \}$
+
+				其中$B_1,B_2$分别是是$V,W$的基
+			\end{lemma}
+			\begin{proof}
+				记$\mathcal{P} = \{f:B_1 \to G|G \subseteq F^{B_2}, \forall g \in G,supp(g)<\aleph_0 \}$
+
+				我们定义$\phi : \hom (V,W) \ni T \mapsto \left(B_1 \ni \alpha \mapsto \left(B_2 \ni \beta \mapsto T_{\alpha \beta } \in F\right)\in G\right) \in \mathcal{P}$
+			
+				其中$T(\alpha )=\sum\limits_{\beta \in B_2} T_{\alpha \beta }\beta $
+
+				这个定义是合理的，因为我们知道，任意一个向量可由有限个基向量线性组合，因此$B_2 \ni \beta \mapsto T_{\alpha \beta } \in F$是有限支撑的（即使$B_2$无限）
+
+				接下来验证$\phi $是同构映射
+
+				先验证它是线性的：
+
+				注意到：$\forall A,B \in \hom(V,W),\phi (A+B)(\alpha )(\beta )=(A+B)_{\alpha \beta }=A_{\alpha \beta }+B_{\alpha \beta }=\phi (A)(\alpha )(\beta )+\phi (B)(\alpha )(\beta ) \Rightarrow \phi (A+B)=\phi (A)+\phi (B)$
+			
+				$\forall k \in F,A \in \hom(V,W),\phi (kA)(\alpha )(\beta )=(kA)_{\alpha \beta}=k\cdot A_{\alpha \beta }=k\phi (A)(\alpha )(\beta )\Rightarrow \phi (kA)=k\phi (A)$
+
+				接下来验证它是一个双射：
+
+				注意到：$\forall g \in \mathcal{P}$，令$T(\alpha )=\sum\limits_{\beta \in B_2} g(\alpha )(\beta )\beta,\alpha \in B_1$。这个定义是良好的，因为它仅仅给出了在基上的作用，而且由于$g(\alpha )$是有限支撑的，所以求和是良好的。
+
+				$\phi (T)(\alpha )(\beta )=g(\alpha )(\beta ) \Rightarrow \phi (T)=g$
+
+				又注意到：$\phi (A)=\phi (B) \Rightarrow \forall \alpha \in B_1,\beta \in B_2,\phi (A)(\alpha )(\beta )=\phi (B)(\alpha )(\beta ) \Rightarrow A_{\alpha \beta }=B_{\alpha \beta }\Rightarrow A=B$
+
+				于是$\phi $的确是一个同构映射，命题得证。
+			\end{proof}
+
 			\begin{them}{$\hom_F (V_1,V_2)$的维数}{}
 				$\dim \hom_F (V,W)=\begin{cases}
 					0, \dim V = 0 \vee \dim W=0 \\
 					(\dim V)\cdot (\dim W),\dim V = n < \aleph_0 \\
-					|\hom(V,W)|=|W|^{\dim V} = (|F|\cdot \dim W)^{\dim V},\dim \geqslant \aleph_0
+					|\hom(V,W)|=|W|^{\dim V} = (|F|\cdot \dim W)^{\dim V},\dim V \geqslant \aleph_0
 				\end{cases}$
 			\end{them}
 			\begin{proof}

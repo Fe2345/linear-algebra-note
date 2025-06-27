@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.1.3)  12 JUN 2025 13:58
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.1.3)  22 JUN 2025 15:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1126,7 +1126,11 @@ LaTeX Font Info:    Overwriting symbol font `__um_fam1' in version `bold'
 
 Package xeCJK Warning: Redefining CJKfamily `\CJKrmdefault' (SimSun(0)).
 
-)) (./main.aux)
+)) (./main.aux (./config/cover.aux) (./chap1/chap.aux
+
+LaTeX Warning: Label `def:设' multiply defined.
+
+) (./chap2/chap.aux) (./chap3/chap.aux) (./chap4/chap.aux) (./extra/extra.aux))
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
@@ -1185,11 +1189,9 @@ LaTeX Font Info:    ... okay on input line 5.
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
 Package hyperref Info: Link coloring ON on input line 5.
+(./main.out) (./main.out)
 \@outlinefile=\write4
 \openout4 = `main.out'.
-
-
-Package hyperref Warning: Rerun to get /PageLabels entry.
 
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
 (Font)                  TU/LatinModernMath-Regular(1)/m/n --> TU/lmr/m/n on input line 5.
@@ -1205,6 +1207,7 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
 (Font)                  OT1/cmtt/m/n --> TU/lmtt/m/n on input line 5.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> TU/lmtt/bx/n on input line 5.
+
 
 Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
  on input line 5.
@@ -1258,14 +1261,13 @@ LaTeX Font Info:    Font shape `TU/LatinModernMath-Regular(3)/m/n' will be
 (Font)              scaled to size 8.3991pt on input line 10.
 LaTeX Font Info:    Font shape `TU/LatinModernMath-Regular(3)/m/n' will be
 (Font)              scaled to size 5.99936pt on input line 10.
- [1]
-No file main.toc.
+ [1] (./main.toc [1
+
+] [2])
 \tf@toc=\write5
 \openout5 = `main.toc'.
 
-[1
-
-])
+ [3])
 \openout2 = `chap1/chap.aux'.
 
  (./chap1/chap.tex
@@ -1313,29 +1315,12 @@ Overfull \hbox (1.1695pt too wide) in paragraph at lines 658--662
 
 
 
-] [38] [39] [40]
-./chap2/chap.tex:181: Extended mathchar used as mathchar (14799924).
-<to be read again> 
-                   \relax 
-l.181 ^^I^^I^^I^^I我们也将矩阵$\bm{A}
-                               $在$m$行$n$列处的元素记作$\bm{A}(i;j)$
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-./chap2/chap.tex:181: Extended mathchar used as mathchar (14799924).
-<to be read again> 
-                   \relax 
-l.181 ...^I^^I我们也将矩阵$\bm{A}$在$m$行$n$列处的元素记作$\bm{A}
-                                                  (i;j)$
-A mathchar number must be between 0 and "7FFF.
-I changed this one to zero.
-
-[41] [42] [43] [44]) [45]
+] [38] [39] [40] [41] [42] [43] [44] [45] [46] [47]) [48]
 \openout2 = `chap3/chap.aux'.
 
  (./chap3/chap.tex
 第三章
-) [46
+) [49
 
 
 
@@ -1345,7 +1330,7 @@ I changed this one to zero.
 
  (./chap4/chap.tex
 第四章
-) [47
+) [50
 
 
 
@@ -1355,66 +1340,51 @@ I changed this one to zero.
 
  (./extra/extra.tex
 第五章
+LaTeX Font Info:    Font shape `TU/LatinModernMath-Regular(2)/m/n' will be
+(Font)              scaled to size 17.28183pt on input line 14.
+LaTeX Font Info:    Font shape `TU/LatinModernMath-Regular(3)/m/n' will be
+(Font)              scaled to size 17.27815pt on input line 14.
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 15.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 15.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 15.
-
-
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 30.
+(hyperref)                removing `math shift' on input line 14.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 43.
+(hyperref)                removing `\hom' on input line 14.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `\symbb' on input line 43.
+(hyperref)                removing `math shift' on input line 14.
 
 
-Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 43.
+Overfull \hbox (48.7518pt too wide) in paragraph at lines 22--23
+[]$[] [] [][][][] [][] [] [] [] [] [] [][] [][][][] [][]$ 
+ []
 
-
-LaTeX Warning: Command \textbackslash invalid in math mode on input line 45.
-
-[48
+[51
 
 
 
 
-]) [49] (./main.aux (./config/cover.aux) (./chap1/chap.aux) (./chap2/chap.aux) (./chap3/chap.aux) (./chap4/chap.aux) (./extra/extra.aux))
+] [52]) [53] (./main.aux (./config/cover.aux) (./chap1/chap.aux) (./chap2/chap.aux) (./chap3/chap.aux) (./chap4/chap.aux) (./extra/extra.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/08/05>
  ***********
 
 
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+LaTeX Warning: There were multiply-defined labels.
 
-
-Package rerunfilecheck Warning: File `main.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `main.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  508736867F18677449E168297F82A396;7459.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: 3AFC20784389C467607935300CD84362;7493.
  ) 
 Here is how much of TeX's memory you used:
- 50831 strings out of 474773
- 1248060 string characters out of 5752390
- 2706002 words of memory out of 5000000
- 72074 multiletter control sequences out of 15000+600000
- 575956 words of font info for 159 fonts, out of 8000000 for 9000
+ 50906 strings out of 474773
+ 1249863 string characters out of 5752390
+ 2707002 words of memory out of 5000000
+ 72131 multiletter control sequences out of 15000+600000
+ 578448 words of font info for 169 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 98i,13n,120p,1288b,2937s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,14n,120p,1288b,2937s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (53 pages, 740612 bytes).
+Output written on main.xdv (59 pages, 906624 bytes).

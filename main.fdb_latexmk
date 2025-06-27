@@ -1,25 +1,25 @@
 # Fdb version 4
-["xdvipdfmx"] 1749692722.68418 "main.xdv" "main.pdf" "main" 1749692724.29862 0
-  "main.xdv" 1749707890 740612 e84e38161d3485d6431bada010c4a400 "xelatex"
+["xdvipdfmx"] 1750576857.94038 "main.xdv" "main.pdf" "main" 1750576859.46986 0
+  "main.xdv" 1750576857 906624 a2d3350342e21accc20d5f11a2ef1063 "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1749707886.21542 "d:/文件/学习/各个课程学习笔记收录/高等代数/main.tex" "main.xdv" "main" 1749707890.70188 2
+["xelatex"] 1750576850.57026 "d:/文件/学习/各个课程学习笔记收录/高等代数/main.tex" "main.xdv" "main" 1750576859.34524 0
   "c:/Windows/Fonts/msyh.ttc" 1736561799 19704352 1e10e74402e59d54499af795caf0b135 ""
-  "chap1/chap.aux" 1749707890 5634 16e4b2b829423d14e669f0fe640010aa "xelatex"
+  "chap1/chap.aux" 1750576856 5634 16e4b2b829423d14e669f0fe640010aa "xelatex"
   "chap1/chap.tex" 1749692667 79025 b1c0eaf83e15e2ff6baec64e181421cf ""
-  "chap2/chap.aux" 1749707890 3641 01dbcdb0ba981ae83b93bc17821aeb1e "xelatex"
-  "chap2/chap.tex" 1749707880 14991 6ebe363e6b26b261b9853cea9535efa8 ""
-  "chap3/chap.aux" 1749707890 1994 e5e9c929793eb9109f9c01902e04c7d4 "xelatex"
+  "chap2/chap.aux" 1750576857 3790 4187f11e8d4bc6cd967ff9f77c879e06 "xelatex"
+  "chap2/chap.tex" 1750487851 20013 87e0e14a22c94c8db56d08a4f9026f02 ""
+  "chap3/chap.aux" 1750576857 1994 43e7cbb23cf116d803a9591caa452e5c "xelatex"
   "chap3/chap.tex" 1749544199 464 483138fe05aa9123ce9fa239f4568ccc ""
-  "chap4/chap.aux" 1749707890 1897 2562eafc98b3abb7b4351ffbcf21ffb8 "xelatex"
+  "chap4/chap.aux" 1750576857 1897 eacdf001c8c44c581cd40580e9b6bf83 "xelatex"
   "chap4/chap.tex" 1749544246 453 b484d62f012f1297c47661a773f12031 ""
   "config/_config.tex" 1744951838 398 ed5c3776625a7c32e405f855ba9af84e ""
-  "config/cover.aux" 1749707889 1141 7d63e8682bb6208a9874121d33f6552d "xelatex"
+  "config/cover.aux" 1750576855 1141 7d63e8682bb6208a9874121d33f6552d "xelatex"
   "config/cover.tex" 1735992666 569 e6962aaf1ab693c8ae87789db235e8d7 ""
   "config/cover_text_0.tex" 1699031078 104 290d86fe46a8e42bb0513c12a3685e25 ""
   "config/custom.tex" 1749374257 972 b72dad33b80522224c9c47017c6a3fc1 ""
-  "config/package.tex" 1749707880 1500 1cd5a27540b5979478ffdbbeb0ea22ee ""
+  "config/package.tex" 1749708855 1500 1cd5a27540b5979478ffdbbeb0ea22ee ""
   "config/paragraph.tex" 1736160617 440 c4e77aba1f37bc4210a639f0c710c16c ""
   "config/theorem1.tex" 1737726975 2103 c44e3255d3cd2dc316f9611d5bae1879 ""
   "d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1735876988 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -302,12 +302,12 @@
   "d:/Program Files (x86)/texlive/2024/texmf-var/web2c/xetex/xelatex.fmt" 1735883004 10850220 00111e35ff84ce4a94f863e2ab2bb4e3 ""
   "d:/Program Files (x86)/texlive/2024/texmf.cnf" 1735882676 713 e69b156964470283e0530f5060668171 ""
   "d:/文件/学习/各个课程学习笔记收录/高等代数/main.tex" 1744952616 310 a36d9dbc1c0ddd46b4a6a12badbb3a3d ""
-  "extra/extra.aux" 1749707890 1784 93284694a96776e5191f7b77332110ea "xelatex"
-  "extra/extra.tex" 1742309837 2175 541f49c79943dc164ccc4bf0687b1205 ""
-  "main.aux" 1749707890 381 5ce95021ff164686cbd32a7802ed8041 "xelatex"
-  "main.out" 1749707890 7459 508736867f18677449e168297f82a396 "xelatex"
+  "extra/extra.aux" 1750576857 1470 7806cd9cce436f7d5aee65c066f9952b "xelatex"
+  "extra/extra.tex" 1750570507 5956 3f9220a38fe347b530f96002627d84d0 ""
+  "main.aux" 1750576857 381 9d3d90962024a13fecdf2aee4330b523 "xelatex"
+  "main.out" 1750576857 7493 3afc20784389c467607935300cd84362 "xelatex"
   "main.tex" 1744952616 310 a36d9dbc1c0ddd46b4a6a12badbb3a3d ""
-  "main.toc" 1749707890 5831 6b69b28435d188d304f0ade7063e378c "xelatex"
+  "main.toc" 1750576857 5782 ce2f58764c7745e471175feaab151aca "xelatex"
   (generated)
   "chap1/chap.aux"
   "chap2/chap.aux"
@@ -321,9 +321,3 @@
   "main.toc"
   "main.xdv"
   (rewritten before read)
-  "chap1/chap.aux"
-  "chap2/chap.aux"
-  "chap3/chap.aux"
-  "chap4/chap.aux"
-  "config/cover.aux"
-  "extra/extra.aux"
