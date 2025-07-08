@@ -84,7 +84,7 @@
 			\end{defn}
 			如果一个映射的幂不会使其本身变化，我们称它是一个幂等变换
 			\begin{defn}{幂等映射}{}
-				$A \hom(V,V)$如果有：
+				$A \in \hom(V,V)$如果有：
 
 				$A = A^2$
 
@@ -263,8 +263,37 @@
 							\end{equation}
 						\end{lemma}
 						\begin{proof}
+							设$\phi : V/\ker A \ni \alpha + \ker A \mapsto A(\alpha ) \in \im A$
+
+							首先验证它的确是一个映射
+
+							假设$\alpha +\ker A=\beta +\ker A$
+
+							那么$\alpha -\beta \in \ker A \Rightarrow A(\alpha -\beta )=\mathbf{0}_W \Rightarrow A(\alpha )=A(\beta )$
+
+							所以$\phi $的确是一个映射
+
+							接下来验证它是一个单射
+
+							设$\phi (\alpha + \ker A)=\phi (\beta +\ker A)$
 							
+							$\Rightarrow A(\alpha )=A(\beta ) \Rightarrow A(\alpha -\beta )=\mathbf{0}_W$
+
+							$\Rightarrow \alpha - \beta  \in \ker A \Rightarrow \alpha +\ker A=\beta +\ker A$
+
+							于是$\phi $是单射。$\phi $显然是满射
+
+							接下来验证线性性：
+
+							$\forall \alpha +\ker A,\beta +\ker A \in V/\ker A,k \in F$
+							
+							$\phi \left((\alpha +\ker A)+(\beta +\ker A)\right)=\phi \left((\alpha +\beta )+\ker A\right)=A(\alpha +\beta )=A(\alpha )+A(\beta )=\phi (\alpha +\ker A)+\phi (\beta +\ker A)$
+						
+							$\phi \left(k\cdot (\alpha +\ker A)\right)=\phi (k\alpha +\ker A)=A(k\alpha )=kA(\alpha )=k\phi (\alpha +\ker A)$
+						
+							于是命题得证。
 						\end{proof}
+
 						它的直接推论是被称为秩-零化度定理的结论，它揭示了秩和零化度的联系
 						\begin{them}{秩-零化度定理}{}
 							$\forall A \in \hom(V,W)$
@@ -272,12 +301,24 @@
 								\rank(A)+\operatorname{nullity}(A) = \dim V
 							\end{equation}
 						\end{them}
+						\begin{proof}
+							$V/\ker A \cong \im A$
+
+							$\Rightarrow \dim(V/\ker A)=\dim \im A$
+
+							$\Rightarrow \dim V - \dim \ker A = \dim \im A$
+
+							$\Rightarrow \rank(A)+\operatorname{nullity}(A)= \dim V$
+						\end{proof}
 					\point{有限维映射和其对偶的秩相同}
 						\begin{proposition}
 							设$A \in \hom(V,W),\dim V,\dim W = n < \aleph_0$
 
 							那么$\rank(A)=\rank(A^*)$
 						\end{proposition}
+						\begin{proof}
+							
+						\end{proof}
 					\point{}
 						\begin{proposition}
 							设$A \in \hom(V,W)$，如果$\dim V=\dim W$，那么：
