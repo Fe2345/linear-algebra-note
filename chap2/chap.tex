@@ -411,31 +411,31 @@
 		\begin{para}{0}
 			\point{相等}
 			    \begin{defn}{矩阵的相等}{}
-				    设$A\in M_{m\times n}(F),B\in M_{m \times n}(F)$，如果$\forall i,j,A(i;j)=B(i;j)$，则称$A=B$。
+				    设$\symbfit{A}\in M_{m\times n}(F),\symbfit{B}\in M_{m \times n}(F)$，如果$\forall i,j,\symbfit{A}(i;j)=\symbfit{B}(i;j)$，则称$\symbfit{A}=\symbfit{B}$。
 				\end{defn}
 			\point{转置}
 				\begin{defn}{矩阵的转置}{}
-				    设$A\in M_{m \times n}(F)$，
-					
-					我们定义矩阵$A^T \in M_{n \times m}(F)$为满足$A^T(i;j)=A(i;j)$的矩阵，称为$A$的转置。
+				    设$\symbfit{A}\in M_{m \times n}(F)$，
+
+					我们定义矩阵$\symbfit{A}^T \in M_{n \times m}(F)$为满足$\symbfit{A}^T(i;j)=\symbfit{A}(j;i)$的矩阵，称为$\symbfit{A}$的转置。
 				\end{defn}
 			\point{加法}
 				\begin{defn}{矩阵的加法}{}
-				    设$A\in M_{m \times n}(F),B\in M_{m \times n}(F)$
+				    设$\symbfit{A}\in M_{m \times n}(F),\symbfit{B}\in M_{m \times n}(F)$
 					
-					我们定义：$(A+B)(i;j)=A(i;j)+B(i;j)$。
+					我们定义：$(\symbfit{A}+\symbfit{B})(i;j)=\symbfit{A}(i;j)+\symbfit{B}(i;j)$。
 				\end{defn}
 			\point{纯量乘法}
 				\begin{defn}{矩阵的纯量乘法}{}
-				    设$A\in M_{m \times n}(F),k \in F$，
-					
-					我们定义矩阵$k\cdot A \in M_{m\times n}(F)$为满足$(k\cdot  A)(i;j)=k\cdot A(i;j)$的矩阵。
+				    设$\symbfit{A}\in M_{m \times n}(F),k \in F$，
+
+					我们定义矩阵$k\cdot \symbfit{A} \in M_{m\times n}(F)$为满足$(k\cdot  \symbfit{A})(i;j)=k\cdot \symbfit{A}(i;j)$的矩阵。
 				\end{defn}
 			\point{乘法}
 				\begin{defn}{矩阵的乘法}{}
-				    设$A\in M_{m\times n}(F),B\in M_{n \times p}(F)$，
-					
-					我们定义矩阵$A\cdot B \in M_{m\times p}(F)$为满足$(A\cdot B)(i;j)=\sum_{k=1}^n A(i;k)B(k;j)$的矩阵
+				    设$\symbfit{A}\in M_{m\times n}(F),\symbfit{B}\in M_{n \times p}(F)$，
+
+					我们定义矩阵$\symbfit{A}\cdot \symbfit{B} \in M_{m\times p}(F)$为满足$(\symbfit{A}\cdot \symbfit{B})(i;j)=\sum_{k=1}^n \symbfit{A}(i;k)\symbfit{B}(k;j)$的矩阵
 				\end{defn}
 			\point{幂}
 				\begin{defn}{方阵的幂}{}
@@ -446,8 +446,24 @@
 						\symbfit{I},m = 0
 					\end{cases},m \geqslant 0$
 				\end{defn}
+			\point{和行向量的乘法}
+				
+			最后，为了后续研究线性映射，我们再定义一种新运算
+				\begin{defn}{$V^n$中的行向量和矩阵的乘积}{}
+					设$(\alpha_1,\cdots,\alpha_m)\in V^m,\symbfit{A}=\begin{pmatrix}
+					a_{11} & \cdots & a_{1n} \\
+					\vdots & \ddots & \vdots \\
+					a_{m1} & \cdots & a_{mn}
+					\end{pmatrix}\in M_{m \times n}(F)$，
+					
+					我们定义：
+
+					$(\alpha_1,\cdots,\alpha_m) \cdot \symbfit{A} = (\sum_{i=1}^m a_{i1}\alpha_i  , \cdots , \sum_{i=1}^m a_{im}\alpha_i)$
+				\end{defn}
+				值得注意的是，这个运算并不是矩阵乘法的退化，因为此处乘法的左元中的向量是一个一般的向量，而不一定是列向量
 		\end{para}
 		\subsection{线性映射的矩阵}
+			给出矩阵及其运算的基本定义后，我们可以开始讨论如何将线性映射写成矩阵了。
 			\begin{defn}{线性映射的矩阵}{}
 				设$A \in \hom(V,W),\dim V = m < \aleph_0,\dim W = n < \aleph_0$
 
@@ -466,10 +482,102 @@
 
 				特别地，如果$V=W$且$\alpha_i = \beta_i$，我们称$\symbfit{A}$是线性变换$A$在$\{\alpha_1,\cdots,\alpha_m\}$下的矩阵
 			\end{defn}
+			我们也常常简记$\left(A(\alpha_1),\cdots,A(\alpha_m)\right)$为$A(\alpha_1,\cdots,\alpha_m)$
+
+			我们习惯上用大写字母表示线性映射，而用加粗的大写字母表示它在某个基下的矩阵
+			
+			我们接下来会看到，矩阵的运算其实就是线性映射的运算
 		\subsection{矩阵的性质}
+			\begin{para}{0}
+				\point{}
+					\begin{proposition}
+						$(\alpha_1,\cdots,\alpha_m)(\symbfit{A}+\symbfit{B})=(\alpha_1,\cdots,\alpha_m)\symbfit{A}+(\alpha_1,\cdots,\alpha_m)\symbfit{B}$
+						
+						$(\alpha_1,\cdots,\alpha_m)(k\symbfit{A})=k\left((\alpha_1,\cdots,\alpha_m)\symbfit{A}\right)$
+
+						$(\alpha_1,\cdots,\alpha_m)(\symbfit{A}\symbfit{B})=\left((\alpha_1,\cdots,\alpha_m)\symbfit{A}\right)\symbfit{B}$
+					\end{proposition}
+					\begin{proof}
+						$(\alpha_1,\cdots,\alpha_m)(\symbfit{A}+\symbfit{B})=(\sum_{i=1}^m (\symbfit{A}+\symbfit{B})(i;1)\alpha_i  , \cdots , \sum_{i=1}^m (\symbfit{A}+\symbfit{B})(i;m)\alpha_i)$
+
+						$=(\sum_{i=1}^m \symbfit{A}(i;1)\alpha_i  , \cdots , \sum_{i=1}^m \symbfit{A}(i;m)\alpha_i)+(\sum_{i=1}^m \symbfit{B}(i;1)\alpha_i  , \cdots , \sum_{i=1}^m \symbfit{B}(i;m)\alpha_i)$
+
+						$=(\alpha_1,\cdots,\alpha_m)\symbfit{A}+(\alpha_1,\cdots,\alpha_m)\symbfit{B}$
+
+						$(\alpha_1,\cdots,\alpha_m)(k\symbfit{A})=(\sum_{i=1}^m (k\symbfit{A})(i;1)\alpha_i  , \cdots , \sum_{i=1}^m (k\symbfit{A})(i;m)\alpha_i)$
+
+						$=k(\sum_{i=1}^m \symbfit{A}(i;1)\alpha_i  , \cdots , \sum_{i=1}^m \symbfit{A}(i;m)\alpha_i)$
+
+						$=k\left((\alpha_1,\cdots,\alpha_m)\symbfit{A}\right)$
+
+						设$\symbfit{A} \in M_{m \times n}(F),\symbfit{B} \in M_{n \times s}(F)$
+						
+						$(\alpha_1,\cdots,\alpha_m)(\symbfit{A}\symbfit{B})=(\sum_{i=1}^m (\symbfit{A}\symbfit{B})(i;1)\alpha_i  , \cdots , \sum_{i=1}^m (\symbfit{A}\symbfit{B})(i;m)\alpha_i)$
+
+						$=(\sum_{i=1}^m (\sum\limits_{j=1}^{n}\symbfit{A}(i;j)\symbfit{B}(j;1))\alpha_i  , \cdots , \sum_{i=1}^m (\sum\limits_{j=1}^{n}\symbfit{A}(i;j)\symbfit{B}(j;m))\alpha_i)$
+
+						$=(\sum\limits_{j=1}^{n}\symbfit{B}(j;1) (\sum_{i=1}^m\symbfit{A}(i;j)\alpha_i)  , \cdots , \sum\limits_{j=1}^{n} \symbfit{B}(j;m)(\sum_{i=1}^m\symbfit{A}(i;j)\alpha_i))$
+					
+						$=(\sum_{i=1}^m\symbfit{A}(i;1)\alpha_i  , \cdots ,\sum_{i=1}^m\symbfit{A}(i;m)\alpha_i)\symbfit{B}$
+
+						$=\left((\alpha_1,\cdots,\alpha_m)\symbfit{A}\right)\symbfit{B}$
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						设$A,B \in \hom(V,W)$，其中$V,W$是$F$上的有限维线性空间
+
+						分别取$V,W$的一个基$\{\alpha_1,\cdots,\alpha_m\},\{\beta_1,\cdots,\beta_n\}$
+
+						设$A,B$在$\{\alpha_1,\cdots,\alpha_m\},\{\beta_1,\cdots,\beta_n\}$下的矩阵分别为$\symbfit{A},\symbfit{B}$
+
+						那么：$A+B$在$\{\alpha_1,\cdots,\alpha_m\},\{\beta_1,\cdots,\beta_n\}$下的矩阵为$\symbfit{A}+\symbfit{B}$
+					\end{proposition}
+					\begin{proof}
+						只需证明：$(A+B)(\alpha_1,\cdots,\alpha_m)=(\beta_1,\cdots,\beta_n)(\symbfit{A}+\symbfit{B})$
+					
+						注意到，$(A+B)(\alpha_1,\cdots,\alpha_m)=A(\alpha_1,\cdots,\alpha_m)+B(\alpha_1,\cdots,\alpha_m)$
+
+						$=(\beta_1,\cdots,\beta_n)\symbfit{A}+=(\beta_1,\cdots,\beta_n)\symbfit{B}=(\beta_1,\cdots,\beta_n)(\symbfit{A}+\symbfit{B})$
+
+						命题得证。
+					\end{proof}
+			\end{para}
 	\section{特殊矩阵}
 	\section{可逆矩阵}
-	\section{行列式}
+	\section{迹和行列式}
+		\subsection{张量积}
+			在研究迹和行列式前，我们先研究张量积。张量积一般应用于多重线性映射的研究中，后面我们会看到：行列式是一种特殊的多重线性映射。
+
+			张量积的本意是将两个线性空间组合在一起形成新的空间，并且希望可以将原来的两个空间和新的空间对应。
+
+			在双线性映射，即对每一分量都线性的映射的研究中，我们将两个空间组合在一起，视为同一空间研究
+
+			我们希望：新的空间和原来的两个空间应该别无二致。因此，如果确立了两个空间$V,W$到张量积空间$U$的映射，我们希望每一个$V,W$到$Z$的双线性映射，都只能确定唯一的$U$到$Z$的映射。
+
+			以上想法给出了以下定义：
+			\begin{defn}{双线性映射}{}
+				设$V,W,Z$是三个线性空间，
+
+				映射$f:V \times W \to Z$如果满足：
+
+				\begin{enumerate}
+					\item $\forall \alpha ,\beta \in V,\gamma \in W,f(\alpha +\beta ,\gamma )=f(\alpha ,\gamma )+f(\beta +\gamma )$
+					\item $\forall \alpha \in V,\beta ,\gamma \in W,f(\alpha ,\beta +\gamma )=f(\alpha ,\beta )+f(\alpha ,\gamma )$
+					\item $\forall k \in F,\alpha \in V,\beta \in W,f(k\cdot\alpha ,\beta )=k\cdot f(\alpha ,\beta ),f(\alpha ,k\cdot \beta )=k\cdot f(\alpha ,\beta )$ 
+				\end{enumerate}
+				那么我们称$f$是一个双线性映射
+			\end{defn}
+			\begin{defn}{线性空间的张量积}{}
+				设$V,W,Z$是三个线性空间，如果线性空间$V \otimes W$满足：
+
+				存在映射$f:V \times W \to V \otimes W$，使得：
+
+				任意的$f:V \times W \to Z$的双线性映射$g$，存在唯一的线性映射$h:V \otimes W \to Z$，使得$g = h \circ f$
+
+				那么，我们称$V \otimes W$是$V$和$W$的张量积
+			\end{defn}
+		\subsection{张量和外积}
+			
 		\subsection{行列式的定义和性质}
 			\begin{defn}{行列式}{}
 				设$F$是一个域，$V$是$F$上的一个线性空间，并且$dim_F V = n$

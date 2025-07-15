@@ -1,66 +1,68 @@
-\contentsline {chapter}{\numberline {第一章\hspace {.3em}}线性空间}{0}{chapter.1}%
-\contentsline {section}{\numberline {1.1}线性空间的定义}{1}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}线性空间的定义}{1}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}线性子空间}{1}{subsection.1.1.2}%
-\contentsline {subsection}{\numberline {1.1.3}线性空间的性质}{1}{subsection.1.1.3}%
-\contentsline {section}{\numberline {1.2}线性组合}{2}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}度量线性空间}{3}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}向量组的线性相关性和线性无关性}{3}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3}线性相关和线性无关的性质}{4}{subsection.1.2.3}%
-\contentsline {section}{\numberline {1.3}极大线性无关向量组、向量组的秩}{6}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}极大线性无关向量组}{7}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}向量组的等价}{7}{subsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.3.3}向量组的秩}{10}{subsection.1.3.3}%
-\contentsline {section}{\numberline {1.4}基、线性空间的维数}{11}{section.1.4}%
-\contentsline {subsection}{\numberline {1.4.1}基的定义}{11}{subsection.1.4.1}%
-\contentsline {subsection}{\numberline {1.4.2}Harmel基的存在性}{12}{subsection.1.4.2}%
-\contentsline {subsection}{\numberline {1.4.3}线性空间的维数}{14}{subsection.1.4.3}%
-\contentsline {subsection}{\numberline {1.4.4}线性空间的维数的性质}{16}{subsection.1.4.4}%
-\contentsline {section}{\numberline {1.5}线性空间的同构}{18}{section.1.5}%
-\contentsline {subsection}{\numberline {1.5.1}同构的定义}{19}{subsection.1.5.1}%
-\contentsline {subsection}{\numberline {1.5.2}同构的性质}{19}{subsection.1.5.2}%
-\contentsline {section}{\numberline {1.6}线性子空间的直和}{23}{section.1.6}%
-\contentsline {subsection}{\numberline {1.6.1}子空间的和}{23}{subsection.1.6.1}%
-\contentsline {subsection}{\numberline {1.6.2}子空间的直和}{26}{subsection.1.6.2}%
-\contentsline {subsection}{\numberline {1.6.3}多个子空间的直和}{27}{subsection.1.6.3}%
-\contentsline {section}{\numberline {1.7}商空间}{29}{section.1.7}%
-\contentsline {subsection}{\numberline {1.7.1}商空间的定义}{30}{subsection.1.7.1}%
-\contentsline {subsection}{\numberline {1.7.2}商空间的性质}{31}{subsection.1.7.2}%
-\contentsline {section}{\numberline {1.8}对偶空间}{33}{section.1.8}%
-\contentsline {subsection}{\numberline {1.8.1}对偶空间的定义}{33}{subsection.1.8.1}%
-\contentsline {subsection}{\numberline {1.8.2}有限维对偶空间的对偶基}{33}{subsection.1.8.2}%
-\contentsline {subsection}{\numberline {1.8.3}双重对偶空间}{34}{subsection.1.8.3}%
-\contentsline {chapter}{\numberline {第二章\hspace {.3em}}线性映射}{37}{chapter.2}%
-\contentsline {section}{\numberline {2.1}线性映射的定义和运算}{37}{section.2.1}%
-\contentsline {subsection}{\numberline {2.1.1}线性映射的定义}{37}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}线性映射的运算}{38}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}线性映射的性质}{40}{subsection.2.1.3}%
-\contentsline {section}{\numberline {2.2}线性映射的核和像}{41}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}核与像的定义}{41}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}核与像的性质}{43}{subsection.2.2.2}%
-\contentsline {section}{\numberline {2.3}矩阵}{46}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}矩阵的定义}{46}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}矩阵的运算}{46}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}线性映射的矩阵}{48}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}矩阵的性质}{49}{subsection.2.3.4}%
-\contentsline {section}{\numberline {2.4}特殊矩阵}{49}{section.2.4}%
-\contentsline {section}{\numberline {2.5}可逆矩阵}{49}{section.2.5}%
-\contentsline {section}{\numberline {2.6}行列式}{49}{section.2.6}%
-\contentsline {subsection}{\numberline {2.6.1}行列式的定义和性质}{49}{subsection.2.6.1}%
-\contentsline {subsection}{\numberline {2.6.2}行列式在基上的展开}{50}{subsection.2.6.2}%
-\contentsline {subsection}{\numberline {2.6.3}矩阵的行列式}{51}{subsection.2.6.3}%
-\contentsline {subsection}{\numberline {2.6.4}矩阵的行列式的余子式展开}{51}{subsection.2.6.4}%
-\contentsline {subsection}{\numberline {2.6.5}矩阵乘积的行列式}{51}{subsection.2.6.5}%
-\contentsline {chapter}{\numberline {第三章\hspace {.3em}}线性映射的分解}{52}{chapter.3}%
-\contentsline {section}{\numberline {3.1}线性映射的特征值和特征向量}{52}{section.3.1}%
-\contentsline {section}{\numberline {3.2}矩阵的分块}{52}{section.3.2}%
-\contentsline {section}{\numberline {3.3}线性映射可对角化的条件}{52}{section.3.3}%
-\contentsline {section}{\numberline {3.4}自伴算子和正规算子}{52}{section.3.4}%
-\contentsline {section}{\numberline {3.5}谱定理}{52}{section.3.5}%
-\contentsline {chapter}{\numberline {第四章\hspace {.3em}}线性映射的Jordan标准形}{53}{chapter.4}%
-\contentsline {section}{\numberline {4.1}线性映射的不变子空间}{53}{section.4.1}%
-\contentsline {section}{\numberline {4.2}线性映射的最小多项式}{53}{section.4.2}%
-\contentsline {section}{\numberline {4.3}线性映射的Smith标准形}{53}{section.4.3}%
-\contentsline {section}{\numberline {4.4}线性映射的Jordan标准形}{53}{section.4.4}%
-\contentsline {chapter}{\numberline {第五章\hspace {.3em}}附录}{54}{chapter.5}%
-\contentsline {section}{\numberline {5.1}$\hom (V,W)$的维数}{54}{section.5.1}%
+\contentsline {chapter}{\numberline {第一章\hspace {.3em}}线性空间}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}线性空间的定义}{2}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}线性空间的定义}{2}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}线性子空间}{2}{subsection.1.1.2}%
+\contentsline {subsection}{\numberline {1.1.3}线性空间的性质}{2}{subsection.1.1.3}%
+\contentsline {section}{\numberline {1.2}线性组合}{3}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}度量线性空间}{4}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}向量组的线性相关性和线性无关性}{4}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}线性相关和线性无关的性质}{5}{subsection.1.2.3}%
+\contentsline {section}{\numberline {1.3}极大线性无关向量组、向量组的秩}{7}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}极大线性无关向量组}{8}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}向量组的等价}{8}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}向量组的秩}{11}{subsection.1.3.3}%
+\contentsline {section}{\numberline {1.4}基、线性空间的维数}{12}{section.1.4}%
+\contentsline {subsection}{\numberline {1.4.1}基的定义}{12}{subsection.1.4.1}%
+\contentsline {subsection}{\numberline {1.4.2}Harmel基的存在性}{13}{subsection.1.4.2}%
+\contentsline {subsection}{\numberline {1.4.3}线性空间的维数}{15}{subsection.1.4.3}%
+\contentsline {subsection}{\numberline {1.4.4}线性空间的维数的性质}{17}{subsection.1.4.4}%
+\contentsline {section}{\numberline {1.5}线性空间的同构}{19}{section.1.5}%
+\contentsline {subsection}{\numberline {1.5.1}同构的定义}{20}{subsection.1.5.1}%
+\contentsline {subsection}{\numberline {1.5.2}同构的性质}{20}{subsection.1.5.2}%
+\contentsline {section}{\numberline {1.6}线性子空间的直和}{24}{section.1.6}%
+\contentsline {subsection}{\numberline {1.6.1}子空间的和}{24}{subsection.1.6.1}%
+\contentsline {subsection}{\numberline {1.6.2}子空间的直和}{27}{subsection.1.6.2}%
+\contentsline {subsection}{\numberline {1.6.3}多个子空间的直和}{28}{subsection.1.6.3}%
+\contentsline {section}{\numberline {1.7}商空间}{30}{section.1.7}%
+\contentsline {subsection}{\numberline {1.7.1}商空间的定义}{31}{subsection.1.7.1}%
+\contentsline {subsection}{\numberline {1.7.2}商空间的性质}{32}{subsection.1.7.2}%
+\contentsline {section}{\numberline {1.8}对偶空间}{34}{section.1.8}%
+\contentsline {subsection}{\numberline {1.8.1}对偶空间的定义}{34}{subsection.1.8.1}%
+\contentsline {subsection}{\numberline {1.8.2}有限维对偶空间的对偶基}{34}{subsection.1.8.2}%
+\contentsline {subsection}{\numberline {1.8.3}双重对偶空间}{35}{subsection.1.8.3}%
+\contentsline {chapter}{\numberline {第二章\hspace {.3em}}线性映射}{38}{chapter.2}%
+\contentsline {section}{\numberline {2.1}线性映射的定义和运算}{38}{section.2.1}%
+\contentsline {subsection}{\numberline {2.1.1}线性映射的定义}{38}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}线性映射的运算}{39}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}线性映射的性质}{41}{subsection.2.1.3}%
+\contentsline {section}{\numberline {2.2}线性映射的核和像}{42}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}核与像的定义}{42}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}核与像的性质}{44}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}矩阵}{47}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}矩阵的定义}{47}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}矩阵的运算}{47}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}线性映射的矩阵}{49}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}矩阵的性质}{50}{subsection.2.3.4}%
+\contentsline {section}{\numberline {2.4}特殊矩阵}{51}{section.2.4}%
+\contentsline {section}{\numberline {2.5}可逆矩阵}{51}{section.2.5}%
+\contentsline {section}{\numberline {2.6}迹和行列式}{51}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}张量积}{51}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}张量和外积}{51}{subsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.6.3}行列式的定义和性质}{51}{subsection.2.6.3}%
+\contentsline {subsection}{\numberline {2.6.4}行列式在基上的展开}{52}{subsection.2.6.4}%
+\contentsline {subsection}{\numberline {2.6.5}矩阵的行列式}{53}{subsection.2.6.5}%
+\contentsline {subsection}{\numberline {2.6.6}矩阵的行列式的余子式展开}{53}{subsection.2.6.6}%
+\contentsline {subsection}{\numberline {2.6.7}矩阵乘积的行列式}{53}{subsection.2.6.7}%
+\contentsline {chapter}{\numberline {第三章\hspace {.3em}}线性映射的分解}{54}{chapter.3}%
+\contentsline {section}{\numberline {3.1}线性映射的特征值和特征向量}{54}{section.3.1}%
+\contentsline {section}{\numberline {3.2}矩阵的分块}{54}{section.3.2}%
+\contentsline {section}{\numberline {3.3}线性映射可对角化的条件}{54}{section.3.3}%
+\contentsline {section}{\numberline {3.4}自伴算子和正规算子}{54}{section.3.4}%
+\contentsline {section}{\numberline {3.5}谱定理}{54}{section.3.5}%
+\contentsline {chapter}{\numberline {第四章\hspace {.3em}}线性映射的Jordan标准形}{55}{chapter.4}%
+\contentsline {section}{\numberline {4.1}线性映射的不变子空间}{55}{section.4.1}%
+\contentsline {section}{\numberline {4.2}线性映射的最小多项式}{55}{section.4.2}%
+\contentsline {section}{\numberline {4.3}线性映射的Smith标准形}{55}{section.4.3}%
+\contentsline {section}{\numberline {4.4}线性映射的Jordan标准形}{55}{section.4.4}%
+\contentsline {chapter}{\numberline {第五章\hspace {.3em}}附录}{56}{chapter.5}%
+\contentsline {section}{\numberline {5.1}$\hom (V,W)$的维数}{56}{section.5.1}%

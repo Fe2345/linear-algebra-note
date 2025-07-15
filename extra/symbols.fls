@@ -1,9 +1,9 @@
-PWD d:/文件/学习/各个课程学习笔记收录/高等代数/chap2
+PWD d:/文件/学习/各个课程学习笔记收录/高等代数/extra
 INPUT d:/Program Files (x86)/texlive/2024/texmf.cnf
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/web2c/texmf.cnf
 INPUT d:/Program Files (x86)/texlive/2024/texmf-var/web2c/xetex/xelatex.fmt
-INPUT d:/文件/学习/各个课程学习笔记收录/高等代数/chap2/chap.tex
-OUTPUT chap.log
+INPUT d:/文件/学习/各个课程学习笔记收录/高等代数/extra/symbols.tex
+OUTPUT symbols.log
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/ctex/ctexbook.cls
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/ctex/ctexbook.cls
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/ctex/config/ctexbackend.cfg
@@ -473,18 +473,18 @@ INPUT ../config/custom.tex
 INPUT ../config/paragraph.tex
 INPUT ../config/paragraph.tex
 INPUT ../config/paragraph.tex
-INPUT ./chap.aux
-INPUT ./chap.aux
-INPUT chap.aux
-OUTPUT chap.aux
+INPUT ./symbols.aux
+INPUT ./symbols.aux
+INPUT symbols.aux
+OUTPUT symbols.aux
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/graphics/color.sty
-INPUT ./chap.out
-INPUT ./chap.out
-INPUT chap.out
-INPUT chap.out
-INPUT ./chap.out
-INPUT ./chap.out
-OUTPUT chap.out
+INPUT ./symbols.out
+INPUT ./symbols.out
+INPUT symbols.out
+INPUT symbols.out
+INPUT ./symbols.out
+INPUT ./symbols.out
+OUTPUT symbols.out
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi12.tfm
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi8.tfm
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmmi6.tfm
@@ -521,7 +521,7 @@ INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/c
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/cm/cmbsy10.tfm
 INPUT d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy7.tfm
-OUTPUT chap.xdv
-INPUT chap.aux
-INPUT ./chap.out
-INPUT ./chap.out
+OUTPUT symbols.xdv
+INPUT symbols.aux
+INPUT ./symbols.out
+INPUT ./symbols.out
