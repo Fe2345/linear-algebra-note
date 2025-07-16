@@ -537,10 +537,133 @@
 					
 						注意到，$(A+B)(\alpha_1,\cdots,\alpha_m)=A(\alpha_1,\cdots,\alpha_m)+B(\alpha_1,\cdots,\alpha_m)$
 
-						$=(\beta_1,\cdots,\beta_n)\symbfit{A}+=(\beta_1,\cdots,\beta_n)\symbfit{B}=(\beta_1,\cdots,\beta_n)(\symbfit{A}+\symbfit{B})$
+						$=(\beta_1,\cdots,\beta_n)\symbfit{A}+(\beta_1,\cdots,\beta_n)\symbfit{B}=(\beta_1,\cdots,\beta_n)(\symbfit{A}+\symbfit{B})$
 
 						命题得证。
 					\end{proof}
+				\point{}
+					\begin{proposition}
+						设$A \in \hom(V,W),k \in F$，其中$V,W$是$F$上的有限维线性空间
+
+						分别取$V,W$的一个基$\{\alpha_1,\cdots,\alpha_m\},\{\beta_1,\cdots,\beta_n\}$
+
+						设$A$在$\{\alpha_1,\cdots,\alpha_m\},\{\beta_1,\cdots,\beta_n\}$下的矩阵为$\symbfit{A}$
+
+						那么：$kA$在$\{\alpha_1,\cdots,\alpha_m\},\{\beta_1,\cdots,\beta_n\}$下的矩阵为$k\symbfit{A}$
+					\end{proposition}
+					\begin{proof}
+						只需证明：$(kA)(\alpha_1,\cdots,\alpha_m)=(\beta_1,\cdots,\beta_n)(k\symbfit{A})$
+					
+						注意到，$(kA)(\alpha_1,\cdots,\alpha_m)=k\left(A(\alpha_1,\cdots,\alpha_m)\right)$
+
+						$=k\left((\beta_1,\cdots,\beta_n)\symbfit{A}\right)=(\beta_1,\cdots,\beta_n)(k\symbfit{A})$
+
+						命题得证。
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						设$A\in \hom(W,U),B \in \hom(V,W)$，其中$V,W$是$F$上的有限维线性空间
+
+						分别取$V,W,U$的一个基$\{\alpha_1,\cdots,\alpha_m\},\{\beta_1,\cdots,\beta_n\},\{\gamma_1,\cdots,\gamma_k\}$
+
+						设$A$在$\{\beta_1,\cdots,\beta_n\},\{\gamma_1,\cdots,\gamma_k\}$下的矩阵为$\symbfit{A}$
+						
+						$B$在$\{\alpha_1,\cdots,\alpha_m\},\{\beta_1,\cdots,\beta_n\}$下的矩阵为$\symbfit{B}$
+
+						那么：$AB$在$\{\alpha_1,\cdots,\alpha_m\},\{\gamma_1,\cdots,\gamma_k\}$下的矩阵为$\symbfit{A}\symbfit{B}$
+					\end{proposition}
+					\begin{proof}
+						只需证明：$(AB)(\alpha_1,\cdots,\alpha_m)=(\gamma_1,\cdots,\gamma_k)(\symbfit{A}\symbfit{B})$
+					
+						注意到，$(AB)(\alpha_1,\cdots,\alpha_m)=A\left(B(\alpha_1,\cdots,\alpha_m)\right)$
+
+						$=A((\beta_1,\cdots,\beta_n)\symbfit{B})=A(\sum\limits_{i=1}^{n}\symbfit{B}(i,1)\beta_i,\cdots,\sum\limits_{i=1}^{n}\symbfit{B}(i,m)\beta_i)$
+
+						$=(\sum\limits_{i=1}^{n}\symbfit{B}(i,1)A(\beta_i),\cdots,\sum\limits_{i=1}^{n}\symbfit{B}(i,m)A(\beta_i))=\left(A(\beta_1),\cdots,A(\beta_n)\right)\symbfit{B}$
+
+						$\left((\gamma_1,\cdots,\gamma_k)\symbfit{A}\right)\symbfit{B}=\left((\gamma_1,\cdots,\gamma_k)\right)(\symbfit{A}\symbfit{B})$
+						
+						命题得证。
+					\end{proof}
+					至此，我们证明了有限维到有限维的线性映射的运算和矩阵的运算别无二致
+				\point{}
+					\begin{proposition}
+						$\dim_F M_{m \times n}(F) = mn$
+					\end{proposition}
+					\begin{proof}
+						设$\symbfit{J_{ij}} \in M_{m \times n}(F)$满足：
+
+						$\symbfit{J_{ij}}(k;l)=\begin{cases}
+							1_F,k=i \wedge l=j \\
+							0_F,k \neq i \vee l \neq j
+						\end{cases}$
+
+						显然$\{\symbfit{J}_{ij}\}$线性无关
+
+						那么，只需注意到：
+
+						$\forall \symbfit{A} \in M_{m \times n}(F),\symbfit{A} = \sum\limits_{i=1}^{m}\left(\sum\limits_{j=1}^{n}A(i;j)\symbfit{J_{ij}}\right)$
+					
+						于是$\dim_F M_{m \times n}(F)=\card \{\symbfit{J}_{ij}\}=mn$，命题得证。
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						设$V,W$是$F$上的线性空间，$\dim V = n < \aleph_0,\dim W = m < \aleph_0$
+
+						那么：$\hom(V,W) \cong M_{m \times n}(F)$
+					\end{proposition}
+					\begin{proof}
+						注意到：$\dim hom(V,W)=mn$
+
+						依照前面的命题和同构的性质，命题得证。
+					\end{proof}
+					此命题中我们使用了有关线性映射空间的维数的结论，证明参见附录。
+				\point{矩阵乘法的交换律}
+					\begin{proposition}
+						设$\symbfit{A} \in M_{m \times n}(F),\symbfit{B} \in M_{n \times k}(F),\symbfit{C} \in M_{k \times s}(F)$
+
+						那么有：$\symbfit{A}(\symbfit{B}\symbfit{C})=(\symbfit{A}\symbfit{B})\symbfit{C}$
+					\end{proposition}
+					\begin{proposition}
+						分别任取$F$上的线性空间$V,W,U,H$，使得$\dim V = n,\dim W=m,\dim U = k ,\dim H = s$
+
+						依照前面的命题，一定能找到$A \in \hom(V,W),B \in \hom(U,V),C \in \hom(H,U)$，使得$\symbfit{A},\symbfit{B},\symbfit{C}$分别是它们的矩阵
+
+						注意到，$\symbfit{A}(\symbfit{B}\symbfit{C}),(\symbfit{A}\symbfit{B})\symbfit{C}$分别是$A(BC),(AB)C$的矩阵。
+						
+						而因为$A(BC)=(AB)C$，所以一定有$\symbfit{A}(\symbfit{B}\symbfit{C})=(\symbfit{A}\symbfit{B})\symbfit{C}$，命题得证。
+					\end{proposition}
+				\point{矩阵乘法的分配律}
+					\begin{proposition}
+						如果$\symbfit{A} \in M_{m \times n}(F),\symbfit{B} \in M_{n \times k}(F),\symbfit{C} \in M_{n \times k}(F)$
+
+						那么有：$\symbfit{A}(\symbfit{B}+\symbfit{C})=\symbfit{A}\symbfit{B}+\symbfit{A}\symbfit{C}$；
+
+						如果$\symbfit{A} \in M_{n \times k}(F),\symbfit{B} \in M_{n \times k}(F),\symbfit{C} \in M_{k \times s}(F)$
+
+						那么有：$(\symbfit{A}+\symbfit{B})\symbfit{C}=\symbfit{A}\symbfit{C}+\symbfit{B}\symbfit{C}$
+					\end{proposition}
+					\begin{proposition}
+						分别任取$F$上的线性空间$V,W,U,H$，使得$\dim V = n,\dim W=m,\dim U = k ,\dim H = s$
+
+						先证左分配律：
+						
+						依照前面的命题，一定能找到$A \in \hom(V,W),B \in \hom(U,V),C \in \hom(U,V)$，使得$\symbfit{A},\symbfit{B},\symbfit{C}$分别是它们的矩阵
+
+						注意到，$\symbfit{A}(\symbfit{B}+\symbfit{C}),\symbfit{A}\symbfit{B}+\symbfit{A}\symbfit{C}$分别是$A(B+C),AB+AC$的矩阵。
+						
+						而因为$A(B+C)=AB+AC$，所以一定有$\symbfit{A}(\symbfit{B}+\symbfit{C})=\symbfit{A}\symbfit{B}+\symbfit{A}\symbfit{C}$
+
+						再证右分配律：
+
+						依照前面的命题，一定能找到$A \in \hom(U,V),B \in \hom(U,V),C \in \hom(H,U)$，使得$\symbfit{A},\symbfit{B},\symbfit{C}$分别是它们的矩阵
+
+						注意到，$(\symbfit{A}+\symbfit{B})\symbfit{C},\symbfit{A}\symbfit{C}+\symbfit{B}\symbfit{C}$分别是$(A+B)C,AC+BC$的矩阵。
+						
+						而因为$(A+B)C=AC+BC$，所以一定有$(\symbfit{A}+\symbfit{B})\symbfit{C}=\symbfit{A}\symbfit{C}+\symbfit{B}\symbfit{C}$
+						
+						命题得证。
+					\end{proposition}
 			\end{para}
 	\section{特殊矩阵}
 	\section{可逆矩阵}
@@ -575,7 +698,13 @@
 				任意的$f:V \times W \to Z$的双线性映射$g$，存在唯一的线性映射$h:V \otimes W \to Z$，使得$g = h \circ f$
 
 				那么，我们称$V \otimes W$是$V$和$W$的张量积
+
+				此时，我们也记$\alpha \otimes \beta := f(\alpha ,\beta )$
 			\end{defn}
+			在继续研究之前，我们需要先证明张量积的确是存在的：
+			\begin{proposition}
+				
+			\end{proposition}
 		\subsection{张量和外积}
 			
 		\subsection{行列式的定义和性质}

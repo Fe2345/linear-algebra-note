@@ -43,26 +43,26 @@
 \contentsline {subsection}{\numberline {2.3.2}矩阵的运算}{47}{subsection.2.3.2}%
 \contentsline {subsection}{\numberline {2.3.3}线性映射的矩阵}{49}{subsection.2.3.3}%
 \contentsline {subsection}{\numberline {2.3.4}矩阵的性质}{50}{subsection.2.3.4}%
-\contentsline {section}{\numberline {2.4}特殊矩阵}{51}{section.2.4}%
-\contentsline {section}{\numberline {2.5}可逆矩阵}{51}{section.2.5}%
-\contentsline {section}{\numberline {2.6}迹和行列式}{51}{section.2.6}%
-\contentsline {subsection}{\numberline {2.6.1}张量积}{51}{subsection.2.6.1}%
-\contentsline {subsection}{\numberline {2.6.2}张量和外积}{51}{subsection.2.6.2}%
-\contentsline {subsection}{\numberline {2.6.3}行列式的定义和性质}{51}{subsection.2.6.3}%
-\contentsline {subsection}{\numberline {2.6.4}行列式在基上的展开}{52}{subsection.2.6.4}%
-\contentsline {subsection}{\numberline {2.6.5}矩阵的行列式}{53}{subsection.2.6.5}%
-\contentsline {subsection}{\numberline {2.6.6}矩阵的行列式的余子式展开}{53}{subsection.2.6.6}%
-\contentsline {subsection}{\numberline {2.6.7}矩阵乘积的行列式}{53}{subsection.2.6.7}%
-\contentsline {chapter}{\numberline {第三章\hspace {.3em}}线性映射的分解}{54}{chapter.3}%
-\contentsline {section}{\numberline {3.1}线性映射的特征值和特征向量}{54}{section.3.1}%
-\contentsline {section}{\numberline {3.2}矩阵的分块}{54}{section.3.2}%
-\contentsline {section}{\numberline {3.3}线性映射可对角化的条件}{54}{section.3.3}%
-\contentsline {section}{\numberline {3.4}自伴算子和正规算子}{54}{section.3.4}%
-\contentsline {section}{\numberline {3.5}谱定理}{54}{section.3.5}%
-\contentsline {chapter}{\numberline {第四章\hspace {.3em}}线性映射的Jordan标准形}{55}{chapter.4}%
-\contentsline {section}{\numberline {4.1}线性映射的不变子空间}{55}{section.4.1}%
-\contentsline {section}{\numberline {4.2}线性映射的最小多项式}{55}{section.4.2}%
-\contentsline {section}{\numberline {4.3}线性映射的Smith标准形}{55}{section.4.3}%
-\contentsline {section}{\numberline {4.4}线性映射的Jordan标准形}{55}{section.4.4}%
-\contentsline {chapter}{\numberline {第五章\hspace {.3em}}附录}{56}{chapter.5}%
-\contentsline {section}{\numberline {5.1}$\hom (V,W)$的维数}{56}{section.5.1}%
+\contentsline {section}{\numberline {2.4}特殊矩阵}{52}{section.2.4}%
+\contentsline {section}{\numberline {2.5}可逆矩阵}{52}{section.2.5}%
+\contentsline {section}{\numberline {2.6}迹和行列式}{52}{section.2.6}%
+\contentsline {subsection}{\numberline {2.6.1}张量积}{52}{subsection.2.6.1}%
+\contentsline {subsection}{\numberline {2.6.2}张量和外积}{54}{subsection.2.6.2}%
+\contentsline {subsection}{\numberline {2.6.3}行列式的定义和性质}{54}{subsection.2.6.3}%
+\contentsline {subsection}{\numberline {2.6.4}行列式在基上的展开}{55}{subsection.2.6.4}%
+\contentsline {subsection}{\numberline {2.6.5}矩阵的行列式}{56}{subsection.2.6.5}%
+\contentsline {subsection}{\numberline {2.6.6}矩阵的行列式的余子式展开}{56}{subsection.2.6.6}%
+\contentsline {subsection}{\numberline {2.6.7}矩阵乘积的行列式}{56}{subsection.2.6.7}%
+\contentsline {chapter}{\numberline {第三章\hspace {.3em}}线性映射的分解}{57}{chapter.3}%
+\contentsline {section}{\numberline {3.1}线性映射的特征值和特征向量}{57}{section.3.1}%
+\contentsline {section}{\numberline {3.2}矩阵的分块}{57}{section.3.2}%
+\contentsline {section}{\numberline {3.3}线性映射可对角化的条件}{57}{section.3.3}%
+\contentsline {section}{\numberline {3.4}自伴算子和正规算子}{57}{section.3.4}%
+\contentsline {section}{\numberline {3.5}谱定理}{57}{section.3.5}%
+\contentsline {chapter}{\numberline {第四章\hspace {.3em}}线性映射的Jordan标准形}{58}{chapter.4}%
+\contentsline {section}{\numberline {4.1}线性映射的不变子空间}{58}{section.4.1}%
+\contentsline {section}{\numberline {4.2}线性映射的最小多项式}{58}{section.4.2}%
+\contentsline {section}{\numberline {4.3}线性映射的Smith标准形}{58}{section.4.3}%
+\contentsline {section}{\numberline {4.4}线性映射的Jordan标准形}{58}{section.4.4}%
+\contentsline {chapter}{\numberline {第五章\hspace {.3em}}附录}{59}{chapter.5}%
+\contentsline {section}{\numberline {5.1}$\hom (V,W)$的维数}{59}{section.5.1}%
