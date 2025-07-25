@@ -407,6 +407,17 @@
 				\vdots \\
 				a_{mi}
 			\end{pmatrix},\beta_j = (a_{j1},\cdots,a_{jn})$
+			可以看出来，矩阵也是可以视为一个向量组，因此，我们也可以对其定义秩：
+			\begin{defn}{矩阵的秩}{}
+				设$\symbfit{A}=(\alpha_1,\cdots,\alpha_n) \in M_{m \times n}(F)$
+
+				我们定义：
+				\begin{equation}
+					\rank(\symbfit{A})=\rank(\alpha_1,\cdots,\alpha_n)
+				\end{equation}
+				称为矩阵的秩
+			\end{defn}
+			后续我们会看到，矩阵秩、线性映射秩、向量组秩其实是统一的
 		\subsection{矩阵的运算}
 		\begin{para}{0}
 			\point{相等}
@@ -689,6 +700,8 @@
 					上述结论说明：$\symbfit{I_n}$是$M_n(F)$的乘法单位元，它一般也被称为单位矩阵
 
 					在证明过程中，我们还发现：不同于绝大多数线性映射的矩阵和其基的选择有关，恒等变换在任意基下的矩阵都是单位矩阵
+
+					我们将在后续用一节专门研究可逆矩阵
 				\point{}
 					\begin{proposition}
 						$\forall k \in F,\symbfit{A} \in M_{n \times m}(F),\symbfit{B} \in M_{m \times k}(F)$
@@ -696,8 +709,100 @@
 						$k(\symbfit{A}\symbfit{B})=(k\symbfit{A})\symbfit{B}=\symbfit{A}(k\symbfit{B})$
 					\end{proposition}
 					\begin{proposition}
+						随意取三个$F$上的线性空间$V,W,U$，使得$\dim V = m,\dim W = n,\dim U = k$
+
+						依照前面的命题，一定能找到$A \in \hom(V,W),B \in \hom(U,V)$，使得$\symbfit{A},\symbfit{B}$分别是它们的矩阵
+
+						注意到，$k(\symbfit{A}\symbfit{B}),(k\symbfit{A})\symbfit{B},\symbfit{A}(k\symbfit{B})$分别是$k(AB),(kA)B,A(kB)$的矩阵。
+						
+						而因为$k(AB)=(kA)B=A(kB)$，所以一定有$k(\symbfit{A}\symbfit{B})=(k\symbfit{A})\symbfit{B}=\symbfit{A}(k\symbfit{B})$
+						
+						命题得证。
+					\end{proposition}
+				\point{}
+					\begin{proposition}
+						$\symbfit{A}^{m} = \symbfit{A} \cdot \symbfit{A}^{m-1} = \symbfit{A}^{m-1}\cdot \symbfit{A},m \geqslant 1$
+					\end{proposition}
+					\begin{proof}
+						只需证明：$\forall A \in \hom(V,V)$，任取$V$的一个基$\{\alpha_1,\cdots,\alpha_n\}$，如果$\symbfit{A}$是$A$在$\{\alpha_1,\cdots,\alpha_n\}$下的矩阵，那么$\symbfit{A}^m$是$A^m$在$\{\alpha_1,\cdots,\alpha_n\}$下的矩阵
+
+						使用数学归纳法。首先，当$m=1$时，结论就假设，显然成立
+
+						现在假设$m$时命题成立，于是$\symbfit{A}^{m+1}=A \circ A^m$是在$\{\alpha_1,\cdots,\alpha_n\}$下的矩阵为$\symbfit{A}\cdot\symbfit{A}^m=\symbfit{A}^{m+1}$
+
+						因此结论成立，依照之前我们证明的线性映射性质，命题显然成立。
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						$(\symbfit{A}+\symbfit{B})^T = \symbfit{A}^T+\symbfit{B}^T$
+					\end{proposition}
+					\begin{proof}
+						$(\symbfit{A}+\symbfit{B})^T (j;i) = (\symbfit{A}+\symbfit{B})(i;j) = \symbfit{A}(i;j)+\symbfit{B}(i;j)=\symbfit{A}^T(j;i)+\symbfit{B}^T(j;i)$
+
+						命题得证
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						$(k\symbfit{A})^T = k\symbfit{A}^T$
+					\end{proposition}
+					\begin{proof}
+						$(k\symbfit{A})^T(j;i)=(k\symbfit{A})(i;j)=k\symbfit{A}(i;j) = k\symbfit{A}^T(j;i)$
+
+						命题得证
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						设$V,W$是$F$上的两个线性空间，$\dim V = n < \aleph_0,\dim W = m < \aleph_0$
+
+						分别取$V,W$的一个基$\{\alpha_1,\cdots,\alpha_n\},\{\beta_1,\cdots,\beta_m\}$，设其对偶基是$\{f_1,\cdots,f_n\},\{g_1,\cdots,g_m\}$
+
+						$\forall A \in \hom(V,W)$，如果它在$\{\alpha_1,\cdots,\alpha_n\},\{\beta_1,\cdots,\beta_m\}$下的矩阵是$\symbfit{A}$
+
+						那么$A^* \in \hom(W^*,V^*)$在$\{g_1,\cdots,g_m\},\{f_1,\cdots,f_n\}$下的矩阵是$\symbfit{A}^T$
+					\end{proposition}
+					\begin{proof}
+						设$A^* \in \hom(W^*,V^*)$在$\{g_1,\cdots,g_m\},\{f_1,\cdots,f_n\}$下的矩阵是$\symbfit{A}'$
+
+						$A^*(g_j)=\sum\limits_{i=1}^{n} \symbfit{A}'(i;j) f_i$
+
+						$\Rightarrow A^*(g_j)(\alpha_k)=\sum\limits_{i=1}^{n} \symbfit{A}'(i;j) f_i(\alpha_k)$
+
+						$\Rightarrow (g_jA)(\alpha_k)=\sum\limits_{i=1}^{n} \symbfit{A}'(i;j) \delta_{ik}$
+
+						$\Rightarrow g_j(\sum\limits_{l=1}^{m} \symbfit{A}(l;k) \beta_l)=\symbfit{A}'(k;j)$
+
+						$\Rightarrow \symbfit{A}(j;k)=\symbfit{A}'(k;j)$
+
+						$\Rightarrow \symbfit{A}'=\symbfit{A}^T$
+
+						命题得证
+					\end{proof}
+				\point{}
+					我们先证明一个引理
+					\begin{lemma}{}{}
+						设$V,W,U$是$F$上的两个线性空间，$\dim V = n < \aleph_0,\dim W = m < \aleph_0,\dim U = k < \aleph_0$
+
+						$\forall A \in \hom(V,W),B \in \hom(U,V)$
+
+						那么$(AB)^*=B^*A^*$
+					\end{lemma}
+					\begin{proof}
+						$\forall g \in W^*,\gamma \in U$
+
+						$(AB)^*(g)(\gamma )=(gAB)(\gamma )=B^*(A^*(g))(\gamma )=(B^*A^*)(g)(\gamma )$
+
+						$\Rightarrow (AB)^*=B^*A^*$
+					\end{proof}
+					\begin{proposition}
 						
 					\end{proposition}
+				\point{}
+					\begin{proposition}
+						$(\symbfit{A}\symbfit{B})^T = \symbfit{B}^T\symbfit{A}^T$
+					\end{proposition}
+					\begin{proof}
+						
+					\end{proof}
 			\end{para}
 	\section{特殊矩阵}
 	\section{可逆矩阵}
