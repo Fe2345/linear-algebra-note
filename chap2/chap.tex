@@ -794,11 +794,69 @@
 						$\Rightarrow (AB)^*=B^*A^*$
 					\end{proof}
 					\begin{proposition}
-						
+						$(\symbfit{A}\symbfit{B})^T = \symbfit{B}^T\symbfit{A}^T$
 					\end{proposition}
+					\begin{proof}
+						任取$F$上的三个线性空间$V,W,U$，使得$\dim V = m < \aleph_0,\dim W = n < \aleph_0,\dim U = k < \aleph_0$
+
+						分别取$V,W,U$的一个基$\{\alpha_1,\cdots,\alpha_m\},\{\beta_1,\cdots,\beta_n\},\{\gamma_1,\cdots,\gamma_k\}$
+
+						并记其对偶基为$\{f_1,\cdots,f_m\},\{g_1,\cdots,g_n\},\{u_1,\cdots,u_k\}$
+
+						显然存在$A \in \hom(V,W)$，使得它在$\{\alpha_1,\cdots,\alpha_m\},\{\beta_1,\cdots,\beta_n\}$下的矩阵为$\symbfit{A}$
+						
+						存在$B \in \hom(U,V)$，使得它在$\{\gamma_1,\cdots,\gamma_k\},\{\alpha_1,\cdots,\alpha_m\}$下的矩阵为$\symbfit{B}$
+
+						注意到：$(\symbfit{A}\symbfit{B})^T$是$(AB)^*$在$\{g_1,\cdots,g_n\},\{u_1,\cdots,u_k\}$下的矩阵
+
+						$\symbfit{B}^T\symbfit{A}^T$是$B^*A^*$在$\{g_1,\cdots,g_n\},\{u_1,\cdots,u_k\}$下的矩阵
+
+						那么，因为$(AB)^*=B^*A^*$，所以一定有$(\symbfit{A}\symbfit{B})^T = \symbfit{B}^T\symbfit{A}^T$
+					\end{proof}
 				\point{}
 					\begin{proposition}
-						$(\symbfit{A}\symbfit{B})^T = \symbfit{B}^T\symbfit{A}^T$
+						设$V,W$是$F$上的两个线性空间，$\dim V = m < \aleph_0,\dim W = n < \aleph_0$
+
+						任取$V,W$的一个基$\{\alpha_1,\cdots,\alpha_m\},\{\beta_1,\cdots,\beta_n\}$
+						
+						$\forall A \in \hom(V,W)$，设$\symbfit{A}$是$A$在$\{\alpha_1,\cdots,\alpha_m\},\{\beta_1,\cdots,\beta_n\}$下的矩阵
+
+						那么有：$\rank(A)=\rank(\symbfit{A})$
+					\end{proposition}
+					\begin{proof}
+						设$\symbfit{A}=(\gamma_1,\cdots,\gamma _m)$
+
+						我们只需证明：$\dim \im(A)=\dim \span(\gamma_1,\cdots,\gamma _m)$，因为$\rank(\gamma_1,\cdots,\gamma _m)=\dim \span(\gamma_1,\cdots,\gamma _m)$（参阅命题1.4.7）
+
+						显然，$\im(A)=\span(A(\alpha_1),\cdots,A(\alpha_m))$
+
+						考虑自然同构：$\phi : W \ni \sum\limits_{i=1}^{n} a_i \beta_i \mapsto \begin{pmatrix}
+							a_1 \\
+							\vdots \\
+							a_n
+						\end{pmatrix} \in F^n$
+
+						显然$\phi $是一个同构映射。
+
+						那么，只需注意到：$\forall k_1A(\alpha_1)+\cdots,k_mA(\alpha_m)\in \im(A)$
+						
+						$\phi (k_1A(\alpha_1)+\cdots,k_mA(\alpha_m))=k_1\gamma_1+\cdots,k_m\gamma_m \in \span(\alpha_1,\cdots,\alpha_m)$
+
+						$\forall k_1\gamma_1+\cdots,k_m\gamma_m \in \span(\alpha_1,\cdots,\alpha_m)$
+
+						$\phi^{-1}(k_1\gamma_1+\cdots,k_m\gamma_m)=k_1A(\alpha_1)+\cdots,k_mA(\alpha_m)\in \im(A)$
+
+						因此，$\im(A) \cong \span(\gamma_1,\cdots,\gamma _m)$，于是命题得证
+					\end{proof}
+					至此，我们证明了，矩阵、向量组、线性映射的秩是统一的。
+				\point{矩阵行秩等于列秩}
+					\begin{proposition}
+						设$\symbfit{A}=(\alpha_1,\cdots,\alpha_n)=\begin{pmatrix}
+							\beta_1 \\
+							\vdots \\
+							\beta_m
+						\end{pmatrix}$
+						那么，$\rank(\alpha_1,\cdots,\alpha_n)=\rank(\beta_1,\cdots,\beta_m)$
 					\end{proposition}
 					\begin{proof}
 						
@@ -806,6 +864,26 @@
 			\end{para}
 	\section{特殊矩阵}
 	\section{可逆矩阵}
+		可逆矩阵其实就是矩阵环$M_n(F)$中的可逆元。本节中我们将研究可逆矩阵的一些基本性质，以及矩阵环中的特殊性质。最后，我们会看到它的一个简单应用：过渡矩阵和相似
+		\subsection{可逆矩阵的定义}
+			\begin{defn}{可逆矩阵}{}
+				设$\symbfit{A} \in M_n(F)$，如果$\exists \symbfit{A}^{-1} \in M_n(F)$，使得：
+
+				\begin{equation}
+					\symbfit{A}\symbfit{A}^{-1}=\symbfit{A}^{-1}\symbfit{A}=\symbfit{I}
+				\end{equation}
+				那么我们称$\symbfit{A}$是一个可逆矩阵，并称$\symbfit{A}^{-1}$是$\symbfit{A}$的逆矩阵
+			\end{defn}
+		\subsection{可逆矩阵的性质}
+			\begin{para}{0}
+				\point{}
+					\begin{proposition}
+						如果$\symbfit{A}$可逆，那么$\left(\symbfit{A}^{-1}\right)^{-1}=\symbfit{A}$
+					\end{proposition}
+					\begin{proof}
+						依照定义显然。
+					\end{proof}
+			\end{para}
 	\section{迹和行列式}
 		\subsection{张量积}
 			在研究迹和行列式前，我们先研究张量积。张量积一般应用于多重线性映射的研究中，后面我们会看到：行列式是一种特殊的多重线性映射。

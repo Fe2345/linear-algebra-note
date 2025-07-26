@@ -1,21 +1,21 @@
 # Fdb version 4
-["xdvipdfmx"] 1752648609.65583 "main.xdv" "main.pdf" "main" 1752648610.34147 0
-  "main.xdv" 1752648609 1033344 96022824f116f117ffeef25ec112344f "xelatex"
+["xdvipdfmx"] 1753515150.73354 "main.xdv" "main.pdf" "main" 1753515151.40792 0
+  "main.xdv" 1753515150 1117352 610b0d6b8d3f917dca7e502d4b2d5a01 "xelatex"
   (generated)
   "main.pdf"
   (rewritten before read)
-["xelatex"] 1752648606.92586 "d:/Data/MyFiles/学习/各个课程学习笔记收录/高等代数/main.tex" "main.xdv" "main" 1752648610.32807 0
+["xelatex"] 1753515147.76675 "d:/Data/MyFiles/学习/各个课程学习笔记收录/高等代数/main.tex" "main.xdv" "main" 1753515151.39403 0
   "c:/Windows/Fonts/msyh.ttc" 1733915345 19704352 1e10e74402e59d54499af795caf0b135 ""
-  "chap1/chap.aux" 1752648609 5634 2bc1a0e252116d4100568bc76dd36bd1 "xelatex"
+  "chap1/chap.aux" 1753515150 5634 2bc1a0e252116d4100568bc76dd36bd1 "xelatex"
   "chap1/chap.tex" 1750303937 79025 b1c0eaf83e15e2ff6baec64e181421cf ""
-  "chap2/chap.aux" 1752648609 4177 d4ca6becec0c40a41b7d5a37e3b008dc "xelatex"
-  "chap2/chap.tex" 1752648606 36135 37dee025f804c70c0565370ad5b7fde6 ""
-  "chap3/chap.aux" 1752648609 1994 3556864b104b95572bf28096d13c1391 "xelatex"
+  "chap2/chap.aux" 1753515150 4444 8c8c91977a5433dd32c714a5babb4ee2 "xelatex"
+  "chap2/chap.tex" 1753515052 47524 c0626770ef00952cfbb9e2b882a17940 ""
+  "chap3/chap.aux" 1753515150 1995 ea6c6dff51cb776e8b457018d17280d7 "xelatex"
   "chap3/chap.tex" 1750303937 464 483138fe05aa9123ce9fa239f4568ccc ""
-  "chap4/chap.aux" 1752648609 1897 104fa2ba209464cdcda55ce62029ba32 "xelatex"
+  "chap4/chap.aux" 1753515150 1898 48fcbeabdae599227e6710e6439b56d1 "xelatex"
   "chap4/chap.tex" 1750303937 453 b484d62f012f1297c47661a773f12031 ""
   "config/_config.tex" 1744951838 398 ed5c3776625a7c32e405f855ba9af84e ""
-  "config/cover.aux" 1752648608 1141 7d63e8682bb6208a9874121d33f6552d "xelatex"
+  "config/cover.aux" 1753515149 1141 7d63e8682bb6208a9874121d33f6552d "xelatex"
   "config/cover.tex" 1735992666 569 e6962aaf1ab693c8ae87789db235e8d7 ""
   "config/cover_text_0.tex" 1699031078 104 290d86fe46a8e42bb0513c12a3685e25 ""
   "config/custom.tex" 1747724549 972 b72dad33b80522224c9c47017c6a3fc1 ""
@@ -302,14 +302,14 @@
   "d:/texlive/2024/texmf-dist/web2c/texmf.cnf" 1748999521 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "d:/texlive/2024/texmf-var/web2c/xetex/xelatex.fmt" 1749004641 10849655 47f8f8f8fb7d6ca8dbef5fbc0b941dc5 ""
   "d:/texlive/2024/texmf.cnf" 1749004529 713 e69b156964470283e0530f5060668171 ""
-  "extra/extra.aux" 1752648609 1470 be7c3d7688896ff267f3d741d70f3dc4 "xelatex"
+  "extra/extra.aux" 1753515150 1471 cd09e12166de7129ba240d07ce7b6011 "xelatex"
   "extra/extra.tex" 1751875338 7876 11fc0e717b05c7bca3905d0b058caaf7 ""
-  "extra/symbols.aux" 1752648608 1142 2fab282cbc8f5bca93bcbc6421dcc1df "xelatex"
+  "extra/symbols.aux" 1753515149 1142 2fab282cbc8f5bca93bcbc6421dcc1df "xelatex"
   "extra/symbols.tex" 1752566096 462 6ec72b6c1ad2c0b3b40cc93f4b37fd3b ""
-  "main.aux" 1752648609 408 e145377641af14a481311254c6ab53ac "xelatex"
-  "main.out" 1752648609 7815 b384374bf8af1374f7b87d74a60acc0c "xelatex"
+  "main.aux" 1753515150 408 23d2ddf6114e96f769b32fb1c2137a62 "xelatex"
+  "main.out" 1753515150 8051 b3d5ba21de56f8afda73823a65b3c264 "xelatex"
   "main.tex" 1752566096 335 273df6435849d581cf6533310b077b27 ""
-  "main.toc" 1752648609 6046 f2ef7ca539cd38a437acddb7262655b7 "xelatex"
+  "main.toc" 1753515150 6230 792aac68ab3f29383edd38cc0a72ab42 "xelatex"
   (generated)
   "chap1/chap.aux"
   "chap2/chap.aux"
