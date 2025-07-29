@@ -1,10 +1,10 @@
 # Fdb version 4
-["xdvipdfmx"] 1752506234.69565 "symbols.xdv" "symbols.pdf" "symbols" 1752506235.33922 0
-  "symbols.xdv" 1752506234 12992 08958933db328120154f8ad23ec69602 "xelatex"
+["xdvipdfmx"] 1753630391.05067 "symbols.xdv" "symbols.pdf" "symbols" 1753630391.75081 0
+  "symbols.xdv" 1753630390 15820 3a5a8afc21248015b11349730c90d867 "xelatex"
   (generated)
   "symbols.pdf"
   (rewritten before read)
-["xelatex"] 1752506232.39381 "d:/文件/学习/各个课程学习笔记收录/高等代数/extra/symbols.tex" "symbols.xdv" "symbols" 1752506235.32681 0
+["xelatex"] 1753630388.50042 "d:/文件/学习/各个课程学习笔记收录/高等代数/extra/symbols.tex" "symbols.xdv" "symbols" 1753630391.73129 0
   "../config/_config.tex" 1744951838 398 ed5c3776625a7c32e405f855ba9af84e ""
   "../config/custom.tex" 1749374257 972 b72dad33b80522224c9c47017c6a3fc1 ""
   "../config/package.tex" 1749708855 1500 1cd5a27540b5979478ffdbbeb0ea22ee ""
@@ -287,10 +287,10 @@
   "d:/Program Files (x86)/texlive/2024/texmf-dist/web2c/texmf.cnf" 1735869087 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "d:/Program Files (x86)/texlive/2024/texmf-var/web2c/xetex/xelatex.fmt" 1735883004 10850220 00111e35ff84ce4a94f863e2ab2bb4e3 ""
   "d:/Program Files (x86)/texlive/2024/texmf.cnf" 1735882676 713 e69b156964470283e0530f5060668171 ""
-  "d:/文件/学习/各个课程学习笔记收录/高等代数/extra/symbols.tex" 1752506231 462 6ec72b6c1ad2c0b3b40cc93f4b37fd3b ""
-  "symbols.aux" 1752506234 128 852fc3e86949e4a73cd552c13992dc37 "xelatex"
-  "symbols.out" 1752506234 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
-  "symbols.tex" 1752506231 462 6ec72b6c1ad2c0b3b40cc93f4b37fd3b ""
+  "d:/文件/学习/各个课程学习笔记收录/高等代数/extra/symbols.tex" 1753630387 957 1d2895fb65bfb5b89e304a8086f56860 ""
+  "symbols.aux" 1753630390 128 852fc3e86949e4a73cd552c13992dc37 "xelatex"
+  "symbols.out" 1753630390 0 d41d8cd98f00b204e9800998ecf8427e "xelatex"
+  "symbols.tex" 1753630387 957 1d2895fb65bfb5b89e304a8086f56860 ""
   (generated)
   "symbols.aux"
   "symbols.log"
