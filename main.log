@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.6.4)  26 JUL 2025 15:32
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.6.4)  6 AUG 2025 17:07
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1269,7 +1269,12 @@ LaTeX Font Info:    Font shape `TU/LatinModernMath-Regular(3)/m/n' will be
  [3])
 \openout2 = `extra/symbols.aux'.
 
- (./extra/symbols.tex) [0
+ (./extra/symbols.tex
+Overfull \hbox (1.00777pt too wide) in paragraph at lines 12--27
+ [] 
+ []
+
+) [0
 
 
 
@@ -1322,26 +1327,36 @@ Overfull \hbox (1.1695pt too wide) in paragraph at lines 658--662
 
 
 ] [39] [40] [41] [42] [43] [44] [45] [46] [47] [48] [49] [50] [51]
-Overfull \hbox (6.71544pt too wide) in paragraph at lines 639--640
+Overfull \hbox (6.71544pt too wide) in paragraph at lines 646--647
 [][][]\TU/SimSun(0)/b/n/12 命 题 \TU/lmr/bx/n/12 2.3.8. []\TU/SimSun(0)/m/it/12 分 别 任 取 $[]$ 上 的 线 性 空 间 $[][] [][] [][] []$，|  使 得 $[] [] [] [][] [] [] [] [][] [] [] []
  []
 
 [52]
-Overfull \hbox (13.47144pt too wide) in paragraph at lines 658--659
+Overfull \hbox (13.47144pt too wide) in paragraph at lines 665--666
 [][][]\TU/SimSun(0)/b/n/12 命 题 \TU/lmr/bx/n/12 2.3.10. []\TU/SimSun(0)/m/it/12 分 别 任 取 $[]$ 上 的 线 性 空 间 $[][] [][] [][] []$，|  使 得 $[] [] [] [][] [] [] [] [][] [] [] []
  []
 
 [53]
-Overfull \hbox (9.22723pt too wide) in paragraph at lines 712--713
+Overfull \hbox (9.22723pt too wide) in paragraph at lines 719--720
 [][][]\TU/SimSun(0)/b/n/12 命 题 \TU/lmr/bx/n/12 2.3.13. []\TU/SimSun(0)/m/it/12 随 意 取 三 个 $[]$ 上 的 线 性 空 间 $[][] [][] []$，|  使 得 $[] [] [] [][] [] [] [] [][] [] [] []
  []
 
-[54] [55] [56] [57] [58] [59] [60] [61]) [62]
+[54] [55]
+Overfull \hbox (28.01945pt too wide) in paragraph at lines 836--837
+[]\TU/SimSun(0)/m/n/12 我 们 只 需 证 明：| $[] [][][][] [] [] [][][][][] [] [] [][][]$，|  因 为 $[][][][][] [] [] [][][] [] [] [][][][][] [] [] [][][]$
+ []
+
+[56]
+Overfull \hbox (12.02171pt too wide) in paragraph at lines 875--876
+[]\TU/SimSun(0)/m/n/12 于 是 有：| $[][][][][] [] [] [][][] [] [][][][] [] [][][][] [] [][][][][] [] [][][][][] [] [][][][][] [] [] [][][]$ 
+ []
+
+[57] [58] [59] [60] [61] [62] [63] [64] [65] [66] [67] [68] [69]) [70]
 \openout2 = `chap3/chap.aux'.
 
  (./chap3/chap.tex
 第三章
-) [63
+) [71
 
 
 
@@ -1351,7 +1366,7 @@ Overfull \hbox (9.22723pt too wide) in paragraph at lines 712--713
 
  (./chap4/chap.tex
 第四章
-) [64
+) [72
 
 
 
@@ -1382,12 +1397,12 @@ Overfull \hbox (48.7518pt too wide) in paragraph at lines 22--23
 []$[] [] [][][][] [][] [] [] [] [] [] [][] [][][][] [][]$ 
  []
 
-[65
+[73
 
 
 
 
-] [66] [67]) [68] (./main.aux (./config/cover.aux) (./extra/symbols.aux) (./chap1/chap.aux) (./chap2/chap.aux) (./chap3/chap.aux) (./chap4/chap.aux) (./extra/extra.aux))
+] [74] [75]) [76] (./main.aux (./config/cover.aux) (./extra/symbols.aux) (./chap1/chap.aux) (./chap2/chap.aux) (./chap3/chap.aux) (./chap4/chap.aux) (./extra/extra.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/08/05>
@@ -1397,15 +1412,15 @@ L3 programming layer <2022/08/05>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: B3D5BA21DE56F8AFDA73823A65B3C264;8051.
+(rerunfilecheck)             Checksum: CDE782F4AB1E74EE95CB1FD2125F339C;8269.
  ) 
 Here is how much of TeX's memory you used:
- 50944 strings out of 474773
- 1239029 string characters out of 5761290
- 2711002 words of memory out of 5000000
- 72162 multiletter control sequences out of 15000+600000
+ 50962 strings out of 474773
+ 1239279 string characters out of 5761290
+ 2715002 words of memory out of 5000000
+ 72180 multiletter control sequences out of 15000+600000
  578448 words of font info for 169 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  98i,14n,120p,1298b,2937s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on main.xdv (74 pages, 1117352 bytes).
+Output written on main.xdv (82 pages, 1258080 bytes).

@@ -378,6 +378,16 @@
 
 							$\Leftrightarrow V \cong V/\ker A \Leftrightarrow \dim \ker A = 0 \Leftrightarrow \ker A = \{\mathbf{0}_V\} \Leftrightarrow A$是单射
 						\end{proof}
+					\point{}
+						\begin{proposition}
+							$A \in \hom(V,V),A$可逆$\Leftrightarrow \rank(A) = \dim V$
+						\end{proposition}
+						\begin{proof}
+							$A$可逆$\Leftrightarrow A$是双射$\Leftrightarrow \im A = V \Leftrightarrow \rank(A)=\dim V$
+						\end{proof}
+						在这里，我们利用了因为线性变换的定义域和陪域一定同维，所以其实双射就是满射的性质
+
+						事实上，容易发现线性映射可逆的必要条件是它的秩等于配域的维数
 				\end{para}
 	\section{矩阵}
 		为了方便后续的研究，我们引入一种“数表”，即矩阵。它和有限维空间上的线性映射完全同构
@@ -602,14 +612,11 @@
 						$\dim_F M_{m \times n}(F) = mn$
 					\end{proposition}
 					\begin{proof}
-						设$\symbfit{J_{ij}} \in M_{m \times n}(F)$满足：
+						设$\symbfit{E_{ij}} \in M_{m \times n}(F)$满足：
 
-						$\symbfit{J_{ij}}(k;l)=\begin{cases}
-							1_F,k=i \wedge l=j \\
-							0_F,k \neq i \vee l \neq j
-						\end{cases}$
+						$\symbfit{E_{ij}}(k;l)=\delta_{ik}\delta_{jk}$
 
-						显然$\{\symbfit{J}_{ij}\}$线性无关
+						显然$\{\symbfit{E}_{ij}\}$线性无关
 
 						那么，只需注意到：
 
@@ -896,10 +903,14 @@
 					\end{proof}
 				\point{}
 					\begin{proposition}
+						设$V$是一个$F$上的线性空间，$\dim V =n < \aleph_0$
+
+						取$V$的一个基$\{\alpha_1,\cdots,\alpha_n\}$，设$A \in \hom(V,V)$在$\{\alpha_1,\cdots,\alpha_n\}$下的矩阵为$\symbfit{A}$
+
 						$A$是幂等变换$\Leftrightarrow \symbfit{A}$是幂等矩阵
 					\end{proposition}
 					\begin{proof}
-						
+						$A$是幂等变换$\Leftrightarrow A^2 = A \Leftrightarrow \symbfit{A}^2 = \symbfit{A} \Leftrightarrow \symbfit{A}$是幂等矩阵
 					\end{proof}
 				\point{}
 					\begin{proposition}
@@ -909,18 +920,26 @@
 
 						$\forall A \in \hom(V,W)$，如果它在$\{\alpha _1,\cdots,\alpha _n\},\{\beta _1,\cdots,\beta _m\}$下的矩阵是$\symbfit{A}$
 
-						$\gamma \in V$满足$\gamma =(\alpha_1,\cdots,\alpha_n)\mathbf{x}$，其中$\mathbf{x} \in M_{n\times 1}(F)$
+						$\gamma \in V$满足$\gamma =(\alpha_1,\cdots,\alpha_n)\mathbf{x}$，其中$\mathbf{x} \in F^n$
 
 						那么，$A(\gamma )$在$\{\beta_1,\cdots,\beta_m\}$下的矩阵是$\symbfit{A}\mathbf{x}$。
 					\end{proposition}
 					\begin{proof}
-						
+						设$\mathbf{x} = (x_1,\cdots,x_n)^T$
+
+						那么，$A(\gamma )=A\left((\alpha 1,\cdots,\alpha _n)\mathbf{x}\right)$
+
+						$=A(x_1\alpha _1+\cdots+x_n\alpha _n)=x_1A(\alpha _1)+\cdots+x_nA(\alpha _n)=\left(A(\alpha _1,\cdots,\alpha _n)\right)\mathbf{x}$
+
+						$\left((\beta_1,\cdots,\beta_m)\symbfit{A}\right)\mathbf{x}=(\beta_1,\cdots,\beta_m)\left(\symbfit{A}\mathbf{x}\right)$
+
+						于是命题得证
 					\end{proof}
 			\end{para}
 	\section{特殊矩阵}
 		本节中我们介绍一些后续需要用到的特殊矩阵
 		\begin{para}{0}
-			\point{}
+			\point{单位矩阵}
 				\begin{defn}{单位矩阵}{}
 					$n$阶矩阵环$M_n(F)$的乘法单位元称为单位矩阵，记作$\symbfit{I_n}$，或简记为$\symbfit{I}$
 				\end{defn}
@@ -931,6 +950,109 @@
 					\vdots & \ddots & \vdots \\
 					0 & \cdots & 1
 				\end{pmatrix}$
+			\point{数量矩阵}
+				\begin{defn}{数量矩阵}{}
+					我们称单位矩阵与一纯量的乘法的结果为数量矩阵：
+					\begin{equation}
+						k\symbfit{I}=\begin{pmatrix}
+						k & \cdots & 0 \\
+						\vdots & \ddots & \vdots \\
+						0 & \cdots & k
+						\end{pmatrix} \in M_n(F),k \in F
+					\end{equation}
+					记作$k\symbfit{I}$
+				\end{defn}
+				全体数量矩阵显然构成一个线性子空间，我们一般记为$F\symbfit{I}$
+			\point{基本矩阵}
+				\begin{defn}{基本矩阵}{}
+					我们定义基本矩阵$\symbfit{E_{ij}} \in M_{m \times n}(F)$为满足以下条件的矩阵：
+					
+					$\symbfit{E_{ij}}(k;l)=\delta_{ik}\delta_{jl}$
+				\end{defn}
+				我们之前已经指出，全体基本矩阵是矩阵空间的一个基
+
+				容易注意到以下结果：
+				\begin{proposition}
+					设$\mathbf{e}_i$为$F^n$中仅在第$i$个元素上为$1$，其他元素均为$0$的向量
+
+					那么有：$\symbfit{E}_{ij} = \mathbf{e}_i \mathbf{e}_j^T$
+				\end{proposition}
+			\point{对角矩阵}
+				\begin{defn}{对角矩阵}{}
+					我们定义：
+					\begin{equation}
+						diag\{d_1,\cdots,d_n\}=\begin{pmatrix}
+							d_1 & \cdots & 0 \\
+							\vdots & \ddots & \vdots \\
+							0 & \cdots & d_n 
+						\end{pmatrix} \in M_n(F),d_1,\cdots,d_n \in F
+					\end{equation}
+				\end{defn} 
+			\point{初等矩阵}
+				\begin{defn}{初等矩阵}{}
+					设$\mathbf{e}_i$为$F^n$中仅在第$i$个元素上为$1$，其他元素均为$0$的向量
+
+					我们定义：
+					\begin{equation}
+						\symbfit{P}(i,j)=\symbfit{I}-(\mathbf{e}_i-\mathbf{e}_j)(\mathbf{e}_i-\mathbf{e}_j)^T \in M_n(F)
+					\end{equation}
+					\begin{equation}
+						\symbfit{P}(i(c))=\symbfit{I}+(c-1)\mathbf{e}_i \mathbf{e}_i^T \in M_n(F),c \in F,c \neq 0
+					\end{equation}
+					\begin{equation}
+						\symbfit{P}(j,i(c))=\symbfit{I}+c\mathbf{e}_j \mathbf{e}_i^T \in M_n(F),i \neq j,c \in F
+					\end{equation}
+					这三种矩阵统称为初等矩阵
+				\end{defn}
+				容易注意到它们的具体形式：
+				$\symbfit{P}(i,j)=\begin{pmatrix}
+					1      &        &        &        &        &        &  0      \\
+						& \ddots &        &        &        &        &        \\
+						&        & 0      & \cdots & 1      &        &        \\
+						&        & \vdots &        & \vdots &        &        \\
+						&        & 1      & \cdots & 0      &        &        \\
+						&        &        &        &        & \ddots &        \\
+					0	&        &        &        &        &        & 1
+					\end{pmatrix}$
+
+				$\symbfit{P}(i(c))=\begin{pmatrix}
+					1      &        &        &        &        &        & 0       \\
+						& \ddots &        &        &        &        &        \\
+						&        & k      &        &        &        &        \\
+						&        &        & \ddots &        &        &        \\
+						&        &        &        & 1      &        &        \\
+						&        &        &        &        & \ddots &        \\
+					0	&        &        &        &        &        & 1
+					\end{pmatrix}$
+				$\symbfit{P}(j,i(c))=\begin{pmatrix}
+					1      &        &        &        &        &        &  0      \\
+						& \ddots &        &        &        &        &        \\
+						&        & 1      & \cdots & k      &        &        \\
+						&        &        & \ddots & \vdots &        &        \\
+						&        &        &        & 1      &        &        \\
+						&        &        &        &        & \ddots &        \\
+					0	&        &        &        &        &        & 1
+					\end{pmatrix}$
+			\point{对称矩阵、反对称矩阵}
+				\begin{defn}{对称矩阵与反对称矩阵}{}
+					我们定义：
+					
+					如果$\symbfit{A} \in M_n(F)$满足：
+
+					$\symbfit{A}^T = \symbfit{A}$，那么我们称$\symbfit{A}$是一个对称矩阵；
+
+					$\symbfit{A}^T = -\symbfit{A}$，那么我们称$\symbfit{A}$是一个反对称矩阵。
+				\end{defn}
+			\point{上三角矩阵、下三角矩阵}
+				\begin{defn}
+					我们定义：
+					
+					如果$\symbfit{A} \in M_n(F)$满足：
+
+					$\forall i>j,\symbfit{A}(i;j)=0$，那么我们称$\symbfit{A}$是一个上三角矩阵；
+
+					$\forall i<j,\symbfit{A}(i;j)=0$，那么我们称$\symbfit{A}$是一个下三角矩阵。
+				\end{defn}
 		\end{para}
 	\section{可逆矩阵}
 		可逆矩阵其实就是矩阵环$M_n(F)$中的可逆元。本节中我们将研究可逆矩阵的一些基本性质，以及矩阵环中的特殊性质。最后，我们会看到它的一个简单应用：过渡矩阵和相似
@@ -964,9 +1086,156 @@
 
 						且此时$A^{-1}$在$\{\alpha_1,\cdots,\alpha_n\}$下的矩阵是$\symbfit{A}^{-1}$
 					\end{proposition}
+					\begin{proof}
+						$A$可逆$\Leftrightarrow \exists B \in \hom(V,V),AB=BA=I $
+						
+						记$B$在$\{\alpha_1,\cdots,\alpha_n\}$下的矩阵为$\symbfit{B}$，则：
+						
+						$A$可逆$\Leftrightarrow \symbfit{A}\symbfit{B} = \symbfit{B}\symbfit{A} = \symbfit{I} \Leftrightarrow \symbfit{A} \in GL_n(F),\symbfit{A^{-1}}=\symbfit{B}$
+
+						于是命题得证。
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						$\symbfit{A} \in GL_n(F) \Leftrightarrow \rank(\symbfit{A})=n$
+					\end{proposition}
+					\begin{proof}
+						设$V$是一个$F$上的线性空间，$\dim V = n < \aleph_0$
+
+						任取$V$的一个基$\{\alpha_1,\cdots,\alpha_n\}$
+
+						显然存在$A \in \hom(V,V)$，使得$A$在$\{\alpha_1,\cdots,\alpha_n\}$上的矩阵是$\symbfit{A}$
+
+						$\symbfit{A} \in GL_n(F) \Leftrightarrow A$可逆$\Leftrightarrow \rank(A)=n \Leftrightarrow \rank(\symbfit{A})=n$
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						$\symbfit{A},\symbfit{B} \in M_n(F)$
+
+						那么：$\symbfit{A}\symbfit{B}=\symbfit{I} \Rightarrow \symbfit{A},\symbfit{B} \in GL_n(F),\symbfit{A}^{-1}=\symbfit{B},\symbfit{B}^{-1}=\symbfit{A}$
+					\end{proposition}
+					\begin{proof}
+						$n=\rank(\symbfit{I})=\rank(\symbfit{A}\symbfit{B})\leqslant \rank(\symbfit{A}) \Rightarrow \rank(\symbfit{A})=n \Rightarrow \symbfit{A} \in GL_n(F)$
+
+						同理可证$\symbfit{B} \in GL_n(F)$，$\symbfit{A}^{-1}=\symbfit{B},\symbfit{B}^{-1}=\symbfit{A}$依照定义是显然的。
+
+						于是命题得证
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						$\left(\symbfit{P}(i,j)\right)^{-1}=\symbfit{P}(j,i)$
+
+						$\left(\symbfit{P}(i(c))\right)^{-1}=\symbfit{P}(i(\frac{1}{c}))$
+
+						$\left(\symbfit{P}(j,i(c))\right)^{-1}=\symbfit{P}(j,i(-c))$
+					\end{proposition}
+					\begin{proof}
+						注意到：
+						
+						$\symbfit{P}(i,j)\symbfit{P}(j;i)=\left(\symbfit{I}-(\mathbf{e}_i-\mathbf{e}_j)(\mathbf{e}_i-\mathbf{e}_j)^T\right)\left(\symbfit{I}-(\mathbf{e}_j-\mathbf{e}_i)(\mathbf{e}_j-\mathbf{e}_i)^T\right)$
+					
+						$=(\symbfit{I}-(\mathbf{e}_i-\mathbf{e}_j)(\mathbf{e}_i-\mathbf{e}_j)^T)^2=\symbfit{I}-2(\mathbf{e}_i-\mathbf{e}_j)(\mathbf{e}_i-\mathbf{e}_j)^T+(\mathbf{e}_i-\mathbf{e}_j)(\mathbf{e}_i-\mathbf{e}_j)^T(\mathbf{e}_i-\mathbf{e}_j)(\mathbf{e}_i-\mathbf{e}_j)^T$
+
+						当$i\neq j$，有$(\mathbf{e}_i-\mathbf{e}_j)^T(\mathbf{e}_i-\mathbf{e}_j)=\delta_{ii}+\delta_{jj}-2\delta_{ij}=2$
+
+						于是有$\symbfit{P}(i,j)\symbfit{P}(j;i)=\symbfit{I}$
+
+						注意到：
+
+						$\symbfit{P}(i(c))\symbfit{P}(i(\frac{1}{c}))=\left(\symbfit{I}+(c-1)\mathbf{e}_i \mathbf{e}_i^T\right)\left(\symbfit{I}+(\frac{1}{c}-1)\mathbf{e}_i \mathbf{e}_i^T\right)$
+
+						$=\symbfit{I}+(c+\frac{1}{c}-2)\mathbf{e}_i \mathbf{e}_i^T+(1-c-\frac{1}{c}+1)\mathbf{e}_i \mathbf{e}_i^T\mathbf{e}_i \mathbf{e}_i^T=\symbfit{I}$
+
+						注意到：
+
+						$\symbfit{P}(j,i(c))\symbfit{P}(j,i(-c))=\left(\symbfit{I}+c\mathbf{e}_i \mathbf{e}_j^T\right)\left(\symbfit{I}-c\mathbf{e}_i \mathbf{e}_j^T\right)$
+					
+						$=\symbfit{I}-c^2\mathbf{e}_i \mathbf{e}_j^T\mathbf{e}_i \mathbf{e}_j^T=\symbfit{I}$
+
+						于是命题得证。
+					\end{proof}
 			\end{para}
 		\subsection{过渡矩阵}
+			我们研究一种矩阵，称为过渡矩阵。
+			\begin{defn}{过渡矩阵}{}
+				设$V$是一个$F$上的有限维线性空间，$\{\alpha_1,\cdots,\alpha_n\},\{\beta_1,\cdots,\beta_n\}$是它的两个基
+
+				如果$\symbfit{S} \in M_{n}(F)$满足：
+				\begin{equation}
+					(\alpha_1,\cdots,\alpha_n)=(\beta_1,\cdots,\beta_n)\symbfit{S}
+				\end{equation}
+				那么我们称$\symbfit{S}$是$\{\beta_1,\cdots,\beta_n\}$到$\{\alpha_1,\cdots,\alpha_n\}$的过渡矩阵
+			\end{defn}
+			容易看出，其实过渡矩阵就是恒等变换$I$在定义域和值域上选取不同基后的矩阵
+
+			我们可以看出以下性质：
+			\begin{para}{0}
+				\point{}
+					\begin{proposition}
+						如果$\symbfit{S}$是$\{\beta_1,\cdots,\beta_n\}$到$\{\alpha_1,\cdots,\alpha_n\}$的过渡矩阵，那么$\symbfit{S}\in  GL_n(F)$
+					\end{proposition}
+					\begin{proof}
+						注意到：$I$在$\{\beta_1,\cdots,\beta_n\},\{\alpha_1,\cdots,\alpha_n\}$下的矩阵$\symbfit{P}$满足$\symbfit{P}\symbfit{S}=\symbfit{S}\symbfit{P}=\symbfit{I}$
+
+						于是命题得证
+					\end{proof}
+				\point{}
+
+					过渡矩阵最大的应用，就是给出了切换线性变换的矩阵所依赖的基后，矩阵究竟会如何变化。
+					\begin{proposition}
+						设$V$是$F$上的线性空间，$\dim V = n < \aleph_0$，$\{\beta_1,\cdots,\beta_n\},\{\alpha_1,\cdots,\alpha_n\}$是它的两个基
+
+						设$A \in \hom(V,V)$在$\{\alpha_1,\cdots,\alpha_n\}$下的矩阵是$\symbfit{A}$，$\symbfit{S}$是$\{\alpha _1,\cdots,\alpha _n\}$到$\{\beta _1,\cdots,\beta _n\}$的过渡矩阵
+					
+						那么，$A$在$\{\beta_1,\cdots,\beta_n\}$下的矩阵$\symbfit{B}$有：
+
+						$\symbfit{B}=\symbfit{S}^{-1}\symbfit{A}\symbfit{S}$
+					\end{proposition}
+					\begin{proof}
+						这是显然的，因为$A=IAI$，而$I$在$\{\beta_1,\cdots,\beta_n\},\{\alpha_1,\cdots,\alpha_n\}$下的矩阵为$\symbfit{S}$，在$\{\alpha_1,\cdots,\alpha_n\}$下的矩阵为$\symbfit{S}^{-1}$
+					\end{proof}
+					如果两个矩阵具备以上所述的关系——即同一变换在不同基下，我们称这种关系为相似。接下来我们正式阐述相似矩阵
+			\end{para}
 		\subsection{矩阵的相似}
+			\begin{defn}{相似矩阵}{}
+				设$\symbfit{A},\symbfit{B}\in M_n(F)$
+
+				如果$\exists \symbfit{P} \in GL_n(F)$，使得$\symbfit{B}=\symbfit{P}^{-1}\symbfit{A}\symbfit{P}$
+
+				那么我们称$\symbfit{A}$与$\symbfit{B}$相似，记作$\symbfit{A} \sim \symbfit{B}$
+			\end{defn}
+			接下来我们研究相似矩阵的性质
+			\begin{para}{0}
+				\point{}
+					\begin{proposition}
+						设$\symbfit{A},\symbfit{B} \in M_n(F)$
+						
+						那么：$\symbfit{A} \sim \symbfit{B} \Leftrightarrow \exists T \in \hom(V,V),\dim_F V = n$，$\symbfit{A},\symbfit{B}$是$T$分别在基$B_1,B_2$下的矩阵
+					\end{proposition}
+					\begin{proof}
+						根据前面同一变换在不同基下矩阵的关系，这是显然的
+					\end{proof}
+				\point{相似是一种等价关系}
+					
+					这是前面命题的直接推论：
+					\begin{corollary}
+						矩阵的相似是一种等价关系
+					\end{corollary}
+					\begin{proof}
+						这是显然的，因为我们已经指出，相似矩阵只是同一映射在不同基下的表示
+					\end{proof}
+				\point{相似矩阵具有相同的秩}
+
+					这事实上也只是前面命题的推论
+					\begin{corollary}
+						如果$\symbfit{A},\symbfit{B} \in M_n(F),\symbfit{A}\sim \symbfit{B}$
+
+						那么有$\rank(\symbfit{A})=\rank(\symbfit{B})$
+					\end{corollary}
+					\begin{proof}
+						这是显然的，因为我们之前已经证明了，无论选取哪个基，映射的矩阵一定和映射具有相同的秩。
+					\end{proof}
+			\end{para}
 	\section{迹和行列式}
 		\subsection{张量积}
 			在研究迹和行列式前，我们先研究张量积。张量积一般应用于多重线性映射的研究中，后面我们会看到：行列式是一种特殊的多重线性映射。
@@ -1048,105 +1317,175 @@
 				称为$V$上的外代数
 
 				特别地，我们记：$I_p = I \cap T^{p} V,\bigwedge\limits^{p} V = T^{p}V/I_p$
+
+				并定义：$\alpha_1 \wedge \cdots \wedge \alpha_m := \alpha_1 \otimes \cdots \otimes \alpha_m + I$
+
+				称为$\alpha_1,\cdots,\alpha_m$的外积
+			\end{defn}
+		\subsection{迹}
+			在完成了预备工作后，我们准备开始定义矩阵的迹
+
+			迹是体现线性映射的不变量之一，其核心在于对映射复合的交换下不变
+			\begin{defn}{迹}{}
+				设$F$是一个域，$V$是$F$上的一个线性空间，并且$dim_F V = n$
+
+				满足以下条件的映射$\tr:\hom(V,V) \to F$称为迹：
+				\begin{enumerate}
+					\item $\forall A,B \in \hom(V,V),\tr(AB)=\tr(BA)$
+					\item $\tr(I)=\dim V = n$
+				\end{enumerate}
+			\end{defn}
+			我们将看到，迹是存在且唯一的。
+
+			我们也可以定义矩阵的迹：
+			\begin{defn}{矩阵的迹}{}
+				设$\symbfit{A} \in M_n(F)$，$V$是一个$F$上的$n$维线性空间
+
+				如果$A \in \hom(V,V)$在基$B$上的矩阵为$\symbfit{A}$
+
+				那么我们定义：
+				\begin{equation}
+					\tr(\symbfit{A}):=\tr(A)
+				\end{equation}
 			\end{defn}
 
-		\subsection{行列式的定义和性质}
+			迹有以下性质：
+			\begin{para}{0}
+				\point{}
+					\begin{proposition}
+						$\tr$存在且唯一
+					\end{proposition}
+					\begin{proof}
+						取$V$的一个基$\{\alpha_1,\cdots,\alpha_n\}$和它的对偶基$\{f_1,\cdots,f_n\}$
+
+						我们定义：
+						$f:\hom(V,V) \ni T \mapsto \sum\limits_{i=1}^{n} f_i\left(T(\alpha_i)\right) \in F$
+					
+						$tr(TS)=\sum\limits_{i=1}^{n} f_i\left(T\sum\limits_{j=1}^{n}f_j(S(\alpha_i))\alpha_j\right)$
+					
+					\end{proof}
+			\end{para}
+		\subsection{行列式}
 			\begin{defn}{行列式}{}
 				设$F$是一个域，$V$是$F$上的一个线性空间，并且$dim_F V = n$
 
-				映射$\det: V^n \rightarrow F$如果满足：
-
-				\ding{172} $\det(\alpha_1,\cdots,\alpha_i + \beta_i,\cdots,\alpha_n)=\det(\alpha_1,\cdots,\alpha_i,\cdots,\alpha_n)+\det(\alpha_1,\cdots,\beta_i,\cdots,\alpha_n)$
-
-				\ding{173} $\forall k\in F,\det(\alpha_1,\cdots,k\cdot \alpha_i,\cdots,\alpha_n)=k \cdot \det(\alpha_1,\cdots,\alpha_i,\cdots,\alpha_n)$
-
-				\ding{173} $\det(\alpha_1,\cdots,\alpha_i,\cdots,\alpha_j,\cdots,\alpha_n)=-\det(\alpha_1,\cdots,\alpha_j,\cdots,\alpha_i,\cdots,\alpha_n)$
-
-				\ding{174} 存在$V$的一组基$\gamma_i,\cdots,\gamma_n,\det(\gamma_1,\cdots,\gamma_n)=1$
-
-				那么我们称$\det$是一个$V$上的$n$阶行列式
+				对于$T\in\hom(V,V)$，我们定义映射$\bigwedge^n T:\bigwedge^n V \to \bigwedge^n V$为：
+				\begin{equation}
+					\left(\bigwedge^n T\right)(\alpha_1 \wedge \cdots \wedge \alpha_n):= T(\alpha_1) \wedge \cdots \wedge T(\alpha_n)
+				\end{equation}
+				由下式导出的映射$\det: \hom(V,V) \rightarrow F$称为行列式：
+				\begin{equation}
+					\left(\bigwedge^n T\right)(\omega )=\det(T)\omega 
+				\end{equation}
 			\end{defn}
-			由行列式的定义，我们可以推导出行列式的基本性质
-			\begin{proposition}
-				向量组$\alpha_1,\cdots,\alpha_i,\cdots,\alpha_j,\cdots,\alpha_n$如果有$\alpha_i=\alpha_j$
-
-				那么$\det (\alpha_1,\cdots,\alpha_i,\cdots,\alpha_j,\cdots,\alpha_n)=0$
-			\end{proposition}
-			\begin{proof}
-				$\det (\alpha_1,\cdots,\alpha_i,\cdots,\alpha_j,\cdots,\alpha_n)=-\det (\alpha_1,\cdots,\alpha_j,\cdots,\alpha_i,\cdots,\alpha_n)$
-
-				但因为$\alpha_i=\alpha_j$，所以必有$\det (\alpha_1,\cdots,\alpha_i,\cdots,\alpha_j,\cdots,\alpha_n)=0$
-			\end{proof}
-			进一步我们可以推出，如果两个变量成系数关系，那么行列式也为零
-			\begin{corollary}{存在成比例变量的行列式为零}{}
-				向量组$\alpha_1,\cdots,\alpha_i,\cdots,\alpha_j,\cdots,\alpha_n$如果有$\alpha_i=k\alpha_j,k\in F$
-
-				那么$\det (\alpha_1,\cdots,\alpha_i,\cdots,\alpha_j,\cdots,\alpha_n)=0$
-			\end{corollary}
-			\begin{proof}
-				$\det (\alpha_1,\cdots,\alpha_i,\cdots,\alpha_j,\cdots,\alpha_n)=k\cdot \det (\alpha_1,\cdots,\alpha_j,\cdots,\alpha_j,\cdots,\alpha_n)=0$
-			\end{proof}
-		\subsection{行列式在基上的展开}
-			\begin{them}{行列式的展开}{}
-				设$F$是一个域，$V$是$F$上的一个线性空间，并且$dim_F V = n$，
-				
-				$V$上的$n$阶行列式$\det$满足$\det(\gamma_1,\cdots,\gamma_n)=1$，其中$\{\gamma_1,\cdots,\gamma_n\}$是$V$的一组基
-
-				那么，有：
-				\begin{equation}
-					\det(\alpha_1,\cdots,\alpha_n)=\sum_{\sigma \in S_n} \text{sgn}(\sigma) \prod_{i=1}^n a_{i,\sigma(i)}
-				\end{equation}
-				其中$\alpha_i = \sum\limits_{j=1}^{n} a_{i,j} \gamma_j$
-			\end{them}
-			\begin{proof}
-				$\det (\alpha_1,\cdots,\alpha_n)=\det\left(\sum\limits_{i_1=1}^{n} a_{1,i_1} \gamma_{i_1},\cdots,\sum\limits_{i_n=1}^{n} a_{n,i_n} \gamma_{i_n}\right)$
-
-				$=\sum\limits_{i_1=1}^{n}\cdots \sum\limits_{i_n=1}^{n} \left(\prod\limits_{k=1}^{n}a_{k,i_k} \det(\alpha_{i_1},\cdots,\alpha_{i_n})\right)$
-
-				$=\sum\limits_{\sigma \in S_n} \left(\prod\limits_{k=1}^{n}a_{k,\sigma(k)} \text{sgn}(\sigma )\right)$
-			\end{proof}
-			事实上，我们也可以改变第一个求和指标，使之称为一个固定但是可以随意选取的置换
-			\begin{corollary}{}{}
-				设$F$是一个域，$V$是$F$上的一个线性空间，并且$dim_F V = n$，
-				
-				$V$上的$n$阶行列式$\det$满足$\det(\gamma_1,\cdots,\gamma_n)=1$，其中$\{\gamma_1,\cdots,\gamma_n\}$是$V$的一组基
-
-				那么，有：
-				\begin{equation}
-					\det(\alpha_1,\cdots,\alpha_n)=\text{sgn}(\rho )\sum_{\sigma \in S_n} \text{sgn}(\sigma) \prod_{i=1}^n a_{\rho(i),\sigma(i)}
-				\end{equation}
-				其中$\alpha_i = \sum\limits_{j=1}^{n} a_{i,j} \gamma_j$，$\rho$是一个置换
-			\end{corollary}
-			\begin{proof}
-				$\det(\alpha_1,\cdots,\alpha_n)=\sum_{\tau  \in S_n} \text{sgn}(\tau ) \prod_{i=1}^n a_{i,\tau (i)}$
-
-				对指标作置换$\rho $，累乘的结果不会变化，所以有：
-
-				$\det(\alpha_1,\cdots,\alpha_n)=\sum_{\tau \in S_n} \text{sgn}(\tau ) \prod_{i=1}^n a_{\rho(i),(\rho \circ \tau )(i)}$
-
-				记$\sigma =\rho \circ \tau $，那么$\det(\alpha_1,\cdots,\alpha_n)=\sum_{\rho^{-1} \circ \sigma  \in S_n} \text{sgn}(\rho^{-1} \circ \sigma) \prod_{i=1}^n a_{\rho(i),\sigma (i)}$
-
-				但是，$\rho^{-1} \circ \sigma \in S_n$其实就是$\sigma \in S_n$，并且我们知道$\text{sgn}(\rho^{-1} \circ \sigma)=\text{sgn}(\rho )\text{sgn}(\sigma )$
-
-				所以$\det(\alpha_1,\cdots,\alpha_n)=\text{sgn}(\rho )\sum_{\sigma \in S_n} \text{sgn}(\sigma) \prod_{i=1}^n a_{\rho(i),\sigma(i)}$
-			\end{proof}
-		\subsection{矩阵的行列式}
-			我们之前已经指出，$M_n (F) \cong F^{n^2} \cong (F^n)^n$，因此，我们可以对矩阵定义行列式：
+			我们自然地把矩阵的行列式定义为其映射的行列式：
 			\begin{defn}{矩阵的行列式}{}
-				设矩阵$A = (\alpha_1,\cdots,\alpha_n)\in M_n (F)$，我们定义：
+				设$\symbfit{A} \in M_n(F)$，$V$是一个$F$上的$n$维线性空间
 
-				$|A|=\det (A) := \det(\alpha_1,\cdots,\alpha_n)$
+				如果$A \in \hom(V,V)$在基$B$上的矩阵为$\symbfit{A}$
 
-				并且有$\det(e_1,\cdots,e_n)=1$，其中$e_i$是标准基向量$(0,\cdots,1,\cdots,0)$，$1$在第$i$个位置上。
-			\end{defn}
-			矩阵的行列式也可以类似地在标准基上展开
-			\begin{them}{矩阵的行列式的展开}{}
-				设$F$是一个域，矩阵$A=(a_{ij}) \in M_{n\times n}(F)$
-				那么，有：
+				那么我们定义：
 				\begin{equation}
-					|A|=\sum_{\sigma \in S_n} \text{sgn}(\sigma) \prod_{i=1}^n a_{i,\sigma(i)}
+					\det(\symbfit{A}):=\det(A)
 				\end{equation}
-			\end{them}
+			\end{defn}
+			$A$的行列式的另外一种常用的符号是记作$|A|$；特别地，我们也常常记$\symbfit{A}=(\alpha_1,\cdots,\alpha_n)$的行列式为$\det(\alpha_1,\cdots,\alpha_n)$
+
+			映射行列式的讨论比较简单，我们接下来讨论中，主要是矩阵的行列式
+			\begin{para}{0}
+				\point{存在性和唯一性}
+
+					事实上，在定义中，我们甚至不能看出行列式是否存在。我们首先证明行列式是存在且唯一的
+					\begin{proposition}
+						$\det$是存在且唯一的
+					\end{proposition}
+					\begin{proof}
+						设$V$是一个$F$上的线性空间，$\dim V = n$，并取它的一个基$\{\gamma_1,\cdots,\gamma_n\}$
+
+						设$\omega =\gamma _1 \wedge \cdots \wedge \gamma _n$，$T(\gamma_i) = \sum\limits_{j=1}^{n} a_{ji}\gamma_j$
+
+						注意到：$\left(\bigwedge^n T\right)(\omega )=T(\gamma _1)\wedge\cdots\wedge T(\gamma _n)=\sum\limits_{i_1=1}^{n} a_{i_1,1} \gamma_{i_1}\wedge \cdots \wedge \sum\limits_{i_n=1}^{n} a_{i_n,n} \gamma_{i_n}$
+
+						$=\sum\limits_{i_1=1}^{n}\cdots \sum\limits_{i_n=1}^{n} \prod\limits_{k=1}^{n}a_{i_k,i} \gamma _{i_1}\wedge\cdots\wedge\gamma _{i_n}$
+
+						$=\sum\limits_{\sigma \in S_n} \left(\prod\limits_{k=1}^{n}\text{sgn}(\sigma )a_{\sigma(k),k} \right)\omega $
+
+						$\Rightarrow \det(T)=\sum\limits_{\sigma \in S_n} \text{sgn}(\sigma )\left(\prod\limits_{k=1}^{n}a_{\sigma(k),k} \right)$
+
+						至此，我们推导出了行列式的具体形式，这说明行列式是存在且唯一的。
+					\end{proof}
+					从证明过程中可见以下推论，这恰恰是矩阵行列式的计算方式
+					\begin{corollary}{}
+						设$\symbfit{A}=(a_{ij})\in M_n(F)$
+						
+						\begin{equation}
+							|\symbfit{A}|=\sum_{\sigma \in S_n} \text{sgn}(\sigma) \prod_{i=1}^n a_{\sigma(i),i}
+						\end{equation}
+					\end{corollary}
+				\point{行列式的交错线性性}
+					事实上，如果考察矩阵的行列式，它呈现出交错多重线性函数的特征，这是其外积定义带来的，正如以下
+					\begin{them}{矩阵行列式的多重线性性}{}
+						对于$\alpha_1,\cdots,\alpha_n,\beta_i \in F^n,k \in F$
+
+						\begin{enumerate}
+							\item $\det(\alpha_1,\cdots,\alpha_i + \beta_i,\cdots,\alpha_n)=\det(\alpha_1,\cdots,\alpha_i,\cdots,\alpha_n)+\det(\alpha_1,\cdots,\beta_i,\cdots,\alpha_n)$
+							\item $\forall k\in F,\det(\alpha_1,\cdots,k\cdot \alpha_i,\cdots,\alpha_n)=k \cdot \det(\alpha_1,\cdots,\alpha_i,\cdots,\alpha_n)$
+							\item $\det(\alpha_1,\cdots,\alpha_i,\cdots,\alpha_j,\cdots,\alpha_n)=-\det(\alpha_1,\cdots,\alpha_j,\cdots,\alpha_i,\cdots,\alpha_n)$
+						\end{enumerate}
+					\end{them}
+					\begin{proof}
+						
+					\end{proof}
+					这也是矩阵行列式的基本性质。进一步，我们可以推出以下推论：
+					\begin{corollary}{}
+					向量组$\alpha_1,\cdots,\alpha_i,\cdots,\alpha_j,\cdots,\alpha_n$如果有$\alpha_i=\alpha_j$
+
+					那么$\det (\alpha_1,\cdots,\alpha_i,\cdots,\alpha_j,\cdots,\alpha_n)=0$
+					\end{corollary}
+					\begin{proof}
+						$\det (\alpha_1,\cdots,\alpha_i,\cdots,\alpha_j,\cdots,\alpha_n)=-\det (\alpha_1,\cdots,\alpha_j,\cdots,\alpha_i,\cdots,\alpha_n)$
+
+						但因为$\alpha_i=\alpha_j$，所以必有$\det (\alpha_1,\cdots,\alpha_i,\cdots,\alpha_j,\cdots,\alpha_n)=0$
+					\end{proof}
+					进一步我们可以推出，如果两个变量成系数关系，那么行列式也为零
+					\begin{corollary}{}
+						向量组$\alpha_1,\cdots,\alpha_i,\cdots,\alpha_j,\cdots,\alpha_n$如果有$\alpha_i=k\alpha_j,k\in F$
+
+						那么$\det (\alpha_1,\cdots,\alpha_i,\cdots,\alpha_j,\cdots,\alpha_n)=0$
+					\end{corollary}
+					\begin{proof}
+						$\det (\alpha_1,\cdots,\alpha_i,\cdots,\alpha_j,\cdots,\alpha_n)=k\cdot \det (\alpha_1,\cdots,\alpha_j,\cdots,\alpha_j,\cdots,\alpha_n)=0$
+					\end{proof}
+				\point{行列式的展开}
+					
+					事实上，的展开的下标，只需要选取两个置换即可，其顺序和选取都是任意的
+					\begin{corollary}{}{}
+						设$\symbfit{A}=(a_{ij})\in M_n(F)$
+
+						那么，有：
+						\begin{equation}
+							\det(\symbfit{A})=\text{sgn}(\rho )\sum_{\sigma \in S_n} \text{sgn}(\sigma) \prod_{i=1}^n a_{\rho(i),\sigma(i)}
+						\end{equation}
+						其中$\rho \in S_n$
+					\end{corollary}
+					\begin{proof}
+						$\det(\symbfit{A})=\sum_{\tau  \in S_n} \text{sgn}(\tau ) \prod_{i=1}^n a_{\tau (i),i}$
+
+						对指标作置换$\rho $，累乘的结果不会变化，所以有：
+
+						$\det(\symbfit{A})=\sum_{\tau \in S_n} \text{sgn}(\tau ) \prod_{i=1}^n a_{(\rho \circ \tau )(i),\rho (i)}$
+
+						记$\sigma =\rho \circ \tau $，那么$\det(\alpha_1,\cdots,\alpha_n)=\sum_{\rho^{-1} \circ \sigma  \in S_n} \text{sgn}(\rho^{-1} \circ \sigma) \prod_{i=1}^n a_{\sigma (i),\rho (i)}$
+
+						因为$\text{sgn}(\rho^{-1} \circ \sigma)=\text{sgn}(\rho )\text{sgn}(\sigma )$
+
+						所以$\det(\alpha_1,\cdots,\alpha_n)=\text{sgn}(\rho )\sum_{\sigma \in S_n} \text{sgn}(\sigma) \prod_{i=1}^n a_{\sigma(i),\rho (i)}$
+					\end{proof}
+				\point{行列式的余子式展开}
+					\begin{them}{矩阵行列式的余子式展开}{}
+						
+					\end{them}
+			\end{para}
 		\subsection{矩阵的行列式的余子式展开}
 		\subsection{矩阵乘积的行列式}
 \ifx\allfiles\undefined
