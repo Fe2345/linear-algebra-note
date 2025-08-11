@@ -7,7 +7,7 @@
 \else
 \fi
 %标题
-\chapter{线性映射}
+\chapter{线性映射及其矩阵}
 	本章开始，我们转向线性映射的研究。
 
 	我们将用三章完成线性映射的研究。本章我们将从映射最基本的研究方式：向量的作用开始
@@ -1390,6 +1390,21 @@
 				\end{equation}
 			\end{defn}
 			$A$的行列式的另外一种常用的符号是记作$|A|$；特别地，我们也常常记$\symbfit{A}=(\alpha_1,\cdots,\alpha_n)$的行列式为$\det(\alpha_1,\cdots,\alpha_n)$
+			
+			我们也给出子式的定义，它是矩阵的一个子矩阵的行列式，常常用于对行列式进行降阶
+			\begin{defn}{子式、余子式}{}
+				设$\symbfit{A}=(a_{ij})_{n\times n} \in M_n(F),I=\{i_1,\cdots,i_k\},J=\{j_1,\cdots,j_k\}$，其中$i_1 < \cdots < i_k,j_1 < \cdots < j_k$
+
+				我们定义：
+
+				$\symbfit{A}_J^I:=\symbfit{A}_{j_1,\cdots,j_k}^{i_1,\cdots,i_k}:=(a_{ij})_{k\times k},i \in I,j \in J$
+
+				行列式$\det(\symbfit{A}_J^I)$称为$\symbfit{A}$的一个$k$阶子式
+
+				特别地，如果$I'=\{i_1',\cdots,i_{n-k}'\},J'=\{j_1',\cdots,j_{n-k}'\},i_1'<\cdots<i_{n-k}',j_1'<\cdots<j_{n-k}',I \cup I'=\Z_n,J\cup J'=\Z_n$
+					
+				那么我们$\det(\symbfit{A}_{J'}^{I'})$是$\det(\symbfit{A}_{J}^{I})$的余子式
+			\end{defn}
 
 			映射行列式的讨论比较简单，我们接下来讨论中，主要是矩阵的行列式
 			\begin{para}{0}
@@ -1482,12 +1497,63 @@
 						所以$\det(\alpha_1,\cdots,\alpha_n)=\text{sgn}(\rho )\sum_{\sigma \in S_n} \text{sgn}(\sigma) \prod_{i=1}^n a_{\sigma(i),\rho (i)}$
 					\end{proof}
 				\point{行列式的余子式展开}
-					\begin{them}{矩阵行列式的余子式展开}{}
+					\begin{lemma}{}{}
+						设$V$是一个$F$上的线性空间，$\dim V = n < \aleph_0$，$\{\alpha_1,\cdots,\alpha_n\}$是$V$的一个基
+
+						对于$\symbfit{A} \in M_n(F),i_1 < \cdots < i_k,j_1 < \cdots < j_k$，如果$A \in \hom(V,V)$在$\{\alpha_1,\cdots,\alpha_n\}$下的矩阵是$\symbfit{A}$
 						
+						那么有：
+
+						$\left(\bigwedge^{k} A\right)(\alpha_{i_1}\wedge \cdots \wedge \alpha_{i_k})=\sum\limits_{j_1 < \cdots < j_k}\det(\symbfit{A}_{j_1,\cdots,j_k}^{i_1,\cdots,i_k})\cdot \alpha_{j_1} \wedge \cdots \wedge \alpha_{j_k}$
+					\end{lemma}
+					\begin{proof}
+						设$\symbfit{A}=(a_{ij})$
+
+						$\left(\bigwedge^{k} A\right)(\alpha_{i_1}\wedge \cdots \wedge \alpha_{i_k})$
+
+						$=\left(\sum\limits_{s_1=1}^{n} a_{s_1i_1}\alpha_{s_1}\right)\wedge \cdots \wedge \left(\sum\limits_{s_k=1}^{n} a_{s_ki_k}\alpha_{s_k}\right)$
+
+						$=\sum\limits_{\rho \in S_{\{j_1,\cdots,j_k\}}} \prod_{l=1}^{k} a_{\rho(l)i_l} \alpha_{\rho(1)}\wedge \cdots \wedge \alpha_{\rho(l)}$
+
+						$=\sum\limits_{j_1 < \cdots < j_k}\left(\sum\limits_{\rho \in S_k}\text{sgn}(\rho )\prod_{l=1}^{k} a_{j_{\rho(l)}i_l} \right) \alpha_{j_1}\wedge \cdots \wedge \alpha_{j_k}$
+
+						$=\sum\limits_{j_1 < \cdots < j_k}\det(\symbfit{A}_{j_1,\cdots,j_k}^{i_1,\cdots,i_k})\cdot \alpha_{j_1} \wedge \cdots \wedge \alpha_{j_k}$
+					\end{proof}
+					下面的定理指出了行列式关于$k$列展开的方法：
+					\begin{them}{Laplace定理}{}
+						设$\symbfit{A} \in M_n(F)$，那么：
+						\begin{equation}
+							\det(\symbfit{A})=\sum\limits_{j_1 < \cdots < j_k} (-1)^{(i_1+\cdots+i_k)+(j_1+\cdots+j_k)}\det(\symbfit{A}_{j_1,\cdots,j_k}^{i_1,\cdots,i_k})\det(\symbfit{A}_{j_1',\cdots,j_{n-k}'}^{i_1',\cdots,i_{n-k}'})
+						\end{equation}
+						其中$\{i_1,\cdots,i_k\}\cup \{i_1',\cdots,i_{n-k}'\}=\{j_1,\cdots,j_k\}\cup\{j_1',\cdots,j_{n-k}'\}=\Z_n,i_1'<\cdots<i_{n-k}',j_1'<\cdots<j_{n-k}'$
 					\end{them}
+					\begin{proof}
+						任取一个$F$上的$n$维线性空间$V$，并取它的一个基$\{\alpha_1,\cdots,\alpha_n\}$
+
+						那么，一定存在一个$A \in \hom(V,V)$，并且它在$\{\alpha_1,\cdots,\alpha_n\}$下的矩阵是$\symbfit{A}$
+						
+						于是：$\det(\symbfit{A})\cdot \alpha_1\wedge \cdots \wedge \alpha_n$
+
+						$=A(\alpha_1)\wedge \cdots \wedge A(\alpha_n)$
+
+						$=\left(\bigwedge^n A\right)(\alpha_1 \wedge \cdots \wedge \alpha_n)$
+
+						$=(-1)^{(i_1+\cdots+i_k)-k}\left(A(\alpha_{i_1})\wedge \cdots \wedge A(\alpha_{i_k})\right)\wedge\left(A(\alpha_{i_1'})\wedge \cdots \wedge A(\alpha_{i_{n-k}'})\right)$
+
+						$=(-1)^{(i_1+\cdots+i_k)-k}\left(\sum\limits_{j_1 < \cdots < j_k}\det(\symbfit{A}_{j_1,\cdots,j_k}^{i_1,\cdots,i_k})\cdot \alpha_{j_1} \wedge \cdots \wedge \alpha_{j_k}\right) \wedge $
+						
+						$\left(\sum\limits_{j_{1}' < \cdots < j_{n-k}'}\det(\symbfit{A}_{j_1',\cdots,j_{n-k}'}^{i_1',\cdots,i_{n-k}'})\cdot \alpha_{j_1'} \wedge \cdots \wedge \alpha_{j_{n-k}'}\right)$
+					
+						$=(-1)^{(i_1+\cdots+i_k)-k}\sum\limits_{j_1 < \cdots < j_k}\det(\symbfit{A}_{j_1,\cdots,j_k}^{i_1,\cdots,i_k})\det(\symbfit{A}_{j_1',\cdots,j_{n-k}'}^{i_1',\cdots,i_{n-k}'})\left(\alpha_{j_1} \wedge \cdots \wedge \alpha_{j_k}\wedge \alpha_{j_1'} \wedge \cdots \wedge \alpha_{j_{n-k}'}\right)$
+
+						$=(-1)^{(i_1+\cdots+i_k)-k}\sum\limits_{j_1 < \cdots < j_k}\det(\symbfit{A}_{j_1,\cdots,j_k}^{i_1,\cdots,i_k})\det(\symbfit{A}_{j_1',\cdots,j_{n-k}'}^{i_1',\cdots,i_{n-k}'})(-1)^{(j_1+\cdots+j_k)-k}\left(\alpha_{1} \wedge \cdots \wedge \alpha_{n}\right)$
+
+						$=\left(\sum\limits_{j_1 < \cdots < j_k} (-1)^{(i_1+\cdots+i_k)+(j_1+\cdots+j_k)}\det(\symbfit{A}_{j_1,\cdots,j_k}^{i_1,\cdots,i_k})\det(\symbfit{A}_{j_1',\cdots,j_{n-k}'}^{i_1',\cdots,i_{n-k}'})\right)(\alpha_1 \wedge \cdots \wedge \alpha_n)$
+
+						于是命题得证。
+					\end{proof}
+				\point{矩阵乘积的行列式}
 			\end{para}
-		\subsection{矩阵的行列式的余子式展开}
-		\subsection{矩阵乘积的行列式}
 \ifx\allfiles\undefined
 \end{document}
 \fi
