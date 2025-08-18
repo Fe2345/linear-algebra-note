@@ -1438,6 +1438,7 @@
 						\end{equation}
 					\end{corollary}
 				\point{行列式的交错线性性}
+
 					事实上，如果考察矩阵的行列式，它呈现出交错多重线性函数的特征，这是其外积定义带来的，正如以下
 					\begin{them}{矩阵行列式的多重线性性}{}
 						对于$\alpha_1,\cdots,\alpha_n,\beta_i \in F^n,k \in F$
@@ -1471,7 +1472,7 @@
 					\begin{proof}
 						$\det (\alpha_1,\cdots,\alpha_i,\cdots,\alpha_j,\cdots,\alpha_n)=k\cdot \det (\alpha_1,\cdots,\alpha_j,\cdots,\alpha_j,\cdots,\alpha_n)=0$
 					\end{proof}
-				\point{行列式的展开}
+				\point{行列式的置换展开}
 					
 					事实上，的展开的下标，只需要选取两个置换即可，其顺序和选取都是任意的
 					\begin{corollary}{}{}
@@ -1495,6 +1496,20 @@
 						因为$\text{sgn}(\rho^{-1} \circ \sigma)=\text{sgn}(\rho )\text{sgn}(\sigma )$
 
 						所以$\det(\alpha_1,\cdots,\alpha_n)=\text{sgn}(\rho )\sum_{\sigma \in S_n} \text{sgn}(\sigma) \prod_{i=1}^n a_{\sigma(i),\rho (i)}$
+					\end{proof}
+				\point{行列式关于矩阵转置和可逆性的性质}
+
+					\begin{proposition}
+						$\symbfit{A} \in GL_n(F) \Leftrightarrow |\symbfit{A}|\neq 0$
+					\end{proposition}
+					\begin{proof}
+						$\symbfit{A} \notin GL_n(F) \Leftrightarrow \rank(\symbfit{A})< n$
+
+						那么，$\symbfit{A}$一定有一个列向量，可被其他列线性表出
+
+						依照之前证明的交错线性性质，一定有$|\symbfit{A}|=0$
+
+						于是命题得证。
 					\end{proof}
 				\point{行列式的余子式展开}
 					\begin{lemma}{}{}

@@ -13,12 +13,12 @@
 			\begin{defn}{线性变换的特征值、特征向量、特征子空间}{}
 				设$V$是一个$F$上的线性空间，$A \in \hom(V,V)$
 
-				那么如果$\exists \lambda \in F,\alpha \in V,\alpha \neq \mathbf{0}$，使得
+				那么如果$\exists \lambda \in F,\alpha \in V,\alpha \neq \mathbf{0}$使得
 
 				\begin{equation}
 					A(\alpha )=\lambda \alpha 
 				\end{equation}
-				成立。
+				成立
 
 				那么我们称$\lambda $是$A$的一个特征值，$\alpha $是$A$的隶属于$\lambda $的一个特征向量
 
@@ -28,9 +28,7 @@
 				\end{equation}
 				称为$A$的属于特征值$\lambda $的特征子空间
 			\end{defn}
-			特征值代表着一个线性映射对一个向量的伸缩程度，这里我们要求向量不为零是因为：如果一个特征值只对于零向量成立，那么它过于平凡，而且会扰乱后续我们一些关于特征值数量的命题
-
-			请注意：特征值必须至少拥有一个非零特征向量不等同于零向量不是它的特征向量。后面我们会看到，特征子空间是子空间，因此零向量一定是任意特征值的特征向量
+			特征值代表着一个线性映射对一个向量的伸缩程度，这里我们要求至少能找到一个向量不为零是因为：如果一个特征值只对于零向量成立，那么它过于平凡，而且会扰乱后续我们一些关于特征值数量的命题
 
 			类似地，我们自然可以定义矩阵的特征值
 			\begin{defn}{矩阵的特征值、特征向量}{}
@@ -63,6 +61,7 @@
 
 						于是命题得证
 					\end{proof}
+					请注意：特征子空间并非全体特征向量的集合，而是全体特征向量和零向量的集合
 				\point{}
 					
 					从特征值的定义可以看出，特征值就像是把线性变换的一部分转换为纯量乘法。我们猜想：每一个特征值体现了映射的不同的“方向”，不同特征子空间的线性无关向量组的并也应该线性无关
@@ -136,7 +135,7 @@
 			\begin{defn}{线性变换的特征多项式}{}
 				设$A \in \hom(V,V)$，我们称
 
-				$f(\lambda )=\det(\lambda I-A)$
+				$\chi_A(\lambda )=\det(\lambda I-A)$
 
 				为$A$的特征多项式
 			\end{defn}
@@ -144,7 +143,7 @@
 			\begin{defn}{矩阵的特征矩阵和特征多项式}{}
 				设$\symbfit{A}\in M_n(F)$，我们称$\lambda \symbfit{I}-\symbfit{A}$是$\symbfit{A}$的特征矩阵
 
-				并称$f(\lambda )=\det(\lambda \symbfit{I}-\symbfit{A})$是$\symbfit{A}$的特征多项式
+				并称$\chi_{\symbfit{A}}(\lambda )=\det(\lambda \symbfit{I}-\symbfit{A})$是$\symbfit{A}$的特征多项式
 			\end{defn}
 			下面的性质指出了我们想要的结果：
 			\begin{para}{0}
@@ -154,17 +153,172 @@
 
 						如果$A \in \hom(V,V)$在$\{\alpha_1,\cdots,\alpha_n\}$下的矩阵是$\symbfit{A}$
 
-						那么我们断言：$A$的特征多项式$f(\lambda )=\det(\lambda I-A)$和$\symbfit{A}$的特征多项式$g(\lambda )=\det(\lambda \symbfit{I}-\symbfit{A})$相等，即$f(\lambda )=g(\lambda )$
+						那么我们断言：$\chi_A(\lambda )=\chi_{\symbfit{A}}(\lambda )$
 					\end{proposition}
 					\begin{proof}
 						这是显然的，因为矩阵的行列式的定义就是其矩阵的行列式
 					\end{proof}
 				\point{}
+					\begin{proposition}
+						$\forall \symbfit{A} \in M_n(F),\chi_{\symbfit{A}}\in F[\lambda ]$
+					\end{proposition}
+					\begin{proof}
+						设$\symbfit{A}=(a_{ij})\in M_n(F)$
+
+						那么，$\lambda\symbfit{I}-\symbfit{A}=\begin{pmatrix}
+							\lambda-a_{11} & -a_{12} & \cdots & -a_{1n} \\
+							-a_{21} & \lambda-a_{22} & \cdots & -a_{2n} \\
+							\vdots & \vdots & \ddots & \vdots \\
+							-a_{n1} & -a_{n2} & \cdots & \lambda-a_{nn}
+						\end{pmatrix}$
+
+						由行列式的置换展开可知，$\chi_{\symbfit{A}}(\lambda )\in F[\lambda ]$
+					\end{proof}
+					\begin{corollary}{}{}
+						$\forall A \in \hom(V,V),\dim V = n < \aleph_0,\chi_A(\lambda )\in F[\lambda ]$
+					\end{corollary}
+					\begin{proof}
+						这是显然的，因为我们只需要任取一个基$\{\alpha_1,\cdots,\alpha_n\}$，并利用$A$在此基下的矩阵$\symbfit{A}$
+
+						利用前面线性映射与其矩阵的特征多项式相同的命题，即可得证。
+					\end{proof}
+				\point{}
 					\begin{them}{线性变换的特征值即是特征多项式在域内的根}{}
-						设
+						设$V$是一个$F$上的$n$维线性空间，$A \in \hom(V,V)$
+
+						那么：$\lambda $是$A$的一个特征值，$\alpha \in V_\lambda \Leftrightarrow \chi_A(\lambda )=0,\alpha \in \ker(\lambda I-A)$
 					\end{them}
+					\begin{proof}
+						$\lambda $是$A$的一个特征值，$\alpha \in V_\lambda$
+
+						$\Leftrightarrow A(\alpha )=\lambda \alpha,V_\lambda \neq \{\mathbf{0}\}$
+
+						$\Leftrightarrow (\lambda I-A)(\alpha )=\mathbf{0},\ker (\lambda I-A) \neq \{\mathbf{0}\}$
+
+						$\Leftrightarrow \rank(\lambda I-A) < n,\alpha \in \ker(\lambda I-A)$
+
+						$\Leftrightarrow \chi_A(\lambda )=0,\alpha \in \ker (\lambda I-A)$
+					\end{proof}
+					其自然推论是其矩阵版本：
+					\begin{corollary}{}{}
+						设$\symbfit{A} \in M_n(F)$
+
+						那么：$\lambda $是$\symbfit{A}$的一个特征值，$\mathbf{x} \in F^n$是$\symbfit{A}$从属于$\lambda $的特征向量$\Leftrightarrow \chi_{\symbfit{A}}(\lambda )=0,(\lambda\symbfit{I}-\symbfit{A})\mathbf{x}=\mathbf{0},\mathbf{x}\neq \mathbf{0}$
+					\end{corollary}
+					这个推论也指出了一下结果：
+					\begin{corollary}{}{}
+						设$\symbfit{A},\symbfit{B} \in M_n(F),\symbfit{A}\sim \symbfit{B}$
+
+						那么$\symbfit{A}$和$\symbfit{B}$具有相同的特征值，并且$\chi_{\symbfit{A}}(\lambda )=\chi_{\symbfit{B}}(\lambda )$
+					\end{corollary}
+					我们之后不再完全讨论矩阵版本的特征值相关定理，因为上面的结果已经说明了：相似矩阵，以及相互对应的矩阵和映射在特征值理论中并无区别
+				\point{}
+					\begin{proposition}
+						设$V$是一个$F$上的$n$维线性空间，$A \in \hom(V,V)$
+
+						那么：
+
+						\begin{equation}
+							\chi_A(\lambda )=\lambda^n - \tr(A) \lambda^{n-1} + \cdots + (-1)^{n-k} \left(\sum\limits_{j_1 < \cdots < j_{n-k}} A_{j_1,\cdots,j_{n-k}}^{j_1,\cdots,j_{n-k}}\right) \lambda^k + \cdots + (-1)^n \det(A)
+						\end{equation}
+					\end{proposition}
+					\begin{proof}
+						事实上，$\lambda^k$项即是下面的行列式求和：
+						$\sum\limits_{j_1' < \cdots < j_{k}'}\begin{vmatrix}
+						-a_{11} & \cdots & 0 & \cdots & 0 & \cdots & -a_{1n} \\
+						\vdots & \ddots & \vdots & & \vdots & & \vdots \\
+						-1 & \cdots & \lambda & \cdots & 0 & \cdots & 1 \\
+						\vdots & & \vdots & \ddots & \vdots &  & \vdots \\
+						-1 & \cdots & 0 & \cdots & \lambda & \cdots & 1 \\
+						\vdots & & \vdots &  & \vdots & \ddots & \vdots \\
+						-a_{n1} & \cdots & 0 & \cdots & 0 & \cdots & -a_{nn}
+						\end{vmatrix}$
+						其中行列式的$j_1',\cdots,j_{k}'$列为仅在第$j_i$个元素为$\lambda $，其他位置都是$0$的列。
+
+						这是因为，如果想要产生$\lambda^k$，那么求和中的每一项必须选取对角线上的$k$个元素；同时，如果在进一步展开中选取了$-a_{ii}$而不是$\lambda $，那么会导致次数降低
+
+						注意到：$\begin{vmatrix}
+						-a_{11} & \cdots & 0 & \cdots & 0 & \cdots & -a_{1n} \\
+						\vdots & \ddots & \vdots & & \vdots & & \vdots \\
+						-1 & \cdots & \lambda & \cdots & 0 & \cdots & 1 \\
+						\vdots & & \vdots & \ddots & \vdots &  & \vdots \\
+						-1 & \cdots & 0 & \cdots & \lambda & \cdots & 1 \\
+						\vdots & & \vdots &  & \vdots & \ddots & \vdots \\
+						-a_{n1} & \cdots & 0 & \cdots & 0 & \cdots & -a_{nn}
+						\end{vmatrix}$
+
+						$=(-1)^{(j_1'+\cdots+j_{k}')+(j_1'+\cdots+j_{k}')}\det(diag\{\lambda,\cdots,\lambda \})(-1)^{n-k}A_{j_1,\cdots,j_{n-k}}^{j_1,\cdots,j_{n-k}}$
+
+						这个结果只需要对$j_1',\cdots,j_k'$列展开即可得出，其中$(-1)^{n-k}$是将$-a_{ij}$前面的负号提出去得到的，而$j_1,\cdots,j_{n-k}$是与$j_1',\cdots,j_k'$互补的有限序列
+
+						于是命题得证。
+					\end{proof}
+					其推论是以下结论：
+					\begin{corollary}{}{}
+						设$F$是一个代数闭域，$V$是一个$F$上的$n$维线性空间，$A \in \hom(V,V)$
+
+						设$\lambda_1,\cdots,\lambda_n$是$A$的特征值（$\chi_A(\lambda )$中的重根按重数计算）
+
+						那么有：
+						\begin{equation}
+							\prod\limits_{i=1}^{n} \lambda_i = \det(A)
+						\end{equation}
+						\begin{equation}
+							\sum\limits_{i=1}^{n} \lambda_i = \tr(A)
+						\end{equation}
+					\end{corollary}
+					\begin{proof}
+						对$\chi_A(\lambda )$作唯一分解：
+
+						$\chi_A(\lambda )=\prod\limits_{i=1}^{n}(\lambda -\lambda_i)$
+
+						$=\lambda^n - (\lambda_1+\cdots+\lambda_n)\lambda^{n-1}+\cdots+(-1)^n \prod_{i=1}^{n}\lambda_i$
+
+						结合前面的命题既得。
+					\end{proof}
+					请注意：这个命题必须要求$F$代数闭，否则可能$\chi_A(\lambda )$的根并非全体特征值，而导致论证失效。
 			\end{para}
 	\section{线性变换的对角标准型}
+		\subsection{对角标准型的定义}
+			\begin{defn}{线性映射的对角标准型}{}
+				设$V$是一个$F$上的一个线性空间，$\dim V = n < \aleph_0$
+
+				如果存在一个基$\{\alpha_1,\cdots,\alpha_n\}$，使$A$在其上的矩阵$\symbfit{A}$是一个对角矩阵
+
+				那么我们称$\symbfit{A}$为$A$的对角标准型，此时称$A$可对角化。
+			\end{defn}
+			类似地，我们可以定义矩阵的对角标准型
+			\begin{defn}{矩阵的对角标准型}{}
+				设$\symbfit{A} \in M_n(F)$，如果存在$\symbfit{P}\in GL_n(F)$和对角矩阵$\symbfit{D}\in M_n(F)$，使得
+
+				$\symbfit{A}=\symbfit{P}^{-1}\symbfit{D}\symbfit{P}$
+
+				那么我们称$\symbfit{D}$为$\symbfit{A}$的对角标准型，此时称$\symbfit{A}$可对角化。
+			\end{defn}
+			容易看出，线性映射的对角标准型与矩阵的对角标准型是等价的。特别地，如果认为$\symbfit{A}$是$A \in \hom(F^n,F^n)$在$\{\mathbf{e}_i\}$下的矩阵，那么容易发现：其实$\symbfit{P}^{-1}$的列向量就是$A$的特征向量。
+		\subsection{线性变换可对角化的条件}
+			观察对角矩阵的结构，既得以下显然的条件：
+			\begin{them}{线性映射可对角化的条件(1)}{}
+				设$V$是一个$F$上的一个线性空间，$\dim V = n < \aleph_0$
+
+				那么：$A \in \hom(V,V)$可对角化$\Leftrightarrow$存在一个由$A$的特征向量组成的$V$的基
+			\end{them}
+			\begin{proof}
+				$A \in \hom(V,V)$可对角化
+
+				$\Leftrightarrow$存在一个基$\{\alpha_1,\cdots,\alpha_n\}$，使得$A$在其上的矩阵为$diag\{\lambda_1,\cdots,\lambda_n\}$
+
+				$\Leftrightarrow A(\alpha_1,\cdots,\alpha_n)=diag\{\lambda_1,\cdots,\lambda_n\}(\alpha_1,\cdots,\alpha_n)$
+
+				$\Leftrightarrow A(\alpha_1,\cdots,\alpha_n)=(\lambda_1\alpha_1,\cdots,\lambda_n \alpha_n)$
+
+				$\Leftrightarrow \lambda_i$是$A$的特征值，$\alpha_i \in V_{\lambda_i}$
+
+				$\Leftrightarrow $存在一个由$A$的特征向量组成的$V$的基
+			\end{proof}
+			\begin{corollary}{线性映射可对角化的条件(2)}{}
+				
+			\end{corollary}
 	\section{线性变换的不变子空间}
 	\section{线性变换的最小多项式}
 	\section{幂零变换的Jordan标准型}

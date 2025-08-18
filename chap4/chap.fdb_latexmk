@@ -1,19 +1,19 @@
 # Fdb version 4
-["xdvipdfmx"] 1749544252.4435 "chap.xdv" "chap.pdf" "chap" 1749544253.19462 0
-  "chap.xdv" 1749544252 14684 bb8ba7626e9319a84e8e99af2a5020ae "xelatex"
+["xdvipdfmx"] 1755432206.5291 "chap.xdv" "chap.pdf" "chap" 1755432207.37022 0
+  "chap.xdv" 1755432206 14268 f756a7ff85f844ec31e6e253a09c5216 "xelatex"
   (generated)
   "chap.pdf"
   (rewritten before read)
-["xelatex"] 1749544249.81196 "d:/文件/学习/各个课程学习笔记收录/高等代数/chap4/chap.tex" "chap.xdv" "chap" 1749544253.17416 0
+["xelatex"] 1755432203.53652 "d:/文件/学习/各个课程学习笔记收录/高等代数/chap4/chap.tex" "chap.xdv" "chap" 1755432207.34007 0
   "../config/_config.tex" 1744951838 398 ed5c3776625a7c32e405f855ba9af84e ""
-  "../config/custom.tex" 1749374257 972 b72dad33b80522224c9c47017c6a3fc1 ""
-  "../config/package.tex" 1745573619 1483 994a00fea88b781bc4bec4f259a3153d ""
+  "../config/custom.tex" 1754797325 1000 ca072824097425c28afbde63bf7887ea ""
+  "../config/package.tex" 1749708855 1500 1cd5a27540b5979478ffdbbeb0ea22ee ""
   "../config/paragraph.tex" 1736160617 440 c4e77aba1f37bc4210a639f0c710c16c ""
   "../config/theorem1.tex" 1737726975 2103 c44e3255d3cd2dc316f9611d5bae1879 ""
   "c:/Windows/Fonts/msyh.ttc" 1736561799 19704352 1e10e74402e59d54499af795caf0b135 ""
-  "chap.aux" 1749544252 877 42770cb0fff929dc1be8482d14f2d363 "xelatex"
-  "chap.out" 1749544252 696 7f07bf7bb8424fc1813d97683c281cd3 "xelatex"
-  "chap.tex" 1749544246 453 b484d62f012f1297c47661a773f12031 ""
+  "chap.aux" 1755432206 859 c2ec142e0bb58ebaf8a4e6b980204b90 "xelatex"
+  "chap.out" 1755432206 634 0bf7918d75ff1b0f450fda0c58de7bb4 "xelatex"
+  "chap.tex" 1755432199 435 54e4291ddfbe3bf944996ec56ea68506 ""
   "d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1735876988 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1735881187 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "d:/Program Files (x86)/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1735882627 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""
@@ -249,6 +249,7 @@
   "d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/tikzfill/tikzfill-common.sty" 1735881621 2573 42712c9e0a2df004e43df5b3c95f0c1e ""
   "d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/tikzfill/tikzfill.image.sty" 1735881621 1120 ba535da48caa03bf1fd3f03ea87779f8 ""
   "d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/tikzfill/tikzlibraryfill.image.code.tex" 1735881621 10931 717eb52299f416934beb8b2b7cd8cee6 ""
+  "d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/tools/bm.sty" 1735881751 13231 2c742011581e2bf297e33520567d9464 ""
   "d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/tools/calc.sty" 1735881751 10214 547fd4d29642cb7c80bf54b49d447f01 ""
   "d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/tools/verbatim.sty" 1735881751 7500 db31c3d04f8bc9010e47a5efbbace9ff ""
   "d:/Program Files (x86)/texlive/2024/texmf-dist/tex/latex/trimspaces/trimspaces.sty" 1735881819 1380 971a51b00a14503ddf754cab24c3f209 ""
@@ -268,7 +269,7 @@
   "d:/Program Files (x86)/texlive/2024/texmf-dist/web2c/texmf.cnf" 1735869087 41649 5d6ae549fbbcb850a863f69aa41f3d10 ""
   "d:/Program Files (x86)/texlive/2024/texmf-var/web2c/xetex/xelatex.fmt" 1735883004 10850220 00111e35ff84ce4a94f863e2ab2bb4e3 ""
   "d:/Program Files (x86)/texlive/2024/texmf.cnf" 1735882676 713 e69b156964470283e0530f5060668171 ""
-  "d:/文件/学习/各个课程学习笔记收录/高等代数/chap4/chap.tex" 1749544246 453 b484d62f012f1297c47661a773f12031 ""
+  "d:/文件/学习/各个课程学习笔记收录/高等代数/chap4/chap.tex" 1755432199 435 54e4291ddfbe3bf944996ec56ea68506 ""
   (generated)
   "chap.aux"
   "chap.log"
