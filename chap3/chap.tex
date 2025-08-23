@@ -8,7 +8,21 @@
 \fi
 %标题
 \chapter{线性变换的表示与分解}
+	在上一章中，我们研究了线性映射的基础理论。本章中，我们进一步，寻求对线性映射的表示和分解。
+
+	我们已经看到：选定一个映射和两个基，就可以写出矩阵。但是，其实这些矩阵中有些是容易使用的，而有些则是难以处理的。如果有一个基下映射的矩阵我们觉得是良好的，我们常常会称这类矩阵为标准型
+
+	本章中我们不研究所有线性映射，而是聚焦一种特殊的线性映射——线性变换。我们会看到，如果域是代数闭的，在特定条件下我们可以将其写成对角矩阵；而更一般地，它一定可以写成Jordan块组成的分块对角矩阵。
+
+	本章的第一节我们讲述对角标准型的基础工作——特征值、特征向量；第二节讲解对角标准型的定义及判定是否可对角化的方式；
+
+	第三至第七节，我们逐渐搭建出Jordan标准型的理论。
 	\section{线性变换的特征值和特征向量}
+		在本节和下一节中，我们将解决对角标准型的问题。
+
+		对角标准型的想法是：尽管并非所有线性映射呈现出$A(\alpha )=\lambda \alpha $的形式，但是很多线性映射都呈现为将基向量仅仅进行伸缩的形式。这样的线性映射会在指定基上呈现为对角矩阵，其对角线元素我们一般称为特征值。
+
+		我们首先构建特征值和其基向量——特征向量的理论。
 		\subsection{特征值和特征向量的定义}
 			\begin{defn}{线性变换的特征值、特征向量、特征子空间}{}
 				设$V$是一个$F$上的线性空间，$A \in \hom(V,V)$
@@ -279,6 +293,7 @@
 					请注意：这个命题必须要求$F$代数闭，否则可能$\chi_A(\lambda )$的根并非全体特征值，而导致论证失效。
 			\end{para}
 	\section{线性变换的对角标准型}
+		本节中我们构建对角标准型的理论。对角标准型的理论是完全自然的，我们无需更多讨论，只需给出定义并直接推导充要条件即可。
 		\subsection{对角标准型的定义}
 			\begin{defn}{线性映射的对角标准型}{}
 				设$V$是一个$F$上的一个线性空间，$\dim V = n < \aleph_0$
@@ -317,9 +332,246 @@
 				$\Leftrightarrow $存在一个由$A$的特征向量组成的$V$的基
 			\end{proof}
 			\begin{corollary}{线性映射可对角化的条件(2)}{}
-				
+				设$V$是一个$F$上的一个线性空间，$\dim V = n < \aleph_0$
+
+				那么：$A \in \hom(V,V)$可对角化$\Leftrightarrow$存在$n$个线性无关的特征向量
 			\end{corollary}
-	\section{线性变换的不变子空间}
+			\begin{proof}
+				这是显然的，因为$V$中的$n$个线性无关的向量一定组成一个基
+			\end{proof}
+			\begin{them}{线性映射可对角化的条件(3)}{}
+				设$V$是一个$F$上的一个线性空间，$\dim V = n < \aleph_0$
+
+				那么：$A \in \hom(V,V)$可对角化$\Leftrightarrow A$的全体不同的特征值$\lambda_1,\cdots,\lambda_s$，满足$V_{\lambda_1},\cdots,V_{\lambda_s}$的基的并集是$V$的基
+			\end{them}
+			\begin{proof}
+				必要性由之前的命题是显然的。
+
+				接下来证明充分性。
+
+				如果$A$可对角化，那么，它一定能选取一个由特征向量组成的基$\{\alpha_{11},\cdots,\alpha_{1r_1},\cdots,\alpha_{s1},\cdots,\alpha_{sr_s}\}$，其中$\alpha_{ij}\in V_{\lambda_i},r_1+\cdots+r_s=n$
+
+				我们只需证明，其实$\{\alpha _{i1},\cdots,\alpha_{ir_i}\}$就是$V_{\lambda_i}$的一个基
+
+				首先，它一定线性无关，因为它是$V$的一个基的一个子集。不妨假设它不是$V_{\lambda_i}$的基，那么，一定$\exists \beta \in V_{\lambda_i}$，使得它不能被$\{\alpha _{i1},\cdots,\alpha_{ir_i}\}$线性表出
+
+				那么，一定有$\{\alpha _{i1},\cdots,\alpha_{ir_i},\beta \}$线性无关。因为如果它线性相关，那么$\{\alpha _{i1},\cdots,\alpha_{ir_i}\}$一定是它的一个极大线性无关组，这使得$\beta $可以被$\{\alpha _{i1},\cdots,\alpha_{ir_i}\}$线性表出，矛盾。
+
+				但是，我们之前已经指出，若干个特征子空间的线性无关向量的并集必定也是线性无关的，这说明$\alpha_{11},\cdots,\alpha_{1r_1},\cdots,\alpha_{s1},\cdots,\alpha_{sr_s},\beta $线性无关。但是$\dim V=n$，其中的$n+1$个向量不可能线性无关，矛盾。
+
+				于是命题得证
+			\end{proof}
+			其推论是接下来的两个条件：
+			\begin{corollary}{线性映射可对角化的条件(4)}{}
+				设$V$是一个$F$上的一个线性空间，$\dim V = n < \aleph_0$
+
+				那么：$A \in \hom(V,V)$可对角化$\Leftrightarrow $如果$\lambda_1,\cdots,\lambda_s$是$A$的全体不同的特征值，那么$V_{\lambda_1} \oplus \cdots \oplus V_{\lambda_s}=V$
+			\end{corollary}
+			\begin{proof}
+				这是显然的，因为前面的命题指出了$V$的一个基正是$V_{\lambda_i}$的基组成的，而这正是直和的充要条件。
+			\end{proof}
+			\begin{corollary}{线性映射可对角化的条件(5)}
+				设$V$是一个$F$上的一个线性空间，$\dim V = n < \aleph_0$
+
+				那么：$A \in \hom(V,V)$可对角化$\Leftrightarrow $如果$\lambda_1,\cdots,\lambda_n$是$A$的全体不同的特征值，那么$\dim V_{\lambda_1}+\cdots+\dim V_{\lambda_s}=n$
+			\end{corollary}
+			\begin{proof}
+				充分性由上面的命题是显然的。
+
+				必要性只需注意到前面命题的结果，即存在一个$V$的基由全体特征子空间的基组成即可。
+			\end{proof}
+			至此，我们基本上得到了全部结果，最后我们将看到一个最终结果，它也是最常用的充要条件
+
+			其实，我们已经注意到：如果特征子空间的维数之和不足，那么它就不可对角化。我们的一个天然的猜想是：特征子空间的维数是不是受限于特征值的重数？如果是的话，其实只需要填满这个重数就可以对角化。
+
+			现在给出一个引理
+			\begin{lemma}{几何重数小于代数重数}{}
+				设$V$是一个$F$上的一个线性空间，$\dim V = n < \aleph_0$
+
+				设$\lambda_i \in F$是$A \in \hom(V,V)$的一个特征值，并且其特征多项式有分解：
+
+				$\chi_A(\lambda )=\prod\limits_{i=1}^{s} (\lambda-\lambda_i)^{r_i}$
+
+				那么我们断言：$\dim V_{\lambda_i} \leqslant r_i$
+
+				其中$\dim V_{\lambda_i}$也常常称为$\lambda_i$的几何重数，$r_i$称为$\lambda_i$的代数重数
+			\end{lemma}
+			\begin{proof}
+				不妨设$\dim V_{\lambda_i}=d$
+
+				取$V_{\lambda_i}$的一个基$\{\alpha_1,\cdots,\alpha_d\}$，并补全为$V$的一个基$\{\alpha_1,\cdots,\alpha_d,\cdots,\alpha_n\}$
+
+				考虑$A$在此基上的矩阵$\symbfit{A}$，它一定具备以下形式：
+
+				$\symbfit{A}=\begin{pmatrix}
+					\lambda_i \symbfit{I}_d & \symbfit{B} \\
+					\symbfit{O} & \symbfit{C}
+				\end{pmatrix}$
+
+				因为$A$在$\{\alpha_1,\cdots,\alpha_d\}$上的作用即是按照相同的特征值$\lambda_i$进行纯量乘法
+
+				那么，特征矩阵$\lambda\symbfit{I}-\symbfit{A}=\begin{pmatrix}
+					(\lambda -\lambda_i) \symbfit{I}_d & -\symbfit{B} \\
+					\symbfit{O} & \lambda \symbfit{I}_{n-d}-\symbfit{C}\end{pmatrix}$
+
+				于是有：$\chi_A(\lambda )=\det((\lambda -\lambda_i) \symbfit{I}_d)\det(\symbfit{I}_{n-d}-\symbfit{C})$
+
+				$=(\lambda -\lambda_i)^d\det( \symbfit{I}_d)\det(\symbfit{I}_{n-d}-\symbfit{C})$
+
+				因此一定有$d\leqslant r_i$，命题得证
+			\end{proof}
+			那么有以下命题：
+			\begin{them}{线性映射可对角化的条件(6)}{}
+				设$F$是一个代数闭域，$V$是一个$F$上的一个线性空间，$\dim V = n < \aleph_0$
+
+				那么$A \in \hom(V,V)$可对角化$\Leftrightarrow$如果$\chi_A(\lambda)=\prod\limits_{i=1}^{s} (\lambda -\lambda_i)^{r_i} $，那么$\dim V_{\lambda_i}=r_i$
+			\end{them}
+			\begin{proof}
+				必要性是显然的，因为这正是前面的命题给出的结果
+
+				充分性只需注意到，如果可对角化必定有$\dim V_{\lambda_1}+\cdots+\dim V_{\lambda_s}$，但是引理已经指出$\dim V_{\lambda_i}\leqslant r_i$，又因为$r_1+\cdots+r_s=n$，那么一定有$\dim V_{\lambda_i}=r_i$
+
+				于是命题得证。
+			\end{proof}
+		对角标准型的性质就是对角矩阵的性质，它们都很显然故无需阐述。可以看出来，对角标准型的条件是极其严苛的——这也是它优良性质的缘由。
+	\section{线性变换的根子空间、不变子空间}
+		我们转向不可对角化的线性映射的表示。
+
+		我们观察可对角化的条件(4)，它的另一种表述是：
+
+		$V=\ker(\lambda_1 I-A)\oplus \cdots \oplus \ker(\lambda_s I-A)$
+
+		但是，我们知道，直和并不总是成立。我们的一个想法是：如果我们调整$\lambda_i I-A$的幂，是否能让他构成直和呢？如果能构成直和，这个幂有办法快速求出来吗？
+
+		一个相当胡扯的想法是：特征多项式的分解$\chi_A(\lambda )=(\lambda -\lambda_1)^{r_1} \cdots (\lambda -\lambda_s)^{r_s}$似乎很符合我们的结构
+
+		我们从特征多项式在映射上的作用，及其分解入手。
+		\subsection{线性变换的多项式}
+			此处我们希望讨论的，其实是一个具体的映射的多项式，也就是以下定义：
+			\begin{defn}{线性映射的行列式}{}
+				设$F$是一个域，$A \in \hom(V,V)$
+
+				我们定义：
+				\begin{equation}
+					F[A]:=\{\sum\limits_{k=0}^{n}a_k A^k| a_k \in F,n \in \N\}
+				\end{equation}
+				称为$A$的多项式环，其元素称为$A$的多项式
+			\end{defn}
+			一个显然的事实是：$F[A]$是$\hom(V,V)$的子环
+
+			接下来探讨线性变换的多项式的性质。
+			\begin{para}{0}
+				\point{Hamilton-Caylay定理}
+					\begin{them}{Hamilton-Caylay定理}{}
+						设$V$是一个$F$上的$n$维线性空间，$A \in \hom(V,V)$
+
+						那么有：
+						\begin{equation}
+							\chi_A(A)=0
+						\end{equation}
+					\end{them}
+					\begin{proof}
+						设$M$是一个$F[A]$上的一个模，其元素和$V$一致，保持$V$中的加法，而其纯量乘法则为：
+
+						$f(A)\cdot \alpha := f(A)(\alpha ),f(A) \in F[A],\alpha \in V$
+
+						那么容易注意到，此时$A \in \hom(M,M)$，即成为$M$的一个自同态
+
+						接下来我们尝试给出$\det(\lambda I-A)$在自同态下的一个表示。此处，我们尝试借助矩阵来完成这一步
+
+						由于$M$其实和$V$有相同的元素，并且$F$本就是$F[A]$的子环，因此只需取$V$的一个基$\{e_1,\cdots,e_n\}$，它既是$M$的生成元
+
+						那么，一定能写出$A$的在这一组生成元下的矩阵$\symbfit{A} \in M_n(F[A])$
+
+						那么，$\det(\lambda I-A)=\det(\lambda \symbfit{I}-\symbfit{A})$（请注意，此处的$\symbfit{I},\symbfit{A}$是环上的矩阵，而非域上的矩阵）
+
+						此时只需考察$\chi_A(A)=\det(A\symbfit{I}-\symbfit{A})$（由于此时矩阵已经是建立在环$F[A]$上的了，$A$成为了纯量，可以直接代入）
+
+						记$\symbfit{P}=A\symbfit{I}-\symbfit{A},adj(\symbfit{P})=(\frac{1}{|\symbfit{P}|}\symbfit{P}_{\N-\{i\}}^{\N-\{j\}})$，并注意到：
+
+						$\chi_A(A)(e_1,\cdots,e_n)=\det(\symbfit{P})(e_1,\cdots,e_n)=adj(\symbfit{P})\symbfit{P}(e_1,\cdots,e_n)$
+
+						$adj(\symbfit{P})(A(e_1,\cdots,e_n)-\symbfit{A}(e_1,\cdots,e_n))=0$
+
+						于是命题得证。
+					\end{proof}
+					这个定理看起来非常令人惊讶：特征多项式竟然可以直接把映射本身化为零。
+
+					这个定理的一个常见的伪证是：直接把$A$代入，得到$\det(AI-A)=\det(0)=0$。但是，其实$\lambda $是一个纯量，并不能将映射代入。
+
+					我们此处的证明正是基于这种想法进行了一个修改：将$F$视为环$F[A]$的子环，从而实现了正确的代入。
+				\point{}
+					\begin{proposition}
+						设$A \in \hom(V,V)$，$f(x),f_1(x),f_2(x) \in F[x]$，$f(x)=f_1(x)f_2(x)$，$(f_1(x),f_2(x))=1$
+
+						那么有：$\ker f(A) = \ker f_1(A) \oplus \ker f_2(A)$
+					\end{proposition}
+					\begin{proof}
+						我们首先证明，$\ker f_1(A)$和$\ker f_2(A)$的确是$\ker f(A)$的子空间
+
+						$\forall \alpha \in \ker f_1(A)$
+
+						$\Rightarrow f_1(A)(\alpha )=\mathbf{0} \Rightarrow f(A)(\alpha )=\left(f_2(A)f_1(A)\right)(\alpha )=\mathbf{0}\Rightarrow \alpha \in \ker f(A) \Rightarrow \ker f_1(A) \subseteq \ker f(A)$
+
+						同理可证$\ker f_2(A) \subseteq \ker f(A)$
+
+						于是我们证明了$\ker f_1(A)+\ker f_2(A) \subseteq \ker f(A)$。现在我们证明$\ker f(A) \subseteq \ker f_1(A)+\ker f_2(A)$
+
+						$\forall \alpha \in \ker f(A)$
+
+						由于$(f_1(x),f_2(x))=1$，一定存在$u(x),v(x) \in F[x],u(x)f_1(x)+v(x)f_2(x)=1$
+
+						于是有：$\alpha = I(\alpha )=\left(u(A)f_1(A)+v(A)f_2(A)\right)(\alpha )=\left(u(A)f_1(A)\right)(\alpha )+\left(v(A)f_2(A)\right)(\alpha )$
+
+						记$\alpha_1=\left(u(A)f_1(A)\right)(\alpha ),\alpha_2=\left(v(A)f_2(A)\right)(\alpha )$
+
+						注意到：$f_2(A)(\alpha_1)=\left(f_2(A)u(A)f_1(A)\right)(\alpha )=\left(u(A)f(A)\right)(\alpha )=u(A)(\mathbf{0})=\mathbf{0} \Rightarrow \alpha_1 \in \ker f_2(A)$
+
+						同理可证$\alpha_2 \in \ker f_1(A)$。于是我们证明了$\ker f(A)=\ker f_1(A)+\ker f_2(A)$
+
+						我们最后证明它们的确构成直和。
+
+						$\forall \beta \in \ker f_1(A) \cap \ker f_2(A)$
+
+						注意到：$\beta = I(\beta )=\left(u(A)f_1(A)+v(A)f_2(A)\right)(\beta )=\left(u(A)f_1(A)\right)(\beta )+\left(v(A)f_2(A)\right)(\beta )=\mathbf{0}$
+
+						于是命题得证。
+					\end{proof}
+					这个命题的直接推论是：
+					\begin{corollary}{--}{}
+						设$A \in \hom(V,V)$，$ f(x),f_1(x),\cdots,f_s(x)\in F[x]$，$f(x)=\prod\limits_{i=1}^{s} f_i(x)$，$\forall i,j,(f_i(x),f_j(x))=1$
+
+						那么有：$\ker f(A) = \bigoplus_{i=1}^{s} \ker f_i(A)$
+					\end{corollary}
+					至此，其实我们已经可以看出来一些方向了。我们已经证明了多项式如果分解为多个互素多项式，那么他们的核也可以构成直和。我们又注意到，任意映射在特诊多项式下为零。
+
+					那么，其实特征多项式的唯一分解一定可以直和为零映射的核——即线性空间本身，这正是我们所期望的结果
+			\end{para}
+		\subsection{线性变换的根子空间}
+			我们将这种理想的子空间为根子空间，因为它的常数是从特征多项式求出来的
+			\begin{defn}{根子空间}{}
+				设$F$是一个代数闭域，$V$是$F$上的一个线性空间，$\dim V = n < \aleph_0$
+
+				$\chi_A(\lambda )=\prod\limits_{i=1}^{s} (\lambda -\lambda_i)^{r_i}$
+
+				那么我们称$\ker (A-\lambda_iI)^{r_i}$为$A$的一个根子空间（又称广义特征子空间）
+			\end{defn}
+			我们现在正式叙述我们观察到的结果
+			\begin{them}{子空间分解定理}{}
+				设$F$是一个代数闭域，$V$是$F$上的一个线性空间，$\dim V = n < \aleph_0$
+
+				$\chi_A(\lambda )=\prod\limits_{i=1}^{s} (\lambda -\lambda_i)^{r_i}$
+
+				那么有：
+				\begin{equation}
+					V = \bigoplus\limits_{i=1}^{s} \ker (A-\lambda_i I)^{r_i}
+				\end{equation}
+			\end{them}
+			至此，我们证实了，代数闭域上的任意有限维线性映射，都可以形成一个根子空间分解。
+
+			接下来我们转向矩阵表示。在之前的对角标准型中，从特征值的定义可以看出来，每一个特征子空间表示为一个对角线上的元素。那么，现在$A$在根子空间上的限制，又能够表示成什么呢？
+		\subsection{线性变换的不变子空间}
+			一个首要的问题是：$A|_{\ker (A-\lambda_i I)^{r_i}}$到底能不能写成一个方阵的形式。以下内容指出：它可以，而且特别地，我们只需要将这若干个方阵写成对角矩阵，就可以得到整个映射的表示。
 	\section{线性变换的最小多项式}
 	\section{幂零变换的Jordan标准型}
 	\section{线性变换的Jordan标准型}
