@@ -569,9 +569,81 @@
 			\end{them}
 			至此，我们证实了，代数闭域上的任意有限维线性映射，都可以形成一个根子空间分解。
 
-			接下来我们转向矩阵表示。在之前的对角标准型中，从特征值的定义可以看出来，每一个特征子空间表示为一个对角线上的元素。那么，现在$A$在根子空间上的限制，又能够表示成什么呢？
+			接下来我们转向矩阵表示。在之前的对角标准型中，从特征值的定义可以看出来，每一个特征子空间表示为一个对角线上的元素。那么，现在我们希望：$A$在根子空间上的限制，都可以写成一个矩阵；特别地，如果每一个限制所属的子空间不同，此时我们便有可能写成分块对角矩阵
 		\subsection{线性变换的不变子空间}
-			一个首要的问题是：$A|_{\ker (A-\lambda_i I)^{r_i}}$到底能不能写成一个方阵的形式。以下内容指出：它可以，而且特别地，我们只需要将这若干个方阵写成对角矩阵，就可以得到整个映射的表示。
+			一个首要的问题是：$A|_{\ker (A-\lambda_i I)^{r_i}}$到底能不能写成一个方阵的形式。如果它可以，那么，我们将不仅可以把映射写成分块对角矩阵，而且每一个块的具体形式可以借助线性变换来求得。
+
+			总之，我们希望验证：是否任意代数闭域上的线性变换在根子空间上的限制是一个线性变换，而且这些线性变换在指定基下的矩阵，恰好可以分块地组成线性变换的矩阵
+
+			我们首先给出不变子空间的定义，它其实就是使得变换的限制依旧为变换的子空间
+			\begin{defn}{不变子空间}{}
+				设$V$是$F$上的一个线性空间，$A \in \hom(V,V)$
+
+				如果$V$的子空间$W \subseteq V$满足：
+
+				$\forall \alpha \in W,A(\alpha ) \in W$
+
+				那么我们称$W$是$A$的一个不变子空间
+			\end{defn}
+			显然，$V$和$\{\mathbf{0}\}$都是$A$的一个不变子空间，它们一般被称为是平凡的不变子空间
+
+			接下来我们给出一些性质
+			\begin{para}{0}
+				\point{}
+					\begin{proposition}
+						设$V$是$F$上的一个线性空间，$A \in \hom(V,V)$，$\lambda $是$A$的一个特征值
+
+						那么$\ker A,\im A,V_{\lambda }$是$A$的不变子空间
+					\end{proposition}
+					\begin{proof}
+						$\forall \alpha \in \ker A,A(\alpha )=\mathbf{0} \in \ker A$
+
+						$\forall \alpha \in \im A,A(\alpha ) \subseteq \im A$
+
+						$\forall \alpha \in V_\lambda ,A(\alpha )=\lambda \alpha  \in V_\lambda $
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						设$V$是$F$上的一个线性空间，$A,B \in \hom(V,V),AB=BA$，$\lambda $是$A$的一个特征值
+
+						那么$\ker A,\im A,V_\lambda $是$B$的不变子空间
+					\end{proposition}
+					\begin{proof}
+						$\forall \alpha \in \ker A,A(B(\alpha ))=B(A(\alpha ))=B(\mathbf{0})=\mathbf{0} \Rightarrow B(\alpha ) \in \ker A$
+
+						$\forall A(\alpha) \in \im A,B(A(\alpha ))=A(B(\alpha )) \in \im A$0
+
+						$\forall \alpha \in V_\lambda ,A(B(\alpha))=B(A(\alpha ))=B(\lambda \alpha )=\lambda B(\alpha ) \Rightarrow B(\alpha ) \in V_\lambda $
+
+						于是命题得证。
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						一个线性变换的两个不变子空间的和与交，也是不变子空间
+					\end{proposition}
+					\begin{proof}
+						设$A \in \hom(V,V)$，$W,U$是$A$的不变子空间
+
+						注意到：$\forall \alpha+\beta \in W+U,\alpha \in W,\beta \in U,A(\alpha +\beta )=A(\alpha )+A(\beta ) \in W+ U$
+
+						$\forall \gamma \in W \cap U,A(\gamma ) \in W,A(\gamma ) \in U \Rightarrow A(\gamma ) \in W \cap U$
+
+						于是命题得证
+					\end{proof}
+				\point{}
+
+					最后一条性质，是我们所希望的结果：即如果把映射限制在一系列构成直和的不变子空间，那么矩阵也可以自然构成分块
+					\begin{proposition}
+						设$V$是$F$上的一个线性空间，$\dim V = n < \aleph_0,A \in \hom(V,V)$，那么：
+
+						$V = W_1 \oplus \cdots \oplus W_s$，其中$W_i$是$A$的不变子空间，且$A|_{W_i}$在基$B_i=\{\alpha_{i1},\cdots,\alpha_{ir_i}\}$下的矩阵为$\symbfit{A}_i$
+
+						$\Leftrightarrow A$在$\{\alpha_{11},\cdots,\alpha_{1r_1},\cdots,\alpha_{s1},\cdots,\alpha_{sr_s}\}$下的矩阵为$\begin{pmatrix}
+							\symbfit{A}_1 & &  &  \\
+							
+						\end{pmatrix}$
+					\end{proposition}
+			\end{para}
 	\section{线性变换的最小多项式}
 	\section{幂零变换的Jordan标准型}
 	\section{线性变换的Jordan标准型}
