@@ -489,9 +489,9 @@
 
 						记$\symbfit{P}=A\symbfit{I}-\symbfit{A},adj(\symbfit{P})=(\frac{1}{|\symbfit{P}|}\symbfit{P}_{\N-\{i\}}^{\N-\{j\}})$，并注意到：
 
-						$\chi_A(A)(e_1,\cdots,e_n)=\det(\symbfit{P})(e_1,\cdots,e_n)=adj(\symbfit{P})\symbfit{P}(e_1,\cdots,e_n)$
+						$\chi_A(A)(e_1,\cdots,e_n)=(e_1,\cdots,e_n)\det(\symbfit{P})=(e_1,\cdots,e_n)\symbfit{P}adj(\symbfit{P})$
 
-						$adj(\symbfit{P})(A(e_1,\cdots,e_n)-\symbfit{A}(e_1,\cdots,e_n))=0$
+						$(A(e_1,\cdots,e_n)-\symbfit{A}(e_1,\cdots,e_n))adj(\symbfit{P})=0$
 
 						于是命题得证。
 					\end{proof}
@@ -639,12 +639,90 @@
 						$V = W_1 \oplus \cdots \oplus W_s$，其中$W_i$是$A$的不变子空间，且$A|_{W_i}$在基$B_i=\{\alpha_{i1},\cdots,\alpha_{ir_i}\}$下的矩阵为$\symbfit{A}_i$
 
 						$\Leftrightarrow A$在$\{\alpha_{11},\cdots,\alpha_{1r_1},\cdots,\alpha_{s1},\cdots,\alpha_{sr_s}\}$下的矩阵为$\begin{pmatrix}
-							\symbfit{A}_1 & &  &  \\
-							
+							\symbfit{A}_1 & &   \\
+							& \ddots &  \\
+							& &  \symbfit{A}_s
 						\end{pmatrix}$
 					\end{proposition}
+					\begin{proof}
+						先证充分性。
+
+						首先，由于$W_1,\cdots,W_s$构成直和，因此$B_1 \cup \cdots \cup B_s$的确是$V$的一个基
+
+						因为$A|_{W_i}$在$B_i$下的矩阵为$\symbfit{A}_i$，因此有：$A|_{W_i}(\alpha_{ij}) = \sum\limits_{k=1}^{r_i} \symbfit{A}_i (k;j)\alpha_{ik}$
+
+						考察$A$在同样的向量上的作用：
+
+						$A(\alpha_{ij})=A|_{W_i}(\alpha_{ij}) = \sum\limits_{k=1}^{r_i} \symbfit{A}_i (k;j)\alpha_{ik}$
+
+						由基的线性无关性可知，以上是$A(\alpha_{ij})$的唯一表示。于是，$A$在基$B_1 \cup \cdots \cup B_s$下的矩阵$\symbfit{A}$分块后的第$i$列，当且仅当在$i$行为$\symbfit{A}_i$，其他均为$\symbfit{O}$
+
+						于是一定有$\symbfit{A}=\begin{pmatrix}
+							\symbfit{A}_1 & &   \\
+							& \ddots &  \\
+							& &  \symbfit{A}_s
+						\end{pmatrix}$，充分性得证。
+
+						接下来证明必要性。
+
+						取$W_i = \span(\alpha_{i1},\cdots,\alpha_{ir_i})$
+
+						由直和的充要条件可知，的确有$V = W_1 \oplus \cdots \oplus W_s$
+
+						且由分块矩阵的结构可见：
+
+						$(A|_{W_i})(\alpha_{i1},\cdots,\alpha_{ir_i})=(\alpha_{i1},\cdots,\alpha_{ir_i})\symbfit{A}$
+
+						于是命题得证。
+					\end{proof}
+				\point{}
+					我们本节提出的最后一个命题，是指出根子空间也是不变子空间，自然可以应用上面关于分块矩阵的命题
+					\begin{proposition}
+						设$V$是$F$上的一个线性空间，$\dim V = n < \aleph_0$，
+
+						如果$A \in \hom(V,V)$的特征多项式在$F$内有以下分解：
+
+						$\chi_A (\lambda )=\prod\limits_{i=1}^{s} (\lambda-\lambda_i)^{r_i}$
+
+						那么$A$的根子空间$\ker (A-\lambda_iI)^{r_i}$是$A$的不变子空间
+					\end{proposition}
+					\begin{proof}
+						这其实是显然的，我们只需要注意到：$A(A-\lambda_i I)=A^2 - \lambda_i A = (A-\lambda_i I)A$
+						
+						即$A$和$A-\lambda_i I$是可交换的
+
+						那么，按照数学归纳法，容易证明$A(A-\lambda_i I)^{r_i}=(A-\lambda_i I)^{r_i}A$
+
+						于是有：
+
+						$\forall \alpha \in \ker (A-\lambda_iI)^{r_i},(A-\lambda_iI)^{r_i}(\alpha )=\mathbf{0}$
+
+						$\Rightarrow A(A-\lambda_iI)^{r_i}(\alpha )=\mathbf{0} \Rightarrow (A-\lambda_iI)^{r_i}(A(\alpha )) = \mathbf{0}$
+
+						$\Rightarrow A(\alpha ) \in \ker (A-\lambda_iI)^{r_i}$
+
+						于是命题得证。
+					\end{proof}
 			\end{para}
 	\section{线性变换的最小多项式}
+		前面我们指出了：只要特征多项式可分解为一次因式的乘积，那么线性空间就是根子空间的直和；进一步，我们只需求出线性变换在根子空间上的限制的矩阵，就可以对角地写出线性变换的矩阵
+
+		本节中我们依旧选取多项式作为一个出发点，试图找到这些分块的具体形式。
+		\subsection{最小多项式的定义}
+			\begin{defn}{最小多项式}{}
+				设$V$是$F$上的一个线性空间，$A \in \hom(V,V)$
+
+				如果$f(x) \in F[x],f \neq 0$满足：
+
+				\begin{enumerate}
+					\item $f(A) = 0$
+					\item $\forall g \in F[x] \wedge g(A) = 0,\operatorname{deg} f \leqslant \operatorname{deg} g$
+					\item $f$是首一多项式
+				\end{enumerate}
+				那么我们称$f$是$A$的最小多项式。
+			\end{defn}
+		\subsection{幂零变换}
+		\subsection{最小多项式和幂零变换的性质}
 	\section{幂零变换的Jordan标准型}
 	\section{线性变换的Jordan标准型}
 \ifx\allfiles\undefined
