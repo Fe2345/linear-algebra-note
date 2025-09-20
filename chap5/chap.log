@@ -1,10 +1,10 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.6.4)  4 SEP 2025 10:15
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.6.4)  18 SEP 2025 19:15
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**d:/Data/MyFiles/学习/各个课程学习笔记收录/高等代数/chap2/chap.tex
-(d:/Data/MyFiles/学习/各个课程学习笔记收录/高等代数/chap2/chap.tex
+**d:/Data/MyFiles/学习/各个课程学习笔记收录/高等代数/chap4/chap.tex
+(d:/Data/MyFiles/学习/各个课程学习笔记收录/高等代数/chap4/chap.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
 (d:/texlive/2024/texmf-dist/tex/latex/ctex/ctexbook.cls (d:/texlive/2024/texmf-dist/tex/latex/ctex/config/ctexbackend.cfg
@@ -1125,11 +1125,7 @@ LaTeX Font Info:    Overwriting symbol font `__um_fam1' in version `bold'
 
 Package xeCJK Warning: Redefining CJKfamily `\CJKrmdefault' (SimSun(0)).
 
-)) (./chap.aux
-
-LaTeX Warning: Label `cor:向' multiply defined.
-
-)
+)) (./chap.aux)
 \openout1 = `chap.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
@@ -1213,90 +1209,25 @@ Package pgfplots Warning: running in backwards compatibility mode (unsuitable ti
 
 \c@lstlisting=\count388
 第一章
-LaTeX Font Info:    Font shape `TU/LatinModernMath-Regular(2)/m/n' will be
-(Font)              scaled to size 12.00128pt on input line 28.
-LaTeX Font Info:    Font shape `TU/LatinModernMath-Regular(2)/m/n' will be
-(Font)              scaled to size 8.40088pt on input line 28.
-LaTeX Font Info:    Font shape `TU/LatinModernMath-Regular(2)/m/n' will be
-(Font)              scaled to size 6.00064pt on input line 28.
-LaTeX Font Info:    Font shape `TU/LatinModernMath-Regular(3)/m/n' will be
-(Font)              scaled to size 11.99872pt on input line 28.
-LaTeX Font Info:    Font shape `TU/LatinModernMath-Regular(3)/m/n' will be
-(Font)              scaled to size 8.3991pt on input line 28.
-LaTeX Font Info:    Font shape `TU/LatinModernMath-Regular(3)/m/n' will be
-(Font)              scaled to size 5.99936pt on input line 28.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 28.
-(d:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 28.
- (d:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for U+rsfs on input line 28.
- (d:/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
-LaTeX Font Info:    Trying to load font information for OMX+yhex on input line 28.
- (d:/texlive/2024/texmf-dist/tex/latex/yhmath/OMXyhex.fd
-File: OMXyhex.fd 
-File: OMXyhex.fd 2013/07/03 v1.1 YH's humble contribution to TeX maths (NP)
-) [1
+[1
 
 
-]
-LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <12> not available
-(Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 70.
- [2] [3] [4] [5] [6] [7] [8] [9] [10] [11] [12] [13] [14]
-Overfull \hbox (6.71544pt too wide) in paragraph at lines 654--655
-[][][]\TU/SimSun(0)/b/n/12 命 题 \TU/lmr/bx/n/12 1.3.8. []\TU/SimSun(0)/m/it/12 分 别 任 取 $[]$ 上 的 线 性 空 间 $[][] [][] [][] []$，|  使 得 $[] [] [] [][] [] [] [] [][] [] [] []
- []
-
-[15]
-Overfull \hbox (13.47144pt too wide) in paragraph at lines 673--674
-[][][]\TU/SimSun(0)/b/n/12 命 题 \TU/lmr/bx/n/12 1.3.10. []\TU/SimSun(0)/m/it/12 分 别 任 取 $[]$ 上 的 线 性 空 间 $[][] [][] [][] []$，|  使 得 $[] [] [] [][] [] [] [] [][] [] [] []
- []
-
-[16]
-Overfull \hbox (9.22723pt too wide) in paragraph at lines 727--728
-[][][]\TU/SimSun(0)/b/n/12 命 题 \TU/lmr/bx/n/12 1.3.13. []\TU/SimSun(0)/m/it/12 随 意 取 三 个 $[]$ 上 的 线 性 空 间 $[][] [][] []$，|  使 得 $[] [] [] [][] [] [] [] [][] [] [] []
- []
-
-[17] [18]
-Overfull \hbox (28.01945pt too wide) in paragraph at lines 844--845
-[]\TU/SimSun(0)/m/n/12 我 们 只 需 证 明：| $[] [][][][] [] [] [][][][][] [] [] [][][]$，|  因 为 $[][][][][] [] [] [][][] [] [] [][][][][] [] [] [][][]$
- []
-
-[19]
-Overfull \hbox (12.02171pt too wide) in paragraph at lines 883--884
-[]\TU/SimSun(0)/m/n/12 于 是 有：| $[][][][][] [] [] [][][] [] [][][][] [] [][][][] [] [][][][][] [] [][][][][] [] [][][][][] [] [] [][][]$ 
- []
-
-[20] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34]
-Overfull \hbox (1.90395pt too wide) in paragraph at lines 1570--1571
-[]$[] [][][][][] [] [][][][][] [][][][][] []$ 
- []
-
-[35] (./chap.aux)
+] (./chap.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/08/05>
  ***********
-
-
-LaTeX Warning: There were multiply-defined labels.
-
 Package rerunfilecheck Info: File `chap.out' has not changed.
-(rerunfilecheck)             Checksum: CF19F2A3637423048B93EF8AC2691DAF;2467.
+(rerunfilecheck)             Checksum: BB541A7BF21E3BD6B81D33A7CDCB1032;594.
  )
-(\end occurred when \ifx on line 1580 was incomplete) 
+(\end occurred when \ifx on line 15 was incomplete) 
 Here is how much of TeX's memory you used:
- 50435 strings out of 474773
- 1224478 string characters out of 5761290
- 2707035 words of memory out of 5000000
- 71741 multiletter control sequences out of 15000+600000
- 569055 words of font info for 115 fonts, out of 8000000 for 9000
+ 49921 strings out of 474773
+ 1204232 string characters out of 5761290
+ 2671035 words of memory out of 5000000
+ 71287 multiletter control sequences out of 15000+600000
+ 561555 words of font info for 69 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 98i,11n,120p,1307b,2937s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,5n,120p,1307b,2937s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on chap.xdv (35 pages, 568060 bytes).
+Output written on chap.xdv (1 page, 14068 bytes).

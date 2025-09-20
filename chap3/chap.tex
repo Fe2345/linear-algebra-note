@@ -722,9 +722,505 @@
 				那么我们称$f$是$A$的最小多项式。
 			\end{defn}
 		\subsection{最小多项式的性质}
-			
-	\section{幂零变换的Jordan标准型}
+			\begin{para}{0}
+				\point{最小多项式是唯一的}
+					\begin{proposition}
+						任意线性变换的最小多项式是唯一的
+					\end{proposition}
+					\begin{proof}
+						不妨假设$m_1(x),m_2(x)$均是$A \in \hom(V,V)$的最小多项式，且$m_1(x),m_2(x)$
+
+						不妨假设$m_1(x)=\sum\limits_{k=0}^{n} a_k x^k,m_2(x)=\sum\limits_{k=0}^{n} b_k x^k$（由最小多项式的定义可知，它们一定同次）
+
+						由最小多项式的定义可知，一定有$a_n=b_n=1$
+
+						容易注意到，$m_1(x)-m_2(x)=\sum\limits_{i=0}^{n-1} (a_k-b_k)x^k$是零化的，因为$m_1(A)-m_2(A)=0-0=0$
+
+						那么这是不可能的，因为此时，只需找出$m_1(x)-m_2(x)$相伴的首一多项式$m(x)$，它正是一个最小多项式，并且它的次数比$m_1(x),m_2(x)$低。
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						设$m(x)$是$A \in \hom(V,V)$的最小多项式，那么：
+
+						$p(x) \in F[x],p(A)=0 \Leftrightarrow m(x) \mid p(x)$
+					\end{proposition}
+					\begin{proof}
+						先证充分性。
+
+						对$p(x),m(x)$作带余除法：
+
+						$\exists q(x),r(x) \in F[x],\operatorname{deg}r(x) < \operatorname{deg} m(x),p(x)=q(x)m(x)+r(x)$
+
+						$\Rightarrow p(A)=q(A)m(A)+r(A) \Rightarrow 0=0+r(A) \Rightarrow r(A)=0$
+
+						事实上，此时只可能有$r(A)=0$，因为我们已经指出，最小多项式是次数最低的零化多项式。
+
+						那么此时有$p(x)=q(x)m(x)$，充分性得证。
+
+						再证必要性。
+
+						这其实是显然的，因为如果有$p(x)=q(x)m(x)$，此时$p(A)=q(A)m(A)=0$，于是必要性得证。
+
+						于是命题得证。
+					\end{proof}
+					这个命题指出了一个事实：零化多项式环其实不仅是一个子环，而且是个理想；特别的，它是由最小多项式生成的主理想$(m(x))$
+				\point{}
+
+					接下来我们探讨有限维空间上的线性映射的最小多项式。这样的线性映射的最小多项式一定是存在的，因为我们知道特征多项式正好就是一个零化多项式
+					\begin{proposition}
+						设$V$是$F$上的一个线性空间，$\dim V = n < \aleph_0$，$A \in \hom(V,V)$，$m(x)$是$A$的最小多项式
+
+						那么$m(x)$和$\chi_A(x)$在$F$中有相同的根（但是重数不一定一致）
+					\end{proposition}
+					\begin{proof}
+						由之前的命题可知，$m(x) \mid \chi_A(x)$，于是$m(x)$的任意根都是$\chi_A(x)$的根。
+
+						于是我们只需证明$\chi_A(x)$在$F$中的任意根都是$m(x)$的根。
+
+						设$m(x)=\sum\limits_{k=0}^{n} a_k x^k$
+
+						我们之前已经指出，$\chi_A(x)$在$F$的根其实就是$A$的特征值。于是不妨设$\chi_A(\lambda )=0,\lambda \in F$
+
+						$\Rightarrow \forall \alpha \in V_\lambda ,A(\alpha )=\lambda \alpha $
+
+						$\Rightarrow \mathbf{0}=0(\alpha )=m(A)(\alpha )=\left(a_0 I+ a_1 A + \cdots + a_n A^n\right)(\alpha )$
+
+						$=a_0 \alpha + a_1 A(\alpha )+\cdots + a_n A^n(\alpha )=a_0 \alpha + a_1 \lambda \alpha +\cdots+a_n \lambda ^n \alpha $
+
+						$=\left(a_0+a_1 \lambda +\cdots + a_n \lambda^n\right)\alpha =m(\lambda )\alpha $
+
+						又$\lambda \neq \mathbf{0}$，于是一定有$m(\lambda )=0$。
+
+						于是命题得证。
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						设$A \in \hom(V,V),V = W_1 \oplus \cdots \oplus W_s$，其中$W_i$是$A$的不变子空间
+
+						那么如果$m_i(x)$是$A|_{W_i}$的最小多项式，那么$A$的最小多项式$m(x)$就是$m_1(x),\cdots,m_s(x)$的首一最小公倍式。
+					\end{proposition}
+					\begin{proof}
+						设$q(x)$是$m_1(x),\cdots,m_s(x)$的首一最小公倍式。
+
+						我们其实只需证明$q(x) \sim m(x)$
+
+						先证明$q(x) \mid m(x)$
+
+						考虑$\forall \alpha_i \in W_i,m(A|_{W_i})(\alpha_i)=m(A)(\alpha_i)=\mathbf{0}$
+
+						由于$\alpha_i$的选取是任意的，因此一定有$m(A|_{W_i})=0$，即$m(x)$也是$A|_{W_i}$的零化多项式。
+
+						那么，由之前的命题一定有$m_i(x) \mid m(x)$。
+
+						于是$m(x)$也是$m_1(x),\cdots,m_s(x)$的公倍式。由于$q(x)$是他们的最小公倍式，一定有$q(x) \mid m(x)$
+
+						接下来证明$m(x) \mid q(x)$。
+
+						只需证明$q(A)=0$即可。设$\forall \alpha \in V,\alpha =\alpha_1+\cdots,\alpha_s,\alpha_i \in W_i$
+						
+						又因为$q(x)$是最小公倍式，因此一定有$q(x)=h_i(x)m_i(x)$
+
+						注意到：$q(A)(\alpha )=q(A)\left(\sum\limits_{i=1}^{s} \alpha_i\right)=\sum\limits_{i=1}^{s}q(A)\left( \alpha_i\right)$
+
+						$=\sum\limits_{i=1}^{s}q(A|_{W_i})\left( \alpha_i\right)=\sum\limits_{i=1}^{s}h_i(A|_{W_i})m_i(A|_{W_i})\left( \alpha_i\right)=\mathbf{0}$
+
+						因为$\alpha $是随意选取的，因此必须有$q(A)=0$。那么按照前面的命题，有$m(x) \mid q(x)$
+
+						于是我们证明了$m(x) \sim q(x)$。又两者都是首一的，因此必须有$m(x)=q(x)$
+
+						于是命题得证。
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						$A \in \hom(V,V)$是一个幂零指数为$l$的幂零多项式$\Leftrightarrow A$的最小多项式$m(x)=x^l$
+					\end{proposition}
+					\begin{proof}
+						先证明充分性，注意到：$A^l=0$，因此$x^l$是$A$的零化多项式。
+
+						那么一定有$m(x) \mid x^l$。但是我们知道，$\forall n < l,A^n \neq 0$，因此只可能$m(x)=x^l$
+
+						必要性是显然的，因为如果$m(x)=x^l$，那么一定有$A^l=0$，且$\forall n < l,A^n \neq 0$
+
+						于是命题得证。
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						设$V$是$F$上的一个线性空间，$\dim V = n < \aleph_0$，$A \in \hom(V,V)$，$m(x)$是$A$的最小多项式
+
+						那么$A$可对角化$\Leftrightarrow m(x)$可在$F$中分解为互不相同的一次因式的乘积
+					\end{proposition}
+					\begin{proof}
+						设$A$的全体互不相同的特征值为$\lambda_1,\cdots,\lambda_s$
+
+						$A$可对角化$\Leftrightarrow V = V_{\lambda_1} \oplus \cdots \oplus V_{\lambda_s}$
+
+						注意到，$\forall \alpha \in \ker (A-\lambda_i I),(A-\lambda_i I)|_{\ker (A-\lambda_i I)}(\alpha )=A(\alpha )-\lambda_i \alpha =\lambda_i \alpha -\lambda_i \alpha = \mathbf{0}$
+
+						$\Rightarrow x-\lambda_i$是$A|_{\ker (A-\lambda_i I)}$的最小多项式（因为$x-\lambda_i$是零化多项式，而其唯一非零低阶因子$a$不是零化多项式）
+
+						$\Leftrightarrow A$的零化多项式为$(x-\lambda_1)\cdots(x-\lambda_s)$
+
+						因此$A$可对角化$\Leftrightarrow m(x)$可在$F$中分解为互不相同的一次因式的乘积
+					\end{proof}
+					其直接推论是：
+					\begin{corollary}{幂零指数大于$1$的幂零变换不可对角化}{}
+						设$V$是$F$上的一个线性空间，$\dim V = n < \aleph_0$，$A \in \hom(V,V)$是一个幂零指数为$l$的幂零变换
+
+						那么，如果$l >1$，则$A$不可对角化
+					\end{corollary}
+					\begin{proof}
+						这是显然的，因为此时$A$的最小多项式为$x^l$，无法分解为不同的一次因式的乘积。
+					\end{proof}
+					\begin{corollary}{幂等变换可对角化}{}
+						设$V$是$F$上的一个线性空间，$\dim V = n < \aleph_0$，$A \in \hom(V,V)$是一个幂等变换
+
+						那么$A$一定可对角化
+					\end{corollary}
+					\begin{proof}
+						这是显然的，因为只需注意到$A^2=A \Rightarrow A(A-I)=0 \Rightarrow x(x-1)$是$A$的零化多项式
+
+						那么，$A$的最小多项式作为$x(x-1)$的因子，一定可以分解为不同的一次因式的乘积
+
+						于是命题得证
+					\end{proof}
+				\point{}
+					最后，我们给出我们所需要的最终成果：
+					\begin{proposition}
+						设$V$是$F$上的一个线性空间，$\dim V = n < \aleph_0$，$A \in \hom(V,V)$，$\lambda_1,\cdots,\lambda_s$是$A$的全体互不相同的特征值
+						
+						$m(x)=(x-\lambda_1)^{t_1}\cdots (x-\lambda_s)^{t_s}$是$A$的最小多项式
+
+						那么，$A|_{\ker (A-\lambda_i I)^{t_i}}$的最小多项式为$(x-\lambda_i)^{t_i}$，
+
+						且$(A-\lambda_i I)|_{\ker (A-\lambda_i I)^{t_i}}$是一个幂零指数为$t_i$的幂零变换
+					\end{proposition}
+					\begin{proof}
+						因为最小多项式和特征多项式同根，此时一定有分解$\chi_A(x)=(x-\lambda_1)^{r_1}\cdots(x-\lambda_s)^{r_s}$
+
+						我们之前已经证明了：$V = \ker(A-\lambda_1 I)^{r_1} \oplus \cdots \oplus \ker (A-\lambda_s I)^{r_s}$
+
+						注意到：$\forall \alpha \in \ker(A-\lambda_i I)^{r_i},(A-\lambda_i I)^{r_i}|_{\ker (A-\lambda_i I)^{r_i}}(\alpha )=\mathbf{0}$
+
+						因此，$(x-\lambda_i)^{r_i}$是$A|_{\ker (A-\lambda_i I)^{r_i}}$的零化多项式。不妨假设$A|_{\ker (A-\lambda_i I)^{r_i}}$的最小多项式$m_i(x)=(x-\lambda_i)^{l_i},l_i \leqslant r_i$
+
+						那么，按照之前的命题，$A$的最小多项式一定是$m_1(x),\cdots,m_s(x)$的首一最小公倍式，又因为$m_1(x),\cdots,m_s(x)$两两互素，因此一定有$m(x)=(x-\lambda_1)^{l_1}\cdots(x-\lambda_s)^{l_s}$
+
+						但是，我们已经假设了$m(x)=(x-\lambda_1)^{t_1}\cdots (x-\lambda_s)^{t_s}$，因此一定有$l_i=t_i$
+
+						于是我们证明了$A|_{\ker (A-\lambda_i I)^{r_i}}$的最小多项式为$(x-\lambda_i)^{t_i}$
+
+						此时只需注意到：因为$t_i < r_i$，所以一定有$\forall \alpha \in \ker (A-\lambda_i)^{t_i},(A-\lambda_i)^{r_i}(\alpha )=\mathbf{0}$，即$\ker (A-\lambda_i I)^{t_i} \subseteq \ker (A-\lambda_i I)^{r_i}$
+
+						同时，由于$(x-\lambda_i)^{t_i}$是$A|_{\ker (A-\lambda_i I)^{r_i}}$的最小多项式，那么$\forall \alpha \in \ker(A-\lambda_i I)^{r_i},(A-\lambda_i I)^{t_i}|_{\ker (A-\lambda_i I)^{r_i}}(\alpha )=0(\alpha )=\mathbf{0}$
+
+						那么，一定有$\ker (A-\lambda_i I)^{r_i} = \ker (A-\lambda_i I)^{t_i}$，于是命题的前半得证
+
+						对于$(A-\lambda_i I)|_{\ker (A-\lambda_i)^{t_i}}$是幂零映射的证明，只需注意到：
+
+						因为$A|_{\ker (A-\lambda_i I)^{t_i}}$的最小多项式为$(x-\lambda_i)^{t_i}$，所以$(A-\lambda_i I)^{t_i}|_{\ker (A-\lambda_i I)^{t_i}}=0$，且$\forall k < t_i,(A-\lambda_i I)^{k}|_{\ker (A-\lambda_i I)^{t_i}} \neq 0$
+
+						因此$x^l$是$(A-\lambda_i I)|_{\ker (A-\lambda_i)^{t_i}}$次数最小的首一零化多项式，即最小多项式
+
+						于是命题得证
+					\end{proof}
+					在这个结论的证明过程中，我们还指出了一个特殊的结果：
+					\begin{corollary}{}{}
+						设$V$是$F$上的一个线性空间，$\dim V = n < \aleph_0$，$A \in \hom(V,V)$，$\lambda_1,\cdots,\lambda_s$是$A$的全体互不相同的特征值
+						
+						$m(x)=(x-\lambda_1)^{t_1}\cdots (x-\lambda_s)^{t_s}$是$A$的最小多项式
+
+						那么，$V = \ker(A-\lambda_i I)^{t_1} \oplus \cdots \oplus \ker (A-\lambda_i I)^{t_s}$
+					\end{corollary}
+					前面的命题指出了两个事实：首先，线性变换可以分解为一些幂零变换；其次，特征多项式其实是不必要的，根子空间中的$r_i$其实也可以用$t_i$代替。
+			\end{para}
 	\section{线性变换的Jordan标准型}
+		\subsection{Jordan矩阵与Jordan标准型}
+			我们首先给出Jordan矩阵的定义
+			\begin{defn}{Jordan块与Jordan矩阵}{}
+				设$F$是一个域，$\lambda \in F,t \in \mathbb{N}^+$
+
+				那么我们称矩阵
+				\begin{equation}
+					\symbfit{J}_t(\lambda )=\begin{pmatrix}
+						\lambda & 1 &  &  &  \\
+						 & \lambda & 1 &  &  \\
+						 &  & \ddots & \ddots &  \\
+						 &  &  & \lambda & 1 \\
+						 &  &  &  & \lambda 
+					\end{pmatrix} \in M_t(F)
+				\end{equation}
+				为一个主对角元为$a$的$t$阶的Jordan块
+
+				特别地，我们称形如$diag\{\symbfit{J}_{t_1}(\lambda_1),\cdots,\symbfit{J}_{t_s}(\lambda_s)\}$的分块对角矩阵为Jordan矩阵
+			\end{defn}
+			接下来我们给出Jordan标准型的定义
+			\begin{defn}{线性变换的Jordan标准型}{}
+				设$V$是$F$上的一个线性空间，$\dim V = n < \aleph_0$，$A \in \hom(V,V)$
+
+				如果存在$V$的一个基，使得$A$在该基下的矩阵是一个Jordan矩阵，那么我们称该矩阵为$A$的Jordan标准型
+			\end{defn}
+			我们之前已经指出，只要特征多项式的根都在域$F$中，那么线性变换就可以分解为一些幂零变换。因此，本节中我们暂时先讨论幂零变换的Jordan标准型
+
+			为了给出幂零变换的Jordan标准型，我们先给出循环子空间的定义：
+			\begin{defn}{循环子空间}{}
+				设$V$是$F$上的一个线性空间，$\dim V = n < \aleph_0$，$A \in \hom(V,V)$
+				
+				如果$\exists \alpha  \in V$，使得$\alpha ,A(\alpha ),\cdots,A^{t-1}(\alpha )$线性无关
+
+				且$\forall r \in \N_+,A^r(\alpha ) \in \span(\alpha ,A(\alpha ),\cdots,A^{t-1}(\alpha ))$
+
+				那么我们称$\span\{\alpha ,A(\alpha ),A^2(\alpha ),\cdots,A^{t-1}(\alpha )\}$是一个$A$-循环子空间
+
+				特别地，如果还有$A^t(\alpha )=\mathbf{0}$，我们称$\span\{\alpha ,A(\alpha ),A^2(\alpha ),\cdots,A^{t-1}(\alpha )\}$是一个$A$-强循环子空间
+			\end{defn}
+			容易注意到，$A-$强循环子空间是$A$的一个不变子空间
+		\subsection{幂零变换的Jordan标准型}
+			\begin{lemma}{}
+				设$V$是$F$上的一个线性空间，$\dim V = n < \aleph_0$，$A \in \hom(V,V)$
+
+				如果$\alpha  \in V$满足：$A^l(\alpha )=\mathbf{0},A^{l-1}(\alpha )\neq \mathbf{0}$
+
+				那么，对于$B=\{A^{l-1}(\alpha ),\cdots,A(\alpha ),\alpha \}$，$\span(B)$是一个$A$-强循环子空间，且$A|_{\span(B)}$在基$B$下的矩阵为$J_l(0)$
+			\end{lemma}
+			\begin{proof}
+				首先证明$A^{l-1}(\alpha ),\cdots,A(\alpha ),\alpha $线性无关。
+
+				考察线性组合$k_{l-1}A^{l-1}(\alpha )+\cdots+k_1 A(\alpha )+k_0 \alpha $
+
+				对$k_i$作数学归纳法：
+
+				首先，$k_0=0$，因为：$A^{l-1}(k_{l-1}A^{l-1}(\alpha )+\cdots+k_1 A(\alpha )+k_0\alpha)=\mathbf{0}$
+
+				$\Rightarrow k_0 A^{l-1} (\alpha )=\mathbf{0} \Rightarrow k_0 = 0$
+
+				现在假设$\forall t \leqslant n-1,k_t = 0$，我们来证明$k_n=0$
+
+				注意到，此时$A^{l-n-1}(k_{l-1}A^{l-1}(\alpha )+\cdots+k_n A^n(\alpha ))=k_n A^{l-1}(\alpha )=\mathbf{0} \Rightarrow k_n=0$
+
+				由强归纳原理，一定有$\forall i,k_i = 0$，于是线性无关性得证。
+
+				$\forall r \in \N_+,A^r(\alpha ) \in \span(B)$是显然的，因为当$r \geqslant t,A^r(\alpha )=\mathbf{0}$
+
+				于是我们证明了$\span(B)$是一个$A$-强循环子空间。
+
+				接下来我们只需注意到，$A|_{\span(B)}(A^{l-i}(\alpha ))=A^{l-i+1}(\alpha )=\sum\limits_{k=1}^{l} \delta_{i-1,k}A^{l-k}(\alpha )$
+
+				因此，$A|_{\span(B)}$在$B$下的矩阵$\symbfit{A}$一定满足：$\symbfit{A}(i-1;i)=1$，而其他元素均为$0$
+
+				那么，这其实就是$\symbfit{A}=J_l(0)$
+
+				于是命题得证。
+			\end{proof}
+			在证明过程中，我们其实也证明了：
+			\begin{corollary}{}
+				设$V$是$F$上的一个线性空间，$\dim V = n < \aleph_0$，$A \in \hom(V,V)$是一个幂零指数为$l$的幂零变换
+
+				那么一定有$ l \leqslant n$
+			\end{corollary}
+			\begin{proof}
+				这是显然的，因为我们已经证明了：对于$\alpha \in V,A^l(\alpha )=\mathbf{0},A^{l-1}(\alpha )\neq \mathbf{0}$
+
+				此时$A^{l-1}(\alpha ),\cdots,A(\alpha ),\alpha $线性无关。
+
+				那么，其实一定有$l \leqslant n$，因为$n$维线性空间中不可能有超过$n$个线性无关的向量。
+
+				于是命题得证。
+			\end{proof}
+			\begin{lemma}{}
+				设$V$是$F$上的一个线性空间，$\dim V = n < \aleph_0$，$A \in \hom(V,V)$是一个幂零指数为$l$的幂零变换
+
+				那么，$V$可分解为$\dim V_0 = \dim \ker A$个强循环子空间的直和。
+			\end{lemma}
+			\begin{proof}
+				对$n$作数学归纳法：
+
+				当$n=1$，由于我们已经指出幂零指数无法超出维数，因此一定有$l=1$（$A^0=I\neq 0$，因此$l$不是零）
+
+				此时，$A=0$，那么，其实只需要取$V$的一个基$\{\alpha \}$，此时显然$V=\span(\alpha)$是一个$A$-强循环子空间，因此命题显然成立
+
+				现在假设$r< n$时命题成立
+
+				首先，我们已经证明了$A=0$时命题成立，因此我们只需考虑$A \neq 0$的情况
+
+				此时，$1 \leqslant \dim(V/\ker A) = \dim V - \dim \ker A< \dim V=n$
+
+				于是，只需找到$V/\ker A$上的一个幂零变换，就可以在$V/\ker A$上应用假设。
+
+				考虑映射：$\phi  : V/\ker A \ni \alpha + \ker A \mapsto A(\alpha )+\ker A$
+
+				我们在证明秩-零化度定理时已经验证了这个映射的良定义性，此处不再讨论
+
+				注意到：$\forall \alpha \in V/\ker A,\phi^l(\alpha+\ker A)=\phi ^l(\alpha )+\ker A = \ker A$。
+
+				因此$\phi $是一个幂零指数小于等于$l$的幂零变换
+
+				于是，依照假设，$V/\ker A$一定存在以下分解：
+
+				$V/\ker A = \span(\alpha_1+\ker A,\cdots,\phi^{t_1-1}(\alpha_1+\ker A))\oplus \cdots \oplus \span(\alpha_k+\ker A,\cdots,\phi^{t_k-1}(\alpha_k+\ker A))$
+
+				且其中$\span(\alpha_i+\ker A,\cdots,\phi^{t_i-1}(\alpha_i+\ker A))$是一个$\phi $-强循环子空间，即有 $\phi^{t_i}(\alpha_i+\ker A)=\ker A$
+
+				那么，依照直和的等价条件，$\alpha_1+\ker A,\cdots,\phi^{t_1-1}(\alpha_1+\ker A),\cdots,\alpha_k+\ker A,\cdots,\phi^{t_k-1}(\alpha_k+\ker A)$是$V/\ker A$的一个基
+
+				我们记$U = \span(\alpha_1,\cdots,A^{t_1-1}(\alpha_1),\cdots,\alpha_k,\cdots,A^{t_k-1}(\alpha_k))$
+
+				那么此时有$V = U \oplus \ker A$
+
+				此时注意之前强循环子空间的关键条件：$\phi ^{t_i}(\alpha_i+\ker A)=\ker A \Rightarrow A^{t_i}(\alpha_i) \in \ker A$
+
+				考察线性组合$p_1 A^{t_1}(\alpha_1)+\cdots+p_k A^{t_k}(\alpha_k)=\mathbf{0}$
+
+				$\Rightarrow A(p_1 A^{t_1-1}(\alpha_1)+\cdots+p_k A^{t_k-1}(\alpha_k))=\mathbf{0}$
+
+				$\Rightarrow p_1 A^{t_1-1}(\alpha_1)+\cdots+p_k A^{t_k-1}(\alpha_k) \in \ker A$
+
+				$\Rightarrow p_1 (A^{t_1-1}(\alpha_1)+\ker A)+\cdots+p_k (A^{t_k-1}(\alpha_k)+\ker A) \in \ker A$
+
+				$\Rightarrow p_1,\cdots,p_k = 0$（因为之前证明了$\alpha_1+\ker A,\cdots,\phi^{t_1-1}(\alpha_1+\ker A),\cdots,\alpha_k+\ker A,\cdots,\phi^{t_k-1}(\alpha_k+\ker A)$是$V/\ker A$的一个基，即线性无关）
+
+				于是我们证明了$A^{t_1}(\alpha_1),\cdots,A^{t_k}(\alpha_k) \in \ker A$线性无关
+
+				于是它一定能补全成$\ker A$的一个基$\{A^{t_1}(\alpha_1),\cdots,A^{t_k}(\alpha_k),\beta_1,\cdots,\beta_s\}$
+
+				那么此时：$V = U \oplus \ker A$
+
+				$= \span(\alpha_1,\cdots,A^{t_1-1}(\alpha_1),\cdots,\alpha_k,\cdots,A^{t_k-1}(\alpha_k),\beta_1,\cdots,\beta_s) \oplus \span(A^{t_1}(\alpha_1),\cdots,A^{t_k}(\alpha_k),\beta_1,\cdots,\beta_s)$
+
+				$= \span(\alpha_1,\cdots,A^{t_1-1}(\alpha _1),A^{t_1}(\alpha_1)) \oplus \cdots \oplus \span(\alpha_k,\cdots,A^{t_k-1}(\alpha_k),A^{t_k}(\alpha_k)) \oplus \span(\beta_1) \oplus \cdots \oplus \span(\beta_s)$
+
+				我们来验证这些子空间的确是$A$-强循环子空间。其实，依照之前的命题，我们只需要验证最后一个元素是否是$A$的核即可，但是，这些元素正是$\ker A$的基，这是必定成立的。
+
+				最后，我们注意到：$\dim \ker A = \card\{A^{t_1}(\alpha_1),\cdots,A^{t_k}(\alpha_k),\beta_1,\cdots,\beta_s\}=t+s$，而分解的数量也恰好是$t+s$，因此分解的数量正好是$\dim \ker A$
+			\end{proof}
+			现在，我们可以给出结论：幂零变换的Jordan标准型一定是存在的。
+			\begin{them}{幂零变换的Jordan标准型}{}
+				设$V$是$F$上的一个线性空间，$\dim V = n < \aleph_0$，$A \in \hom(V,V)$是一个幂零指数为$l$的幂零变换
+
+				那么一定存在一个基，使得它在此基下的矩阵是一个Jordan矩阵$diag\{J_{t_1}(0),\cdots,J_{t_k}(0)\}$，且其中$t_i \leqslant l$
+
+				特别地，Jordan块的个数是$\dim \ker A$，其中$t$级Jordan块的个数$N(t)=\rank(B^{t-1})-2\rank(B^t)+\rank(B^{t+1})$
+			\end{them}
+			\begin{proof}
+				首先，Jordan标准型的存在性是显然的，因为我们只需找到它的一个强循环子空间分解$V=W_1 \oplus \cdots \oplus W_s$，而按照我们之前证明的引理，
+
+				我们首先证明：$\rank(J_l(0)^{t})=l-t,0 \leqslant t \leqslant l$
+
+				我们来证明，$J_l(0)^t$是满足$J_l(0)(i;i+t)=1$，而其他元素均为$0$的矩阵。
+
+				对$t$作数学归纳法。首先，当$t=1$，这就是Jordan块的定义，自然成立
+
+				现在假设$t$时成立，我们来证明$t+1$时也成立：
+
+				$J_{l}(0)^{t+1}(i;j)=\sum\limits_{k=1}^{l}J_l(0)^t(i;k)J_l(0)(k;j)$
+
+				显然，只有当$k=i+t=j-1$时，$J_l(0)^t(i;k)J_l(0)(k;j)=1$，其他情况均为$0$，即当且仅有$J_{l}(0)^{t+1}(i;i+t)=1$
+
+				于是由归纳法得证。那么，显然有：$\rank(J_l(0)^t)=l-t,0 \leqslant t \leqslant l$
+
+				接下来我们只需注意到：$\rank(A^t)=\sum\limits_{k=t+1}^{l} N(k)(k-t)$（因为$diag\{\symbfit{J}_{t_1}(\lambda_1),\cdots,\symbfit{J}_{t_s}(\lambda_s)\}^{t}=diag\{\symbfit{J}_{t_1}(\lambda_1)^t,\cdots,\symbfit{J}_{t_s}(\lambda_s)^t\}$）
+
+				于是有：$\rank(A^{t-1})=\sum\limits_{k=t}^{l} N(k)(k-t+1)$
+
+				$\rank(A^{t+1})=\sum\limits_{k=t+2}^{l} N(k)(k-t-1)$
+
+				于是可以注意到：$\rank(A^{t-1})+\rank(A^{t+1})-2\rank(A^t)$
+
+				$=\sum\limits_{k=t+2}^{l} 2N(k)(k-t)+N(t)+2N(t+1)-2\sum\limits_{k=t+2}^{l}N(k)(k-t)-2N(t+1)=N(t)$
+
+				于是命题得证。
+			\end{proof}
+		\subsection{线性变换的Jordan标准型}
+			最后，我们应用我们给出的全部结论，给出我们的最终结果：线性变换的Jordan标准型
+
+			我们回顾之前给出的结果，我们指出了可以分解为若干个不变子空间，每个子空间上是一个幂零变换和数量变换的和；我们又指出了幂零变换可以写出Jordan标准型
+
+			结果已经很显然了：如果能给出根子空间分解，我们就可以写出Jordan标准型
+			\begin{proposition}
+				设$V$是$F$上的一个线性空间，$\dim V = n < \aleph_0$，$A \in \hom(V,V)$
+							
+				那么，$A$的Jordan标准型存在$ \Leftrightarrow A$的最小多项式在$F$中存在分解$m(x)=(x-\lambda_1)^{t_1}\cdots (x-\lambda_s)^{t_s}$
+			\end{proposition}
+			\begin{proof}
+				先证明必要性。
+
+				由之前的命题，如果此形式的分解存在，那么一定有$V = \ker (A-\lambda_1 I)^{t_1}\oplus \cdots \oplus \ker (A-\lambda_s I)^{t_s}$
+
+				但是，我们已经证明了，幂零变换$(A-\lambda_i I)|_{\ker (A-\lambda_i I)^{t_i}}$的Jordan标准型$diag\{J_{t_{i1}}(0),\cdots,J_{t_{ik_i}}(0)\}$
+
+				那么$A|_{\ker (A-\lambda_i I)^{t_i}}$的Jordan标准型就是$diag\{J_{t_{i1}}(\lambda_i),\cdots,J_{t_{ik_i}}(\lambda_i)\}$
+
+				于是$A$一定有标准型$diag\{J_{t_{11}}(\lambda_1),\cdots,J_{t_{1k_1}}(\lambda_1),\cdots,J_{t_{s1}}(\lambda_s),\cdots,J_{t_{sk_s}}(\lambda_s)\}$，于是必要性得证。
+
+				我们接下来证明充分性
+
+				充分性是显然的，因为对于Jordan标准型$diag\{J_{l_1}(\lambda_1),\cdots,J_{l_s}(\lambda_s)\}$，$J_{l_i}(\lambda_i)$所对应的线性变换的最小多项式是$(x-\lambda_i)^{l_i}$
+
+				因此线性变换的最小多项式一定可以在$F$中分解为互若干一次因式的乘积，于是命题得证。
+			\end{proof}
+			有了以上命题，接下来我们阐述Jordan标准型的具体形式
+			\begin{them}{线性变换的Jordan标准型}{}
+				设$V$是$F$上的一个线性空间，$\dim V = n < \aleph_0$，$A \in \hom(V,V)$，
+							
+				$m(x)=(x-\lambda_1)^{t_1}\cdots (x-\lambda_s)^{t_s}$是$A$的最小多项式
+
+				那么，$A$的Jordan标准型一定存在，且对角线元素为$\lambda_i$的Jordan块个数$N_i$，及$J_{t}(\lambda_i)$的个数$N_i(T)$分别为：
+
+				\begin{equation}
+					N_i = \operatorname{nullity}(A-\lambda_i I)
+				\end{equation}
+				\begin{equation}
+					N_i(t) = \rank((A-\lambda_i I)^{t-1})-2\rank((A-\lambda_i I)^t)+\rank((A-\lambda_i I)^{t+1}),t \leqslant t_i
+				\end{equation}
+			\end{them}
+			\begin{proof}
+				首先，我们已经证明了此时Jordan标准型存在。我们来计算块的个数
+
+				首先，我们已经指出，$V = \ker (A-\lambda_1 I)^{t_1} \oplus \cdots \oplus \ker (A-\lambda_s I)^{t_s}$
+
+				此时，对于每一个子空间，一定能找到一个基$B_i$，使$(A-\lambda_i I)|_{\ker (A-\lambda_i I)^{t_i}}$在$B_i$下的矩阵为$diag\{J_{t_{i1}}(0),\cdots,J_{t_{ik_i}}(0)\}$
+
+				于是，此时$A|_{\ker (A-\lambda_i I)^{t_i}}$在$B$下的矩阵为$diag\{J_{t_{i1}}(\lambda_i),\cdots,J_{t_{ik_i}}(\lambda_i)\}$。
+
+				由于$\lambda_i$是互不相同的，其实此时一定有$N_i = t_i = \dim \ker ((A-\lambda_i I)|_{\ker (A-\lambda_i I)^{t_i}})$
+
+				其实，此时$\ker (A-\lambda_i I)^{t_i}$的限制是完全没有必要的，因为注意到：$\forall \alpha \in \ker (A-\lambda_i I) \Rightarrow \alpha \in \ker(A-\lambda_i I)^{t_i}$
+
+				因此，此时有$N_i = \operatorname{nullity}(A-\lambda_i I)$
+
+				而$N_i(t)=\rank((A-\lambda_i I)^{t-1}|_{\ker(A-\lambda_i I)^{t_i}})-2\rank((A-\lambda_i I)^t|_{\ker(A-\lambda_i I)^{t_i}})+\rank((A-\lambda_i I)^{t+1}|_{\ker(A-\lambda_i I)^{t_i}})$
+
+				$=(\dim \ker(A-\lambda_i I)^{t_i}-\dim \ker((A-\lambda_i I)^{t-1}|_{\ker(A-\lambda_i I)^{t_i+1}})-2(\dim \ker(A-\lambda_i I)^{t_i}-\dim \ker((A-\lambda_i I)^{t}|_{\ker(A-\lambda_i I)^{t_i}}))+(\dim \ker(A-\lambda_i I)^{t_i}-\dim \ker((A-\lambda_i I)^{t+1}|_{\ker(A-\lambda_i I)^{t_i}}))$
+
+				$=-\dim \ker((A-\lambda_i I)^{t-1}|_{\ker(A-\lambda_i I)^{t_i+1}})+2\dim \ker((A-\lambda_i I)^{t}|_{\ker(A-\lambda_i I)^{t_i}}))-\dim \ker((A-\lambda_i I)^{t+1}|_{\ker(A-\lambda_i I)^{t_i}})$
+			
+				事实上，有：$\forall t,\ker((A-\lambda_i I)^t|_{\ker (A-\lambda_j I)^{t_j}})=\mathbf{0},i\neq j$
+
+				这是因为：如果$i\neq j$，那么一定有$((x-\lambda_i)^t,(x-\lambda_j)^{t_j})=1$
+
+				$\Rightarrow \exists u(x),v(x) \in F[x],u(x)(x-\lambda_i)^{t}+v(x)(x-\lambda_j)^{t_j}=1$
+
+				代入$A|_{\ker (A-\lambda_j I)^{t_j}}$：
+
+				$\Rightarrow u(A|_{\ker (A-\lambda_j I)^{t_j}})(A-\lambda_i I)^{t}|_{\ker (A-\lambda_j I)^{t_j}}+v(A|_{\ker (A-\lambda_j I)^{t_j}})(A-\lambda_j I)^{t_j}|_{\ker (A-\lambda_j I)^{t_j}}=1$
+
+				$\Rightarrow u(A|_{\ker (A-\lambda_j I)^{t_j}})(A-\lambda_i I)^{t}|_{\ker (A-\lambda_j I)^{t_j}}=1$
+
+				由$F[x]$可交换可知，此时$((A-\lambda_i I)^{t}|_{\ker (A-\lambda_j I)^{t_j}})^{-1}=u(A)|_{\ker (A-\lambda_j I)^{t_j}}$
+
+				既然$(A-\lambda_i I)^{t}|_{\ker (A-\lambda_j I)^{t_j}}$可逆，那么一定有$\ker((A-\lambda_i I)^t|_{\ker (A-\lambda_j I)^{t_j}})=\mathbf{0}$
+
+				那么，其实之前$N_i(t)$的计算公式中的子空间限制都是没有必要的（因为在其他子空间上的核都是零），因此有：
+
+				$N_i(t)=-\dim \ker((A-\lambda_i I)^{t-1}|_{\ker(A-\lambda_i I)^{t_i+1}})+2\dim \ker((A-\lambda_i I)^{t}|_{\ker(A-\lambda_i I)^{t_i}}))-\dim \ker((A-\lambda_i I)^{t+1}|_{\ker(A-\lambda_i I)^{t_i}})$
+
+				$-\dim((A-\lambda_i I)^{t-1})+2\dim\ker((A-\lambda_i I)^{t})-\dim\ker((A-\lambda_i I)^{t+1})$
+
+				$=(\dim V-\dim\ker((A-\lambda_i I)^{t-1}))-2(\dim V-\dim\ker ((A-\lambda_i I)^{t}))+(\dim V-\dim\ker ((A-\lambda_i I)^{t+1}))$
+
+				$=\rank((A-\lambda_i I)^{t-1})-2\rank((A-\lambda_i I)^{t})+\rank((A-\lambda_i I)^{t+1})$
+
+				于是命题得证。
+			\end{proof}
 \ifx\allfiles\undefined
 \end{document}
 \fi
