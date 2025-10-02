@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.6.4)  20 SEP 2025 11:08
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.6.4)  29 SEP 2025 20:52
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1209,25 +1209,61 @@ Package pgfplots Warning: running in backwards compatibility mode (unsuitable ti
 
 \c@lstlisting=\count388
 第一章
-[1
+LaTeX Font Info:    Font shape `TU/LatinModernMath-Regular(2)/m/n' will be
+(Font)              scaled to size 12.00128pt on input line 14.
+LaTeX Font Info:    Font shape `TU/LatinModernMath-Regular(2)/m/n' will be
+(Font)              scaled to size 8.40088pt on input line 14.
+LaTeX Font Info:    Font shape `TU/LatinModernMath-Regular(2)/m/n' will be
+(Font)              scaled to size 6.00064pt on input line 14.
+LaTeX Font Info:    Font shape `TU/LatinModernMath-Regular(3)/m/n' will be
+(Font)              scaled to size 11.99872pt on input line 14.
+LaTeX Font Info:    Font shape `TU/LatinModernMath-Regular(3)/m/n' will be
+(Font)              scaled to size 8.3991pt on input line 14.
+LaTeX Font Info:    Font shape `TU/LatinModernMath-Regular(3)/m/n' will be
+(Font)              scaled to size 5.99936pt on input line 14.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 14.
+(d:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 14.
+ (d:/texlive/2024/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+LaTeX Font Info:    Trying to load font information for U+rsfs on input line 14.
+ (d:/texlive/2024/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+)
+LaTeX Font Info:    Trying to load font information for OMX+yhex on input line 14.
+ (d:/texlive/2024/texmf-dist/tex/latex/yhmath/OMXyhex.fd
+File: OMXyhex.fd 
+File: OMXyhex.fd 2013/07/03 v1.1 YH's humble contribution to TeX maths (NP)
+) [1
 
 
-] (./chap.aux)
+]
+LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <12> not available
+(Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 74.
+ [2] [3] [4]
+Overfull \hbox (38.21866pt too wide) in paragraph at lines 166--167
+[]$[][][][] [] [] [][] [] [][][] [][][][][] [][][][] [] [][][][][][] [] [] [][][][][] [] [][][] [] [] [][][][] [] [] [][][][] [] [][][] [][][][][] [] [][][][][] []
+ []
+
+[5] [6] [7] [8] [9] [10] (./chap.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/08/05>
  ***********
 Package rerunfilecheck Info: File `chap.out' has not changed.
-(rerunfilecheck)             Checksum: 59586988278766BC397E2E0F7589FC38;427.
+(rerunfilecheck)             Checksum: F91A84994ED2606AE393B4B38F76B112;1321.
  )
-(\end occurred when \ifx on line 15 was incomplete) 
+(\end occurred when \ifx on line 403 was incomplete) 
 Here is how much of TeX's memory you used:
- 49921 strings out of 474773
- 1204232 string characters out of 5761290
- 2671035 words of memory out of 5000000
- 71287 multiletter control sequences out of 15000+600000
- 561555 words of font info for 69 fonts, out of 8000000 for 9000
+ 50332 strings out of 474773
+ 1220479 string characters out of 5761290
+ 2692035 words of memory out of 5000000
+ 71636 multiletter control sequences out of 15000+600000
+ 569071 words of font info for 117 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
- 98i,5n,120p,1307b,2937s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 98i,8n,120p,1307b,2937s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on chap.xdv (1 page, 13524 bytes).
+Output written on chap.xdv (10 pages, 174848 bytes).

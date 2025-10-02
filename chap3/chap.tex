@@ -1096,7 +1096,7 @@
 			\begin{them}{幂零变换的Jordan标准型}{}
 				设$V$是$F$上的一个线性空间，$\dim V = n < \aleph_0$，$A \in \hom(V,V)$是一个幂零指数为$l$的幂零变换
 
-				那么一定存在一个基，使得它在此基下的矩阵是一个Jordan矩阵$diag\{J_{t_1}(0),\cdots,J_{t_k}(0)\}$，且其中$t_i \leqslant l$
+				那么一定存在一个基，使得它在此基下的矩阵是一个Jordan矩阵$diag\{\symbfit{J}_{t_1}(0),\cdots,\symbfit{J}_{t_k}(0)\}$，且其中$t_i \leqslant l$
 
 				特别地，Jordan块的个数是$\dim \ker A$，其中$t$级Jordan块的个数$N(t)=\rank(B^{t-1})-2\rank(B^t)+\rank(B^{t+1})$
 			\end{them}
@@ -1145,15 +1145,15 @@
 
 				由之前的命题，如果此形式的分解存在，那么一定有$V = \ker (A-\lambda_1 I)^{t_1}\oplus \cdots \oplus \ker (A-\lambda_s I)^{t_s}$
 
-				但是，我们已经证明了，幂零变换$(A-\lambda_i I)|_{\ker (A-\lambda_i I)^{t_i}}$的Jordan标准型$diag\{J_{t_{i1}}(0),\cdots,J_{t_{ik_i}}(0)\}$
+				但是，我们已经证明了，幂零变换$(A-\lambda_i I)|_{\ker (A-\lambda_i I)^{t_i}}$的Jordan标准型$diag\{\symbfit{J}_{t_{i1}}(0),\cdots,\symbfit{J}_{t_{ik_i}}(0)\}$
 
-				那么$A|_{\ker (A-\lambda_i I)^{t_i}}$的Jordan标准型就是$diag\{J_{t_{i1}}(\lambda_i),\cdots,J_{t_{ik_i}}(\lambda_i)\}$
+				那么$A|_{\ker (A-\lambda_i I)^{t_i}}$的Jordan标准型就是$diag\{\symbfit{J}_{t_{i1}}(\lambda_i),\cdots,\symbfit{J}_{t_{ik_i}}(\lambda_i)\}$
 
-				于是$A$一定有标准型$diag\{J_{t_{11}}(\lambda_1),\cdots,J_{t_{1k_1}}(\lambda_1),\cdots,J_{t_{s1}}(\lambda_s),\cdots,J_{t_{sk_s}}(\lambda_s)\}$，于是必要性得证。
+				于是$A$一定有标准型$diag\{\symbfit{J}_{t_{11}}(\lambda_1),\cdots,\symbfit{J}_{t_{1k_1}}(\lambda_1),\cdots,\symbfit{J}_{t_{s1}}(\lambda_s),\cdots,\symbfit{J}_{t_{sk_s}}(\lambda_s)\}$，于是必要性得证。
 
 				我们接下来证明充分性
 
-				充分性是显然的，因为对于Jordan标准型$diag\{J_{l_1}(\lambda_1),\cdots,J_{l_s}(\lambda_s)\}$，$J_{l_i}(\lambda_i)$所对应的线性变换的最小多项式是$(x-\lambda_i)^{l_i}$
+				充分性是显然的，因为对于Jordan标准型$diag\{\symbfit{J}_{l_1}(\lambda_1),\cdots,\symbfit{J}_{l_s}(\lambda_s)\}$，$\symbfit{J}_{l_i}(\lambda_i)$所对应的线性变换的最小多项式是$(x-\lambda_i)^{l_i}$
 
 				因此线性变换的最小多项式一定可以在$F$中分解为互若干一次因式的乘积，于是命题得证。
 			\end{proof}
@@ -1163,7 +1163,7 @@
 							
 				$m(x)=(x-\lambda_1)^{t_1}\cdots (x-\lambda_s)^{t_s}$是$A$的最小多项式
 
-				那么，$A$的Jordan标准型一定存在，且对角线元素为$\lambda_i$的Jordan块个数$N_i$，及$J_{t}(\lambda_i)$的个数$N_i(T)$分别为：
+				那么，$A$的Jordan标准型一定存在，且对角线元素为$\lambda_i$的Jordan块个数$N_i$，及$\symbfit{J_{t}(\lambda_i)}$的个数$N_i(T)$分别为：
 
 				\begin{equation}
 					N_i = \operatorname{nullity}(A-\lambda_i I)
@@ -1177,9 +1177,9 @@
 
 				首先，我们已经指出，$V = \ker (A-\lambda_1 I)^{t_1} \oplus \cdots \oplus \ker (A-\lambda_s I)^{t_s}$
 
-				此时，对于每一个子空间，一定能找到一个基$B_i$，使$(A-\lambda_i I)|_{\ker (A-\lambda_i I)^{t_i}}$在$B_i$下的矩阵为$diag\{J_{t_{i1}}(0),\cdots,J_{t_{ik_i}}(0)\}$
+				此时，对于每一个子空间，一定能找到一个基$B_i$，使$(A-\lambda_i I)|_{\ker (A-\lambda_i I)^{t_i}}$在$B_i$下的矩阵为$diag\{\symbfit{J}_{t_{i1}}(0),\cdots,\symbfit{J}_{t_{ik_i}}(0)\}$
 
-				于是，此时$A|_{\ker (A-\lambda_i I)^{t_i}}$在$B$下的矩阵为$diag\{J_{t_{i1}}(\lambda_i),\cdots,J_{t_{ik_i}}(\lambda_i)\}$。
+				于是，此时$A|_{\ker (A-\lambda_i I)^{t_i}}$在$B$下的矩阵为$diag\{\symbfit{J}_{t_{i1}}(\lambda_i),\cdots,\symbfit{J}_{t_{ik_i}}(\lambda_i)\}$。
 
 				由于$\lambda_i$是互不相同的，其实此时一定有$N_i = t_i = \dim \ker ((A-\lambda_i I)|_{\ker (A-\lambda_i I)^{t_i}})$
 

@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.6.4)  20 SEP 2025 10:22
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.6.4)  21 SEP 2025 11:00
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1294,7 +1294,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 1099--1100
  []
 
 [26] [27]
-Overfull \hbox (34.21169pt too wide) in paragraph at lines 1148--1149
+Overfull \hbox (36.03569pt too wide) in paragraph at lines 1148--1149
 []\TU/SimSun(0)/m/n/12 但 是，|  我 们 已 经 证 明 了，|  幂 零 变 换 $[][] [] [][][][][][]$ 的 \TU/lmr/m/n/12 Jordan \TU/SimSun(0)/m/n/12 标 准 型 $[][][][][][][][][][][] [] [] [][][][][][]$ 
  []
 
@@ -1325,4 +1325,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  98i,10n,120p,1307b,2937s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on chap.xdv (29 pages, 510188 bytes).
+Output written on chap.xdv (29 pages, 510224 bytes).

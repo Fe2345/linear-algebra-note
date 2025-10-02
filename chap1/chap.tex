@@ -314,7 +314,7 @@
 
 				那么$\alpha_x = \sum\limits_{y \in B} k_{xy} \left(\sum\limits_{z \in C} l_{yz} \gamma_z\right)=\sum\limits_{y \in B,z\in C} k_{xy}l_{yz} \gamma_z$
 
-				因此$\{\alpha_x \in V| x \in A\}$可由$\{\alpha_x \in V| x \in A\}$线性表出，同理可证$\{\gamma_x \in V| x \in C\}$可由$\{\alpha_x \in V| x \in A\}$线性表出
+				因此$\{\alpha_x \in V| x \in A\}$可由$\{\gamma _x \in V| x \in A\}$线性表出，同理可证$\{\gamma_x \in V| x \in C\}$可由$\{\alpha_x \in V| x \in A\}$线性表出
 				
 				所以$\{\alpha_x \in V| x \in A\} \cong \{\gamma_x \in V| x \in C\}$，传递性得证。于是命题得证
 			\end{proof}
@@ -341,18 +341,20 @@
 					\begin{lemma}{}{}
 						向量组$\{\alpha_1,\cdots,\alpha_n\}$如果线性相关，
 						
-						那么一定$\exists k,\text{s.t. }\alpha_k$可由$\alpha_1,\cdots,\alpha_{k-1}$线性表出，并且$\text{span}(\alpha_1,\cdots,\alpha_{i-1},\alpha_{i+1},\cdots,\alpha_n)=\text{span}(\alpha_1,\cdots,\alpha_n)$
+						那么一定$\exists k,\text{s.t. }\alpha_k$可由$\alpha_1,\cdots,\alpha_{k-1}$线性表出，并且$\text{span}(\alpha_1,\cdots,\alpha_{k-1},\alpha_{k+1},\cdots,\alpha_n)=\text{span}(\alpha_1,\cdots,\alpha_n)$
 					\end{lemma}
-					接下来给出命题
 					\begin{proof}
-						因为$\{\alpha_1,\cdots,\alpha_n\}$线性相关，所以一定$\exists k_1,\cdots,k_n,k_1 \alpha_1+\cdots+k_n \alpha_n = \mathbf{0}$
+						因为$\{\alpha_1,\cdots,\alpha_n\}$线性相关，那么一定存在一个线性组合$l_1\alpha_1+\cdots l_n\alpha_n=\mathbf{0}$，且$k_i$不全为零
 
-						只需选取满足$k_i \neq 0$的最大的下标$p$，那么有$\alpha_1+\cdots+k_p \alpha_p = \mathbf{0}$
+						取$k=\max\{i|l_i \neq 0,i=1,\cdots,n\}$
 
-						于是$\alpha_p = -\frac{1}{k_p} \sum\limits_{i=1}^{p-1} \alpha_i$
+						那么此时其实线性组合简化为：$l_1\alpha_1+\cdots+l_k\alpha_k = \mathbf{0}$
 
-						此时因为$\alpha_p$可由前面的向量线性表出，因此去除其不会对生成的子空间有任何影响，命题得证。
+						于是此时$\alpha_k = -\frac{1}{l_k} \sum\limits_{i=1}^{k-1} l_i \alpha_i$
+
+						由于$\alpha_k$可由其他向量线性表出，因此$\text{span}(\alpha_1,\cdots,\alpha_{k-1},\alpha_{k+1},\cdots,\alpha_n)=\text{span}(\alpha_1,\cdots,\alpha_n)$是显然成立的。
 					\end{proof}
+					接下来给出命题
 					\begin{proposition}
 						如果向量组$\{\alpha_x \in V| x \in A\}$可由$\{\beta_x \in V| x \in B\}$线性表出，并且$\text{Card } A > \text{Card }B$
 
@@ -390,7 +392,7 @@
 
 						因此只需考虑这个向量 $w$ 是 $B_{j-1}$ 中那些来自 $\{\beta _1, \dots, \beta _n\}$ 的向量
 
-						由于 $w$ 可以由向量组中前面的向量线性表出，我们可以从 $\alpha_j \cup B_{j-1}$ 中移除 $w$，得到新的向量组 $B_j = (\alpha_j \cup B_{j-1})-w$。这个新的向量组 $B_j$ 仍然生成子空间 $W$
+						由于 $w$ 可以由向量组中前面的向量线性表出，我们可以从 $\alpha_j \cup B_{j-1}$ 中移除 $w$，得到新的向量组 $B_j = (\alpha_j \cup B_{j-1})-\{w\}$。这个新的向量组 $B_j$ 仍然生成子空间 $W$
 						
 						这样，我们就完成了向量组序列$B_0, B_1, \dots, B_n$的构造。
 						
@@ -637,12 +639,12 @@
 			\end{defn}
 			可以看出来，线性空间的维数并非只有有限和无限两类，比如以下例子分别给出了$\aleph_0$和$\aleph_1$维的线性空间
 			\begin{example}
-				$\dim_K K[x] = \aleph_0$
+				$\dim_F F[x] = \aleph_0$
 			\end{example}
 			\begin{proof}
-				显然，$\{x^n | n \in \N\}$是$K[x]$的一个基
+				显然，$\{x^n | n \in \N\}$是$F[x]$的一个基
 
-				因此，$\dim_K K[x] = |\{x^n | n \in \N\}| = \aleph_0$
+				因此，$\dim_F F[x] = |\{x^n | n \in \N\}| = \aleph_0$
 			\end{proof}
 			\begin{example}
 				$\dim_{\R} \{f:{\R} \rightarrow {\R}| {\card} supp(f) < {\aleph_0}\} = \aleph_1$
@@ -744,11 +746,11 @@
 
 						那么有：$dim \text{ span}(S)=rank(S)$
 					\end{proposition}
-					\begin{proposition}
+					\begin{proof}
 						只需取$S$的一个极大线性无关组$B \subseteq S$。由极大线性无关组的性质，$\text{span}(S)=\text{span}(B)$
 
 						于是有$dim \text{ span }(S)=dim \text{ span }(B)=|B|=rank(B)=rank(S)$，命题得证。
-					\end{proposition}
+					\end{proof}
 				\point{}
 					\begin{proposition}
 						设$S=\{\alpha_x \in V| x \in A,|A| \leqslant \aleph_0\},G=\{\alpha_x \in V| x \in B,|B| \leqslant \aleph_0\}$

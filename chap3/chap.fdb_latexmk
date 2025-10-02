@@ -1,20 +1,20 @@
 # Fdb version 4
-["xdvipdfmx"] 1758334942.9105 "chap.xdv" "chap.pdf" "chap" 1758334943.69151 0
-  "chap.xdv" 1758334942 510188 93506db2065651ac1a55fd4dbe05cbee "xelatex"
+["xdvipdfmx"] 1758423612.35971 "chap.xdv" "chap.pdf" "chap" 1758423613.14073 0
+  "chap.xdv" 1758423612 510224 488dbb780a37516b9e1f217b58401b6a "xelatex"
   (generated)
   "chap.pdf"
   (rewritten before read)
-["xelatex"] 1758334939.08739 "d:/Data/MyFiles/学习/各个课程学习笔记收录/高等代数/chap3/chap.tex" "chap.xdv" "chap" 1758334943.66656 0
+["xelatex"] 1758423608.09289 "d:/Data/MyFiles/学习/各个课程学习笔记收录/高等代数/chap3/chap.tex" "chap.xdv" "chap" 1758423613.11323 0
   "../config/_config.tex" 1744951838 398 ed5c3776625a7c32e405f855ba9af84e ""
   "../config/custom.tex" 1754466811 1000 ca072824097425c28afbde63bf7887ea ""
   "../config/package.tex" 1750303937 1500 1cd5a27540b5979478ffdbbeb0ea22ee ""
   "../config/paragraph.tex" 1736160617 440 c4e77aba1f37bc4210a639f0c710c16c ""
   "../config/theorem1.tex" 1737726975 2103 c44e3255d3cd2dc316f9611d5bae1879 ""
   "c:/Windows/Fonts/msyh.ttc" 1733915345 19704352 1e10e74402e59d54499af795caf0b135 ""
-  "chap.aux" 1758334942 3180 c3573b69c2d7e3be11c04a904b5f3ac1 "xelatex"
-  "chap.out" 1758334942 2722 b1b850327c9db053ceb9fd3225f2a584 "xelatex"
-  "chap.tex" 1758334938 64194 66bbf49d21cce3c0773353d51253b2e9 ""
-  "d:/Data/MyFiles/学习/各个课程学习笔记收录/高等代数/chap3/chap.tex" 1758334938 64194 66bbf49d21cce3c0773353d51253b2e9 ""
+  "chap.aux" 1758423612 3180 c3573b69c2d7e3be11c04a904b5f3ac1 "xelatex"
+  "chap.out" 1758423612 2722 b1b850327c9db053ceb9fd3225f2a584 "xelatex"
+  "chap.tex" 1758423607 63149 bda7eca3549cdfc61070d62fb2984518 ""
+  "d:/Data/MyFiles/学习/各个课程学习笔记收录/高等代数/chap3/chap.tex" 1758423607 63149 bda7eca3549cdfc61070d62fb2984518 ""
   "d:/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1749001069 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "d:/texlive/2024/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1749003768 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "d:/texlive/2024/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1749004501 1528 7e12f4c0fcf5a072cebdcfbfc610f54c ""

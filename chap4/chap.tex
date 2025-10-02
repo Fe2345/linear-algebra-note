@@ -9,9 +9,397 @@
 %标题
 \chapter{内积空间}
 	\section{内积空间的定义}
-	\section{张量积}
-	\section{张量代数}
-	\section{外代数}
+		\subsection{内积空间的定义}
+			\begin{defn}{共轭}{}
+				设$F$是一个域，自同构$\sigma : F \to F$如果满足：
+
+				\begin{equation}
+					\forall a \in F,\sigma^2(a)=a
+				\end{equation}
+				那么我们称$\sigma $是一个共轭映射，$\sigma (a)$称为$a$的共轭，也记作$\overline{a}$。
+			\end{defn}
+			\begin{defn}{内积空间}{}
+				设$F$是一个定义了共轭和偏序的域，$V$是一个$F$上的线性空间，映射$f:V \times V \to F$如果满足：
+
+				\begin{itemize}
+					\item $f(\alpha ,\beta )=\overline{f(\beta ,\alpha )}$（共轭对称性）
+					\item $f(\alpha +\beta ,\gamma )=f(\alpha ,\gamma )+f(\beta ,\gamma )$（对第一个变量可加）
+					\item $f(k\alpha ,\beta )=kf(\alpha ,\beta )$（对第一个变量线性）
+					\item $f(\alpha ,\alpha )\geqslant 0,f(\alpha ,\alpha )=0 \Leftrightarrow \alpha =\mathbf{0}$（正定性）
+				\end{itemize}
+				那么我们称$f$是$V$上的一个内积，此时称$(F,V,+,\cdot,f)$是一个内积空间（我们也简称$V$是一个内积空间）
+
+				习惯上，我们也常常将$f(\alpha ,\beta )$记作$\langle \alpha ,\beta \rangle $
+			\end{defn}
+			基于抽象内积空间，我们可以提出一些相关的概念：
+			\begin{defn}{正交}{}
+				设$V$是一个内积空间，$\langle \alpha ,\beta \rangle =0$，
+				
+				那么我们称$\alpha $与$\beta $是正交的，记作$\alpha \perp \beta $
+			\end{defn}
+			如果一个基是相互正交的，那么它被称为正交基：
+			\begin{defn}{正交基}{}
+				设$V$是一个内积空间，$V$的一个基$B$如果满足：
+
+				$\forall \alpha ,\beta \in B,\alpha \neq \beta ,\langle \alpha ,\beta \rangle =0$，
+				
+				那么我们称$B$是$V$的一个正交基。
+			\end{defn}
+			我们特别考虑一种特殊的”补空间“，称为正交补：
+			\begin{defn}{正交补}{}
+				设$V$是$F$上的一个内积空间，$S \subseteq V$。我们定义：
+
+				\begin{equation}
+					S^{\perp}=\{\alpha \in V | \forall \beta \in S,\alpha \perp \beta \}
+				\end{equation}
+				称为$S$的正交补。
+			\end{defn}
+			值得注意的是，上述定义中，我们并不要求$S$是一个子空间；我们也将看到，就算$S$是子空间，正交补和$S$的直和也不一定是整个空间。
+
+			接下来我们讨论两类重要的内积空间
+		\subsection{实内积空间、复内积空间}
+			\begin{defn}{实内积空间}{}
+				考虑$\R$及其上的平凡自同构$\sigma(x)=x$
+
+				此时，实数域$\R$上的内积空间，称为实内积空间。
+
+				特别地，如果此时内积空间还是有限维的，我们称之为Euclidean空间
+			\end{defn}
+			由定义可知，实内积空间拥有以下独特的特性：不仅仅是对单变量线性，而是对双变量线性，而且完全对称。也就是说，它是一个对称双线性映射；特别地，由于实数域是全序集，因此任意向量的内积都是可比的。
+			\begin{defn}{复内积空间}{}
+				考虑$\C$及其上的共轭映射$\sigma(a+bi)=a-bi$
+
+				复数域$\C$上的内积空间，称为复内积空间（或酉空间）
+			\end{defn}
+			实内积空间和复内积空间的独特特点是：可以定义范数，并导出度量，进而产生拓扑
+			\begin{defn}{内积空间中的范数}{}
+				设$V$是$F$上的一个内积空间，$F=\R$或者$F=\C$，$V$上的自然范数$\|\cdot \|:V \to \R$定义为：
+				\begin{equation}
+					\|\alpha \|=\sqrt{\langle \alpha ,\alpha \rangle }
+				\end{equation}
+			\end{defn}
+			我们这里特意要求基域只能是实数或复数域是因为：在一般域上，不能保证向量与自身的内积可以定义良好的平方根。
+			
+			在实内积空间和酉空间中，如果正交基的每一个向量的范数都是$1$，我们也称之为标准正交基：
+			\begin{defn}{标准正交基}{}
+				设$V$是$F$上的一个内积空间，$F=\R$或者$F=\C$，$V$的一个正交基$B$如果满足：
+
+				$\forall \alpha \in B,\|\alpha \|=1$
+
+				那么我们称$B$是$V$的一个标准正交基。
+			\end{defn}
+
+			此时，内积空间转变为一个线性赋范空间；进而，我们可以用范数定义度量：
+			\begin{defn}{内积空间中的度量}{}
+				设$V$是$F$上的一个内积空间，$F=\R$或者$F=\C$，$V$上的自然度量$d:V \times V \to F$定义为：
+				\begin{equation}
+					d(\alpha ,\beta )=\|\alpha -\beta \|
+				\end{equation}
+			\end{defn}
+			进而，我们可以定义极限和连续：
+			\begin{defn}{内积空间中向量列的极限}{}
+				设$V$是一个实内积空间或酉空间，$\{\alpha_i\}$是$V$中的一个向量列，如果存在一个向量$\alpha \in V$，使得：
+				\begin{equation}
+					\forall \varepsilon > 0,\exists N \in \N_+,\forall n > N,d(\alpha_n,\alpha ) < \varepsilon 
+				\end{equation}
+				我们称向量列$\{\alpha_i\}$收敛于$\alpha $，记作$\lim_{n \to \infty}\alpha_n=\alpha $
+			\end{defn}
+			\begin{defn}{连续线性泛函}{}
+				设$V,W$分别是一个实内积空间或酉空间，$f \in \hom(V,W)$，如果有：
+				\begin{equation}
+					\forall \{\alpha_i\},\lim_{n \to \infty}\alpha_n=\lim_{n \to \infty}f(\alpha_n)
+				\end{equation}
+				那么我们称$f$是一个连续线性泛函
+			\end{defn}
+			进而可以定义完备性：
+			\begin{defn}{Hillbert空间}{}
+				设$V$是一个实内积空间或酉空间，如果$V$中符合下面条件的任意向量列$\{\alpha_i\}$
+				\begin{equation}
+					\forall \varepsilon > 0,\exists N \in \N_+,\forall m,n \geqslant N,d(\alpha_m,\alpha_n) < \varepsilon 
+				\end{equation}
+				收敛。
+
+				那么，我们称$V$是完备的，并称它是一个Hillbert空间。
+			\end{defn}
+			我们也可以定义开集和闭集
+			\begin{defn}{开集和闭集}{}
+				设$V$是一个实内积空间或酉空间，$S \subseteq V$，如果对于任意$\alpha \in S$，存在$r > 0$，使得：
+				\begin{equation}
+					B(\alpha ,r)=\{\beta \in V | d(\alpha ,\beta ) < r\} \subseteq S
+				\end{equation}
+				那么我们称$S$是一个开集。
+
+				如果$V-S$是一个开集，那么我们称$S$是一个闭集。
+			\end{defn}
+		\subsection{内积空间的性质}
+			我们讨论一些性质。
+			\begin{para}{0}
+				\point{}
+					首先，我们讨论内积的线性性质。
+					\begin{proposition}
+						$\langle \alpha ,\beta + \gamma \rangle =\langle \alpha ,\beta \rangle +\langle \alpha ,\gamma \rangle$
+
+						$\langle \alpha ,k\gamma \rangle =\overline{k}\langle \alpha ,\gamma \rangle$
+					\end{proposition}
+					\begin{proof}
+						$\langle \alpha ,\beta + \gamma \rangle =\overline{\langle \beta+\gamma ,\alpha  \rangle}=\overline{\langle \beta ,\alpha  \rangle}+\overline{\langle \gamma ,\alpha  \rangle}=\langle \alpha ,\beta \rangle +\langle \alpha ,\gamma \rangle$
+
+						$\langle \alpha ,k\gamma \rangle =\overline{\langle k\gamma ,\alpha  \rangle}=\overline{k}\overline{\langle \gamma ,\alpha  \rangle}=\overline{k}\langle \alpha ,\gamma \rangle$
+					\end{proof}
+					接下来我们考察一种特别的内积，它只定义在实内积空间或酉空间，被称为标准内积：
+				\point{}
+					\begin{proposition}
+						设$V$是$\R$上的一个$n$维线性空间，$\{\alpha_1,\alpha_2,\cdots,\alpha_n\}$是$V$的一个基，
+						
+						$\forall \alpha ,\beta \in V$，如果$\alpha =\sum_{i=1}^n a_i\alpha_i,\beta =\sum_{i=1}^n b_i\alpha_i$，那么我们说：
+
+						\begin{equation}
+							f(\alpha ,\beta)=\sum_{i=1}^n a_i b_i
+						\end{equation}
+						是$V$上的一个内积
+					\end{proposition}
+					\begin{proof}
+						设$\alpha =\sum\limits_{i=1}^{n} a_i \alpha_i,\beta =\sum\limits_{i=1}^{n} b_i \alpha_i,\gamma =\sum\limits_{i=1}^{n} c_i \alpha_i$，那么：
+
+						$f(\alpha ,\beta )=f(\sum\limits_{i=1}^{n} a_i \alpha_i,\sum\limits_{i=1}^{n} b_i \alpha_i )=\sum\limits_{i=1}^{n} a_i b_i=\sum\limits_{i=1}^{n} b_i a_i = f(\sum\limits_{i=1}^{n} b_i \alpha_i,\sum\limits_{i=1}^{n} a_i \alpha_i )=f(\beta ,\alpha )$
+						
+						$f(\alpha ,\beta +\gamma )=f(\sum\limits_{i=1}^{n} a_i\alpha_i,\sum\limits_{i=1}^{n} (b_i + c_i) \alpha_i )=\sum\limits_{i=1}^{n} a_i (b_i + c_i)=\sum\limits_{i=1}^{n} a_i b_i + \sum\limits_{i=1}^{n} a_i c_i =f(\sum\limits_{i=1}^{n} a_i \alpha_i,\sum\limits_{i=1}^{n} b_i \alpha_i ) + f(\sum\limits_{i=1}^{n} a_i \alpha_i,\sum\limits_{i=1}^{n} c_i \alpha_i )=f(\alpha ,\beta )+f(\alpha ,\gamma )$
+
+						$f(\alpha ,k\beta )=f(\sum\limits_{i=1}^{n} a_i \alpha_i,k\sum\limits_{i=1}^{n} b_i \alpha_i )=f(\sum\limits_{i=1}^{n} a_i \alpha_i,\sum\limits_{i=1}^{n} kb_i \alpha_i )=\sum\limits_{i=1}^{n} a_i (kb_i)=k\sum\limits_{i=1}^{n} a_i b_i = k f(\sum\limits_{i=1}^{n} a_i \alpha_i,\sum\limits_{i=1}^{n} b_i \alpha_i )=k f(\alpha ,\beta )$
+
+						$\forall \alpha \neq \mathbf{0},f(\alpha ,\alpha )=f(\sum\limits_{i=1}^{n} a_i \alpha_i,\sum\limits_{i=1}^{n} a_i \alpha_i )=\sum\limits_{i=1}^{n} a_i^2>0$
+
+						于是命题得证。
+					\end{proof}
+					酉空间情形类似如下：
+				\point{}
+					\begin{proposition}
+						设$V$是$\C$上的一个$n$维线性空间，$\{\alpha_1,\alpha_2,\cdots,\alpha_n\}$是$V$的一个基，
+						
+						$\forall \alpha ,\beta \in V$，如果$\alpha =\sum_{i=1}^n a_i\alpha_i,\beta =\sum_{i=1}^n b_i\alpha_i$，那么我们说：
+
+						\begin{equation}
+							f(\alpha ,\beta)=\sum_{i=1}^n a_i \overline{b_i}
+						\end{equation}
+						是$V$上的一个内积
+					\end{proposition}
+					\begin{proof}
+						设$\alpha =\sum\limits_{i=1}^{n} a_i \alpha_i,\beta =\sum\limits_{i=1}^{n} b_i \alpha_i,\gamma =\sum\limits_{i=1}^{n} c_i \alpha_i$，那么：
+
+						$f(\alpha ,\beta )=f(\sum\limits_{i=1}^{n} a_i \alpha_i,\sum\limits_{i=1}^{n} b_i \alpha_i )=\sum\limits_{i=1}^{n} a_i \overline{b_i}=\sum\limits_{i=1}^{n} \overline{b_i}\overline{\overline{a_i}}=\overline{\sum\limits_{i=1}^{n} b_i\overline{a_i}}=\overline{f(\beta ,\alpha )}$
+
+						$f(\alpha ,\beta +\gamma )=f(\sum\limits_{i=1}^{n} a_i\alpha_i,\sum\limits_{i=1}^{n} (b_i + c_i) \alpha_i )=\sum\limits_{i=1}^{n} a_i \overline{b_i + c_i} = \sum\limits_{i=1}^{n} a_i (\overline{b_i} + \overline{c_i}) = \sum\limits_{i=1}^{n} a_i \overline{b_i} + \sum\limits_{i=1}^{n} a_i \overline{c_i} = f(\alpha ,\beta ) + f(\alpha ,\gamma )$
+
+						$f(\alpha ,k\beta )=f(\sum\limits_{i=1}^{n} a_i \alpha_i,k\sum\limits_{i=1}^{n} b_i \alpha_i )=f(\sum\limits_{i=1}^{n} a_i \alpha_i,\sum\limits_{i=1}^{n} (k b_i) \alpha_i )=\sum\limits_{i=1}^{n} a_i \overline{k b_i} = \overline{k} \sum\limits_{i=1}^{n} a_i \overline{b_i} = \overline{k} f(\alpha ,\beta )$
+
+						$\forall \alpha \neq \mathbf{0},f(\alpha ,\alpha )=f(\sum\limits_{i=1}^{n} a_i \alpha_i,\sum\limits_{i=1}^{n} a_i \alpha_i )=\sum\limits_{i=1}^{n} a_i \overline{a_i} = \sum\limits_{i=1}^{n} |a_i|^2 > 0$
+
+						于是命题得证。
+					\end{proof}
+					我们接下来探讨正交的性质。
+				\point{}
+					\begin{proposition}
+						设$V$是一个内积空间，$S \subseteq V$，那么$S^{\perp}$是$V$的一个子空间
+					\end{proposition}
+					\begin{proof}
+						取$\forall \alpha ,\beta \in S^{\perp},k\in F$
+
+						依定义，有$\forall \eta \in S,\langle \alpha ,\eta \rangle=0,\langle \beta ,\eta \rangle=0$
+
+						注意到：$\langle \alpha +\beta ,\eta \rangle=\langle \alpha ,\eta \rangle+\langle \beta ,\eta \rangle=0+0=0 \Rightarrow \alpha +\beta \in S^{\perp}$
+
+						$\langle k\alpha ,\eta \rangle=k\langle \alpha ,\eta \rangle=0 \Rightarrow k\alpha \in S^{\perp}$
+
+						于是命题得证。
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						设$V$是一个内积空间，$V$的有限子集$S$如果不存在零向量，且向量两两正交，那么它线性无关
+					\end{proposition}
+					\begin{proof}
+						设$S=\{\alpha_1,\cdots,\alpha_n\},\forall i \neq j,\langle \alpha_i,\alpha_j \rangle=0,\alpha_i \neq \mathbf{0}$
+
+						考察线性组合$\sum\limits_{i=1}^{n} k_i \alpha_i = \mathbf{0}$
+
+						对$\forall i \leqslant l,k_i = 0$作强归纳法。
+
+						首先，$\mathbf{0}=\langle \sum\limits_{i=1}^{n} k_i \alpha_i,\alpha_1\rangle = k_1 \langle \alpha_1,\alpha_1 \rangle \Rightarrow k_1=0$，于是$i=1$时成立；
+
+						现在假设$i \leqslant l$时成立，考察$l+1$时：
+
+						$\mathbf{0}=\langle \sum\limits_{i=l+1}^{n} k_i \alpha_i,\alpha_{l+1}\rangle = k_{l+1} \langle \alpha_{l+1},\alpha_{l+1} \rangle \Rightarrow k_{l+1}=0$，于是$i=l+1$时成立。
+
+						由强归纳法原理，$\forall i \leqslant n,k_i=0$，于是命题得证。
+					\end{proof}
+					它的直接推论是，正交基是一定存在的：
+				\point{}
+					\begin{proposition}
+						任意有限维内积空间的正交基都是存在的。
+					\end{proposition}
+					\begin{proof}
+						取$V$的一个基$\{\alpha_1,\cdots,\alpha_n\}$
+
+						考察以下一系列线性组合：$\eta_i = \alpha_i - \sum\limits_{j=1}^{i-1} \frac{\langle \alpha _i ,\eta_j \rangle}{\langle \eta_j ,\eta_j \rangle} \eta_j$
+
+						对归纳假设：$\forall i,j\leqslant k,i \neq j,\langle \eta_i,\eta_j \rangle = 0,\langle \eta_i,\eta_i \rangle \neq 0$使用数学归纳法。
+
+						首先，当$k=1$，$\eta_1=\alpha_1$，归纳假设显然成立；
+
+						我们现在假设$k$时成立，考察$k+1$时：
+
+						$\forall j < k+1$
+
+						$\langle \eta_{k+1},\eta_j \rangle = \langle \alpha_{k+1},\eta_j \rangle - \sum\limits_{i=1}^{k} \frac{\langle \alpha_{k+1},\eta_i \rangle}{\langle \eta_i,\eta_i \rangle} \langle \eta_i,\eta_j \rangle$
+
+						$=\langle \alpha_{k+1},\eta_j \rangle - \frac{\langle \alpha_{k+1},\eta_j \rangle}{\langle \eta_j,\eta_j \rangle} \cdot \langle \eta_j,\eta_j \rangle = \mathbf{0}$
+
+						$\langle \eta_j,\eta_{k+1} \rangle = \overline{\langle \eta_{k+1},\eta_j \rangle} = 0$，此时归纳假设成立。
+
+						于是$\{\eta_i\}$的确是相互正交的；由有限正交向量组线性无关，以及基的性质，$\{\eta_i\}$是$V$的一个正交基。
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						设$V$是$F$上的一个内积空间，$\{\eta_1,\cdots,\eta_n\}$是$V$的一个标准正交基，那么对于$\forall \alpha \in V$
+
+						$\alpha = \sum\limits_{i=1}^{n} \langle \alpha , \eta_i \rangle \eta_i$
+					\end{proposition}
+					\begin{proof}
+						因为$\{\eta_i\}$的确是一个基，因为一定能找到一系列系数$k_i$，使得$\alpha = \sum\limits_{i=1}^n k_i \eta_i $
+
+						此时只需注意到：$\langle \alpha ,\eta_i \rangle = \langle \sum\limits_{j=1}^n k_j \eta_j ,\eta_i \rangle = k_i \langle \eta_i ,\eta_i \rangle = k_i$
+
+						$\Rightarrow \alpha =\sum\limits_{i=1}^{n} \langle \alpha , \eta_i \rangle \eta_i$
+					\end{proof}
+				\point{}
+					\begin{them}{Cauchy-Buniakowski-Schwarz不等式}{}
+						设$V$是一个实内积空间或酉空间，$\alpha ,\beta \in V$，那么：
+						\begin{equation}
+							|\langle \alpha ,\beta \rangle | \leqslant \|\alpha \| \|\beta \|
+						\end{equation}
+						等号成立的充分必要条件是$\alpha $与$\beta $线性相关
+					\end{them}
+					\begin{proof}
+						当$\alpha ,\beta $线性相关，要不$\alpha =\mathbf{0}$，要不$\beta =k\alpha $，此时不等式显然成立
+
+						考察$\alpha ,\beta $线性无关的情形
+
+						此时，一定有：$\forall k,\alpha -k\beta \neq\mathbf{0}$
+
+						此时，$\langle \alpha -k\beta ,\alpha -k\beta \rangle > 0$
+
+						$\Rightarrow \|\alpha \|^2-k \langle \alpha ,\beta \rangle-\overline{k}\langle \beta ,\alpha \rangle + |k|^2 \|\beta \|^2 > 0$
+
+						代入$k = -\frac{\langle \beta ,\alpha \rangle}{\|\beta \|^2}$，得：
+
+						$\|\alpha \|^2 - \frac{\overline{\langle \alpha ,\beta \rangle}\langle \alpha ,\beta \rangle}{\|\beta \|^2}-\frac{\langle\alpha ,\beta \rangle\overline{\langle \alpha ,\beta  \rangle}}{\|\beta \|^2} + \frac{|\langle \beta ,\alpha \rangle|^2}{\|\beta \|^2} > 0$
+
+						$\Rightarrow \|\alpha \|^2 - \frac{|\langle \alpha ,\beta \rangle|^2}{\|\beta \|^2} > 0$
+
+						$\Rightarrow |\langle \alpha ,\beta \rangle|^2 < \|\alpha \|^2 \|\beta \|^2$
+						
+						于是命题得证。
+					\end{proof}
+					上述定理适用于两类内积空间，尽管实内积空间并不能简单视为复内积空间的一个子空间，但是证明过程中利用的性质都是通用的，我们统一地写出这个证明。
+				\point{}
+					
+					最后，我们讨论Hillbert空间上的性质
+					\begin{proposition}
+						设$V$是一个$F$上的Hillbert空间，$S \subseteq V$是$V$的一个闭子空间，那么有$S \oplus S^{\perp}=V$
+					\end{proposition}
+					\begin{proof}
+						我们先证明$S + S^{\perp} = V$
+
+						$\forall \alpha \in V$，考察函数$f(\theta )=\|\alpha -\theta \|,\theta \in S$
+
+						由于$S$是闭集，那么$f$的最小值一定存在，取$\beta $使得$f(\beta )=\min_\theta  f(\theta )$，并记$\gamma =\alpha -\beta $
+
+						我们来证明，的确有$\gamma \in S^{\perp}$
+
+						$\forall \eta \in S$，我们希望证明$\langle \gamma ,\eta \rangle = 0$
+
+						考察函数$g(t)=\|\alpha - (t\eta + \beta )\|^2,t \in \R$
+
+						由于$t\eta +\beta \in S$，而$\|\alpha -\theta  \|$在$\theta =\beta $时取得最小值，因此，$g(t)$在$t=0$时取得最小值。
+
+						显然，$g(t)=\|\alpha - (t\eta + \beta )\|^2=\|\gamma - t\eta \|^2=\|\gamma \|^2-2t\operatorname{Re}\langle \gamma ,\eta  \rangle+t^2\|\eta \|^2$连续可导
+
+						于是，一定有$g'(0)=(-2\operatorname{Re}\langle \gamma ,\eta  \rangle+2t\|\eta \|^2)|_{t=0}=-2\operatorname{Re}\langle \gamma ,\eta  \rangle=0\Rightarrow \operatorname{Re}\langle \gamma ,\eta  \rangle=0$。
+
+						若$F=\R$，那么$\langle \gamma ,\eta  \rangle=0$，论证完成；
+						
+						对于$F=\C$的情形，考虑$g(t)=\|\alpha - (t i \eta + \beta )\|^2,t \in \R$
+
+						同理可得$\operatorname{Re}\langle \gamma ,i\eta  \rangle=0$。
+
+						$\Rightarrow \operatorname{Re}(-i\langle \gamma ,\eta  \rangle)=0 \Rightarrow \operatorname{Re}(\operatorname{Im}\langle \gamma ,\eta  \rangle-i\operatorname{Re}\langle \gamma ,\eta  \rangle)=0\Rightarrow \operatorname{Im}\langle \gamma ,\eta  \rangle=0$。
+					
+						于是此时有$\langle \gamma ,\eta  \rangle=0$，论证完成。
+
+						最后我们证明$S \cap S^{\perp}=\{\mathbf{0}\}$
+
+						设$\alpha \in S\cap S^{\perp}$，那么$\langle \alpha ,\alpha \rangle = 0 \Rightarrow \alpha = \mathbf{0}$
+
+						于是命题得证。
+					\end{proof}
+					利用这个结论可以证明以下重要事实：
+					\begin{them}{Riesz表示定理}{}
+						设$V$是一个$F$上的Hillbert空间，如果$f \in \hom(V,F)$是一个连续泛函，那么存在唯一的$\phi \in V$，使得：
+						\begin{equation}
+							f(\alpha ) = \langle \alpha,\phi  \rangle
+						\end{equation}
+					\end{them}
+					\begin{proof}
+							我们首先证明：$\ker f$是一个闭集。
+
+							注意到：任意收敛序列$\{\alpha_n\} \subseteq \ker f$，因为$f$是连续的，因此有
+
+							$f(\lim_{n \to \infty} \alpha_n)=\lim_{n \to \infty} f(\alpha_n)=\lim_{n \to \infty} 0=0 \Rightarrow \lim_{n \to \infty} \alpha_n \in \ker f$
+
+							即$\ker f$对任意序列的极限封闭。
+
+							接下来考察集合$\overline{\ker f}:=\{\lambda | \forall \lambda \in O,O\text{是开集},O \cap \ker f \neq \emptyset\}$
+
+							注意到，一定有$\ker f \subseteq \overline{\ker f}$，因为$\ker f$中的任意一点，包含其的开集与$\ker f$的交集至少包含这个点本身。
+
+							考察$\alpha \in \overline{\ker f}$
+
+							取$\alpha_i \in B(\alpha ,\frac{1}{n}) \cap \ker f$，其中$B(\alpha ,s):=\{\beta |d(\alpha ,\beta )< s\}$，由$\overline{\ker f}$的定义可知序列是的确可以取得的。
+
+							那么，此时一定有$\lim_{n \to \infty} \alpha_n = \alpha $，因为$0 < d(\alpha ,\alpha_k)<\frac{1}{k}$。
+
+							但是，我们已经指出：$\ker f$对任意收敛序列的极限封闭，因此$\alpha \in \ker f$。那么，$\ker f = \overline{\ker f}$
+
+							那么，我们说，$\ker f$是闭集。因为：$\ker f$已经包含了所有与开集有非空交集的点，那么对于$\forall \beta \in V-\ker f$，一定存在包含$\beta $的一个开集$O$，使得$O\in V-\ker f$，而这正是$\ker f$闭的定义。
+
+							于是依照之前证明的结论，一定有$\ker f \oplus (\ker f)^{\perp} = V$
+
+							于是$\im f \cong V/\ker f \im \cong (\ker f)^{\perp}$
+
+							但是，$\im f \subseteq F \Rightarrow \dim \im f = 1$，因此$\dim (\ker f)^{\perp} = 1$
+
+							取$(\ker f)^{\perp}$的一个标准正交基$\{\eta \}$，那么此时有：
+
+							$f(\alpha )=\langle \alpha ,\eta \rangle f(\eta) =\langle \alpha ,\overline{f(\eta )}\eta \rangle$
+
+							记$\phi = \overline{f(\eta )}\eta$，那么此时有$f(\alpha )=\langle \alpha ,\phi \rangle$。
+
+							于是命题得证。
+						\end{proof}
+			\end{para}
+	\section{正规算子}
+		\subsection{正规算子的定义}
+			先给出定义。
+			\begin{defn}{共轭算子}{}
+				设$V$是$F$上的一个内积空间，$A \in \hom(V,V)$，我们定义满足以下条件的算子$A^* \in \hom(V,V)$
+				\begin{equation}
+					\langle A\alpha ,\beta \rangle =\langle \alpha ,A^*\beta \rangle
+				\end{equation}
+			\end{defn}
+	\section{自伴算子}
+	\section{保距算子、幺正算子}
+	\section{酉算子}
+	\section{奇异值与奇异值分解}
+	\section{UR、QR、Schur分解}
 \ifx\allfiles\undefined
 \end{document}
 \fi
