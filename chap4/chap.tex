@@ -386,16 +386,55 @@
 							于是命题得证。
 						\end{proof}
 			\end{para}
-	\section{正规算子}
-		\subsection{正规算子的定义}
-			先给出定义。
+	\section{正规算子和自伴算子}
+		\subsection{伴随算子}
+			我们先定义伴随算子，它是我们后续讨论的基础。
 			\begin{defn}{共轭算子}{}
-				设$V$是$F$上的一个内积空间，$A \in \hom(V,V)$，我们定义满足以下条件的算子$A^* \in \hom(V,V)$
+				设$V,W$是$F$上的两个内积空间，$A \in \hom(V,V)$，我们定义满足以下条件的算子$A^* : V \to V$
 				\begin{equation}
-					\langle A\alpha ,\beta \rangle =\langle \alpha ,A^*\beta \rangle
+					\langle A(\alpha) ,\beta \rangle =\langle \alpha ,A^*(\beta) \rangle
 				\end{equation}
 			\end{defn}
-	\section{自伴算子}
+			我们先研究伴随算子的一些性质。
+			\begin{para}{0}
+				\point{}
+					\begin{proposition}
+						设$A \in \hom(V,V)$，那么$A^*$是唯一的。
+					\end{proposition}
+					\begin{proof}
+						不妨假设命题不成立，那么存在$B,C : V \to V,B \neq C$，此时有：
+
+						$\forall \alpha ,\beta \in V,\langle A\alpha ,\beta \rangle =\langle \alpha ,B\beta \rangle =\langle \alpha ,C\beta \rangle$
+
+						显然，一定$\exists \gamma ,B(\gamma )\neq C(\gamma )$
+
+						此时注意到：$\langle B(\gamma )-C(\gamma ),B(\gamma )-C(\gamma )\rangle = \langle B(\gamma ),B(\gamma )\rangle - \langle B(\gamma ),C(\gamma )\rangle =\mathbf{0} \Rightarrow B(\gamma )=C(\gamma )$，与假设矛盾。
+
+						于是命题得证。
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						$\forall A \in \hom(V,V),A^* \in \hom(V,V)$
+					\end{proposition}
+					\begin{proof}
+						$\forall \alpha ,\beta ,\gamma \in V,k \in F$
+
+						$\langle \alpha ,(A^*+B^*)(\beta ) \rangle =\langle A(\alpha ),\beta \rangle +\langle B(\alpha ),\beta \rangle =\langle \alpha ,A^*(\beta ) \rangle +\langle \alpha ,B^*(\beta ) \rangle =\langle \alpha ,A^*(\beta )+B^*(\beta ) \rangle$
+
+						$\Rightarrow (A^*+B^*)(\beta )=A^*(\beta )+B^*(\beta )$
+
+						$\langle \alpha ,(kA^*)(\beta ) \rangle =k\langle A(\alpha ),\beta \rangle =k\langle \alpha ,A^*(\beta ) \rangle =\langle \alpha ,kA^*(\beta ) \rangle$
+
+						$\Rightarrow (kA^*)(\beta )=kA^*(\beta )$
+
+						于是命题得证。
+					\end{proof}
+			\end{para}
+		\subsection{正规算子}
+			先给出定义。
+			\begin{defn}{正规算子}{}
+				设$V$是$F$上的一个内积空间，$A \in \hom(V,V)$，如果$AA^*=A^*A$，那么我们称$A$是一个正规算子
+			\end{defn}
 	\section{保距算子、幺正算子}
 	\section{酉算子}
 	\section{奇异值与奇异值分解}
