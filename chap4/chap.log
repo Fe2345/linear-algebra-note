@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.6.4)  12 OCT 2025 12:32
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.6.4)  19 OCT 2025 18:12
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1242,28 +1242,33 @@ File: OMXyhex.fd 2013/07/03 v1.1 YH's humble contribution to TeX maths (NP)
 
 ]
 LaTeX Font Info:    Font shape `TU/SimSun(0)/m/sl' in size <12> not available
-(Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 76.
+(Font)              Font shape `TU/SimSun(0)/m/it' tried instead on input line 74.
  [2] [3] [4]
-Overfull \hbox (38.21866pt too wide) in paragraph at lines 174--175
+Overfull \hbox (38.21866pt too wide) in paragraph at lines 166--167
 []$[][][][] [] [] [][] [] [][][] [][][][][] [][][][] [] [][][][][][] [] [] [][][][][] [] [][][] [] [] [][][][] [] [] [][][][] [] [][][] [][][][][] [] [][][][][] []
  []
 
-[5] [6] [7] [8] [9] [10] [11] (./chap.aux)
+[5] [6] [7] [8] [9] [10]
+Overfull \hbox (2.56827pt too wide) in paragraph at lines 423--424
+[]$[][][] [][][] [] [][][][][][][][] [] [][][][][][] [][][] [] [][][][][][] [][][] [] [][][] [][][][][][][] [] [][][] [][][][][][][] [] [][][] [][][][][] []
+ []
+
+[11] [12] (./chap.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/08/05>
  ***********
 Package rerunfilecheck Info: File `chap.out' has not changed.
-(rerunfilecheck)             Checksum: DCC829C77D0A70D4A8BC2BD846E9C8FB;1274.
+(rerunfilecheck)             Checksum: F23483B581C8B760864FE0AB0C667437;1344.
  )
-(\end occurred when \ifx on line 440 was incomplete) 
+(\end occurred when \ifx on line 501 was incomplete) 
 Here is how much of TeX's memory you used:
- 50333 strings out of 474773
- 1220495 string characters out of 5761290
+ 50345 strings out of 474773
+ 1221235 string characters out of 5761290
  2692035 words of memory out of 5000000
- 71637 multiletter control sequences out of 15000+600000
+ 71649 multiletter control sequences out of 15000+600000
  569071 words of font info for 117 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  98i,8n,120p,1307b,2937s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on chap.xdv (11 pages, 187452 bytes).
+Output written on chap.xdv (12 pages, 203528 bytes).

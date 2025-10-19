@@ -1503,6 +1503,15 @@ b
 
 				$\forall \gamma  \in V,\gamma  =\sum\limits_{i=1}^{n} f_i(\gamma )\alpha_i$
 			\end{proposition}
+			\begin{proof}
+				因为$\{\alpha_1,\cdots,\alpha_n\}$是一个基，那么一定存在以下线性组合：
+
+				$\gamma =k_1\alpha_1+\cdots+k_n\alpha_n$
+
+				此时注意到：$f_i(\gamma )=k_1f_i(\alpha_1)+\cdots+k_i f_i(\alpha_i)+\cdots+k_n f_i(\alpha_n)=k_i$
+
+				即$k_i = f_i(\gamma )$。于是命题得证。
+			\end{proof}
 		\subsection{双重对偶空间}
 			\begin{defn}{双重对偶空间}{}
 				$V^*$的对偶空间称为$V$的双重对偶空间，记作$V^{**}$

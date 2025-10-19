@@ -29,7 +29,7 @@
 				\end{itemize}
 				那么我们称$f$是$V$上的一个内积，此时称$(F,V,+,\cdot,f)$是一个内积空间（我们也简称$V$是一个内积空间）
 
-				习惯上，我们也常常将$f(\alpha ,\beta )$记作$\langle \alpha ,\beta \rangle $
+				习惯上，我们也常常将$f(\alpha ,\beta )$记作$\langle \alpha ,\beta \rangle_W $。如果我们仅在一个线性空间中讨论，我们也常常简写为$\langle \alpha ,\beta \rangle $。
 			\end{defn}
 			基于抽象内积空间，我们可以提出一些相关的概念：
 			\begin{defn}{正交}{}
@@ -387,48 +387,107 @@
 						\end{proof}
 			\end{para}
 	\section{正规算子和自伴算子}
+		本节中，如无特别说明，我们假定所有线性空间都定义了内积。
 		\subsection{伴随算子}
 			我们先定义伴随算子，它是我们后续讨论的基础。
 			\begin{defn}{共轭算子}{}
-				设$V,W$是$F$上的两个内积空间，$A \in \hom(V,V)$，我们定义满足以下条件的算子$A^* : V \to V$
+				设$V,W$是$F$上的两个内积空间，$A \in \hom(V,W)$，我们定义满足以下条件的算子$A^* : W \to V$
 				\begin{equation}
-					\langle A(\alpha) ,\beta \rangle =\langle \alpha ,A^*(\beta) \rangle
+					\langle A(\alpha) ,\beta \rangle_W =\langle \alpha ,A^*(\beta) \rangle_V
 				\end{equation}
 			\end{defn}
 			我们先研究伴随算子的一些性质。
 			\begin{para}{0}
 				\point{}
 					\begin{proposition}
-						设$A \in \hom(V,V)$，那么$A^*$是唯一的。
+						设$A \in \hom(V,W)$，那么$A^*$是唯一的。
 					\end{proposition}
 					\begin{proof}
-						不妨假设命题不成立，那么存在$B,C : V \to V,B \neq C$，此时有：
+						不妨假设命题不成立，那么存在$B,C : W \to V,B \neq C$，此时有：
 
-						$\forall \alpha ,\beta \in V,\langle A\alpha ,\beta \rangle =\langle \alpha ,B\beta \rangle =\langle \alpha ,C\beta \rangle$
+						$\forall \alpha\in V,\beta \in W,\langle A\alpha ,\beta \rangle_W =\langle \alpha ,B\beta \rangle_V =\langle \alpha ,C\beta \rangle_V$
 
 						显然，一定$\exists \gamma ,B(\gamma )\neq C(\gamma )$
 
-						此时注意到：$\langle B(\gamma )-C(\gamma ),B(\gamma )-C(\gamma )\rangle = \langle B(\gamma ),B(\gamma )\rangle - \langle B(\gamma ),C(\gamma )\rangle =\mathbf{0} \Rightarrow B(\gamma )=C(\gamma )$，与假设矛盾。
+						此时注意到：$\langle B(\gamma )-C(\gamma ),B(\gamma )-C(\gamma )\rangle_V = \langle B(\gamma ),B(\gamma )\rangle_V - \langle B(\gamma ),C(\gamma )\rangle_V =\mathbf{0} \Rightarrow B(\gamma )=C(\gamma )$，与假设矛盾。
 
 						于是命题得证。
 					\end{proof}
 				\point{}
 					\begin{proposition}
-						$\forall A \in \hom(V,V),A^* \in \hom(V,V)$
+						$\forall A \in \hom(V,W),A^* \in \hom(W,V)$
 					\end{proposition}
 					\begin{proof}
-						$\forall \alpha ,\beta ,\gamma \in V,k \in F$
+						$\forall \alpha\in V,\beta \in W,k \in F$
 
-						$\langle \alpha ,(A^*+B^*)(\beta ) \rangle =\langle A(\alpha ),\beta \rangle +\langle B(\alpha ),\beta \rangle =\langle \alpha ,A^*(\beta ) \rangle +\langle \alpha ,B^*(\beta ) \rangle =\langle \alpha ,A^*(\beta )+B^*(\beta ) \rangle$
+						$\langle \alpha ,(A^*+B^*)(\beta ) \rangle_V =\langle A(\alpha ),\beta \rangle_W +\langle B(\alpha ),\beta \rangle_W =\langle \alpha ,A^*(\beta ) \rangle_V +\langle \alpha ,B^*(\beta ) \rangle_V =\langle \alpha ,A^*(\beta )+B^*(\beta ) \rangle_V$
 
 						$\Rightarrow (A^*+B^*)(\beta )=A^*(\beta )+B^*(\beta )$
 
-						$\langle \alpha ,(kA^*)(\beta ) \rangle =k\langle A(\alpha ),\beta \rangle =k\langle \alpha ,A^*(\beta ) \rangle =\langle \alpha ,kA^*(\beta ) \rangle$
+						$\langle \alpha ,(kA^*)(\beta ) \rangle_V =k\langle A(\alpha ),\beta \rangle_W =k\langle \alpha ,A^*(\beta ) \rangle_V =\langle \alpha ,kA^*(\beta ) \rangle_V$
 
 						$\Rightarrow (kA^*)(\beta )=kA^*(\beta )$
 
 						于是命题得证。
 					\end{proof}
+				\point{}
+					\begin{proposition}
+						$\forall A,B \in \hom(V,W),(A+B)^* = A^* + B^*$
+					\end{proposition}
+					\begin{proof}
+						$\forall \alpha \in V,\beta \in W$
+
+						$\langle \alpha ,(A+B)^*(\beta ) \rangle_V =\langle (A+B)(\alpha ),\beta \rangle_W =\langle A(\alpha ),\beta \rangle_W +\langle B(\alpha ),\beta \rangle_W =\langle \alpha ,A^*(\beta ) \rangle_V +\langle \alpha ,B^*(\beta ) \rangle_V =\langle \alpha ,A^*(\beta )+B^*(\beta ) \rangle_V$
+
+						由于$\alpha ,\beta $是任意选取的，命题得证。
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						$(kA)^*=\overline{k}A^*$
+					\end{proposition}
+					\begin{proof}
+						$\forall \alpha\in V,\beta \in W$
+
+						$\langle \alpha ,(kA)^*(\beta ) \rangle_V =\langle (kA)(\alpha ),\beta \rangle_W=k\langle A(\alpha ),\beta \rangle_W=k\langle \alpha ,A^*(\beta ) \rangle_V =\langle \alpha ,\overline{k}A^*(\beta ) \rangle_V$
+
+						由于$\alpha ,\beta $是任意选取的，命题得证。
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						$\forall A \in \hom(V,W), (A^*)^* = A$
+					\end{proposition}
+					\begin{proof}
+						$\forall \alpha  \in V,\beta \in W$
+
+						$\langle \alpha ,(A^*)^*(\beta ) \rangle_V =\langle (A^*)(\alpha ),\beta \rangle_W =\langle \alpha ,A(\beta ) \rangle_V$
+
+						由于$\alpha ,\beta $是任意选取的，命题得证。
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						$\forall A \in \hom(V,W), B \in \hom(U,V),(AB)^*=B^*A^*$
+					\end{proposition}
+					\begin{proof}
+						$\forall \alpha \in U,\beta \in W$
+
+						$\langle \alpha ,(AB)^*(\beta )\rangle_U = \langle (AB)(\alpha ),\beta \rangle_W = \langle B(\alpha ),A^*(\beta )\rangle_V = \langle \alpha ,(B^*A^*)(\beta )\rangle_U$
+
+						由于$\alpha ,\beta $是任意选区的，命题得证。
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						如果$A$可逆，那么此时$A^*$也可逆，并且有$(A^*)^{-1}=(A^{-1})^*$
+					\end{proposition}
+				\point{}
+					\begin{proposition}
+						设$A\in \hom(V,W)$，有以下结论：
+						\begin{enumerate}
+							\item $\ker A = (\im A^*)^{\perp}$
+							\item $\im A = (\ker A^*)^{\perp}$
+							\item $\ker A^* = (\im A)^{\perp}$
+							\item $\im A^* = (\ker A)^{\perp}$
+						\end{enumerate}
+					\end{proposition}
 			\end{para}
 		\subsection{正规算子}
 			先给出定义。
