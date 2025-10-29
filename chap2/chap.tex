@@ -209,11 +209,11 @@
 
 				为了方便后续性质的研究，接下来我们给出对偶映射的概念
 				\begin{defn}{对偶映射}{}
-					设$T \in \hom(V_1,V_2)$，我们定义对偶映射$T^* \in \hom (V_2^*,V_1^*)$
+					设$T \in \hom(V_1,V_2)$，我们定义对偶映射$T' \in \hom (V_2^*,V_1^*)$
 
 					如果满足：$\forall f \in V_2^*,\alpha \in V_1$
 					\begin{equation}
-							\left(T^*(f)\right)(\alpha )=(f\circ T)(\alpha )
+							\left(T'(f)\right)(\alpha )=(f\circ T)(\alpha )
 					\end{equation}
 				\end{defn}
 			\subsection{核与像的性质}
@@ -354,10 +354,10 @@
 						\begin{proposition}
 							设$T \in \hom(V,W),\dim V=m < \aleph_0,\dim W = n< \aleph_0$
 
-							那么$\rank(T)=\rank(T^*)$
+							那么$\rank(T)=\rank(T')$
 						\end{proposition}
 						\begin{proof}
-							只需注意到，$\ker T^* = \{f \in W^*| T^*(f) = \mathbf{0}_{V^*}\}$
+							只需注意到，$\ker T' = \{f \in W^*| T'(f) = \mathbf{0}_{V^*}\}$
 
 							$=\{f \in W^*| f \circ T = \mathbf{0}_{V^*}\}$
 
@@ -367,11 +367,11 @@
 
 							而按照引理，有：$\dim \im T + \dim \{f \in W^*| \forall \beta  \in \im T,f(\beta ) = 0\} = \dim W$
 
-							$\Rightarrow \dim \im T +\dim \ker T^* = \dim W$
+							$\Rightarrow \dim \im T +\dim \ker T' = \dim W$
 
-							再运用秩-零化度定理，有：$\dim \im T^* + \dim \ker T^* = \dim W^* =\dim W$
+							再运用秩-零化度定理，有：$\dim \im T' + \dim \ker T' = \dim W' =\dim W$
 
-							因此有$\dim \im T = \dim \im T^* \Rightarrow \rank(T)=\rank(T^*)$，命题得证
+							因此有$\dim \im T = \dim \im T' \Rightarrow \rank(T)=\rank(T')$，命题得证
 						\end{proof}
 					\point{}
 						\begin{proposition}
@@ -773,14 +773,14 @@
 
 						$\forall A \in \hom(V,W)$，如果它在$\{\alpha_1,\cdots,\alpha_n\},\{\beta_1,\cdots,\beta_m\}$下的矩阵是$\symbfit{A}$
 
-						那么$A^* \in \hom(W^*,V^*)$在$\{g_1,\cdots,g_m\},\{f_1,\cdots,f_n\}$下的矩阵是$\symbfit{A}^T$
+						那么$A' \in \hom(W^*,V^*)$在$\{g_1,\cdots,g_m\},\{f_1,\cdots,f_n\}$下的矩阵是$\symbfit{A}^T$
 					\end{proposition}
 					\begin{proof}
-						设$A^* \in \hom(W^*,V^*)$在$\{g_1,\cdots,g_m\},\{f_1,\cdots,f_n\}$下的矩阵是$\symbfit{A}'$
+						设$A' \in \hom(W^*,V^*)$在$\{g_1,\cdots,g_m\},\{f_1,\cdots,f_n\}$下的矩阵是$\symbfit{A}'$
 
-						$A^*(g_j)=\sum\limits_{i=1}^{n} \symbfit{A}'(i;j) f_i$
+						$A'(g_j)=\sum\limits_{i=1}^{n} \symbfit{A}'(i;j) f_i$
 
-						$\Rightarrow A^*(g_j)(\alpha_k)=\sum\limits_{i=1}^{n} \symbfit{A}'(i;j) f_i(\alpha_k)$
+						$\Rightarrow A'(g_j)(\alpha_k)=\sum\limits_{i=1}^{n} \symbfit{A}'(i;j) f_i(\alpha_k)$
 
 						$\Rightarrow (g_jA)(\alpha_k)=\sum\limits_{i=1}^{n} \symbfit{A}'(i;j) \delta_{ik}$
 
@@ -799,14 +799,14 @@
 
 						$\forall A \in \hom(V,W),B \in \hom(U,V)$
 
-						那么$(AB)^*=B^*A^*$
+						那么$(AB)'=B'A'$
 					\end{lemma}
 					\begin{proof}
 						$\forall g \in W^*,\gamma \in U$
 
-						$(AB)^*(g)(\gamma )=(gAB)(\gamma )=B^*(A^*(g))(\gamma )=(B^*A^*)(g)(\gamma )$
+						$(AB)'(g)(\gamma )=(gAB)(\gamma )=B'(A'(g))(\gamma )=(B'A')(g)(\gamma )$
 
-						$\Rightarrow (AB)^*=B^*A^*$
+						$\Rightarrow (AB)'=B'A'$
 					\end{proof}
 					\begin{proposition}
 						$(\symbfit{A}\symbfit{B})^T = \symbfit{B}^T\symbfit{A}^T$
@@ -822,11 +822,11 @@
 						
 						存在$B \in \hom(U,V)$，使得它在$\{\gamma_1,\cdots,\gamma_k\},\{\alpha_1,\cdots,\alpha_m\}$下的矩阵为$\symbfit{B}$
 
-						注意到：$(\symbfit{A}\symbfit{B})^T$是$(AB)^*$在$\{g_1,\cdots,g_n\},\{u_1,\cdots,u_k\}$下的矩阵
+						注意到：$(\symbfit{A}\symbfit{B})^T$是$(AB)'$在$\{g_1,\cdots,g_n\},\{u_1,\cdots,u_k\}$下的矩阵
 
-						$\symbfit{B}^T\symbfit{A}^T$是$B^*A^*$在$\{g_1,\cdots,g_n\},\{u_1,\cdots,u_k\}$下的矩阵
+						$\symbfit{B}^T\symbfit{A}^T$是$B'A'$在$\{g_1,\cdots,g_n\},\{u_1,\cdots,u_k\}$下的矩阵
 
-						那么，因为$(AB)^*=B^*A^*$，所以一定有$(\symbfit{A}\symbfit{B})^T = \symbfit{B}^T\symbfit{A}^T$
+						那么，因为$(AB)'=B'A'$，所以一定有$(\symbfit{A}\symbfit{B})^T = \symbfit{B}^T\symbfit{A}^T$
 					\end{proof}
 				\point{}
 					\begin{proposition}

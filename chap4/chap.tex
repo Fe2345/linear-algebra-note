@@ -349,42 +349,65 @@
 						\end{equation}
 					\end{them}
 					\begin{proof}
-							我们首先证明：$\ker f$是一个闭集。
+						我们首先证明：$\ker f$是一个闭集。
 
-							注意到：任意收敛序列$\{\alpha_n\} \subseteq \ker f$，因为$f$是连续的，因此有
+						注意到：任意收敛序列$\{\alpha_n\} \subseteq \ker f$，因为$f$是连续的，因此有
 
-							$f(\lim_{n \to \infty} \alpha_n)=\lim_{n \to \infty} f(\alpha_n)=\lim_{n \to \infty} 0=0 \Rightarrow \lim_{n \to \infty} \alpha_n \in \ker f$
+						$f(\lim_{n \to \infty} \alpha_n)=\lim_{n \to \infty} f(\alpha_n)=\lim_{n \to \infty} 0=0 \Rightarrow \lim_{n \to \infty} \alpha_n \in \ker f$
 
-							即$\ker f$对任意序列的极限封闭。
+						即$\ker f$对任意序列的极限封闭。
 
-							接下来考察集合$\overline{\ker f}:=\{\lambda | \forall \lambda \in O,O\text{是开集},O \cap \ker f \neq \emptyset\}$
+						接下来考察集合$\overline{\ker f}:=\{\lambda | \forall \lambda \in O,O\text{是开集},O \cap \ker f \neq \emptyset\}$
 
-							注意到，一定有$\ker f \subseteq \overline{\ker f}$，因为$\ker f$中的任意一点，包含其的开集与$\ker f$的交集至少包含这个点本身。
+						注意到，一定有$\ker f \subseteq \overline{\ker f}$，因为$\ker f$中的任意一点，包含其的开集与$\ker f$的交集至少包含这个点本身。
 
-							考察$\alpha \in \overline{\ker f}$
+						考察$\alpha \in \overline{\ker f}$
 
-							取$\alpha_i \in B(\alpha ,\frac{1}{n}) \cap \ker f$，其中$B(\alpha ,s):=\{\beta |d(\alpha ,\beta )< s\}$，由$\overline{\ker f}$的定义可知序列是的确可以取得的。
+						取$\alpha_i \in B(\alpha ,\frac{1}{n}) \cap \ker f$，其中$B(\alpha ,s):=\{\beta |d(\alpha ,\beta )< s\}$，由$\overline{\ker f}$的定义可知序列是的确可以取得的。
 
-							那么，此时一定有$\lim_{n \to \infty} \alpha_n = \alpha $，因为$0 < d(\alpha ,\alpha_k)<\frac{1}{k}$。
+						那么，此时一定有$\lim_{n \to \infty} \alpha_n = \alpha $，因为$0 < d(\alpha ,\alpha_k)<\frac{1}{k}$。
 
-							但是，我们已经指出：$\ker f$对任意收敛序列的极限封闭，因此$\alpha \in \ker f$。那么，$\ker f = \overline{\ker f}$
+						但是，我们已经指出：$\ker f$对任意收敛序列的极限封闭，因此$\alpha \in \ker f$。那么，$\ker f = \overline{\ker f}$
 
-							那么，我们说，$\ker f$是闭集。因为：$\ker f$已经包含了所有与开集有非空交集的点，那么对于$\forall \beta \in V-\ker f$，一定存在包含$\beta $的一个开集$O$，使得$O\in V-\ker f$，而这正是$\ker f$闭的定义。
+						那么，我们说，$\ker f$是闭集。因为：$\ker f$已经包含了所有与开集有非空交集的点，那么对于$\forall \beta \in V-\ker f$，一定存在包含$\beta $的一个开集$O$，使得$O\in V-\ker f$，而这正是$\ker f$闭的定义。
 
-							于是依照之前证明的结论，一定有$\ker f \oplus (\ker f)^{\perp} = V$
+						于是依照之前证明的结论，一定有$\ker f \oplus (\ker f)^{\perp} = V$
 
-							于是$\im f \cong V/\ker f \im \cong (\ker f)^{\perp}$
+						于是$\im f \cong V/\ker f \im \cong (\ker f)^{\perp}$
 
-							但是，$\im f \subseteq F \Rightarrow \dim \im f = 1$，因此$\dim (\ker f)^{\perp} = 1$
+						但是，$\im f \subseteq F \Rightarrow \dim \im f = 1$，因此$\dim (\ker f)^{\perp} = 1$
 
-							取$(\ker f)^{\perp}$的一个标准正交基$\{\eta \}$，那么此时有：
+						取$(\ker f)^{\perp}$的一个标准正交基$\{\eta \}$，那么此时有：
 
-							$f(\alpha )=\langle \alpha ,\eta \rangle f(\eta) =\langle \alpha ,\overline{f(\eta )}\eta \rangle$
+						$f(\alpha )=\langle \alpha ,\eta \rangle f(\eta) =\langle \alpha ,\overline{f(\eta )}\eta \rangle$
 
-							记$\phi = \overline{f(\eta )}\eta$，那么此时有$f(\alpha )=\langle \alpha ,\phi \rangle$。
+						记$\phi = \overline{f(\eta )}\eta$，那么此时有$f(\alpha )=\langle \alpha ,\phi \rangle$。
 
-							于是命题得证。
-						\end{proof}
+						于是命题得证。
+					\end{proof}
+					利用子空间和正交补直和，可以导出以下显然的事实：
+					\begin{proposition}
+						设$V$是一个Hillbert空间，如果$S$是$V$的一个子空间，那么有$(S^{\perp})^{\perp} =S$
+					\end{proposition}
+					\begin{proof}
+						我们先证明$S \subseteq (S^{\perp})^{\perp}$
+
+						$\forall \alpha \in S$，有$\forall \beta \in S^{\perp} ,\langle \alpha ,\beta \rangle = 0$（因为这就是正交补的定义）
+
+						反过来看，其实就是$\forall \beta \in S^{\perp} ,\langle \beta ,\alpha \rangle = 0 \Rightarrow \alpha \in (S^{\perp})^{\perp}$
+
+						接下来证明$(S^{\perp})^{\perp} \subseteq S$
+
+						取$\forall \alpha \in (S^{\perp})^{\perp}$
+
+						因为$(S^{\perp})^{\perp} \subseteq V$，因此依照之前的命题，一定存在分解$\alpha =\beta +\gamma ,\beta \in S,\gamma \in S^{\perp}$
+
+						此时注意到：$\gamma =\alpha -\beta ,\beta \in S \Rightarrow \beta \in (S^{\perp})^{\perp}\Rightarrow \gamma \in (S^{\perp})^{\perp}$
+
+						因此有$\gamma \in S^{\perp} \cap (S^{\perp})^{\perp} \Rightarrow \langle \gamma ,\gamma \rangle = 0 \Rightarrow \gamma = \mathbf{0}$
+
+						于是有$\alpha = \beta \in S$，那么一定有$(S^{\perp})^{\perp} \subseteq S$，于是命题得证。
+					\end{proof}
 			\end{para}
 	\section{正规算子和自伴算子}
 		本节中，如无特别说明，我们假定所有线性空间都定义了内积。
@@ -472,15 +495,26 @@
 
 						$\langle \alpha ,(AB)^*(\beta )\rangle_U = \langle (AB)(\alpha ),\beta \rangle_W = \langle B(\alpha ),A^*(\beta )\rangle_V = \langle \alpha ,(B^*A^*)(\beta )\rangle_U$
 
-						由于$\alpha ,\beta $是任意选区的，命题得证。
+						由于$\alpha ,\beta $是任意选取的，命题得证。
 					\end{proof}
 				\point{}
 					\begin{proposition}
-						如果$A$可逆，那么此时$A^*$也可逆，并且有$(A^*)^{-1}=(A^{-1})^*$
+						如果$A \in \hom(V,W)$可逆，那么此时$A^* \in \hom(W,V)$也可逆，并且有$(A^*)^{-1}=(A^{-1})^*$
 					\end{proposition}
+					\begin{proof}
+						只需证明$A^*(A^{-1})^* = (A^{-1})^*A^*=I$
+
+						$\forall \alpha,\beta  \in V$
+
+						$\langle \alpha ,(A^*(A^{-1})^*)(\beta )\rangle_V =\langle A(\alpha ),(A^{-1})^*(\beta )\rangle_W=\langle (A^{-1}A)(\alpha ),\beta \rangle_V=\langle \alpha ,\beta \rangle_V$
+
+						$\langle \alpha ,((A^{-1})^*A^*)(\beta )\rangle_V =\langle (A^{-1})(\alpha ),A^*(\beta )\rangle_W=\langle (AA^{-1})(\alpha ),\beta \rangle_V=\langle \alpha ,\beta \rangle_V$
+
+						由于$\alpha ,\beta $是任意选取的，命题得证。
+					\end{proof}
 				\point{}
 					\begin{proposition}
-						设$A\in \hom(V,W)$，有以下结论：
+						设$A\in \hom(V,W)$，其中$V,W$是Hillbert空间，有以下结论：
 						\begin{enumerate}
 							\item $\ker A = (\im A^*)^{\perp}$
 							\item $\im A = (\ker A^*)^{\perp}$
@@ -488,12 +522,205 @@
 							\item $\im A^* = (\ker A)^{\perp}$
 						\end{enumerate}
 					\end{proposition}
+					\begin{proof}
+						$\ker A=\{\alpha \in V| A(\alpha )=\mathbf{0}\}$
+
+						$=\{\alpha \in V| \forall \beta \in W,\langle A(\alpha ),\beta \rangle_W =0\}$
+
+						$=\{\alpha \in V| \forall \beta \in W,\langle \alpha ,A^*(\beta )\rangle_V =0\}$
+
+						$=\{A^*(\beta )  \in V|\beta \in W\}^{\perp}=(\im A^*)^{\perp}$
+
+						于是第一条性质得证。
+
+						我们取$A^*$代入上式，得：$\ker A^* = (\im (A^*)^*)^{\perp}=(\im A)^{\perp}$，于是第三条性质得证。
+
+						对第一条性质左右取正交补，得：$(\ker A)^{\perp} = \im A^*$，于是第四条性质得证。
+
+						对第二条性质左右取正交补，得：$(\im A)^{\perp} = \ker A^*$，于是第二条性质得证。
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						设$A \in \hom(V,W)$，$V,W$的一个标准正交基分别为：$\{\alpha_1,\cdots,\alpha_n\},\{\beta_1,\cdots,\beta_m\}$
+
+						那么$A$在$\{\alpha_1,\cdots,\alpha_n\},\{\beta_1,\cdots,\beta_m\}$下的矩阵$\symbfit{A}$，和$A^*$在$\{\beta_1,\cdots,\beta_m\},\{\alpha_1,\cdots,\alpha_n\}$下的矩阵$\symbfit{A}^*$满足：
+						\begin{equation}
+							\symbfit{A}^* = \overline{\symbfit{A}^T}
+						\end{equation}
+						其中矩阵的共轭定义为：$\overline{\symbfit{T}}:=(\overline{\symbfit{T}(i;j)})_{m \times n}$
+					\end{proposition}
+					\begin{proof}
+						$A(\alpha_k)=\sum\limits_{i=1}^{m} \symbfit{A}(i;k)\beta_i \Rightarrow \langle A(\alpha_k),\beta_l \rangle = \sum\limits_{i=1}^{m} \symbfit{A}(i;k)\langle \beta_i,\beta_l \rangle = \symbfit{A}(l;k)$
+
+						$A^*(\beta_l)=\sum\limits_{j=1}^{n} \symbfit{A}(j;l)\alpha_j \Rightarrow \langle \alpha_k,A^*(\beta_l) \rangle = \sum\limits_{j=1}^{m} \overline{\symbfit{A}(j;l)}\langle \alpha_k,\alpha_j \rangle = \overline{\symbfit{A}(k;l)}$
+
+						由伴随算子的定义，有$\langle A(\alpha_k),\beta_l \rangle = \langle \alpha_k,A^*(\beta_l) \rangle$，于是一定有$\symbfit{A}(l;k) = \overline{\symbfit{A}(k;l)}$
+
+						命题得证。
+					\end{proof}
 			\end{para}
 		\subsection{正规算子}
 			先给出定义。
 			\begin{defn}{正规算子}{}
 				设$V$是$F$上的一个内积空间，$A \in \hom(V,V)$，如果$AA^*=A^*A$，那么我们称$A$是一个正规算子
 			\end{defn}
+			我们讨论正规算子的性质
+			\begin{para}{0}
+				\point{}
+					先给出两个引理：
+					\begin{lemma}{}
+						设$V$是$\C$上的一个内积空间，$A \in \hom(V,V)$
+						
+						如果$\forall \alpha \in V,\langle A(\alpha ),\alpha  \rangle =0$，那么$A=\mathbf{0}$
+					\end{lemma}
+					\begin{proof}
+						注意到：
+
+						$\forall \alpha ,\beta \in V$
+
+						$\frac{\langle A(\alpha +\beta ),\alpha +\beta \rangle -\langle A(\alpha -\beta ),\alpha -\beta \rangle}{4}+\frac{\langle A(\alpha + i\beta ),\alpha + i\beta \rangle -\langle A(\alpha - i\beta ),\alpha - i\beta \rangle}{4}i$
+					
+						$=\frac{2\langle A(\beta ),\alpha\rangle +2\langle A(\alpha,\beta \rangle}{4}+\frac{-2i\langle A(\alpha),\beta \rangle +2i\langle A(\beta ),\alpha\rangle}{4}i$
+
+						$=\langle A(\alpha) ,\beta \rangle$
+
+						但是，注意到原式的每一项都具备$\langle A(\gamma ),\gamma  \rangle$的形式。那么，一定有$\langle A(\alpha) ,\beta \rangle=0$，从而$A=0$。
+
+						命题得证。
+					\end{proof}
+					\begin{lemma}{}
+						设$V$是$F$上的一个内积空间，$F=\R$或$F=\C$。如果$A \in \hom(V,V)$满足$A=A^*$，那么：
+
+						$\forall \alpha \in V ,\langle A(\alpha ),\alpha \rangle = 0 \Leftrightarrow A=0$
+					\end{lemma}
+					\begin{proof}
+						$\forall \alpha \in V ,\langle A(\alpha ),\alpha \rangle = 0$
+
+						$\Rightarrow \forall \alpha ,\beta \in V,\langle A(\alpha+\beta ),\alpha + \beta \rangle =0$
+
+						$\Rightarrow \forall \alpha ,\beta \in V,\langle A(\alpha ),\alpha \rangle + \langle A(\beta ),\beta \rangle + \langle A(\alpha ),\beta \rangle + \langle A(\beta ),\alpha \rangle =0$
+
+						$\Rightarrow \forall \alpha ,\beta \in V,\langle A(\alpha ),\beta \rangle + \langle A(\beta ),\alpha \rangle =0$
+
+						此时，如果$F=\R$，那么立即得到$\langle A(\alpha ),\beta \rangle =0 \Rightarrow A=0$；
+						
+						而如果$F=\C$，前面的引理已经指出了$A=0$。于是命题得证。
+					\end{proof}
+					事实上，符合以上所述的的算子我们一般称为自伴算子，它显然是一种特殊的正规算子。但是，因为正规算子是更一般的情形，我们暂时不先介绍它。
+					\begin{proposition}
+						$A \in \hom(V,V)$是正规算子$\Leftrightarrow \forall \alpha \in V,\langle A(\alpha ),A(\alpha )\rangle=\langle A^*(\alpha ),A^*(\alpha )\rangle$
+					\end{proposition}
+					\begin{proof}
+						$A$是正规算子$\Leftrightarrow AA^*-A^*A=0$
+
+						注意到，$(AA^*-A^*A)^*=AA^*-A^*A$
+
+						于是$A$是自伴算子$\Leftrightarrow \forall \alpha \in V,\langle (AA^*-A^*A)(\alpha ),\alpha \rangle =0$
+
+						$\Leftrightarrow $
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						如果$A \in \hom(V,V)$是正规算子，那么有$\ker A = \ker A^*$
+					\end{proposition}
+					\begin{proof}
+						
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						如果$A \in \hom(V,V)$是正规算子，那么有$\im A = \im A^*$
+					\end{proposition}
+				\point{}
+					\begin{proposition}
+						如果$A \in \hom(V,V)$是正规算子，那么有$\ker A \oplus \im A = V$
+					\end{proposition}
+				\point{}
+					\begin{proposition}
+						如果$A \in \hom(V,V)$是正规算子，那么$\forall \lambda \in F,A-\lambda I$也是正规算子
+					\end{proposition}
+				\point{}
+					\begin{proposition}
+						如果$A \in \hom(V,V)$是正规算子，那么$\lambda $是$A$的特征值，$\alpha $是$A$的属于$\lambda $的特征向量的充要条件是：
+
+						$\overline{\lambda} $是$A^*$的特征值，$\alpha $是$A^*$的属于$\overline{\lambda }$的特征向量
+					\end{proposition}
+				\point{}
+					\begin{proposition}
+						如果$A \in \hom(V,V)$是正规算子，那么$A$的属于不同特征值的特征向量相互正交
+					\end{proposition}
+			\end{para}
+		\subsection{自伴算子}
+			\begin{defn}{自伴算子}{}
+				设$V$是$F$上的一个内积空间，$A \in \hom(V,V)$，如果$A=A^*$，那么我们称$A$是一个自伴算子
+			\end{defn}
+			讨论性质。
+			\begin{para}{0}
+				\point{}
+					\begin{corollary}{自伴算子仅具有实特征值}
+						设$V$是一个$F$上的内积空间，$F=\R$或$F=\C$，如果$A \in \hom(V,V)$是自伴算子，那么$A$的所有特征值都是实数
+					\end{corollary}
+				\point{}
+					\begin{proposition}
+						如果$A \in \hom(V,V)$是自伴算子，那么$A$的所有特征值都是实数
+					\end{proposition}
+				\point{}
+					\begin{proposition}
+						如果$A \in \hom(V,V)$是自伴算子，那么属于不同特征值的特征向量相互正交
+					\end{proposition}
+				\point{}
+					\begin{proposition}
+						设$V$是$\C$上的一个内积空间，$A \in \hom(V,V)$是正规算子的充要条件是：
+
+						存在两个自伴算子$T,S \in \hom(V,V)$，使得$TS=ST,A=T+iS$
+					\end{proposition}
+					事实上，在复内积空间中，向量与其在算子作用下的向量的内积，也可以反应算子的自伴性，如下：
+				\point{}
+					\begin{proposition}
+						设$V$是$\C$上的一个内积空间，$A \in \hom(V,V)$，那么$A$是自伴算子的充要条件是：
+
+						$\forall \alpha\in V,\langle A(\alpha ),\alpha  \rangle \in \R$
+					\end{proposition}
+					特别地，如果内积始终为零，那么此时算子会直接退化为零算子：
+					\begin{proposition}
+						设$V$是$\C$上的一个内积空间，$A \in \hom(V,V)$
+						
+						如果$\forall \alpha \in V,\langle A(\alpha ),\alpha  \rangle =0$，那么$A=\mathbf{0}$
+					\end{proposition}
+					在一般的内积空间上，上述命题一般不成立，而是必须先限制算子是自伴的：
+					\begin{proposition}
+						设$V$是$F$上的一个内积空间，$A \in \hom(V,V)$是自伴算子
+						
+						如果$\forall \alpha \in V,\langle A(\alpha ),\alpha  \rangle =0$，那么$A=\mathbf{0}$
+					\end{proposition}
+			\end{para}
+		\subsection{谱定理}
+			\begin{defn}{谱}{}
+				设$V$是$F$上的一个内积空间，$A \in \hom(V,V)$，我们定义：
+				\begin{equation}
+					\sigma (A) := \{\lambda \in F| A-\lambda I \text{不可逆}\}
+				\end{equation}
+				称为$A$的谱
+			\end{defn}
+			\begin{them}{实谱定理}{}
+				设$V$是$\R$上的一个内积空间，$A \in \hom(V,V)$
+
+				以下三个命题等价：
+				\begin{enumerate}
+					\item $A$是自伴算子
+					\item $V$存在一个标准正交基，使得$A$在该基下的矩阵为对角矩阵
+					\item $V$存在一个由$A$的特征向量组成的标准正交基
+				\end{enumerate}
+			\end{them}
+			\begin{them}{复谱定理}{}
+				设$V$是$\C$上的一个内积空间，$A \in \hom(V,V)$
+
+				以下三个命题等价：
+				\begin{enumerate}
+					\item $A$是正规算子
+					\item $V$存在一个标准正交基，使得$A$在该基下的矩阵为对角矩阵
+					\item $V$存在一个由$A$的特征向量组成的标准正交基
+				\end{enumerate}
+			\end{them}
 	\section{保距算子、幺正算子}
 	\section{酉算子}
 	\section{奇异值与奇异值分解}
