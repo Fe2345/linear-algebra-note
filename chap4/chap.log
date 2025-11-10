@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.6.4)  29 OCT 2025 16:10
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.6.4)  7 NOV 2025 19:23
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1262,7 +1262,7 @@ Overfull \hbox (8.12117pt too wide) in paragraph at lines 544--545
 [][]\TU/SimSun(0)/b/n/12 命 题 \TU/lmr/bx/n/12 1.2.9. []\TU/SimSun(0)/m/it/12 设 $[] [] [][][][] [][]$，| $[][] []$ 的 一 个 标 准 正 交 基 分 别 为：| $[][][][] [] [] [][][][] [][][][] [] [] [][][]$ 
  []
 
-[13] [14] [15] [16] [17] (./chap.aux)
+[13] [14] [15] [16] [17] [18] (./chap.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/08/05>
@@ -1274,7 +1274,7 @@ LaTeX Warning: There were multiply-defined labels.
 Package rerunfilecheck Info: File `chap.out' has not changed.
 (rerunfilecheck)             Checksum: 137594CB3508C0DD8AA63EA4FB83FCFE;1524.
  )
-(\end occurred when \ifx on line 728 was incomplete) 
+(\end occurred when \ifx on line 778 was incomplete) 
 Here is how much of TeX's memory you used:
  50360 strings out of 474773
  1221510 string characters out of 5761290
@@ -1284,4 +1284,4 @@ Here is how much of TeX's memory you used:
  1348 hyphenation exceptions out of 8191
  98i,8n,120p,1307b,2937s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on chap.xdv (17 pages, 281824 bytes).
+Output written on chap.xdv (18 pages, 291372 bytes).

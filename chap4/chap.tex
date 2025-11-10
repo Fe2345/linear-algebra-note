@@ -617,37 +617,92 @@
 
 						于是$A$是自伴算子$\Leftrightarrow \forall \alpha \in V,\langle (AA^*-A^*A)(\alpha ),\alpha \rangle =0$
 
-						$\Leftrightarrow $
+						$\Leftrightarrow \langle AA^*(\alpha ),\alpha \rangle=\langle A^*A(\alpha ),\alpha\rangle$
+
+						$\Leftrightarrow \langle A(\alpha ),A(\alpha )\rangle=\langle A^*(\alpha ),A^*(\alpha )\rangle$
+
+						于是命题得证。
 					\end{proof}
 				\point{}
 					\begin{proposition}
 						如果$A \in \hom(V,V)$是正规算子，那么有$\ker A = \ker A^*$
 					\end{proposition}
 					\begin{proof}
-						
+						依照之前的命题，一定有：
+
+						$\ker A = \{\alpha \in V|A(\alpha )=\mathbf{0}\}=\{\alpha \in V|\langle A(\alpha ),A(\alpha )\rangle=0\}=\{\alpha \in V|\langle A^*(\alpha ),A^*(\alpha )\rangle=0\}=\{\alpha \in V|A^*(\alpha )=\mathbf{0}\}=\ker A^*$
+
+						于是命题得证。
 					\end{proof}
 				\point{}
 					\begin{proposition}
 						如果$A \in \hom(V,V)$是正规算子，那么有$\im A = \im A^*$
 					\end{proposition}
+					\begin{proof}
+						对上面的命题，左右取正交补，得：
+
+						$\im A^* = \im A$
+
+						于是命题得证。
+					\end{proof}
 				\point{}
 					\begin{proposition}
 						如果$A \in \hom(V,V)$是正规算子，那么有$\ker A \oplus \im A = V$
 					\end{proposition}
+					\begin{proof}
+						$\ker A \oplus \im A=\ker A^* \oplus (\ker A^*)^{\perp} = V$
+
+						于是命题得证。
+					\end{proof}
 				\point{}
 					\begin{proposition}
 						如果$A \in \hom(V,V)$是正规算子，那么$\forall \lambda \in F,A-\lambda I$也是正规算子
 					\end{proposition}
+					\begin{proof}
+						$(A-\lambda I)(A-\lambda I)^*=(A-\lambda I)(A^*-\lambda I)=AA^*-\lambda A-\lambda A^*+\lambda ^2 I=A^*A-\lambda A^*-\lambda+\lambda^2 I=(A^*-\lambda I)(A-\lambda I)=(A-\lambda I)^*(A-\lambda I)$
+
+						于是命题得证。
+					\end{proof}
 				\point{}
 					\begin{proposition}
 						如果$A \in \hom(V,V)$是正规算子，那么$\lambda $是$A$的特征值，$\alpha $是$A$的属于$\lambda $的特征向量的充要条件是：
 
 						$\overline{\lambda} $是$A^*$的特征值，$\alpha $是$A^*$的属于$\overline{\lambda }$的特征向量
 					\end{proposition}
+					\begin{proof}
+						$\alpha $是$A$的属于$\lambda $的特征向量
+
+						$\Leftrightarrow A(\alpha )=\lambda \alpha $
+
+						$\Leftrightarrow \langle (A-\lambda I)(\alpha ) ,(A-\lambda I)(\alpha )\rangle =0$
+
+						$\Leftrightarrow \langle (A-\lambda I)^*(\alpha ) ,(A-\lambda I)^*(\alpha )\rangle =0$
+
+						$\Leftrightarrow A^*(\alpha )=\overline{\lambda }\alpha $
+
+						于是命题得证。
+					\end{proof}
 				\point{}
 					\begin{proposition}
 						如果$A \in \hom(V,V)$是正规算子，那么$A$的属于不同特征值的特征向量相互正交
 					\end{proposition}
+					\begin{proof}
+						假设$\alpha ,\beta \in V,k,l\in F,k\neq l,A(\alpha )=k\alpha ,A(\beta )=l\beta $
+
+						注意到：
+
+						$(k-l)\langle \alpha ,\beta \rangle$
+
+						$=k\langle \alpha ,\beta \rangle-l\langle \alpha ,\beta \rangle$
+
+						$=\langle k\alpha ,\beta \rangle-\langle \alpha ,\overline{l}\beta \rangle$
+
+						$=\langle A(\alpha ),\beta \rangle-\langle \alpha ,A^*(\beta )\rangle$
+
+						$=\langle A(\alpha ),\beta \rangle - \langle A(\alpha ),\beta \rangle=0 \Rightarrow \langle \alpha ,\beta \rangle=0$
+
+						于是命题得证。
+					\end{proof}
 			\end{para}
 		\subsection{自伴算子}
 			\begin{defn}{自伴算子}{}
@@ -655,10 +710,17 @@
 			\end{defn}
 			讨论性质。
 			\begin{para}{0}
-				\point{}
+				\point{自伴算子仅具有实特征值}
 					\begin{corollary}{自伴算子仅具有实特征值}
 						设$V$是一个$F$上的内积空间，$F=\R$或$F=\C$，如果$A \in \hom(V,V)$是自伴算子，那么$A$的所有特征值都是实数
 					\end{corollary}
+					\begin{proof}
+						这是显然的，因为假如$\alpha $是$A$的属于$\lambda $的特征向量，那么注意到：
+
+						此时$\lambda \alpha =A(\alpha )=A^*(\alpha )=\overline{\lambda }\alpha $
+
+						由特征值和特征向量的定义可知，$\alpha \neq \mathbf{0}$，因此$\lambda =\overline{\lambda }$，即$\lambda \in \R$。
+					\end{proof}
 				\point{}
 					\begin{proposition}
 						如果$A \in \hom(V,V)$是自伴算子，那么$A$的所有特征值都是实数
@@ -679,18 +741,6 @@
 						设$V$是$\C$上的一个内积空间，$A \in \hom(V,V)$，那么$A$是自伴算子的充要条件是：
 
 						$\forall \alpha\in V,\langle A(\alpha ),\alpha  \rangle \in \R$
-					\end{proposition}
-					特别地，如果内积始终为零，那么此时算子会直接退化为零算子：
-					\begin{proposition}
-						设$V$是$\C$上的一个内积空间，$A \in \hom(V,V)$
-						
-						如果$\forall \alpha \in V,\langle A(\alpha ),\alpha  \rangle =0$，那么$A=\mathbf{0}$
-					\end{proposition}
-					在一般的内积空间上，上述命题一般不成立，而是必须先限制算子是自伴的：
-					\begin{proposition}
-						设$V$是$F$上的一个内积空间，$A \in \hom(V,V)$是自伴算子
-						
-						如果$\forall \alpha \in V,\langle A(\alpha ),\alpha  \rangle =0$，那么$A=\mathbf{0}$
 					\end{proposition}
 			\end{para}
 		\subsection{谱定理}

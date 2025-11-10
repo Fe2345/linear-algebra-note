@@ -944,7 +944,41 @@
 						于是命题得证
 					\end{proof}
 			\end{para}
-	\section{分块矩阵}
+	\section{矩阵的分块}
+		\subsection{分块矩阵的定义}
+			准确来说，分块矩阵并不是一种新的矩阵类型，而是一种表示矩阵的方法
+
+			我们将矩阵按照行列切为若干个“子块”，每一块都是一个子矩阵。我们先给出子矩阵的准确定义：
+			\begin{defn}{子矩阵}{}
+				设$\symbfit{A} \in M_{m \times n}(F)$
+				
+				$I=\{i_1,\cdots,i_m\},J=\{j_1,\cdots,j_s\},1 \leqslant i_1 < i_2 < \cdots < i_r \leqslant m,1 \leqslant j_1 < j_2 < \cdots < j_s \leqslant n$
+
+				我们定义满足下式的矩阵$\symbfit{A}_{J}^{I} \in M_{r \times s}(F)$为$\symbfit{A}$的一个子矩阵：
+
+				\begin{equation}
+					\symbfit{A}_{J}^{I}(p;q)=\symbfit{A}(i_p;j_q),1 \leqslant p \leqslant r,1 \leqslant q \leqslant s
+				\end{equation}
+			\end{defn}
+			值得注意的是，子矩阵的行列数并不一定要连续，但是接下来给出的分块矩阵，要求其子矩阵是连续的。
+			\begin{defn}{矩阵的分块}{}
+				设$\symbfit{A}\in M_{m \times n}(F), m = s_1+\cdots+s_k,n = t_1+\cdots+t_l$
+
+				我们将$\symbfit{A}$表示为如下形式的矩阵：
+				\begin{equation}
+					\symbfit{A} = \begin{pmatrix}
+						\symbfit{P}_{11} & \cdots & \symbfit{P}_{1l} \\
+						\vdots & \ddots & \vdots \\
+						\symbfit{P}_{k1} & \cdots & \symbfit{P}_{kl}
+					\end{pmatrix}
+				\end{equation}
+				称为$\symbfit{A}$的一个分块矩阵，$\symbfit{P}_{ij}$为它的第$i$行第$j$列的块，
+
+				其中，$\symbfit{P}_{ij}=\symbfit{A}_{J}^{I},I=\{\sum\limits_{u=1}^{i-1}s_u+1,\cdots,\sum\limits_{u=1}^{i-1}s_u+s_i\},J=\{\sum\limits_{h=1}^{j-1}t_h+1,\cdots,\sum\limits_{h=1}^{j-1}t_h+t_j\}$
+			\end{defn}
+		\subsection{分块矩阵的运算}
+			我们接下来研究，矩阵分块后的运算规则。事实上，分块矩阵的运算，等价于每一个矩阵块各自运算
+			。
 	\section{特殊矩阵}
 		本节中我们介绍一些后续需要用到的特殊矩阵
 		\begin{para}{0}
@@ -1404,11 +1438,7 @@
 			\begin{defn}{子式、余子式}{}
 				设$\symbfit{A}=(a_{ij})_{n\times n} \in M_n(F),I=\{i_1,\cdots,i_k\},J=\{j_1,\cdots,j_k\}$，其中$i_1 < \cdots < i_k,j_1 < \cdots < j_k$
 
-				我们定义：
-
-				$\symbfit{A}_J^I:=\symbfit{A}_{j_1,\cdots,j_k}^{i_1,\cdots,i_k}:=(a_{ij})_{k\times k},i \in I,j \in J$
-
-				行列式$\det(\symbfit{A}_J^I)$称为$\symbfit{A}$的一个$k$阶子式
+				我们定义行列式$\det(\symbfit{A}_J^I)$称为$\symbfit{A}$的一个$k$阶子式
 
 				特别地，如果$I'=\{i_1',\cdots,i_{n-k}'\},J'=\{j_1',\cdots,j_{n-k}'\},i_1'<\cdots<i_{n-k}',j_1'<\cdots<j_{n-k}',I \cup I'=\Z_n,J\cup J'=\Z_n$
 					

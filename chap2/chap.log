@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.6.4)  22 OCT 2025 14:58
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.6.4)  8 NOV 2025 19:52
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1272,12 +1272,12 @@ Overfull \hbox (12.02171pt too wide) in paragraph at lines 883--884
 []\TU/SimSun(0)/m/n/12 于 是 有：| $[][][][][] [] [] [][][] [] [][][][] [] [][][][] [] [][][][][] [] [][][][][] [] [][][][][] [] [] [][][]$ 
  []
 
-[20] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35]
-Overfull \hbox (1.90395pt too wide) in paragraph at lines 1571--1572
+[20] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36]
+Overfull \hbox (1.90395pt too wide) in paragraph at lines 1601--1602
 []$[] [][][][][] [] [][][][][] [][][][][] []$ 
  []
 
-[36] (./chap.aux)
+[37] (./chap.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/08/05>
@@ -1287,16 +1287,16 @@ L3 programming layer <2022/08/05>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `chap.out' has not changed.
-(rerunfilecheck)             Checksum: 662817FC284A8CC4A2C242685FAEF878;2554.
+(rerunfilecheck)             Checksum: CA0185F972E6AA5BD988242409CDAD27;2798.
  )
-(\end occurred when \ifx on line 1581 was incomplete) 
+(\end occurred when \ifx on line 1611 was incomplete) 
 Here is how much of TeX's memory you used:
- 50435 strings out of 474773
- 1224478 string characters out of 5761290
+ 50438 strings out of 474773
+ 1224523 string characters out of 5761290
  2703035 words of memory out of 5000000
- 71741 multiletter control sequences out of 15000+600000
+ 71744 multiletter control sequences out of 15000+600000
  569055 words of font info for 115 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  98i,11n,120p,1307b,2937s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on chap.xdv (36 pages, 568900 bytes).
+Output written on chap.xdv (37 pages, 583876 bytes).
