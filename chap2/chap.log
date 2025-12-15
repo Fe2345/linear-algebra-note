@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.6.4)  8 NOV 2025 19:52
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2025.6.4)  11 DEC 2025 14:54
 entering extended mode
  \write18 enabled.
  file:line:error style messages enabled.
@@ -1272,12 +1272,27 @@ Overfull \hbox (12.02171pt too wide) in paragraph at lines 883--884
 []\TU/SimSun(0)/m/n/12 于 是 有：| $[][][][][] [] [] [][][] [] [][][][] [] [][][][] [] [][][][][] [] [][][][][] [] [][][][][] [] [] [][][]$ 
  []
 
-[20] [21] [22] [23] [24] [25] [26] [27] [28] [29] [30] [31] [32] [33] [34] [35] [36]
-Overfull \hbox (1.90395pt too wide) in paragraph at lines 1601--1602
+[20] [21]
+Overfull \hbox (1.15495pt too wide) in paragraph at lines 1012--1013
+[]\TU/SimSun(0)/m/n/12 分 别 取 $[][] []$ 的 一 个 基 $[][][][] [] [] [][][] [] [] [][][] [] [] [][][][] [][][][] [] [] [][][] [] [] [][][] [] [] [][][]$ 
+ []
+
+[22] [23] [24]
+Overfull \hbox (37.28531pt too wide) in paragraph at lines 1150--1151
+[]\TU/SimSun(0)/m/n/12 存 在 $[] [] [][][][] [][]$，|  使 得 它 们 在 $[][][][] [] [] [][][] [] [] [][][] [] [] [][][][] [][][][] [] [] [][][] [] [] [][][] [] [] [][][]$
+ []
+
+[25] [26] [27]
+Overfull \hbox (53.63313pt too wide) in paragraph at lines 1263--1269
+[]\TU/SimSun(0)/b/n/12 证 明\TU/lmr/bx/n/12 : \TU/SimSun(0)/m/n/12 第 一 个 和 第 三 个 式 子 都 是 显 然 的，|  我 们 现 在 证 第 二 个 式 子。| $[][][][][][][] [][] [] [] [][][][] [][][][][][] [][] []
+ []
+
+[28] [29] [30] [31] [32] [33] [34] [35] [36] [37] [38] [39] [40] [41] [42] [43] [44]
+Overfull \hbox (1.90395pt too wide) in paragraph at lines 2044--2045
 []$[] [][][][][] [] [][][][][] [][][][][] []$ 
  []
 
-[37] (./chap.aux)
+[45] (./chap.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2022/08/05>
@@ -1287,16 +1302,16 @@ L3 programming layer <2022/08/05>
 LaTeX Warning: There were multiply-defined labels.
 
 Package rerunfilecheck Info: File `chap.out' has not changed.
-(rerunfilecheck)             Checksum: CA0185F972E6AA5BD988242409CDAD27;2798.
+(rerunfilecheck)             Checksum: E7F473D2ECA0E62031E52CF27E712FBD;2956.
  )
-(\end occurred when \ifx on line 1611 was incomplete) 
+(\end occurred when \ifx on line 2054 was incomplete) 
 Here is how much of TeX's memory you used:
- 50438 strings out of 474773
- 1224523 string characters out of 5761290
- 2703035 words of memory out of 5000000
- 71744 multiletter control sequences out of 15000+600000
+ 50476 strings out of 474773
+ 1226643 string characters out of 5761290
+ 2713035 words of memory out of 5000000
+ 71782 multiletter control sequences out of 15000+600000
  569055 words of font info for 115 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  98i,11n,120p,1307b,2937s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on chap.xdv (37 pages, 583876 bytes).
+Output written on chap.xdv (45 pages, 700144 bytes).

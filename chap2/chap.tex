@@ -976,9 +976,221 @@
 
 				其中，$\symbfit{P}_{ij}=\symbfit{A}_{J}^{I},I=\{\sum\limits_{u=1}^{i-1}s_u+1,\cdots,\sum\limits_{u=1}^{i-1}s_u+s_i\},J=\{\sum\limits_{h=1}^{j-1}t_h+1,\cdots,\sum\limits_{h=1}^{j-1}t_h+t_j\}$
 			\end{defn}
+		\subsection{分块矩阵与线性映射的关系}
+			事实上，容易注意到分块矩阵和线性映射的关系。
+
+			我们回忆线性映射的矩阵的定义，我们可以说，矩阵的列对应着自变量，矩阵的行对应着因变量。一个显然的猜想是：矩阵的分块对应着线性映射在某一子空间的限制，并从值上取某一子空间上的投影
+
+			我们严格化这个说法，首先，我们需要定义投影：
+			\begin{defn}{投影变换}
+				设$V$是域$F$上的一个线性空间，$U,W$是$V$的两个子空间，且满足$V=U \oplus W$
+
+				我们定义映射$P_U : V \to V$
+				\begin{equation}
+					P_U : V \ni \alpha + \beta \mapsto \alpha \in U,\alpha \in U,\beta \in W
+				\end{equation}
+
+				称$P_U$为从$V$到$U$的投影变换
+			\end{defn}
+			容易注意到，投影变换是一个线性变换。
+			\begin{proposition}
+				$P_U$是一个线性变换
+			\end{proposition}
+			\begin{proof}
+				$\forall \gamma_1 = \alpha_1 + \beta_1,\gamma_2 = \alpha_2 + \beta_2 \in V,\alpha_1,\alpha_2 \in U,\beta_1,\beta_2 \in W,k \in F$
+
+				$P_U(\gamma_1+\gamma_2)=\alpha_1+\alpha_2=P_U(\gamma_1)+P_U(\gamma_2)$
+
+				$P_U(k\gamma_1)=P_U(k\alpha_1+k\beta_1)=k\alpha_1=P_U(k\gamma_1)$
+
+				因此，$P_U$是一个线性变换
+			\end{proof}
+			现在，我们可以给出分块矩阵和线性映射的关系：
+			\begin{them}{分块矩阵与线性映射的关系}{}
+				设$V,W$是域$F$上的两个线性空间，$\dim V = s = s_1+\cdots+s_n < \aleph_0,\dim W = d = d_1+\cdots+d_m < \aleph_0$
+
+				分别取$V,W$的一个基$\{\alpha_{11},\cdots,\alpha_{1s_1},\cdots,\alpha_{n1},\cdots,\alpha_{ns_n}\},\{\beta_{11},\cdots,\beta_{1d_1},\cdots,\alpha_{m1},\cdots,\alpha_{md_m}\}$
+
+				并记$U_i = \span\{\alpha_{i1},\cdots,\alpha_{is_i}\},W_j = \span\{\beta_{j1},\cdots,\beta_{jd_j}\}$
+
+				$\forall A \in \hom(V,W)$，
+				
+				如果它在$\{\alpha_{11},\cdots,\alpha_{1s_1},\cdots,\alpha_{n1},\cdots,\alpha_{ns_n}\},\{\beta_{11},\cdots,\beta_{1d_1},\cdots,\alpha_{m1},\cdots,\alpha_{md_m}\}$下的矩阵$\symbfit{A}$是分块矩阵：
+
+				\begin{equation}
+					\symbfit{A} = \begin{pmatrix}
+						\symbfit{A}_{11} & \cdots & \symbfit{A}_{1n} \\
+						\vdots & \ddots & \vdots \\
+						\symbfit{A}_{m1} & \cdots & \symbfit{A}_{mn}
+					\end{pmatrix},\symbfit{A}_{ij} \in M_{d_i \times s_j}(F)
+				\end{equation}
+				那么一定有：$\symbfit{A}_{ij}$是$P_{W_i} \circ A|_{U_j}$在$\{\alpha_{j1},\cdots,\alpha_{js_j}\},\{\beta_{i1},\cdots,\beta_{id_i}\}$下的矩阵
+			\end{them}
+			\begin{proof}
+				注意到：
+
+				$(P_{W_i} \circ A|_{U_j})(\alpha_{jk}) = P_{W_i}(\sum\limits_{l \leqslant m,p \leqslant d_l} \symbfit{A}(\sum\limits_{u=1}^{l-1}d_u + p;\sum\limits_{u=1}^{i-1}s_u+k)\beta_{lp})=\sum\limits_{p=1}^{d_i} \symbfit{A}_{ij}(p;k)\beta_{ip}$
+
+				于是命题得证。
+			\end{proof}
 		\subsection{分块矩阵的运算}
 			我们接下来研究，矩阵分块后的运算规则。事实上，分块矩阵的运算，等价于每一个矩阵块各自运算
-			。
+			\begin{para}{0}
+				\point{}
+					\begin{proposition}
+						设$\symbfit{A},\symbfit{B} \in M_{m \times n}(F)$，它们的分块矩阵形式分别为：
+
+						$\symbfit{A} = \begin{pmatrix}
+							\symbfit{A}_{11} & \cdots & \symbfit{A}_{1l} \\
+							\vdots & \ddots & \vdots \\
+							\symbfit{A}_{k1} & \cdots & \symbfit{A}_{kl} \\
+						\end{pmatrix},\symbfit{B} = \begin{pmatrix}
+							\symbfit{B}_{11} & \cdots & \symbfit{B}_{1l} \\
+							\vdots & \ddots & \vdots \\
+							\symbfit{B}_{k1} & \cdots & \symbfit{B}_{kl}
+						\end{pmatrix},A_{ij},B_{ij} \in M_{d_i \times s_j}(F)$
+
+						那么一定有：
+
+						$\symbfit{A}+\symbfit{B} = \begin{pmatrix}
+							\symbfit{A}_{11}+\symbfit{B}_{11} & \cdots & \symbfit{A}_{1l}+\symbfit{B}_{1l} \\
+							\vdots & \ddots & \vdots \\
+							\symbfit{A}_{k1}+\symbfit{B}_{k1} & \cdots & \symbfit{A}_{kl}+\symbfit{B}_{kl} \\
+						\end{pmatrix}$
+					\end{proposition}
+					\begin{proof}
+						这个命题利用定义即可。
+
+						记$\symbfit{A}+\symbfit{B}$的分块矩阵形式是$\begin{pmatrix}
+							\symbfit{C}_{11} & \cdots & \symbfit{C}_{1l} \\
+							\vdots & \ddots & \vdots \\
+							\symbfit{C}_{k1} & \cdots & \symbfit{C}_{kl} \\
+						\end{pmatrix},C_{ij}\in M_{d_i \times s_j}(F)$
+
+						那么注意到：$\symbfit{C}_{ij}(p;q)=(\symbfit{A}+\symbfit{B})(\sum\limits_{u=1}^{i-1}d_u+p;\sum\limits_{l=1}^{j-1}s_l+q)$
+
+						$=\symbfit{A}(\sum\limits_{u=1}^{i-1}d_u+p;\sum\limits_{l=1}^{j-1}s_l+q)+\symbfit{B}(\sum\limits_{u=1}^{i-1}d_u+p;\sum\limits_{l=1}^{j-1}s_l+q)$
+
+						$=\symbfit{A}_{ij}(p;q)+\symbfit{B}_{ij}(p;q)$
+
+						于是命题得证
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						设$\symbfit{A}\in M_{m \times n}(F),k \in F$，它的分块矩阵形式为：
+
+						$\symbfit{A} = \begin{pmatrix}
+							\symbfit{A}_{11} & \cdots & \symbfit{A}_{1l} \\
+							\vdots & \ddots & \vdots \\
+							\symbfit{A}_{k1} & \cdots & \symbfit{A}_{kl} \\
+						\end{pmatrix},A_{ij}\in M_{d_i \times s_j}(F)$
+
+						那么一定有：
+
+						$k\symbfit{A} = \begin{pmatrix}
+							k\symbfit{A}_{11} & \cdots & k\symbfit{A}_{1l} \\
+							\vdots & \ddots & \vdots \\
+							k\symbfit{A}_{k1} & \cdots & k\symbfit{A}_{kl} \\
+						\end{pmatrix}$
+					\end{proposition}
+					\begin{proof}
+						这个命题利用定义即可。
+
+						记$k\symbfit{A}$的分块矩阵形式是$\begin{pmatrix}
+							\symbfit{C}_{11} & \cdots & \symbfit{C}_{1l} \\
+							\vdots & \ddots & \vdots \\
+							\symbfit{C}_{k1} & \cdots & \symbfit{C}_{kl} \\
+						\end{pmatrix},C_{ij}\in M_{d_i \times s_j}(F)$
+
+						那么注意到：$\symbfit{C}_{ij}(p;q)=(k\symbfit{A})(\sum\limits_{u=1}^{i-1}d_u+p;\sum\limits_{l=1}^{j-1}s_l+q)$
+
+						$=k\symbfit{A}(\sum\limits_{u=1}^{i-1}d_u+p;\sum\limits_{l=1}^{j-1}s_l+q)$
+
+						$=k\symbfit{A}_{ij}(p;q)$
+
+						于是命题得证
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						设$\symbfit{A},\symbfit{B} \in M_{m \times n}(F)$，它们的分块矩阵形式分别为：
+
+						$\symbfit{A} = \begin{pmatrix}
+							\symbfit{A}_{11} & \cdots & \symbfit{A}_{1l} \\
+							\vdots & \ddots & \vdots \\
+							\symbfit{A}_{k1} & \cdots & \symbfit{A}_{kl} \\
+						\end{pmatrix},\symbfit{B} = \begin{pmatrix}
+							\symbfit{B}_{11} & \cdots & \symbfit{B}_{1p} \\
+							\vdots & \ddots & \vdots \\
+							\symbfit{B}_{l1} & \cdots & \symbfit{B}_{kp}
+						\end{pmatrix},A_{ij}\in M_{d_i \times s_j}(F),B_{ij}\in M_{s_j \times r_k}(F)$
+
+						那么$\symbfit{A}\symbfit{B}$的分块矩阵形式$\begin{pmatrix}
+							\symbfit{C}_{11} & \cdots & \symbfit{C}_{1p} \\
+							\vdots & \ddots & \vdots \\
+							\symbfit{C}_{k1} & \cdots & \symbfit{C}_{kp} \\
+						\end{pmatrix},C_{ij}\in M_{d_i \times r_j}(F)$一定满足：
+
+						$\symbfit{C}_{ij} = \sum\limits_{r=1}^{k} \symbfit{A}_{ir} \symbfit{B}_{rj}$
+					\end{proposition}
+					\begin{proof}
+						任取三个$F$上的线性空间$V,W,U$，使得$\dim V = s = s_1+\cdots+s_l,\dim W = d = d_1+\cdots+d_k,\dim U = r = r_1+\cdots+r_p$
+
+						分别取$V,W,U$的基$\{\alpha_{11},\cdots,\alpha_{1s_1},\cdots,\alpha_{l1},\cdots,\alpha_{ls_l}\}$
+						
+						$\{\beta_{11},\cdots,\beta_{1d_1},\cdots,\beta_{k1},\cdots,\beta_{kd_k}\}$
+
+						$\{\gamma_{11},\cdots,\gamma_{1r_1},\cdots,\gamma_{p1},\cdots,\gamma_{pr_p}\}$
+
+						并记$V_i = \span\{\alpha_{i1},\cdots,\alpha_{is_i}\},W_j = \span\{\beta_{j1},\cdots,\beta_{jd_j}\},U_h=\span\{\gamma_{h1},\cdots,\gamma_{hr_h}\}$
+
+						显然，一定存在$A \in \hom(W,V)$，
+						
+						使得它们在$\{\beta_{11},\cdots,\beta_{1d_1},\cdots,\beta_{k1},\cdots,\beta_{kd_k}\},\{\alpha_{11},\cdots,\alpha_{1s_1},\cdots,\alpha_{l1},\cdots,\alpha_{ls_l}\}$下的矩阵分别是$\symbfit{A}$
+
+						存在$B \in \hom(U,W)$，使得它们在$\{\gamma_{11},\cdots,\gamma_{1r_1},\cdots,\gamma_{p1},\cdots,\gamma_{pr_p}\},\{\beta_{11},\cdots,\beta_{1d_1},\cdots,\beta_{k1},\cdots,\beta_{kd_k}\}$下的矩阵分别是$\symbfit{B}$
+
+						那么，$AB$在$\{\gamma_{11},\cdots,\gamma_{1r_1},\cdots,\gamma_{p1},\cdots,\gamma_{pr_p}\},\{\alpha_{11},\cdots,\alpha_{1s_1},\cdots,\alpha_{l1},\cdots,\alpha_{ls_l}\}$下的矩阵就是$\symbfit{A}\symbfit{B}$
+
+						那么，依据之前证明的命题，一定有：$(P_{V_i}\circ AB)_{U_h}$在$\{\gamma_{h1},\cdots,\gamma_{hr_h}\},\{\alpha_{i1},\cdots,\alpha_{is_i}\}$下的矩阵是$\symbfit{C}_{ih}$
+
+						又注意到：$P_{V_i}\circ AB|_{U_h} = \sum\limits_{r=1}^{l} (P_{V_i} \circ A|_{W_r}) \circ (P_{W_r} \circ B|_{U_h})$
+
+						但是，依据之前证明的命题，$(P_{V_i} \circ A|_{W_r})$在$\{\beta_{r1},\cdots,\beta_{rd_r}\},\{\alpha_{i1},\cdots,\alpha_{is_i}\}$下的矩阵是$\symbfit{A}_{ir}$
+
+						$(P_{W_r} \circ B|_{U_h})$在$\{\gamma_{h1},\cdots,\gamma_{hr_h}\},\{\beta_{r1},\cdots,\beta_{rd_r}\}$下的矩阵是$\symbfit{B}_{rh}$
+
+						那么一定有：$\symbfit{C}_{ih} = \sum\limits_{r=1}^{k} \symbfit{A}_{ir} \symbfit{B}_{rh}$
+
+						于是命题得证。
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						设$\symbfit{A},\in M_{m \times n}(F)$，它们的分块矩阵形式分别为：
+
+						$\symbfit{A} = \begin{pmatrix}
+							\symbfit{A}_{11} & \cdots & \symbfit{A}_{1l} \\
+							\vdots & \ddots & \vdots \\
+							\symbfit{A}_{k1} & \cdots & \symbfit{A}_{kl} \\
+						\end{pmatrix},A_{ij}\in M_{d_i \times s_j}(F)$
+
+						那么$\symbfit{A}^T$的分块矩阵形式$\begin{pmatrix}
+							\symbfit{C}_{11} & \cdots & \symbfit{C}_{1k} \\
+							\vdots & \ddots & \vdots \\
+							\symbfit{C}_{l1} & \cdots & \symbfit{C}_{lk} \\
+						\end{pmatrix},C_{ij}\in M_{s_j \times d_i}(F)$一定满足：
+
+						$\symbfit{C}_{ji} = \symbfit{A}_{ij}^T$
+					\end{proposition}
+					\begin{proof}
+						这个命题利用定义即可。
+
+						注意到：$\symbfit{C}_{ji}(p;q)=\symbfit{A}^T(\sum\limits_{u=1}^{j-1}s_u + p;\sum\limits_{h=1}^{i-1}d_h + q)$
+
+						$=\symbfit{A}(\sum\limits_{h=1}^{i-1}d_h + q;\sum\limits_{u=1}^{j-1}s_u + p)$
+
+						$=\symbfit{A}_{ij}(p;q)$
+					\end{proof}
+			\end{para}
 	\section{特殊矩阵}
 		本节中我们介绍一些后续需要用到的特殊矩阵
 		\begin{para}{0}
@@ -1020,6 +1232,11 @@
 
 					那么有：$\symbfit{E}_{ij} = \mathbf{e}_i \mathbf{e}_j^T$
 				\end{proposition}
+				\begin{proof}
+					只需注意到：$\symbfit{E}_{ij}(k;l)=\mathbf{e}_i(k)\mathbf{e}_j(l)=\delta_{ik}\delta_{jl}$
+
+					于是命题得证。
+				\end{proof}
 			\point{对角矩阵}
 				\begin{defn}{对角矩阵}{}
 					我们定义：
@@ -1031,6 +1248,72 @@
 						\end{pmatrix} \in M_n(F),d_1,\cdots,d_n \in F
 					\end{equation}
 				\end{defn} 
+				对角矩阵的一个重要性质是：它们自身对加法和乘法构成一个环和线性空间
+				\begin{proposition}
+					设$\symbfit{A} = diag\{a_1,\cdots,a_n\},\symbfit{B} = diag\{b_1,\cdots,b_n\},a_1,\cdots,a_n,b_1,\cdots,b_n \in F$
+
+					那么，
+
+					$\symbfit{A}+\symbfit{B} = diag\{a_1+b_1,\cdots,a_n+b_n\}$
+
+					$\symbfit{A}\symbfit{B} = diag\{a_1b_1,\cdots,a_nb_n\}$
+
+					$k\symbfit{A} = diag\{ka_1,\cdots,ka_n\}$
+				\end{proposition}
+				\begin{proof}
+					第一个和第三个式子都是显然的，我们现在证第二个式子。
+					$(\symbfit{A}\symbfit{B})(p;q)=\sum\limits_{i=1}^{n} \symbfit{A}(p;i)\symbfit{B}(i;q)=\begin{cases}
+						a_pb_p,&p=q\\
+						0,&p \neq q
+					\end{cases}$
+
+					于是命题得证。
+				\end{proof}
+				类似地，如果一个分块矩阵呈现为对角块形式，那么它们称为分块对角矩阵
+				\begin{defn}{分块对角矩阵}{}
+					形如以下的分块矩阵称为分块对角矩阵：
+					\begin{equation}
+						\symbfit{A} = \begin{pmatrix}
+							\symbfit{A}_1 &  & 0 \\
+							 & \ddots &  \\
+							0 &  & \symbfit{A}_k
+						\end{pmatrix},A_i \in M_{n_i}(F),1 \leqslant i \leqslant k
+					\end{equation}
+				\end{defn}
+				容易验证的一个性质是，分块对角矩阵也构成一个环和线性空间
+				\begin{proposition}
+					设$\symbfit{A},\symbfit{B} \in M_n(F)$都是分块对角矩阵，分别为：
+
+					$\symbfit{A} = \begin{pmatrix}
+						\symbfit{A}_1 &  & 0 \\
+						 & \ddots &  \\
+						0 &  & \symbfit{A}_k
+					\end{pmatrix},\symbfit{B} = \begin{pmatrix}
+						\symbfit{B}_1 &  & 0 \\
+						 & \ddots &  \\
+						0 &  & \symbfit{B}_k
+					\end{pmatrix},A_i,B_i \in M_{n_i}(F),1 \leqslant i \leqslant k$
+
+					那么，
+
+					$\symbfit{A}+\symbfit{B} = \begin{pmatrix}
+						\symbfit{A}_1+\symbfit{B}_1 &  & 0 \\
+						 & \ddots &  \\
+						0 &  & \symbfit{A}_k+\symbfit{B}_k
+					\end{pmatrix}$
+
+					$\symbfit{A}\symbfit{B} = \begin{pmatrix}
+						\symbfit{A}_1\symbfit{B}_1 &  & 0 \\
+						 & \ddots &  \\
+						0 &  & \symbfit{A}_k\symbfit{B}_k
+					\end{pmatrix}$
+
+					$k\symbfit{A} = \begin{pmatrix}
+						k\symbfit{A}_1 &  & 0 \\
+						 & \ddots &  \\
+						0 &  & k\symbfit{A}_k
+					\end{pmatrix}$
+				\end{proposition}
 			\point{初等矩阵}
 				\begin{defn}{初等矩阵}{}
 					设$\mathbf{e}_i$为$F^n$中仅在第$i$个元素上为$1$，其他元素均为$0$的向量
@@ -1076,6 +1359,41 @@
 						&        &        &        &        & \ddots &        \\
 					0	&        &        &        &        &        & 1
 					\end{pmatrix}$
+				类似地，我们可以定义分块初等矩阵：
+				\begin{defn}{分块初等矩阵}{}
+					形如以下三种形式的分块矩阵称为分块初等矩阵：
+					\begin{equation}
+						\begin{pmatrix}
+							\symbfit{I}_{n_1} &        &        &        &        &        & O_{n_1 \times n_k}       \\
+								& \ddots &        &        &        &        &        \\
+								&        & O_{n_j \times n_i}      & \cdots & \symbfit{I}_{n_j} &        &        \\
+								&        & \vdots &        & \vdots &        &        \\
+								&        & \symbfit{I}_{n_i} & \cdots & O_{n_i \times n_j}      &        &        \\
+								&        &        &        &        & \ddots &        \\
+							O_{n_k \times n_1}	&        &        &        &        &        & \symbfit{I}_{n_k}
+						\end{pmatrix}
+					\end{equation}
+					\begin{equation}
+						\begin{pmatrix}
+							\symbfit{I}_{n_1} &        &        &    & O_{n_1 \times n_k}       \\
+								& \ddots &        &        &      \\
+								&        & c\symbfit{I}_{n_i} &  &        \\
+								&        &        & \ddots &     \\
+							O_{n_k \times n_1}	&        &        &        &     \symbfit{I}_{n_k}
+						\end{pmatrix},c \in F,c \neq 0
+					\end{equation}
+					\begin{equation}
+						\begin{pmatrix}
+							\symbfit{I}_{n_1} &        &        &        &        &        & O_{n_1 \times n_k}       \\
+								& \ddots &        &        &        &        &        \\
+								&        & \symbfit{I}_{n_i} & \cdots & c\symbfit{I}_{n_j} &        &        \\
+								&        &        & \ddots & \vdots &        &        \\
+								&        &        &        & \symbfit{I}_{n_j} &        &        \\
+								&        &        &        &        & \ddots &        \\
+							O_{n_k \times n_1}	&        &        &        &        &        & \symbfit{I}_{n_k}
+						\end{pmatrix},c \in F
+					\end{equation}
+				\end{defn}
 			\point{对称矩阵、反对称矩阵}
 				\begin{defn}{对称矩阵与反对称矩阵}{}
 					我们定义：
@@ -1086,8 +1404,58 @@
 
 					$\symbfit{A}^T = -\symbfit{A}$，那么我们称$\symbfit{A}$是一个反对称矩阵。
 				\end{defn}
+				对称矩阵和反对称矩阵的一个重要性质是：它们构成一个线性空间
+				\begin{proposition}
+					设$\symbfit{A},\symbfit{B} \in M_n(F),k \in F$都是对称矩阵（或反对称矩阵）
+
+					那么，$\symbfit{A}+\symbfit{B},k\symbfit{A}$也是对称矩阵（或反对称矩阵）
+				\end{proposition}
+				\begin{proof}
+					注意到：如果$\symbfit{A},\symbfit{B}$都是对称矩阵，那么有：
+
+					$(\symbfit{A}+\symbfit{B})^T=\symbfit{A}^T+\symbfit{B}^T=\symbfit{A}+\symbfit{B}$
+
+					$(k\symbfit{A})^T=k\symbfit{A}^T=k\symbfit{A}$
+
+					又注意到：如果$\symbfit{A},\symbfit{B}$都是反对称矩阵，那么有：
+
+					$(\symbfit{A}+\symbfit{B})^T=\symbfit{A}^T+\symbfit{B}^T=-\symbfit{A}-\symbfit{B}=-(\symbfit{A}+\symbfit{B})$
+
+					$(k\symbfit{A})^T=k\symbfit{A}^T=-k\symbfit{A}$
+
+					于是命题得证。
+				\end{proof}
+				特别地，这两个线性空间构成对矩阵空间的直和
+				\begin{proposition}
+					记$R_1 = \{ \symbfit{A} \in M_n(F) | \symbfit{A}=\symbfit{A}^T\}$
+					
+					$R_2 = \{ \symbfit{A} \in M_n(F) | \symbfit{A}=-\symbfit{A}^T\}$
+					
+					那么有：$M_n(F) = R_1 \oplus R_2$
+				\end{proposition}
+				\begin{proof}
+					首先证明$M_n(F) = R_1 + R_2$：
+
+					只需注意到，$\forall \symbfit{A}\in M_n(F)$
+
+					$\symbfit{A}=\frac{\symbfit{A}+\symbfit{A}^T}{2}+\frac{\symbfit{A}-\symbfit{A}^T}{2}$
+
+					而$(\frac{\symbfit{A}+\symbfit{A}^T}{2})^T=\frac{\symbfit{A}^T+\symbfit{A}}{2}=\frac{\symbfit{A}+\symbfit{A}^T}{2}$
+
+					$(\frac{\symbfit{A}-\symbfit{A}^T}{2})^T=\frac{\symbfit{A}^T-\symbfit{A}}{2}=-\frac{\symbfit{A}-\symbfit{A}^T}{2}$
+
+					于是有：$M_n(F)=R_1+R_2$
+
+					接下来只需证明$R_1 \cap R_2 = \{0\}$：
+
+					设$\symbfit{A} \in R_1 \cap R_2$，则有：
+
+					$\symbfit{A}=\symbfit{A}^T=-\symbfit{A}^T \Rightarrow \symbfit{A}=\symbfit{O}$
+
+					于是命题得证。
+				\end{proof}
 			\point{上三角矩阵、下三角矩阵}
-				\begin{defn}
+				\begin{defn}{上三角矩阵与下三角矩阵}{}
 					我们定义：
 					
 					如果$\symbfit{A} \in M_n(F)$满足：
@@ -1096,6 +1464,27 @@
 
 					$\forall i<j,\symbfit{A}(i;j)=0$，那么我们称$\symbfit{A}$是一个下三角矩阵。
 				\end{defn}
+				上下三角矩阵的一个重要性质是：它们自身对加法和乘法构成一个环和线性空间
+				\begin{proposition}
+					设$\symbfit{A},\symbfit{B} \in M_n(F),k \in F$都是上三角矩阵（或下三角矩阵）
+
+					那么，$\symbfit{A}+\symbfit{B},k\symbfit{A},\symbfit{A}\symbfit{B}$也是上三角矩阵（或下三角矩阵）
+				\end{proposition}
+				\begin{proof}
+					设$\symbfit{A},\symbfit{B}$是上三角矩阵
+
+					$\symbfit{A}+\symbfit{B},k\symbfit{A}$是上三角矩阵是显然的，我们现在证明$\symbfit{A}\symbfit{B}$是上三角矩阵：
+
+					注意到，$\forall p > q,(\symbfit{A}\symbfit{B})(p;q)=\sum\limits_{i=1}^{n} \symbfit{A}(p;i)\symbfit{B}(i;q)$
+
+					求和的每一项当且仅当在$p\geqslant i\geqslant q$时非零，但这和$p>q$矛盾
+
+					因此有$\forall p>q,(\symbfit{A}\symbfit{B})(p;q)=0$，于是此时$\symbfit{A}\symbfit{B}$是上三角矩阵
+
+					同理可证下三角矩阵的情况。
+
+					于是命题得证。
+				\end{proof}
 		\end{para}
 	\section{可逆矩阵}
 		可逆矩阵其实就是矩阵环$M_n(F)$中的可逆元。本节中我们将研究可逆矩阵的一些基本性质，以及矩阵环中的特殊性质。最后，我们会看到它的一个简单应用：过渡矩阵和相似
@@ -1196,6 +1585,56 @@
 						$=\symbfit{I}-c^2\mathbf{e}_i \mathbf{e}_j^T\mathbf{e}_i \mathbf{e}_j^T=\symbfit{I}$
 
 						于是命题得证。
+					\end{proof}
+				\point{}
+					\begin{proposition}
+						记全体初等矩阵的集合为$S$，那么有：
+
+						$GL_n(F)=\langle S \rangle$
+					\end{proposition}
+					\begin{proof}
+						对$n$作数学归纳法。
+
+						当$n=1$时，此时矩阵仅有一个元素，于是有$\begin{pmatrix}
+							c
+						\end{pmatrix}=\symbfit{P}(1(c))$，命题成立。
+
+						现在假设$n$时成立，我们来证$n+1$时也成立。
+
+						取$\forall \symbfit{A} \in GL_{n+1}(F)$
+
+						注意到，因为$\symbfit{A}$可逆，因此其第一列不全为$0$（否则列不满秩，于矩阵可逆矛盾）。不妨取任意$\symbfit{A}(i;1)\neq 0$
+
+						左乘$\symbfit{P}(1(\frac{1}{\symbfit{A}(i;1)}))\symbfit{P}(i;1)$将其换到第一行并化为$1$，此时有：
+
+						$\symbfit{A}_1=\symbfit{P}(1(\frac{1}{\symbfit{A}(i;1)}))\symbfit{P}(i;1)\symbfit{A}=\begin{pmatrix}
+							1 & \mathbf{c}^T \\
+							\mathbf{b} & \symbfit{B}
+						\end{pmatrix}$
+						
+						此时在矩阵左右乘形如$\symbfit{P}(j;1(c))$的一系列矩阵，将第一列、第一行除第一个元素外的元素化为$0$，此时有：
+
+						$\symbfit{A}_2 = \symbfit{E}_1\cdots\symbfit{E}_k\symbfit{A}_1\symbfit{R}_1\cdots\symbfit{R}_p=\begin{pmatrix}
+							1 & \mathbf{0}^T \\
+							\mathbf{0} & \symbfit{B}_1
+						\end{pmatrix}$
+
+						此时注意到：因为$\symbfit{A}$可逆，其行向量必定线性无关，因此$\begin{pmatrix}
+							\mathbf{0} & \symbfit{B}_1
+						\end{pmatrix}$的行向量也线性无关。因为向量组的每一个向量减少一个零元素不会影响线性无关性，因此$\symbfit{B}_1$的行向量也线性无关，从而$\symbfit{B}_1$可逆。
+
+						于是依照假设，一定存在分解$\symbfit{B}_1=\symbfit{F}_1\cdots\symbfit{F}_l$
+
+						此时记$\symbfit{F}_k'=\begin{pmatrix}
+							1 & \mathbf{0}^T \\
+							\mathbf{0} & \symbfit{F}_k
+						\end{pmatrix}$
+
+						注意到，此时$\symbfit{A}_2=\symbfit{F}_1'\cdots \symbfit{F}_k'$，且$\symbfit{F}_k'$是初等矩阵。
+
+						于是有：$\symbfit{A}=\symbfit{P}(i;1)^{-1}\symbfit{P}(1(\frac{1}{\symbfit{A}(i;1)}))^{-1}\symbfit{E}_k^{-1}\cdots\symbfit{E}_1^{-1}\symbfit{F}_1'\cdots \symbfit{F}_k'\symbfit{R}_l^{-1}\cdots\symbfit{R}_1^{-1}$
+
+						于是$n+1$时也成立，命题得证。
 					\end{proof}
 			\end{para}
 		\subsection{过渡矩阵}
@@ -1372,7 +1811,7 @@
 			\begin{defn}{迹}{}
 				设$F$是一个域，$V$是$F$上的一个线性空间，并且$dim_F V = n$
 
-				满足以下条件的映射$\tr:\hom(V,V) \to F$称为迹：
+				满足以下条件的映射$\tr \in \hom(\hom(V,V),F)$称为迹：
 				\begin{enumerate}
 					\item $\forall A,B \in \hom(V,V),\tr(AB)=\tr(BA)$
 					\item $\tr(I)=\dim V = n$
@@ -1399,13 +1838,17 @@
 						$\tr$存在且唯一
 					\end{proposition}
 					\begin{proof}
-						取$V$的一个基$\{\alpha_1,\cdots,\alpha_n\}$和它的对偶基$\{f_1,\cdots,f_n\}$
+						取$V$的一个基$\{\alpha_1,\cdots,\alpha_n\}$
 
-						我们定义：
-						$f:\hom(V,V) \ni T \mapsto \sum\limits_{i=1}^{n} f_i\left(T(\alpha_i)\right) \in F$
-					
-						$tr(TS)=\sum\limits_{i=1}^{n} f_i\left(T\sum\limits_{j=1}^{n}f_j(S(\alpha_i))\alpha_j\right)$
-					
+						我们先定义：$E_{ij}:V \ni \sum\limits_{l=1}^{n} k_l \alpha_l \mapsto k_i \alpha_j \in V$。容易注意到，$\{E_{ij}\}$是$\hom(V,V)$的一个基
+
+						考虑映射：$f: \hom(V,V) \ni T = \sum\limits_{i,j}^{n,n} a_{ij} E_{ij} \mapsto \sum\limits_{k=1}^{n} a_{kk} \in F$
+
+						注意到：$\forall T=\sum\limits_{i,j}^{n,n}a_{ij}E_{ij},S=\sum\limits_{i,j}^{n,n}b_{ij}E_{ij} \in \hom(V,V)$
+
+						$f(TS)=f\left(\sum\limits_{i,j}^{n,n}\left(\sum\limits_{k=1}^{n} a_{ik} b_{kj}\right)E_{ij}\right)=\sum\limits_{i=1}^{n}\sum\limits_{k=1}^{n}a_{ik}b_{ki}$
+
+						$f(ST)=f\left(\right)$
 					\end{proof}
 			\end{para}
 		\subsection{行列式}

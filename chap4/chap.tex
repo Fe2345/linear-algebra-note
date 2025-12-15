@@ -710,6 +710,25 @@
 			\end{defn}
 			讨论性质。
 			\begin{para}{0}
+				\point{}
+					\begin{corollary}{自伴算子的矩阵共轭}
+						设$V$是一个$F$上的内积空间，$F=\R$或$F=\C$，如果$A \in \hom(V,V)$是自伴算子，设$\symbfit{A}$是$A$在基$B$下的矩阵，那么有：
+
+						$\symbfit{A} = \overline{\symbfit{A}^T}$
+					\end{corollary}
+					\begin{proof}
+						这是显然的，因为我们已经指出，伴随算子$A^*$在$B$下的矩阵满足$\symbfit{A}^* = \overline{\symbfit{A}^T}$
+					\end{proof}
+					这个推论的一个更常用的推论是，实自伴算子的矩阵是对称矩阵
+					\begin{corollary}{实自伴算子的矩阵对称}
+						设$V$是一个$\R$上的内积空间，如果$A \in \hom(V,V)$是自伴算子，设$\symbfit{A}$是$A$在基$B$下的矩阵，那么有：
+
+						$\symbfit{A} = \symbfit{A}^T$
+						
+					\end{corollary}
+					\begin{proof}
+						这是显然的，因为实数的共轭就是它本身。
+					\end{proof}
 				\point{自伴算子仅具有实特征值}
 					\begin{corollary}{自伴算子仅具有实特征值}
 						设$V$是一个$F$上的内积空间，$F=\R$或$F=\C$，如果$A \in \hom(V,V)$是自伴算子，那么$A$的所有特征值都是实数
@@ -720,21 +739,49 @@
 						此时$\lambda \alpha =A(\alpha )=A^*(\alpha )=\overline{\lambda }\alpha $
 
 						由特征值和特征向量的定义可知，$\alpha \neq \mathbf{0}$，因此$\lambda =\overline{\lambda }$，即$\lambda \in \R$。
+
+						于是命题得证。
 					\end{proof}
 				\point{}
-					\begin{proposition}
-						如果$A \in \hom(V,V)$是自伴算子，那么$A$的所有特征值都是实数
-					\end{proposition}
-				\point{}
-					\begin{proposition}
-						如果$A \in \hom(V,V)$是自伴算子，那么属于不同特征值的特征向量相互正交
-					\end{proposition}
+					\begin{corollary}{}
+						设$V$是一个$F$上的内积空间，$F=\R$或$F=\C$，如果$A \in \hom(V,V)$是自伴算子，那么属于不同特征值的特征向量相互正交
+					\end{corollary}
+					\begin{proof}
+						因为自伴算子是正规算子，依照之前的命题，命题得证。
+					\end{proof}
+					这个命题的一个重要推论是关于实对称矩阵的一个重要成果：
+					\begin{corollary}{实对称矩阵的特征值和特征向量}
+						设$\symbfit{A} \in M_n(\R)$，且$\symbfit{A}$是对称矩阵，那么$\chi_{\symbfit{A}}(\lambda )$只有实根，且$\symbfit{A}$属于不同特征值的特征向量相互正交
+					\end{corollary}
+					\begin{proof}
+						事实上，实矩阵也可以视为复矩阵。
+						
+					\end{proof}
 				\point{}
 					\begin{proposition}
 						设$V$是$\C$上的一个内积空间，$A \in \hom(V,V)$是正规算子的充要条件是：
 
 						存在两个自伴算子$T,S \in \hom(V,V)$，使得$TS=ST,A=T+iS$
 					\end{proposition}
+					\begin{proof}
+						注意到：$A=\frac{A+A^*}{2}+i\frac{A-A^*}{2i}$
+
+						而$(\frac{A+A^*}{2})^*=\frac{A^*+A}{2}=\frac{A+A^*}{2}$
+
+						$(\frac{A-A^*}{2i})^*=\frac{A^*-A}{-2i}=\frac{A-A^*}{2i}$
+
+						又有$\frac{A+A^*}{2}\circ \frac{A-A^*}{2i}=-\frac{1}{2}(A+A^*)(A-A^*)=-\frac{1}{2}(A^2+A^*A-AA^*-(A^*)^2)=-\frac{1}{2}(A^2+AA^*-A^*A-(A^*)^2)=-\frac{1}{2}(A-A^*)(A+A^*)=\frac{A-A^*}{2i}\circ \frac{A+A^*}{2}$
+
+						于是必要性得证。
+
+						接下来证明充分性。
+
+						如果$A=T+iS$，注意到：
+
+						$A^*=T-iS \Rightarrow AA^*=(T+iS)(T-iS)=T^2+iST-iTS+S^2=T^2+iTS-iST+S^2=(T-iS)(T+iS)=A^*A$，于是$A$的确是正规算子
+
+						命题得证。
+					\end{proof}
 					事实上，在复内积空间中，向量与其在算子作用下的向量的内积，也可以反应算子的自伴性，如下：
 				\point{}
 					\begin{proposition}
