@@ -1833,22 +1833,110 @@
 
 			迹有以下性质：
 			\begin{para}{0}
-				\point{}
+				\point{迹存在且唯一}
 					\begin{proposition}
 						$\tr$存在且唯一
 					\end{proposition}
 					\begin{proof}
 						取$V$的一个基$\{\alpha_1,\cdots,\alpha_n\}$
 
-						我们先定义：$E_{ij}:V \ni \sum\limits_{l=1}^{n} k_l \alpha_l \mapsto k_i \alpha_j \in V$。容易注意到，$\{E_{ij}\}$是$\hom(V,V)$的一个基
+						我们先定义：$E_{ij}:V \ni \sum\limits_{l=0}^{n} k_l \alpha_l \mapsto k_i \alpha_j \in V$。容易注意到，$\{E_{ij}\}$是$\hom(V,V)$的一个基
+
+						再注意到：$E_{ij}$的以下性质：$E_{ij}E_{kl}=\delta_{il}E_{kj}$
+
+						这是因为：$(E_{ij}\circ E_{kl})(α_k)=E_{ij}(α_{l})=δ_{il}α_j ⇒E_{ij}E_{kl}=δ_{il}E_{kj}$
 
 						考虑映射：$f: \hom(V,V) \ni T = \sum\limits_{i,j}^{n,n} a_{ij} E_{ij} \mapsto \sum\limits_{k=1}^{n} a_{kk} \in F$
 
-						注意到：$\forall T=\sum\limits_{i,j}^{n,n}a_{ij}E_{ij},S=\sum\limits_{i,j}^{n,n}b_{ij}E_{ij} \in \hom(V,V)$
+						注意到：$\forall T=\sum\limits_{i,j}^{n,n}a_{ij}E_{ij},S=\sum\limits_{k,l}^{n,n}b_{kl}E_{kl} \in \hom(V,V)$
 
-						$f(TS)=f\left(\sum\limits_{i,j}^{n,n}\left(\sum\limits_{k=1}^{n} a_{ik} b_{kj}\right)E_{ij}\right)=\sum\limits_{i=1}^{n}\sum\limits_{k=1}^{n}a_{ik}b_{ki}$
+						$f(TS)=f\left(\sum\limits_{i,j,k,l}^{n,n,n,n}a_{ij}b_{kl}E_{ij}E_{kl}\right)=f\left(\sum\limits_{i,j,k}^{n,n,n}a_{ij}b_{ki}E_{kj}\right)$（因为当且仅当$i=l$时$\delta_{il}=1$）
 
-						$f(ST)=f\left(\right)$
+						$=\sum\limits_{i,j}^{n,n}a_{ij}b_{ji}$
+
+						$f(ST)=f\left(\sum\limits_{i,j,k,l}^{n,n,n,n}b_{kl}a_{ij}E_{kl}E_{ij}\right)=f\left(\sum\limits_{i,j,l}^{n,n,n}b_{jl}a_{ij}E_{il}\right)$
+
+						$=\sum\limits_{i,j}^{n,n}b_{ji}a_{ij}$
+
+						于是我们验证了$f(TS)=f(ST)$，而容易注意到：
+
+						$I=\sum\limits_{i=1}^{n} E_{ii} ⇒ f(I)=n=\dim_F V$
+
+						于是$f$的确是一个迹。接下来证明迹的唯一性。
+
+						记$W=\span\{ST-TS| S,T \in \hom(V,V)\}$，我们来证明：$\hom(V,V)=FI \oplus W$
+
+						取$\forall A \in \hom(V,V)$，有：
+
+						$A = \frac{f(A)}{n}I+\left(A-\frac{f(A)}{n}I\right)$
+
+						此时只需利用$A$的展开$A=\sum\limits_{i,j}^{n,n}k_{ij}E_{ij}$，并注意到：
+
+						$A-\frac{f(A)}{n}I=\sum\limits_{i=2}^{n}k_{ii}(E_{1i}E_{i1}-E_{i1}E_{1i})+\sum\limits_{i,j,i\neq j} k_{ij}(E_{ij}E_{ii}-E_{ii}E_{ij})$
+
+						于是的确有$\hom(V,V)=FI + W$，
+
+						再注意到：$\forall kI \in FI \cap W$，由$f$的性质一定有$f(kI)=0 ⇒ k=0$，于是$\hom(V,V) = FI \oplus W$得证
+
+						现在考察$U=\{g \in \hom(\hom(V,V),F)|\forall T,S \in \hom(V,V),g(TS)=g(ST)\}$
+
+						显然，$U \subseteq W'=\{g \in \hom(V,V)^*|\forall α \in W,g(α)=0\}$
+
+						依照引理2.1.3，$\dim W'=\dim \hom(V,V)-\dim W=1$
+
+						于是，$\dim U \leqslant 1$，但是我们已经证明了$f \in U$，于是$\dim U = 1$
+
+						于是任意迹$g$一定满足$g=kf$，再利用迹在恒等映射上的值，于是有$g(I)=kf(I)=kn ⇒ k=1$，从而迹的唯一性得证
+					\end{proof}
+					于是有以下推论：
+					\begin{corollary}{相似矩阵具有相同的迹}{}
+						如果$\symbfit{A},\symbfit{B} \in M_n(F),\symbfit{A}\sim \symbfit{B}$
+
+						那么，$\tr(\symbfit{A})=\tr(\symbfit{B})$
+					\end{corollary}
+					\begin{proof}
+						这是显然的，因为我们已经证明，两个矩阵相似的充要条件是它们是同一映射在不同基下的矩阵表示
+
+						于是命题得证。
+					\end{proof}
+				\point{矩阵的迹的具体形式}
+
+					\begin{proposition}
+						设$\symbfit{A}=(a_{ij})_{n\times n} \in M_n(F)$，那么有：
+
+						\begin{equation}
+							\tr(\symbfit{A})=\sum\limits_{i=1}^{n} a_{ii}
+						\end{equation}
+					\end{proposition}
+					\begin{proof}
+						这其实是显然的，依照定义，只需取$n$维线性空间$V$的一个基$\{\alpha_1,\cdots,\alpha_n\}$，并考虑在$B$上的矩阵为$\symbfit{A}$的线性变换$A$（这样的变换显然是存在的），那么注意到：
+
+						$\left(\sum\limits_{i,j}^{n,n} a_{ji} E_{ij}\right)(\alpha_1,\cdots,\alpha_n)=(\sum\limits_{j=1}^{n}a_{j1}\alpha_j,\cdots,\sum\limits_{j=1}^{n}a_{jn}\alpha_j)$
+
+						$=(\alpha_1,\cdots,\alpha_n)\symbfit{A} ⇒ A=\sum\limits_{i,j}^{n,n}a_{ji}E_{ij}$
+
+						于是$\tr(\symbfit{A})=\tr(A)=\sum\limits_{i=1}^{n}a_{ii}$，命题得证。					
+					\end{proof}
+					于是有以下推论：
+					\begin{corollary}{}{}
+						$\forall \symbfit{A},\symbfit{B} \in M_n(F),k \in F$
+
+						\begin{enumerate}
+							\item $\tr(\symbfit{A}+\symbfit{B})=\tr(\symbfit{A})+\tr(\symbfit{B})$
+							\item $\tr(k\cdot \symbfit{A})=k \cdot \tr(\symbfit{A})$
+							\item $\tr(\symbfit{A}^T)=\tr(\symbfit{A})$
+							\item $\tr(\symbfit{A}\symbfit{B})=\tr(\symbfit{B}\symbfit{A})$
+						\end{enumerate}
+					\end{corollary}
+					\begin{proof}
+						前三条都是显然的，只需证明第四条：
+
+						取$n$维线性空间$V$的一个基$\{\alpha_1,\cdots,\alpha_n\}$，并考虑在$B$上的矩阵为$\symbfit{A},\symbfit{B}$的线性变换$A,B$（这样的变换显然是存在的）
+
+						于是按照迹的定义，有$\tr(AB)=\tr(BA),\tr(\symbfit{A}\symbfit{B})=\tr(AB),\tr(\symbfit{B}\symbfit{A})=\tr(BA)$
+
+						于是$\tr(\symbfit{A}\symbfit{B})=\tr(\symbfit{B}\symbfit{A})$，命题得证。
+
 					\end{proof}
 			\end{para}
 		\subsection{行列式}
@@ -1901,7 +1989,7 @@
 
 						设$\omega =\gamma _1 \wedge \cdots \wedge \gamma _n$，$T(\gamma_i) = \sum\limits_{j=1}^{n} a_{ji}\gamma_j$
 
-						注意到：$\left(\bigwedge^n T\right)(\omega )=T(\gamma _1)\wedge\cdots\wedge T(\gamma _n)=\sum\limits_{i_1=1}^{n} a_{i_1,1} \gamma_{i_1}\wedge \cdots \wedge \sum\limits_{i_n=1}^{n} a_{i_n,n} \gamma_{i_n}$
+						注意到：$\left(\bigwedge^n T\right)(\omega )=T(\gamma_1)\wedge\cdots\wedge T(\gamma _n)=\sum\limits_{i_1=1}^{n} a_{i_1,1} \gamma_{i_1}\wedge \cdots \wedge \sum\limits_{i_n=1}^{n} a_{i_n,n} \gamma_{i_n}$
 
 						$=\sum\limits_{i_1=1}^{n}\cdots \sum\limits_{i_n=1}^{n} \prod\limits_{k=1}^{n}a_{i_k,i} \gamma _{i_1}\wedge\cdots\wedge\gamma _{i_n}$
 
